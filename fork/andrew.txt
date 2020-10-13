@@ -1,1 +1,0 @@
-Text file edited in vim on windows.
