@@ -1,0 +1,127 @@
+
+
+
+pip - 'pip installs python', installs python libraries
+pypi - https://pypi.org/
+
+type - identifying characteristic of an object
+    none - the absence of a value
+    int - integer
+    float - floating point number
+    boolean - true or false value
+    string - text
+    list - ordered collection of elements
+    dictionary - collection of key-value pairs
+    tuple - immutible list
+    range
+
+mutable vs immutable
+    mutable - able to be changed
+        e.g. list, dictionary
+    immutable - cannot be changed
+        e.g. string, tuple, boolean, int, float, none
+
+    nums = [3, 2, 1]
+    nums.sort()
+    print(nums)
+
+    text = 'hello'
+    text = text.upper()
+    print(text)
+
+
+identity (is) vs equality (==)
+    x = 'hello'
+    y = x
+    y += ' world'
+    print(x)
+
+    x = ['a', 'b', 'c']
+    y = x
+    y.append('d')
+    print(x)
+
+
+    # x = 'hello'
+    # y = 'hello'
+    # print(x is y) # True - optimized by the python interpreter
+
+
+    # x = 'hello'
+    # y = 'hell'
+    # y += 'o'
+    # print(x is y) # False, same as print(id(x) == id(y))
+    # print(x == y) # True
+
+
+    # x = ['a', 'b', 'c']
+    # y = ['a', 'b', 'c']
+    # print(id(x))
+    # print(id(y))
+
+assignment (=)
+
+
+function - a isolated block of code with input (parameters) and output (return) (print, input)
+method - a special kind of function that belongs to a class (string.split)
+parameter - inside the function
+    def add(a, b) - a and b are parameters
+argument - outside the function
+    add(5, 2) - 5 and 2 are arguments
+
+
+index, indices - integer that represents the position of an element in a list/tuple, or a char in a string
+
+statement vs expression
+    expression: evaluates to a value (x + 2)
+    statement: does something (x = x + 2)
+
+
+iteration - looping
+increment
+
+class - a blueprint for an object, combination of data and functions (methods)
+object - occupies memory, has a memory address, tracked the garbage collector
+variable - something that varies, name for an object
+
+
+module - a .py file, a collection of variables and function and classes
+package - a folder of .py files, a collection of modules
+import - import one module into another
+
+edge case
+off by one error
+primary path of execution
+debugging
+
+regex, pattern
+
+relative path - relative to a given file (../folder/file.txt)
+absolute path - relative to the root directory (C:/Windows/file.txt)
+
+
+
+
+HERESY
+    'indexes'
+    using a variable 'i' for something other than the index
+        for i in 'hello'
+    using snake case for class names
+    adding a new property to a class outside the initializer
+    accessing a private variable
+
+
+
+
+cases
+    this_is_snake_case
+        python variables, functions
+    thisIsCamelCase
+        javascript, java
+    ThisIsTitleCase, OrPascalCase
+        python classes
+    kebab-case
+        used for css
+    tHiSaLtEnAtInGcAsE
+
+
