@@ -53,7 +53,7 @@ Would you like to convert a distance from
 one unit of measurement to another?
 
 Enter "y" for Yes or "n" for No - ''')
-# Line 57 - ** are a while loop that allows the user
+# Lines 61 - 127 are a while loop that allows the user
 #  to utilize the program.
 # "True" is using the variables in lines
 #  8 and 9 to evaluate the Truthiness of 
