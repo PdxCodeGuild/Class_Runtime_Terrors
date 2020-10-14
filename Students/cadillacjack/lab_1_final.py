@@ -9,8 +9,8 @@ convert = {
 "mi": 1609.34,
 "m": 1.0,
 "km": 1000.0,
-"yard": 0.9144,
-"inch": 0.0254}
+"y": 0.9144,
+"i": 0.0254}
 
 
 
@@ -75,35 +75,37 @@ Enter "km" for Kilometers
 
 Final Unit - ''')
 
-        start = convert[initial_unit]
+            start = convert[initial_unit]
+            
+        
 
-        if desired_unit == "m":
-            to_meters(number, start)
+            if desired_unit == "m":
+                to_meters(number, start)
 
-        elif desired_unit == "i":
-            to_inches(number, start)
+            elif desired_unit == "i":
+                to_inches(number, start)
 
-        elif desired_unit == "ft":
-            to_feet(number, start)
+            elif desired_unit == "ft":
+                to_feet(number, start)
 
-        elif desired_unit == "y":
-            to_yards(number, start)
+            elif desired_unit == "y":
+                to_yards(number, start)
 
-        elif desired_unit == "mi":
-           to_miles(number, start)
+            elif desired_unit == "mi":
+               to_miles(number, start)
 
-        elif desired_unit == "km":
-            to_kilometers(number, start)
+            elif desired_unit == "km":
+                to_kilometers(number, start)
 
 
             initiate = input('''
 Would you like to make another conversion?
 Enter "y" for Yes or "n" to Exit - ''')
 
-
         elif initiate.lower() == "n":
             print("Thank you for using Cadillac Jacks Unit Conversion Program")
             break
+
         else:
             print("Please enter 'y' for Yes or 'n' to Exit - ")
 

@@ -1,34 +1,25 @@
-# trying to figure out the conversion
-# matrix here
 
 
-convert = {
-"ft": 0.3048,
-"mi": 1609.34,
-"m": 1.0,
-"km": 1000.0,
-"yard": 0.9144,
-"inch": 0.0254}
+def to_feet(user_distance, user_unit):
+    result = float(user_distance) * user_unit / convert["ft"]
+    print(f"The units you entered are equal to {result} Feet.")
 
-def blah(start, end):
-    starter = start * convert["m"]
-    print(1)
-    ender = end * convert["m"]
-    print(2)
-    print(starter / ender)
+def to_miles(user_distance, user_unit):
+    result = float(user_distance) * user_unit / convert["mi"]
+    print(f"The units you entered are equal to {result} Miles.")
 
+def to_kilometers(user_distance, user_unit):
+    result = float(user_distance) * user_unit / convert["km"]
+    print(f"The units you entered are equal to {result} Kilometers.")
 
-def main():
-    first = input("Check one ; ")
-    second = input("Check two ; ")
+def to_yards(user_distance, user_unit):
+    result = float(user_distance) * user_unit / convert["y"]
+    print(f"The units you entered are equal to {result} yards.")
 
-    first = convert[first]
-    second = convert[second]
+def to_inches(user_distance, user_unit):
+    result = float(user_distance) * user_unit / convert["i"]
+    print(f"The units you entered are equal to {result} inches.")
 
-    print(blah(first, second))
-
-main()
-
-
-
-
+def to_meters(user_distance, user_unit):
+    result = float(user_distance) * user_unit
+    print(f"The units you entered are equal to {result} meters.")
