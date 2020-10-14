@@ -1,7 +1,7 @@
 # Version 2 of Unit Converter will convert a variety of units to meters
 # Tom Schroeder 10/13/2020
 
-original_distance = float(input ('\nEnter the distance in feet that you want to convert to meters: '))
+original_distance = float(input ('\nEnter the distance that you want to convert to meters: '))
 
 
 # dictionary of conversion values
