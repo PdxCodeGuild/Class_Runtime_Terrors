@@ -1,4 +1,4 @@
-
+# This whole file was just to write my functions
 
 def to_feet(user_distance, user_unit):
     result = float(user_distance) * user_unit / convert["ft"]
