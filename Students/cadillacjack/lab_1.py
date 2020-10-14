@@ -11,7 +11,9 @@ convert = {
 "ft": 0.03048,
 "mi": 1609.34,
 "m": 1.0,
-"km": 1000.0}
+"km": 1000.0,
+"yard": 0.9144,
+"inch": 0.0254}
 
 # Lines 19 - 21 are a function that multiples the user inputs
 
