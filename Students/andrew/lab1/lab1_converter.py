@@ -1,5 +1,5 @@
 def feet_to_meters():
-	measurment = { 'ft':0.3048}
+	measurment = { 'ft':0.03048}
 	distance = input("Enter a distance in feet: ")
 	meters = float(distance) * measurment['ft']
 	print(f'{distance} ft is {meters}m ')
