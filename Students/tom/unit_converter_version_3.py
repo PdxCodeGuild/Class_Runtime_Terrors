@@ -1,4 +1,4 @@
-# Version 2 of Unit Converter will convert a variety of units to meters
+# Version 3 of Unit Converter adds more conversion factors
 # Tom Schroeder 10/13/2020
 
 original_distance = float(input ('\nEnter the distance that you want to convert to meters: '))
@@ -9,11 +9,13 @@ conversion_values = {
     'ft': 0.3048,
     'mi': 1609.34,
     'm': 1,
-    'km': 1000
+    'km': 1000,
+    'yd': 0.9144,
+    'in': 0.0254
 }
 
 # user inputs the units of the original disance
-original_units = input ('Enter the original units (ft, mi, m, km): ')
+original_units = input ('Enter the original units (in, ft, yd, mi, m, km): ')
 
 # get the conversion factor from the dictionary
 conversion_factor = conversion_values[original_units]
