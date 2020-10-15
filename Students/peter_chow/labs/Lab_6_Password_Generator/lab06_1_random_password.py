@@ -16,8 +16,8 @@ input, print
 looping
 random.choice
 the 'sting builder pattern'
-
 '''
+
 # import random module
 import random
 
