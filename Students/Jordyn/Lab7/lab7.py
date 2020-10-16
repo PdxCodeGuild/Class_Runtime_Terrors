@@ -27,7 +27,7 @@ def play_again():
     yes_list = ["yes", "ya", "y"]
     no_list = ["no", "nah", "n"]
     replay = input("Would you like to play again? Y/N\n>").lower()
-    while replay in yes_list or no_list:
+    if replay in yes_list or no_list:
         if replay in yes_list:
             return 1
         elif replay in no_list:
