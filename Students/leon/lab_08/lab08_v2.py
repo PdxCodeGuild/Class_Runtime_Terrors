@@ -4,8 +4,7 @@
 import random
 
 def main():
-    #compy = random.randint(1,10)
-    compy = 3
+    compy = random.randint(1,10)
     victory = False
     endgame = False
     i = 1
