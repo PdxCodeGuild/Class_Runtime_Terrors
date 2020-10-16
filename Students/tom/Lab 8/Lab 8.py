@@ -1,4 +1,4 @@
-# Lab 8: Guess the Number
+# Lab 8: Version #1, Guess the Number
 # 10/15/2020
 # Tom Schroeder
 
