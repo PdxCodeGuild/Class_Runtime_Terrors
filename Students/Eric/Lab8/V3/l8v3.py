@@ -32,4 +32,3 @@ x = random.randint(1,10)
 print("This is debuging Code the number is ",x)  #Use Comments to add the debuging code tool 
 print("Welcome to the guess the Number Game")
 main()
-
