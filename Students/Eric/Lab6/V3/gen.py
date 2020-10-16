@@ -11,6 +11,7 @@ llist = []
 plist= []
 dlist = []
 
+#User Input Fuction with Anti Number
 def userinput(many):
     while True:
      x = input(f'\nHow many {many} do you want?\n\n')
@@ -27,30 +28,6 @@ print("\n\nWelcome to the Password Generator")
 x1 = userinput('Letter(s)')
 x2 = userinput('Character(s)')
 x3 = userinput('Number(s)')
-# #Data Colection
-# while True:
-#      x1 = input('\nHow many Letter do you want?\n\n')
-#      if (x1.isdecimal()):
-#           x1 = int(x1)    
-#           break
-#      else:
-#           print('\nInvaid input try again!')
-   
-# while True:
-#      x2 = input('\nHow many Characters do you want?\n\n')
-#      if (x2.isdecimal()):
-#           x2 = int(x2) 
-#           break 
-#      else:
-#           print('\nInvaid input try again!')
-
-# while True:
-#      x3 = input('\nHow many Numbers do you want ?\n\n')
-#      if (x3.isdecimal()):
-#           x3 = int(x3)    
-#           break
-#      else:
-#           print('\nInvaid input try again!')
 
 # For Loops with Anti Zero Break   
 if x1 != 0:
@@ -69,3 +46,4 @@ joinlist = ''.join(list) # Join List
 xT= x1 + x2 + x3
 
 print(f'\n\nYour {xT} length password with {x1} Letters, {x2} Characters, and {x3} Numbers is',joinlist,'\n\n')
+
