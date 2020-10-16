@@ -1,4 +1,4 @@
-# Lab 8: Version #3, Guess the Number, unlimted trys, with too high/too low response
+# Lab 8: Version #3, Guess the Number, unlimted trys, and too high/too low response
 # 10/15/2020
 # Tom Schroeder
 
