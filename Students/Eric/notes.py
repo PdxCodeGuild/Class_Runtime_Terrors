@@ -62,7 +62,7 @@
 # #
 
 
-get the index number
+# get the index number
 # listx = ['a', 'b','c']
 # for x in listx:
 #     x1 = listx.index(x)
