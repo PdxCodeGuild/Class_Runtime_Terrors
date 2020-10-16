@@ -25,13 +25,6 @@ Enter "y" for Yes, or "n" for No :  ''')
         secret = random.randint(1,10)
     elif int(guess) != secret:
         counter += 1
-        if counter == 10:
-            print(f'''
-You have exceeded your daily recommended value of guesses.
-The secret number was {secret}
-Thank you for playing.
-            ''')
-            break
         print('''
 That is not the secret number. Try again...
         ''')
