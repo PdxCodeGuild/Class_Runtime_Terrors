@@ -40,6 +40,6 @@ while you == False:
         else:
             print("You picked:", you, "and Computer picked:", computer, "...You Won!")
     else:
-        print("Invalid input, try again!")
-    you = False
-    computer = rps[randint(0,2)]
+     computer = rps[randint(0,2)]
+payagin = input('Do you want to play again? yes/no')
+    if 
