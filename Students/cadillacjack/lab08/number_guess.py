@@ -13,7 +13,7 @@ while initiate == "y":
     guess = input('''
 Enter a number between 1 and 10
 Your Guess : ''')
-    print(secret)
+    
     if int(guess) == secret:
         print(f'''
 Congratulations! You have successfully guessed the secret number!
