@@ -1,14 +1,13 @@
 #!/bin/python3
-# Filename: lab_08_1_guess_the_number.py
+# Filename: lab_08_2_guess_the_number.py
 # Course: Full Stack Developer Evening Bootcamps
 # Author: Peter Chow, Student
-# Assignment: Lab 8: Guess the Number - Version 1
+# Assignment: Lab 8: Guess the Number - Version 2
 # Date: 10/15/2020
 # Version 1.0
 
 '''
-Using a while loop, allow the user to guess 10 times. If they fail to guess the number after 10 tries, the user is told they've lost. 
-If the user guesses the number, the user is told they've won and the game exits. You can get a random number using random.randint:
+Allow the user to make an unlimited number of guesses using a while True and break. Keep track of how many guesses the user has made, and tell them at the end.
 
 '''
 # pseudo code
