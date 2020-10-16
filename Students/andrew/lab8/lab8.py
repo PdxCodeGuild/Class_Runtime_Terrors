@@ -105,16 +105,17 @@ def compare(x , y):
 def guess_v5():
     guess = 0
     count = 10
-    num = random.randint(1, 10)
-    print(" The CPU will try to guess a number between between 1 and 10. \n Lets see if it can do it in less than 10 tries!")
-    
+    num = 0
+    print(" The CPU will try to guess a number you choose between between 1 and 10. \n Lets see if it can do it in less than 10 tries!")
+    guess = input("Please enter a number between 1 and 10: \n")
+
     while count > 0 and num != int(guess):
-        guess = random.randint(1,10)
+        num = random.randint(1, 10)
         count -= 1
         if num == int(guess):
             print(f'Awesome! The CPU guessed the right number: {num} \n')
         else:
-            print(f'Sorry, {guess} is not the correct number.')
+            print(f'Sorry, {num} is not the correct number.')
             print("Thinking")
             time.sleep(.5)
             print(".")
