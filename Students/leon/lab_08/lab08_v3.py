@@ -1,5 +1,6 @@
 # PDX Fullstack Lab 08 version 1
 # guess the number game infinite attempts
+# add a hint to error message
 
 import random
 
@@ -17,11 +18,16 @@ def main():
             break
         else:
             i += 1 
-            end = input("Wrong. Play again? ")
-            if (end == 'n'):
-                endgame = True
-                break
-            
+            if (player > compy):
+                end = input("Wrong. Too high! Play again? ")
+                if (end == 'n'):
+                    endgame = True
+                    break
+            else: 
+                end = input("Wrong. Too low! Play again? ")
+                if (end == 'n'):
+                    endgame = True
+                    break
 
     if (not victory):
         print("You lose. You tried ", i, "times.")
