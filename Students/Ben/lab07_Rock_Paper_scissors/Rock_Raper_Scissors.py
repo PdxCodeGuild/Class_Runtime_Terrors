@@ -21,7 +21,3 @@ while  Play_again == 'Y':
     Play_again = input('Do you want to play again (Y/N): ')
 else:
     print('Bye!')
-
-
-
-
