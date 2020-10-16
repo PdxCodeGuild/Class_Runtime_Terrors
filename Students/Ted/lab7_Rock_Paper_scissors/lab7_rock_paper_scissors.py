@@ -1,41 +1,44 @@
 import random
 choices = ('rock','paper','scissors')
-user = input('To play, choose; rock, paper or scissors. ')
-if user not in choices:
-    user = input('only pick from the three choices. ')
 
-comp = random.choice(choices)
+while True:
 
-if user == comp:
-    print('It is a tie!')
+    user = input('To play, choose; rock, paper or scissors. ')
+    if user not in choices:
+        user = input('only pick from the three choices. ')
 
-elif user == 'rock':
-    if comp == 'paper':
-        print('you lose')
-    elif comp == 'scissors':
-        print('you win')
+    comp = random.choice(choices)
 
-elif user == 'paper':
-    if comp == 'rock':
-        print('you win')
-    elif comp == 'scissors':
-        print('you lose')
+    if user == comp:
+        print('It is a tie!')
 
-elif user =='scissors':
-    if comp == 'rock':
-        print('you lose')
-    elif comp == 'paper':
-        print('you win')
+    elif user == 'rock':
+        if comp == 'paper':
+            print('you lose')
+        elif comp == 'scissors':
+            print('you win')
 
-#again = input('Would you like to play again? Yes or No? ').lower
+    elif user == 'paper':
+        if comp == 'rock':
+            print('you win')
+        elif comp == 'scissors':
+            print('you lose')
 
-#if again == 'yes':
-    #user = input('Which will it be this time? ')
+    elif user =='scissors':
+        if comp == 'rock':
+            print('you lose')
+        elif comp == 'paper':
+            print('you win')
 
-#elif again == 'no':
-     #print('Thanks for playing')
+    again = input('Would you like to play again? Yes or No? ').lower()
 
-#above is how I tried to ask for a rematch. I have seen something 'while ==True'
-#but don't understand how to use it.
+    if again == 'yes':
+        user = input('Which will it be this time? ')
+
+    elif again == 'no':
+        print('Thanks for playing')
+        break
+
+
 
 
