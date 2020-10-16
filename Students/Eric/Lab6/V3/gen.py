@@ -46,3 +46,4 @@ joinlist = ''.join(list) # Join List
 xT= x1 + x2 + x3
 
 print(f'\n\nYour {xT} length password with {x1} Letters, {x2} Characters, and {x3} Numbers is',joinlist,'\n\n')
+
