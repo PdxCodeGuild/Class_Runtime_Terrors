@@ -1,6 +1,6 @@
 # 10/15/2020
 # Random.randint; 
-#####################################################
+####################################################
 # Version 1
 # import random
 # x = random.randint(1,10)
@@ -33,21 +33,48 @@
 #         print("try again!")
 ####################################################
 # Version 3
+# import random
+# x = random.randint(1,10)
+# guess = 0
+
+# while guess != x:
+#     guess = int(input("Guess the number: "))
+#     if guess == x:
+#         print("Correct")
+#         break
+#     elif guess > x:
+#         print("Too high!")
+#     else:
+#         print("Too low!")
+####################################################
+# Version 4
 import random
 x = random.randint(1,10)
+print(x)
 guess = 0
+attempt = 1
 
 while guess != x:
     guess = int(input("Guess the number: "))
     if guess == x:
         print("Correct")
         break
-    elif guess > x:
-        print("Too high!")
-    else:
-        print("Too low!")
-####################################################
-# Version 4
-import random
-x = random.randint(1,10)
-print(x)
+    else: 
+        if attempt == 1:
+            print('This is your first attemp, no hisotrical comparison available')
+            attempt += 1
+            last_guess = guess 
+        else:
+            
+            print(f'your last guess is {last_guess}')
+            diff_now = abs(guess-x)
+            diff_prev = abs(last_guess-x)
+            if diff_now < diff_prev:
+                print("You are closer now")
+            else:
+                print("you are further now than your last guess")
+    last_guess = guess 
+############################################################
+# Version 5
+        
+        
