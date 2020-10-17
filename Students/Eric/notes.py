@@ -67,3 +67,11 @@
 # for x in listx:
 #     x1 = listx.index(x)
 #     print(x1)
+
+# --------------------10/16/2020
+# fuctions 
+
+
+# *args running muti times keys
+# **kwargs data
+#  read up!
