@@ -1,11 +1,17 @@
+"""Update with comments"""
+# TODO Add error corection to check for invalid inputs
+# TODO Refactor code to help readability
+# TODO Place all code inside a main function
+
+
 def convert(dollars):
-    hdcount = 0
+    hdcount = 0         # Variables keeping track of coin count
     qcount = 0
     dcount = 0
     ncount = 0
-
     money = float(dollars)
-    if money // .50:
+
+    if money // .50:        # If statements check value of money to see if it is divisible by coins value
         hdcount = money // .50
         money = money - (hdcount * .5)
         money = round(money, 3)
@@ -25,11 +31,14 @@ def convert(dollars):
         money = money - (ncount * .05)
         money = round(money, 3)
 
+    # Pennies are the remainder of the preceeding operations, multiplying by 100 gives us the correct amout
     pennies = money * 100
     formatted = '{:.0f}'.format(pennies)
 
     print(
         f'You have: \n {hdcount}:Hlaf-Dollars \n {qcount}: Quarters \n {dcount}: Dimes \n {ncount}: nickles \n {formatted}: pennies ')
+
+# change maker calls conver function and passes in dollar as a argument
 
 
 def change_maker_5000():
