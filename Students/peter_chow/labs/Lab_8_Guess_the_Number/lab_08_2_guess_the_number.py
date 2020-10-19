@@ -3,7 +3,7 @@
 # Course: Full Stack Developer Evening Bootcamps
 # Author: Peter Chow, Student
 # Assignment: Lab 8: Guess the Number - Version 2
-# Date: 10/15/2020
+# Date: 10/16/2020
 # Version 1.0
 
 '''
