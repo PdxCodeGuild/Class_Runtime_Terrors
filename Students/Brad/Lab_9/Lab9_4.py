@@ -19,14 +19,13 @@ def main():
         print(message)
         distance = input('What is the numerical distance you would like to convert?: ')
         while distance.isalpha():
-            print('please enter a numeric value.: ')
+            print('please enter a numeric value.')
             distance = input('What is the numerical distance you would like to convert?: ')
 
         input_unit = input('What are the input units?: ')
         while not unit_con.get(input_unit):
             print(f'Invalid entry. Please add one of the choices. {choices}')
             input_unit = input('What are the input units?: ')
-
 
         output_unit = input('What are the output units?: ')
         while not unit_con.get(output_unit):
