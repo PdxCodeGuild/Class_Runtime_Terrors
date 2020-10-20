@@ -175,14 +175,17 @@ while True:
             attempts += 1
             last_guess = absolute_difference #saves the last absolute difference from the previous turn
             print("Your guess was incorrect.")
+
         elif absolute_difference == last_guess:
             attempts += 1
             last_guess = absolute_difference
             print("Your guess was incorrect and was no closer than your last guess.")
+
         elif absolute_difference < last_guess:
             attempts += 1
             last_guess = absolute_difference
             print("Your guess was incorrect and was closer than your last guess.")
+            
         elif absolute_difference > last_guess:
             attempts += 1
             last_guess = absolute_difference
