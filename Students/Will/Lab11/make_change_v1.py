@@ -1,6 +1,3 @@
-
-coins = [("quarter", 25), ("dime", 10), ("nickel", 5), ("penny", 1)]
-
 print("""
 Welcome to the Change Maker 5000
 """)
@@ -10,9 +7,15 @@ while True:
     dollars = float(dollars)
     
     coins = [("quarter", 25), ("dime", 10), ("nickel", 5), ("penny", 1)]
-
+    [q,d,n,p]=coins
     cents = dollars * 100
 
+    def cascade(coin,value)
+        coin = cents // value
+        coin = int(coin)
+        slag = cents % value
+        return slag  
+              
     quarter = cents //  25
     quarter = int(quarter)
     slag = cents % 25
