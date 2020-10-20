@@ -3,3 +3,5 @@
 [10-14-2020 - Passcode: KU87?BC&](https://zoom.us/rec/share/6UF1tPtnP8mH9jNmeeWkca9wQk85VtTlrKGmFdQJ03vtSPrSV2cbTqenhTePxi1z.WHqEKywEo1-iRCKB)
 
 [10-15-2020 - Passcode: qm.1!+8E](https://zoom.us/rec/share/lYkXF8lslOQGxkpMJyCYkKxFl88CtQniXgSuWLV0zCYEIJzNCyL0HmSOcP0C27hW.Kbqtx7xVwuEfdoCI )
+
+[10-16-2020 - Passcode: i!FP*.7%](https://zoom.us/rec/share/fmoJpYXFXwusAEZVjVGh6NVuoR2P4ArC68-LBKXW2ls1VCYFZqkPwHwLntHmUkXK.9yVU02YJf69e9U-u  )
