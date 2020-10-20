@@ -1,5 +1,7 @@
-# PDX Fullstack lab 20 version 1
+# PDX Fullstack lab 20 version 2
 # Pick Six
+# ROI computation included
+
 from random import randint
 
 ticket = [0,0,0,0,0,0]
@@ -28,7 +30,8 @@ def num_matches(winning, tick):
 
 def main():
     # starting balance
-    balance = 0       
+    earnings = 0       
+    expense = 0
     # iteration variable; loop 100,000 times              
     n = 100000
     # intro blurb
@@ -37,7 +40,7 @@ def main():
     # primary loop
     while n > 0:
         # reset tickets
-        balance += -2
+        expense += 2
         WinTick = [0,0,0,0,0,0] 
         PlayTick = [0,0,0,0,0,0]
         WinTick = pick6(ticket)
@@ -45,29 +48,30 @@ def main():
         win = num_matches(WinTick, PlayTick)
         if win > 0:
             if win > 5:
-                balance = balance + 25000000
+                earnings = earnings + 25000000
                 win = 0
             elif win > 4:
-                balance = balance + 1000000
+                earnings = earnings + 1000000
                 win = 0
             elif win > 3:
-                balance = balance + 50000
+                earnings = earnings + 50000
                 win = 0
             elif win > 2:
-                balance = balance + 100
+                earnings = earnings + 100
                 win = 0
             elif win > 1:
-                balance = balance + 7
+                earnings = earnings + 7
                 win = 0
             elif win > 0:
-                balance = balance + 4
+                earnings = earnings + 4
                 win = 0
             else:
                 win = 0
         n = n -1
 
-    
+    balance = earnings - expense
     print("Your final balance is: ", balance)
-
+    roi = balance / expense
+    print("Your ROI is: ", roi)
 
 main()
