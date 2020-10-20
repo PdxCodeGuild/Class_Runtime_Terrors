@@ -7,8 +7,8 @@ Submitted 10/20/20
 
 from random import randint
 counter = 0
-lottery = []
 ticket = []
+lottery = []
 
 def lotto_ticket():
     global counter
@@ -55,7 +55,7 @@ def main():
         money = 0
 
     print(f"Winnings = ${money}")
-    print(f"{money - 200000 / 200000}% is your Return On Investment (ROI)")
+    print(f"{money - 200000 / 200000 * 100}% is your Return On Investment (ROI)")
 
 
 main()
