@@ -94,7 +94,7 @@ while True:
         else:
             break
 
-    if half_dollar == 1: #section defines how the coin type is worded for propper grammar
+    if half_dollar == 1: #section defines how the coin type is worded for propper grammar and well flowing output
         half_dollar = f' {half_dollar} half-dollar,'
     elif half_dollar == 0:
         half_dollar = ''
