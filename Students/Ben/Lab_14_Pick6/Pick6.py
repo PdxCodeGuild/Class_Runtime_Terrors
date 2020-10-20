@@ -1,18 +1,18 @@
 # Created on 10-19-2020, Monday
-print(" Welcome to the Pick 6 Game! ")
+print("Welcome to the Pick 6 Game! ")
 balance = float()
-print(f" Your balance is : $ {balance}")
+print(f"Your balance is : $ {balance}")
 import random
 
 ticket = random.sample(range(1,99),6)
 print(ticket)
 
-total_match_count = 0
+match_count = 0
+cost = 0
 
-def validate_match():
+def validate_match(match_count):
     pick = random.sample(range(1,99), 6)
-    print(pick)
-    match_count = 0 
+        # print(pick)
     for element in pick:
         # print(element)
         index = pick.index(element)
@@ -26,12 +26,16 @@ def validate_match():
         cost = 2*(index+1)
         # print(cost)
     print(f"Current # of mathces: {match_count}")
+    return(match_count)
+    return(cost)
 
 number_of_ticket = 1
-while number_of_ticket in range(0,5):
-    validate_match()
+while number_of_ticket in range(1,11):
+    validate_match(match_count)
     number_of_ticket += 1
 
+print(match_count)
+print(cost)
 
 
 payoff = {
