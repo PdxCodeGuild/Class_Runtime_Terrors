@@ -36,20 +36,9 @@ class RockPaperScissor:
         if a == b:
             print("tie")
             return False
-        elif a == "rock":
-            if b == "paper":
-                return self.recordWin(1)
-            else:
-                return self.recordWin(0)
-        elif a == "paper":
-            if b == "scissor":
-                return self.recordWin(1)
-            else:
-                return self.recordWin(0)
-        elif b == " rock":
+        elif a == "rock" and b == "paper" or a == "paper" and b == "scissor" or a == "scissor" and b == "paper":
             return self.recordWin(1)
-        else:
-            return self.recordWin(0)
+        return self.recordWin(0)
 
     def recordWin(self,name):
         if self.score[name][1] >= 0:
