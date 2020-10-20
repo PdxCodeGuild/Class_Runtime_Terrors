@@ -1,7 +1,40 @@
-"""Update with comments"""
-# TODO Add error corection to check for invalid inputs
+# TODO Fix output at the end of money conversion
 # TODO Refactor code to help readability
-# TODO Place all code inside a main function
+
+
+def money_handler():
+    correct_input = False
+    while correct_input == False:
+        try:
+            money = float(input("please enter a dollar amount:"))
+            if money < 0.01:
+                print("That is not enough money to convert! \n")
+            else:
+                return money
+                # break
+        except:
+            print("Please enter numbers in a x.xx format, ie. 1.23: \n")
+
+
+def continue_conversion(stop):
+    cont = False
+    while cont == False:
+        try:
+            convert_again = input(
+                "Would you like to convert more money? n for no or y for yes: \n")
+            if convert_again.lower() == 'y':
+                money = money_handler()
+                convert(money)
+
+            if convert_again.lower() == 'n':
+                stop = True
+                return stop
+        except Exception as e:
+            print(e)
+
+        else:
+            print(
+                f'{convert_again} is not a valid input! Please enter y or n to continue or close.\n')
 
 
 def convert(dollars):
@@ -42,20 +75,16 @@ def convert(dollars):
 
 
 def change_maker_5000():
-    dollar = 0.0
     stop = False
     print("Welcome to the change maker \n")
     while stop == False:
-        dollar = input("Enter a dollar amount: \n")
-        if float(dollar) <= 0:
-            print("Please enter a valid us monetary value (i.e, 1.73) \n")
-        else:
-            convert(dollar)
-            convert_again = input(
-                "Would you like to convert more money? Type y or n: \n")
-        if convert_again.lower() == 'n':
-            stop = True
-            print("Goodbye")
+        dollar = money_handler()
+        convert(dollar)
+        stop = continue_conversion(stop)
 
 
-change_maker_5000()
+def main():
+    change_maker_5000()
+
+
+main()
