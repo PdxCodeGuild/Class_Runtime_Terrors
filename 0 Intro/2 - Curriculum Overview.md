@@ -120,12 +120,10 @@ A program is a series of instructions given to a computer which perform operatio
 
 **Weeks 4, 5:** HTML/CSS
 
-**Weeks 6, 7, 8:** Django
+**Weeks 6, 7, 8:** JavaScript
 
-**Weeks 8, 9:** Basic JavaScript
+**Weeks 8, 9:** Django, capstone proposal
 
-**Weeks 10, 11:** Ajax, Django Rest Framework, capstone proposal
+**Weeks 10, 11, 12:** Capstone project
 
-**Weeks 12, 13, 14:** Capstone project
-
-**Post Class Weeks 1, 2:** Capstone revisions/additions/polish, job search
+**Post Class Weeks 1, 2:** Capstone revisions/additions/polish
