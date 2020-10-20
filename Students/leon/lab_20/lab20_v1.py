@@ -1,6 +1,6 @@
 # PDX Fullstack lab 20 version 1
 # Pick Six
-import random
+from random import randint
 
 ticket = [0,0,0,0,0,0]
 win = 0
@@ -10,7 +10,7 @@ def pick6(ticket):
     ticket = [0,0,0,0,0,0]  
     i = 0
     while (i < 6):
-        ticket[i] = (random.randint(1,99))
+        ticket[i] = (randint(1,99))
         i += 1
     return(ticket)
 
@@ -37,6 +37,7 @@ def main():
     # primary loop
     while n > 0:
         # reset tickets
+        balance += -2
         WinTick = [0,0,0,0,0,0] 
         PlayTick = [0,0,0,0,0,0]
         WinTick = pick6(ticket)
@@ -58,7 +59,7 @@ def main():
             elif win > 1:
                 balance = balance + 7
                 win = 0
-            elif balance > 0:
+            elif win > 0:
                 balance = balance + 4
                 win = 0
             else:
