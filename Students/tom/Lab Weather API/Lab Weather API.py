@@ -2,9 +2,9 @@ import requests
 
 zip = 97221
 # zip = input('What is the Zip code of your weather request?\n')
-current_wx_response = requests.get(f'https://api.openweathermap.org/data/2.5/weather?zip={zip}&units=imperial&appid=0295b9d3c4ed9f1b401df9e1f2e3bba6')
+current_wx_response = requests.get(f'https://api.openweathermap.org/data/2.5/weather?zip={zip}&units=imperial&appid=api')
 
-# forecast_wx_response = requests.get(f'https://api.openweathermap.org/data/2.5/forecast?zip={zip}&units=imperial&appid=0295b9d3c4ed9f1b401df9e1f2e3bba6')
+# forecast_wx_response = requests.get(f'https://api.openweathermap.org/data/2.5/forecast?zip={zip}&units=imperial&appid=api')
 
 
 current_wx_data = current_wx_response.json()
