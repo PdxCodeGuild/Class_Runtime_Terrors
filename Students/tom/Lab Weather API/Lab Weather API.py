@@ -1,9 +1,9 @@
 import requests
 import time
 
-zip = input('What is the Zip code of your weather request?\n')
+zip = input('What is the Zip code for your weather request?\n')
 
-current_wx_response = requests.get(f'https://api.openweathermap.org/data/2.5/weather?zip={zip}&units=imperial&appid=api')
+current_wx_response = requests.get(f'https://api.openweathermap.org/data/2.5/weather?zip={zip}&units=imperial&appid=API')
 current_wx_data = current_wx_response.json()
 
 temp           = current_wx_data ["main"]["temp"]
