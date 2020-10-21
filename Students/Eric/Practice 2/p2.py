@@ -1,4 +1,4 @@
-import string
+
 
 def double_letters(word):
   wordlist = list(word)
@@ -36,6 +36,19 @@ print(latest_letter('pneumonoultramicroscopicsilicovolcanoconiosis')) # v
 # def count_hi(text):
 
 
+def count_hi(text):
+    textlist = list(text)
+    counthi = 0
+    for x in range(len(textlist)):
+        y = x + 1
+        if textlist[x] == "h" and textlist[y] == "i":
+            counthi = counthi + 1
+    return counthi
+
+print('P4')
+print(count_hi('hihi')) # 2
+
+
 def snake_case(text):
     return text.lower()
 
@@ -44,16 +57,20 @@ print(snake_case('Hello World!')) # hello_world
 print(snake_case('This is another example.')) # this_is_another_example
 
 
-# def camel_case(text):
-#     PUNCTUATION = string.punctuation 
+def camel_case(text):
+    punc = ""'!()-[]{};:'"\, <>. /?@#$%^&*_~''"
+    for x in text:
+        if x in punc:
+            text = text.replace(x, "")
+    return text
 
+print('P6')
+print(camel_case('Hello World!')) # helloWorld
+print(camel_case('This is another example.')) # thisIsAnotherExample
+
+# def alternating_case(text):
 #     for x in text:
-#         if x in PUNCTUATION:
-#             print(f'\n{x}')
-#             text = text.replace(x,"") 
+#         if x = 0
     
-#     return text
-
-# print('P6')
-# print(camel_case('Hello World!')) # helloWorld
-# print(camel_case('This is another example.')) # thisIsAnotherExample
+# print(alternating_case('Hello World!')) # HeLlO WoRlD!
+# print(alternating_case('This is another example.')) # ThIs iS AnOtHeR ExAmPle.
