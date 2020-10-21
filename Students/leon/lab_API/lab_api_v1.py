@@ -29,11 +29,10 @@ def main():
         
         i = 0
         if choice == 'weather':
-            print(cast['main']['temp'])
+            print(round(cast['main']['temp']))
         else: 
             while (i < 5):
-                print(f"Day {i+1}: ", cast['list'][i]['main']['temp'])
-                #print(cast['list'][0]['main']['temp'])
+                print(f"Day {i+1}: ", round(cast['list'][i]['main']['temp']))
                 i += 1
                 
 
