@@ -1,14 +1,10 @@
 import requests
 import time
 
-zip = 97221
-# zip = input('What is the Zip code of your weather request?\n')
+zip = input('What is the Zip code of your weather request?\n')
 
 current_wx_response = requests.get(f'https://api.openweathermap.org/data/2.5/weather?zip={zip}&units=imperial&appid=api')
 current_wx_data = current_wx_response.json()
-
-# forecast_wx_response = requests.get(f'https://api.openweathermap.org/data/2.5/forecast?zip={zip}&units=imperial&appid=api')
-# forecast_wx_data = forecast_wx_response.json()
 
 temp           = current_wx_data ["main"]["temp"]
 feels_temp     = current_wx_data ["main"]["feels_like"]
