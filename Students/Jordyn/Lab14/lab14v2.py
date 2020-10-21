@@ -10,6 +10,7 @@ to-do
 import random
 
 def pick6():
+    """Picks 6 random numbers and injects them into a list"""
     random_list = []
     loop = 1
     while loop <= 6:
@@ -20,6 +21,7 @@ def pick6():
         return random_list
 
 def num_matches(winning, ticket):
+    """"Catches the number of matching values between winning ticket and new ticket"""
     matching = 0
     index = 0
     while index <= 5:
@@ -34,6 +36,7 @@ def num_matches(winning, ticket):
         return matching
 
 def matching_value(matched):
+    """Checks number of matched numbers on new ticket vs winning ticket"""
     value = -2
     if matched == 0:
         return value
@@ -69,8 +72,10 @@ while loop < loop_limit:
     # ticket = [1, 1, 1, 1, 1, 1] #testing num_matches() function
 
     matching = num_matches(winning_ticket, ticket)
+    
     if matching == 6:
         print("JACKPOT!")
+
     # print(matching)
     ticket_value = matching_value(matching)
     value += ticket_value

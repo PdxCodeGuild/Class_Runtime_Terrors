@@ -28,7 +28,7 @@ def multiple_plays(x,balance):
     print(balance)   
     return balance
 def qty_play():
-    x = input( "enter the number of times you would like to play: ")
+    x = input( "enter the number of time you would like to play: ")
     x = int(x)
     return x
 multiple_plays(qty_play(), balance)
