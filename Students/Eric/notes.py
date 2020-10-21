@@ -75,3 +75,16 @@
 # *args running muti times keys
 # **kwargs data
 #  read up!
+# 10/19/2020 Notes
+# fuctions
+#Read up global vars ex. global x
+
+# raise Exception ('Sorry)
+# try and eccept and finally
+
+#lambda  x: 3 +1 
+# fn.strip().tittle()
+#look at strip
+
+full_name = lambda fn, ln : fn.strip().title() + " " + ln.strip().title()
+print(full_name("Eric" , "le"))
