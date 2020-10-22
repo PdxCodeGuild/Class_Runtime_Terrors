@@ -82,9 +82,21 @@
 # raise Exception ('Sorry)
 # try and eccept and finally
 
-#lambda  x: 3 +1 
+#lambda  x: 3 +1  one line funtion
 # fn.strip().tittle()
 #look at strip
 
-full_name = lambda fn, ln : fn.strip().title() + " " + ln.strip().title()
-print(full_name("Eric" , "le"))
+# full_name = lambda fn, ln : fn.strip().title() + " " + ln.strip().title()
+# # print(full_name("Eric" , "le"))
+
+# # -----------------------------10/20/2020 notes 
+# Sending a GET Request
+# Sending a GET request is the direct equivalent of using your browser, you can get the body of the response using response.text.
+
+# import requests
+
+# response = requests.get('https://api.ipify.org')
+
+# data = response.json() reform
+# print(response.text) # 76.105.187.182
+# api
