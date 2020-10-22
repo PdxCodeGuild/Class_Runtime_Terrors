@@ -13,7 +13,6 @@ def main():
     else:
         print("\nStay Safe!\n")
 
-
 def inputpick():
     while True:
         try:
