@@ -3,14 +3,6 @@
 # prints top 10 words of a given book
 
 import string
-hold = {}
-
-def build_dict(word):
-    if word in hold:
-        hold[word] += 1 
-    else:
-        hold[word] = 1 
-
 
 def main():
 
