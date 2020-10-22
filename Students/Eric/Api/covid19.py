@@ -13,7 +13,6 @@ def main():
     else:
         print("\nStay Safe!\n")
 
-
 def inputpick():
     while True:
         try:
@@ -63,10 +62,6 @@ def apirecall():
     url = 'https://api.covid19api.com/summary'
     summary = requests.get(url)
     return summary.json()
-
-
-
-
 
 print('\n\nWelcome Covid-19 Tracker\n')
 
