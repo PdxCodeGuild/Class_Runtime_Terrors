@@ -64,10 +64,6 @@ def apirecall():
     summary = requests.get(url)
     return summary.json()
 
-
-
-
-
 print('\n\nWelcome Covid-19 Tracker\n')
 
 main()
