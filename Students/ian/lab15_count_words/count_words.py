@@ -30,14 +30,17 @@ for i in range(min(10, len(words))):  # print the top 10 words, or all of them, 
 
 
 """
-# import requests
+import requests
 import re
+import os.path
 
 
 def getFile():
     response = requests.get("https://www.gutenberg.org/files/62897/62897-0.txt")
     response.encoding = "utf-8"  # set encoding to utf-8
-    print(response.text)
+    with open("words", "w") as file:
+        for line in response.text:
+            file.write(line)
 
 
 def sortAndCount(d):
@@ -47,7 +50,6 @@ def sortAndCount(d):
 
 
 def genWordDict(fname):
-    print("counting words")
     d = dict()
 
     with open(fname, "r", encoding="utf-8") as file:
@@ -62,8 +64,10 @@ def genWordDict(fname):
 
 
 def main():
-    # getFile()
-    d = genWordDict("words")
+    fname = "words"
+    if not os.path.isfile(fname):
+        getFile()
+    d = genWordDict(fname)
     words = sortAndCount(d)
     print("The top ten words are: \n")
     for i in range(min(10, len(words))):
