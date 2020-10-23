@@ -57,8 +57,9 @@ payoff = {
 
 match = 0
 cost = 0
+
 print('You matched: ')
-def validate_match(match):
+def validate_match(match,total):
     pick = random.sample(range(1,99), 6)
     for element in pick:
         index = pick.index(element)
@@ -68,9 +69,15 @@ def validate_match(match):
         else:
             pass  
         cost = 2*(index+1)
+
     print(f"Match: {match}")
+    return match
 
 ticket_num = 1
+total=0
 while ticket_num in range(1,11):
-    validate_match(match)
+    match = validate_match(match,total)
     ticket_num += 1
+    if match == 1:
+        total += payoff[1]
+    print(total)
