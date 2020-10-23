@@ -5,12 +5,9 @@ response = requests.get('https://www.gutenberg.org/files/45484/45484-0.txt')
 response.encoding = 'utf-8' # set encoding to utf-8
 
 poe = response.text
-poe = poe.strip(punct)
-poe = poe.replace('\n',' ')
-poe = poe.replace('\r',' ')
-poe = poe.replace('\t',' ')
-poe = poe.lower()
-poe = poe.split(' ')
+
+unwanted = ("\n \r \t" + punct)
+poe = poe.strip(unwanted).lower().split(" ")
 
 raven = {}
 
