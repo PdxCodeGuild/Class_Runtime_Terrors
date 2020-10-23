@@ -32,8 +32,11 @@ def get_country_info(data, country_selection):
             # elif temp_data == country_id:
             #     return data[key]
 
-def format_data():
-    print()
+def display_data(country_info):
+    print(country_info)
+    print(country_info['Country'])
+    print(country_info['TotalConfirmed'])
+    print(country_info['TotalDeaths'])
 
 print("Gathering Current Covid-19 Related Data")
 
@@ -50,15 +53,19 @@ while True:
     print("             COVID-19 Related Information Live\n")
     country_selection = input("""Please input the name of the Country you are searching for. If you know your Country ID, you may also input that.
 If you would like a list of available Countries, type 'Country List'.\n> """)
-    while country_selection not in countries or country_selection not in country_id:
-        country_selection = input("""\nSelection not available. Please ensure correct spelling and Capitalization.
+    while country_selection not in countries:
+        if country_selection == 'County List':
+            print(countries)
+            break
+        elif country_selection not in country_id:
+            country_selection = input("""\nSelection not available. Please ensure correct spelling and Capitalization.
 
 Please input the name of the Country you are searching for. If you know your Country ID, you may also input that.
 If you would like a list of available Countries, type 'Country List'.\n> """)
-        if country_selection in countries or country_selection in country_id:
-            break
-    if country_selection == 'County List':
-        print(countries)
+            if country_selection in countries:
+                break
+            elif country_selection in country_id:
+                break
     
     country_info = get_country_info(data, country_selection)
-    print(country_info)
+    display_data(country_info)

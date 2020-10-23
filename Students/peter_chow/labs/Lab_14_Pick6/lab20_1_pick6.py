@@ -3,7 +3,7 @@
 # Course: Full Stack Developer Evening Bootcamps
 # Author: Peter Chow, Student
 # Assignment: Lab 14: Pick6 - Version 1
-# Date: 10/19/2020
+# Date: 10/22/2020
 # Version 1.0
 
 '''
@@ -38,55 +38,39 @@ After the loop, print the final balanceHave the computer play pick6 many times a
 
 '''
 
+print("\nDo you feel lucky?")
+balance = float()
+print('Here are the winning numbers: ')
 import random
 
-# Generate a list of 6 random numbers representing the winning tickets
-# pick6 = []
-# for x in range(6):
-#     pick6.append(random.randint(1,99)) # Computer generates at random int betweek 1 and 99
-# print(pick6)
+ticket = random.sample(range(1,99),6)
+print(ticket)
 
-# for x = []
-#     cpu_numbers = [random.randint(1, 99) for num in range(0,6)]
-#     print('CPU numbers: ', cpu_numbers)
+payoff = {
+    1:4,
+    2:7,
+    3:100,
+    4:50000,
+    5:1000000,
+    6:25000000
+}
 
-def pic6():
-    cpu_numbers = [random.randint(1, 99) for num in range(0,6)]
-    # print('CPU numbers: ', cpu_numbers)
-    return cpu_numbers
+match = 0
+cost = 0
+print('You matched: ')
+def validate_match(match):
+    pick = random.sample(range(1,99), 6)
+    for element in pick:
+        index = pick.index(element)
+        win_num = ticket[index]
+        if element == win_num:
+            match += 1            
+        else:
+            pass  
+        cost = 2*(index+1)
+    print(f"Match: {match}")
 
-def compaire(w, t): # w = winner, t = ticket
-    match = 0
-    for item in range(len(w)):
-        if t[item] == w[item]:  
-            match =+ 1
-    return match
-
-ticket = pic6()
-winning = pic6() 
-result = compaire(ticket, winning)
-print(result)
-print('Winning: ', winning)
-print('Ticket: ', ticket)
-
-def count():
-    counter = 0
-    for count_down in range(1000000):
-        ticket = pic6()
-        winning = pic6() 
-        result = compaire(ticket, winning)
-        counter = result
-    print(counter)
-
-count()
-
-
-        
-
-
-
-
-
-# Start your balance at 0
-balance = []
-
+ticket_num = 1
+while ticket_num in range(1,11):
+    validate_match(match)
+    ticket_num += 1

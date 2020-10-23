@@ -28,7 +28,7 @@ while True:
     break
 
 gP = (random.sample(gP, len(gP))) # Can't randomly sort string elements.Use this function it returns as a list 
-gP= ''.join(gP) # Then you must join function to convert back to string 
+gP= ''.join(gP) # Then you must use join function to convert back to string 
 print(gP) 
 
     
