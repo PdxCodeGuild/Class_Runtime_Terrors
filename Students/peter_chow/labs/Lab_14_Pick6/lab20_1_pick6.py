@@ -38,9 +38,8 @@ After the loop, print the final balanceHave the computer play pick6 many times a
 
 '''
 
-print("Do you feel lucky?")
+print("\nDo you feel lucky?")
 balance = float()
-# print(f"Here are the winning numbers: $ {balance}")
 print('Here are the winning numbers: ')
 import random
 
