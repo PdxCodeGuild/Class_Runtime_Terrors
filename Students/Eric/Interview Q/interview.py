@@ -15,8 +15,9 @@ def test(wordlist):
 
     for k,v in letter_dic.items(): # Calling up Keys and Values
         answerlist.append(k)
-        vstring =str(v) # Need to make int to Str otherwises unable to join
-        answerlist.append(vstring)
+        if v != 1:
+            vstring =str(v) # Need to make int to Str otherwises unable to join
+            answerlist.append(vstring)
     return ("".join(answerlist))
 
 print(test('wwwwaaadexxxxxx'))
