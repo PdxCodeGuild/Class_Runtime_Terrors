@@ -1,9 +1,8 @@
 import string
+import operator
 
 punctuations = string.punctuation
-# print(punctuations)
 word_list = {}
-
 no_punct_word = ''
 
 with open('lab15_read.txt', 'r', encoding = 'utf-8') as file:
@@ -18,13 +17,10 @@ with open('lab15_read.txt', 'r', encoding = 'utf-8') as file:
         elif word not in word_list:
             word_list[word] = 1
 
-word_list = sorted(word_list.items(), key = lambda x: x[1], reverse=True) #stolen and I dont fully understand yet... sorry
+word_list = sorted(word_list.items(), key=operator.itemgetter(1), reverse=True)
 
-# print(word_list)
 print('Top 10 words in file:\n')
-
 for key in range(0, 10):
-    # for word, repeat in word_list[key]:
     word_list_range = word_list[key]
     word = word_list_range[0]
     repeat = word_list_range[1]
