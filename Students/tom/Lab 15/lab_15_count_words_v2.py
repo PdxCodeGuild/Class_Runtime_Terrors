@@ -5,8 +5,8 @@
 import string
 
 word_list = [] # initiates variable for a list of all words in the book
-word_pairs = []
-word_pair_dictionary = {}
+word_pairs = [] # initiates variable for a list of all word-pairs in the book
+word_pair_dictionary = {} # initiates variable for a dictionary of all word-pairs in the book
 
 with open ('pg63523.txt', 'r') as book: # opens text file of book
     number_of_characters = 100 # sets variable to limit of characters
