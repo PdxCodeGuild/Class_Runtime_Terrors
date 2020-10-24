@@ -44,5 +44,9 @@ raven = list(raven.items())
 raven.sort(key = lambda tup: tup[1], reverse = True)
 # Sort "raven" by index, reorder high to low
 
-print(raven[:10])
+print('''The 10 most used words in
+'The Raven', by Edgar Allen Poe, are : ''')
+
+for i in range(10):
+    print(raven[i])
 # Print out top 10 words in Edgar Allen Poe's "The Raven"
