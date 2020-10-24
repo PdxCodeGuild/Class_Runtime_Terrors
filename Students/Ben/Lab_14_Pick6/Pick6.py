@@ -10,6 +10,7 @@ print(ticket)
 match_count = 0
 cost = 0
 
+
 def validate_match(match_count):
     pick = random.sample(range(1,99), 6)
         # print(pick)
@@ -23,15 +24,14 @@ def validate_match(match_count):
             match_count += 1            
         else:
             pass  
-        cost = 2*(index+1)
-        # print(cost)
+    cost = 2
     print(f"Current # of mathces: {match_count}")
-    return(match_count)
+    # Function_output = {"Cost": 0 ,"Match_Count": 0}
     return(cost)
 
 number_of_ticket = 1
 while number_of_ticket in range(1,11):
-    validate_match(match_count)
+    cost += validate_match(match_count)
     number_of_ticket += 1
 
 print(match_count)
