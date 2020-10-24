@@ -37,47 +37,55 @@ After the loop, print the final balanceHave the computer play pick6 many times a
 
 
 '''
-
-print("\nDo you feel lucky?")
-balance = float()
-print('Here are the winning numbers: ')
 import random
 
-ticket = random.sample(range(1,99),6)
-print(ticket)
+def pick6():
+    chosen_numbers = random.sample(range(1,99),6)
+    return chosen_numbers
 
-payoff = {
-    1:4,
-    2:7,
-    3:100,
-    4:50000,
-    5:1000000,
-    6:25000000
-}
+def num_matches(winnings, ticket):
+    wincounter = 0
+    for i, value in enumerate(ticket):
+        if value == winnings[i]:
+            wincounter += 1
+    
+    if wincounter == 0:
+        winnings = 0
+    elif wincounter == 1:
+        winnings = 4
+    elif wincounter == 2:
+        winnings = 7
+    elif wincounter == 3:
+        winnings = 100
+    elif wincounter == 4:
+        winnings = 50000
+    elif wincounter == 5:
+        winnings =  1000000
+    elif wincounter == 6:
+        winnings = 25000000
+    return winnings
 
-match = 0
-cost = 0
+def main():
+    savings_account = 0
+    purchase_counter = 0
+    earnings = 0
+    expenses = 0
 
-print('You matched: ')
-def validate_match(match,total):
-    pick = random.sample(range(1,99), 6)
-    for element in pick:
-        index = pick.index(element)
-        win_num = ticket[index]
-        if element == win_num:
-            match += 1            
-        else:
-            pass  
-        cost = 2*(index+1)
+    # while purchase_counter < 1000:
+    for i in range(10000):
+        savings_account = savings_account - 2
+        expenses = expenses + 2
+        winning = pick6()
+        ticket = pick6()
+        prizes = num_matches(winning, ticket)
+        savings_account = savings_account + prizes
+        earnings = earnings + prizes
+        purchase_counter +=1
 
-    print(f"Match: {match}")
-    return match
+    return_on_investment = 100 * (earnings - expenses)/expenses
+    print(f"Your earning is ${float(savings_account)}")
+    print(f"Your ROI is {float(return_on_investment)}%")
 
-ticket_num = 1
-total=0
-while ticket_num in range(1,11):
-    match = validate_match(match,total)
-    ticket_num += 1
-    if match == 1:
-        total += payoff[1]
-    print(total)
+if __name__ == "__main__":
+    print("\nDo you feel lucky?")
+    main()
