@@ -1,5 +1,5 @@
 # 10/23/2020 
-
+import string
 ROT13 ="abcdefghijklmnopqrstuvwxyz"
 
 # user_input = input("Enter your message here: ")
@@ -10,9 +10,13 @@ ROT13 ="abcdefghijklmnopqrstuvwxyz"
 
 def encryption_v1 ():
     user_input = input("Enter your message here: ")
+    encrypted_input = ''
     for letter in user_input:
         original_index = ROT13.index(letter)
         new_index = ( original_index + 13 ) % 26
-        print(ROT13[new_index])
+        new_letter = ROT13[new_index]
+        encrypted_input += new_letter
+    print(encrypted_input)
 
 encryption_v1()
+
