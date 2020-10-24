@@ -2,7 +2,7 @@ def alternating_case(text):
     new_text = ''
     length = 0
     for char in text:
-        if char == ' ':
+        if char == ' ': #catches spaces and skips alternating text because pros skip the spaces when alternating their mocking text!
             new_text += char
             continue
         elif char != ' ':
