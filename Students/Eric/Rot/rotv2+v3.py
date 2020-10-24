@@ -24,11 +24,18 @@ def rot(word,rot):
 
     return answerlist
 
+def userinput():
+    while True:
+     x = input('Enter a your Rot:')
+     try:
+          x = int(x)    
+          return (x)
+     except:
+          print('\nInvaid input try again!')
+
 print("Welcome to the Rot Cipher")
 userinput = input('Input your password to be cipher: ')
-userrot =  input('Input your Rot: ')
-userrot = int(userrot)
-
+userrot = userinput()
 x = (rot(userinput, userrot))
 x =("".join(x))
 print (x)
