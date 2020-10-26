@@ -1,6 +1,6 @@
-# PDX Fullstack lab 09 ROT13 version 1
+# PDX Fullstack lab 09 ROT13 version 2
 # take user input as plaintext and output ciphertext
-# using rotation of the encryption 13
+# using rotation of the encryption by user input for key value
 
 import string
 import copy
