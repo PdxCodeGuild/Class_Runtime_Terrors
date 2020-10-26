@@ -3,7 +3,7 @@
 # Course: Full Stack Developer Evening Bootcamps
 # Author: Peter Chow, Student
 # Assignment: Lab 14: Pick6 - Version 1
-# Date: 10/19/2020
+# Date: 10/22/2020
 # Version 1.0
 
 '''
@@ -37,56 +37,55 @@ After the loop, print the final balanceHave the computer play pick6 many times a
 
 
 '''
-
 import random
 
-# Generate a list of 6 random numbers representing the winning tickets
-# pick6 = []
-# for x in range(6):
-#     pick6.append(random.randint(1,99)) # Computer generates at random int betweek 1 and 99
-# print(pick6)
+def pick6():
+    chosen_numbers = random.sample(range(1,99),6)
+    return chosen_numbers
 
-# for x = []
-#     cpu_numbers = [random.randint(1, 99) for num in range(0,6)]
-#     print('CPU numbers: ', cpu_numbers)
+def num_matches(winnings, ticket):
+    wincounter = 0
+    for i, value in enumerate(ticket):
+        if value == winnings[i]:
+            wincounter += 1
+    
+    if wincounter == 0:
+        winnings = 0
+    elif wincounter == 1:
+        winnings = 4
+    elif wincounter == 2:
+        winnings = 7
+    elif wincounter == 3:
+        winnings = 100
+    elif wincounter == 4:
+        winnings = 50000
+    elif wincounter == 5:
+        winnings =  1000000
+    elif wincounter == 6:
+        winnings = 25000000
+    return winnings
 
-def pic6():
-    cpu_numbers = [random.randint(1, 99) for num in range(0,6)]
-    # print('CPU numbers: ', cpu_numbers)
-    return cpu_numbers
+def main():
+    savings_account = 0
+    purchase_counter = 0
+    earnings = 0
+    expenses = 0
 
-def compaire(w, t): # w = winner, t = ticket
-    match = 0
-    for item in range(len(w)):
-        if t[item] == w[item]:  
-            match =+ 1
-    return match
+    # while purchase_counter < 1000:
+    for i in range(10000):
+        savings_account = savings_account - 2
+        expenses = expenses + 2
+        winning = pick6()
+        ticket = pick6()
+        prizes = num_matches(winning, ticket)
+        savings_account = savings_account + prizes
+        earnings = earnings + prizes
+        purchase_counter +=1
 
-ticket = pic6()
-winning = pic6() 
-result = compaire(ticket, winning)
-print(result)
-print('Winning: ', winning)
-print('Ticket: ', ticket)
+    return_on_investment = 100 * (earnings - expenses)/expenses
+    print(f"Your earning is ${float(savings_account)}")
+    print(f"Your ROI is {float(return_on_investment)}%")
 
-def count():
-    counter = 0
-    for count_down in range(1000000):
-        ticket = pic6()
-        winning = pic6() 
-        result = compaire(ticket, winning)
-        counter = result
-    print(counter)
-
-count()
-
-
-        
-
-
-
-
-
-# Start your balance at 0
-balance = []
-
+if __name__ == "__main__":
+    print("\nDo you feel lucky?")
+    main()
