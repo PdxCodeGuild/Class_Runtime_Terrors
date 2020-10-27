@@ -44,8 +44,8 @@ def main():
 
         while not bull:
             tag = True
-            print("Welcome to Cypher 1.0")
-            print("Key value = 13. Can only accept lowercase " + \
+            print("Welcome to Cypher 2.0")
+            print("Can only accept lowercase " + \
                 "alphabeticals.")
             plain = input("Enter word to encrypt: ").lower()
             # convert str to list
