@@ -5,6 +5,7 @@ class BankAccount:
         self.balance = balance
 
     def deposit(self):
+        self.balance += deposit
         return self.deposit
     
     def bankfees(self):
@@ -13,5 +14,3 @@ class BankAccount:
     
     def display(self):
         return self.display
-
-
