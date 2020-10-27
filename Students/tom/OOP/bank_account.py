@@ -1,15 +1,17 @@
 class BankAccount:
-    def__init__(account_info, accountnumber, name, balance):
-        account_info.accountnumber = number
-        account_info.name = name
-        account_info.balance = balance
-    def deposit(account_info):
-        return account_info.deposit
+    def__init__(self, accountnumber, name, balance):
+        self.accountnumber = number
+        self.name = name
+        self.balance = balance
+
+    def deposit(self):
+        return self.deposit
     
-    def bankfees(account_info):
-        return account_info.bankfees
+    def bankfees(self):
+        bankfees = int(self.balance * 0.05)
+        return self.bankfees
     
-    def display(account_info):
-        return account_info.display
+    def display(self):
+        return self.display
 
 
