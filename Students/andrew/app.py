@@ -8,7 +8,7 @@ import datetime
 HOST = "smtp.gmail.com"
 PORT = "465"
 BASEURL = "api.openweathermap.org/data/2.5/weather?zip="
-API_KEY = "de0486bfa33d259b7be3a5bf888cf0d4"
+API_KEY = ""
 
 
 default_user = "pythonweatherapp1@gmail.com"
