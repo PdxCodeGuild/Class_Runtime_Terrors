@@ -37,9 +37,8 @@ class BankAccount:
     def bank_fee(self):
         # msg = "Your fees"
         # print(f"{msg:-^30}")
-        fee = 0.05
+        fee = 0.005
         current_balance = self.balance
-        fee_charge = (current_balance * 0.05)
-        print(f'Your 5% fee for this transaction is ${round(fee_charge)}')
-        fee_charge = (current_balance * 0.05)
+        fee_charge = (current_balance * fee)
+        print(f'Your 0.05% fee for this transaction is ${round(fee_charge)}')
         return fee_charge
