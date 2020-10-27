@@ -22,6 +22,8 @@ def caesar(alpha):
     delta = (foo.get(alpha)) + key
     if delta > 122:
         delta = delta - 26
+    if delta < 97:
+        delta = delta + 26
 
     poo = {}
     t = 96
