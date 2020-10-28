@@ -13,16 +13,13 @@ class bankaccount:
 
     def deposit(self):
         amount = float(input('How much are you depositing? '))
-        self.balance = float((self.balance + amount)) 
-        fees = self.bankfees()
-        self.balance = self.balance - fees
-        print(f'Your new balance is ${self.balance}, after ${fees} in service fees.')
+        self.balance = float((self.balance + amount) - (self.bankfees()))
+        print(f'Your new balance is ${self.balance}, after ${self.bankfees()} in service fees.')
 
     def withdraw(self):
         amount = float(input('How much are you withdrawing? '))
-        fees = self.bankfees()
-        self.balance = float((self.balance - amount) - fees)
-        print(f'Your new balance is ${self.balance}, including a ${fees} service fee.')
+        self.balance = float((self.balance - amount) - (self.bankfees()))
+        print(f'Your new balance is ${self.balance}, including a ${self.bankfees()} service fee.')
 
 
     def display(self):  

@@ -1,0 +1,164 @@
+
+# def switch_index(old_index,which_value):
+#     counter = which_value
+#     counter_list = []
+#     new_index = []
+#     for i in old_index:    
+#         i = encoder[i][] + 
+#         while i > 12:
+#             i = i - 13
+#             counter += 1
+#         counter = counter % 2
+#         counter_list.append(counter)
+#         new_index.append(i)
+#     return new_index, counter
+
+# def encoder_ring(new_index, counter):
+#     secret_message = []
+#     for i in new_index:
+#         i = encoder[i][counter(i)]
+#         secret_message.append(i)
+#     ''.join(secret_message)
+#     print(secret_message)
+
+
+import string
+
+low_let = list(string.ascii_lowercase)
+up_let = list(string.ascii_uppercase)
+num = list(string.digits)
+pun = list(string.punctuation)
+
+def rot13(char,):
+    if char >= 13:
+        char = char - 13
+    else:
+        char = char + 13
+    # print(char)
+    return char
+
+def encrypt_low(char,):
+    char = low_let.index(char)
+    coded = low_let[rot13(char,)]
+    # print(coded)
+    return coded
+
+def encrypt_up(char,):
+    char = up_let.index(char)
+    coded = up_let[rot13(char,)]
+    print(coded)
+    return coded
+
+def encrypt_num(char,):
+    char = num.index(char)
+    if char >= 7:
+        char = char - 7
+    else:
+        char = char +3
+    coded = num[char]
+    # print(coded)
+    return coded
+
+def decrypt_num(char,):
+    char = num.index(char)
+    if char <= 2:
+        char = char + 7
+    else:
+        char = char - 3
+    coded = num[char]
+    # print(coded)
+    return coded
+
+def worker(message,):
+    work = list(message)
+    length = len(work)
+    worked =[]          
+    for i in range(length):
+        i = (work[i])
+        # print(work)
+        print(i)
+        if i in low_let:
+            # i = low_let.index(i)
+            # print(i)
+            worked.append(encrypt_low(i))
+        elif i in up_let:
+            # print(i)
+            # i = up_let.index(i)
+            worked.append(encrypt_up(i))
+            print(worked)
+            
+        elif i == " ":
+            worked.append(i)
+        else:
+            worked.append(i)
+        # print(worked)
+        return worked
+
+def int_worker(worked,):            
+    for i in worked:           
+        if i in num: 
+            i = num.index(i)
+            worked.append(encrypt_num(i))
+        elif i not in num:
+            worked.append(i)
+        # print(worked)
+        return worked
+
+def int_deworker(worked,):            
+    for i in worked:            
+        if i in num: 
+            i = num.index(i)
+            worked.append(decrypt_num(i))
+        elif i not in num:
+            worked.append(i)
+        # print(worked)
+        return worked
+
+def encoder_ring(message,which):
+    # print(message)
+    if which == 1:
+        worked = worker(message,)
+        # print(message)
+        # print(worked)
+        worked = int_worker(worked,)
+        # print(worked)
+        worked = "".join(worked)
+
+        # print(worked)
+
+    if which == 2:
+        worked = worker(message,)
+        worked = int_deworker(worked,)
+        worked = "".join(worked)
+
+        # print(worked)
+
+
+def main():
+    initiate = input('''
+Would you like to use Cadillac Jacks Encoder Ring? y/n : ''')
+    while initiate == "y":
+        query = input('''
+Enter 1 to Encrypt a message
+Enter 2 to Decrypt a message
+Your selection : ''')
+        if query == "1":
+            message = input('''
+What is the message you would like to encrypt? : ''')
+            # print(message)
+            encoder_ring(message, 1)
+            initiate = input('''
+Would you like to process another message? y/n : ''')
+        elif query == "2":
+            message = input('''
+What is the message you would like to decrypt? : ''')
+            # print(message)
+            encoder_ring(message, 2)
+            initiate = input('''
+Would you like to process another message? y/n : ''')
+        else:
+            initiate = input('''
+That was an invalid response. Do you wish to continue? y/n : ''')
+            
+
+main()
