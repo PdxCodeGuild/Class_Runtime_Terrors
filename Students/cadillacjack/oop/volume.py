@@ -16,9 +16,7 @@ class Volume:
 
 class All_measurements(Volume):
     def __init__(self, length, width, height):
-        self.length = int(length)
-        self.height = int(height)
-        self.width = int(width)
+        super().__init__(length, width, height)
         self.area = self.area()
         self.per = self.perimeter()
         self.volu = self.vol()
