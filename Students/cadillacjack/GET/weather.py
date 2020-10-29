@@ -1,12 +1,8 @@
 import requests
 
 zip = input("What is the zip code you would like to check? : ")
-
-
 my_site = requests.get (f"http://api.openweathermap.org/data/2.5/weather?zip={zip},us&units=imperial&appid=f13b34adc98e544c0e9b823946d44c29")
-
 data = my_site.json()
-
 city = data["name"]
 temp = data["main"]["temp"]
 wind_speed = data["wind"]["speed"]
