@@ -16,7 +16,7 @@ class BankAccount():
         return self.balance
     def withdrawal(self, amount):
         amount *= self.bankfee
-        self.balance = float(self.withdrawal - amount)
+        self.balance = float(self.balance - amount)
 
 def main():
     '''Main pipeline through which everything will run'''
@@ -25,24 +25,38 @@ def main():
 
     user_type_select = user_type() #Obtains new or old member
 
-    if user_type_select == 1:
+    if user_type_select == 1: #User Login
         login_name = existing_user()
-    elif user_type_select == 2:
+        main_2(login_name)
+    elif user_type_select == 2: #New User
         member_list = new_user()
         json_dump(member_list)
         main()
-    
+
+def main_2(login_name):
+    member_list = json_read()
     selection = user_selection(login_name)
-    if selection == 1:
-        member_list.update(deposit(login_name))
-        json_dump(member_list)
-    elif selection == 2:
-        member_list.update(withdraw(login_name))
-        json_dump(member_list)
-    elif selection == 3:
+    if selection == 1: #Deposit
+        new_list = deposit(login_name)
+        for index in range(len(member_list)):
+            if member_list[index]['name'] == login_name:
+                member_list[index].update(new_list)
+                json_dump(member_list)
+                main_2(login_name)
+
+    elif selection == 2: #Withdraw
+        new_list = withdraw(login_name)
+        for index in range(len(member_list)):
+            if member_list[index]['name'] == login_name:
+                member_list[index].update(new_list)
+                json_dump(member_list)
+                main_2(login_name)
+
+    elif selection == 3: #View Details
         acc_details(login_name)
-    elif selection == 4:
+    elif selection == 4: #Log Out
         main()
+
     print('Goodbye')
     sys.exit()
 
@@ -61,12 +75,15 @@ def user_type():
         try:
             user_select = int(input("""Please type:
                     1. Existing Member
-                    2. New Member\n> """))
-            if user_select not in range(1, 3):
+                    2. New Member
+                    3. Exit Application\n> """))
+            if user_select not in range(1, 4):
                 print("\nInvalid Selection, please select 1 or 2.\n")
                 
-            elif user_select in range(1, 3):
-                # print(user_select)
+            elif user_select in range(1, 4):
+                if user_select == 3:
+                    print("Have a wonderful day!")
+                    sys.exit()
                 break
         except ValueError:
             print("\nInvalid Selection, please select 1 or 2.\n")
@@ -109,12 +126,13 @@ def user_selection(user):
                     4. Log Out\n> """))
             if selection not in range(1, 5):
                 print("\nInvalid Selection, please select 1, 2, 3, or 4.\n")
-                # user_selection(user)
             elif selection in range(1, 5):
+                if selection == 4:
+                    print(f"Goodbye {user}!")
+                    main()
                 break
         except ValueError:
             print("\nInvalid Selection, please select 1, 2, 3, or 4.\n")
-            # user_selection(user)
         except TypeError:
             print("\nInvalid Selection, please select 1, 2, 3, or 4.\n")
     return selection
@@ -128,7 +146,6 @@ def rand_accountNumber():
         x += 1
         return_number += str(account_number)
     return return_number
-
 def deposit(login_name): #This looks so messy haha
     '''Grabs account based on name, and updates with deposit amount'''
     member_list = json_read()
@@ -176,13 +193,6 @@ def acc_details(login_name):
 #Account Balance    : {member_details['balance']}
 
     ''')
-    while True:
-        account_return = input('Would you like to return? Y/N\n> ').lower()
-        if account_return == 'y':
-            user_selection(login_name)
-        elif account_return == 'n':
-            break
-        else:
-            print('Invalid Selection.')
+    main_2(login_name)
 
 main()
