@@ -6,12 +6,17 @@
   },
   {
     "name": "Kyle",
-    "accountNumber": "1099614",
-    "balance": 0
+    "accountNumber": "1049107",
+    "balance": -105.0
   },
   {
     "name": "Jordyn",
     "accountNumber": "1910310",
+    "balance": 792.0
+  },
+  {
+    "name": "Kyle",
+    "accountNumber": "1049107",
     "balance": 0
   }
 ]
