@@ -7,13 +7,14 @@ class How_old:
         self.year = int(year)
     def convert(self):
         bday = datetime(self.year, self.month, self.day)
-        alive = datetime.now() - bday
+        date = datetime.now()
+        alive = date - bday
+        age = date.year - bday.year
         print(f'''
 Your Birthday is : {bday}
+You are {age} years old.
 You have been alive (more or less): {alive})''')
         
-
-
 
 initiate = input('''
 This program will display how many seconds
