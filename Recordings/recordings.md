@@ -16,3 +16,6 @@
 
 [10-26-2020 - Passcode: S+=nEQ01](https://zoom.us/rec/share/voyXiJMs_3lYDAHrpqpw6aD8Ce7CunI5v6KUH3_nBTZ0xGebqSbue5elDvXlt5SP.1u3hPu4NmHjbWVH9)
 
+[10-27-2020 - Passcode: 9&r^1eq4](https://zoom.us/rec/share/mIP1rYDkmaqA88MO3-ER9MQJwWyNLA75u0VNtOXcsCRt7UUX1tKv5ZfFkn_6frHA.fgcy569iO4yDHbRJ)
+
+[10-27-2020 - Passcode: XqE%Z7hl](https://zoom.us/rec/share/cGXCa0R6lTA-s8rTqYzcb1DeAaqQDBcJFf9ATMlijPvnfu4dTPwnaUrcZ63_bBpC.Ro-cYTc-qCoYdGXH)

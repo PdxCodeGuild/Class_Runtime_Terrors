@@ -20,20 +20,10 @@ class Parallelepipede(Rectangle):
 
     def volume(self):
         zen = self.area() * self.height
-        return(zen)
+        print(zen)
 
     def display(self):
-        shape = input(f'Which shape do you wish to display,"para" or "rec"? ')
-        if shape == 'para':
-            print(f'''the shape is {self.length} long,
-            {self.width} wide,
-            {self.height} tall,
-            and has a volume of {self.volume()}''')
-        if shape == 'rec':
-            print(f'''the shape is {self.length} long,
-             {self.width} wide and 
-             has an area of {self.area()}''')
-
+        pass
 
 rec_1 = Rectangle(20,30)
 rec_2 = Rectangle(20,50)
@@ -45,5 +35,3 @@ print(para_1.width)
 
 print(para_1.volume())
 
-para_1.display()
-para_2.display()
