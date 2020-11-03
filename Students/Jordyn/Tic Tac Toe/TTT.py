@@ -1,3 +1,6 @@
+#Tic Tac Toe
+#By: Jordyn, Andrew, Ben
+
 class Game:
     def __init__(self):
         self.move = 0
@@ -180,6 +183,5 @@ def main():
     game = Game()
     game.display_board()
     game.play_game(player.player1())
-
 
 main()
