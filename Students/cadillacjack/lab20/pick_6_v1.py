@@ -75,7 +75,7 @@ if initiate == "y":
 
         print(f'''
 Winnings = ${money}
-Losses = ${spent}''')
+Losses = $`{spent}''')
         
         print(f"{money - spent / spent * 100}% is your Return On Investment (ROI)")
 
