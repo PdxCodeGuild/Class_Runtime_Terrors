@@ -4,7 +4,7 @@ balance = float()
 print(f"Your balance is : $ {balance}")
 import random
 
-ticket = random.sample(range(1,99),6)
+ticket = random.sample(range(1,99),6) # This is a list contains all winning number
 print(ticket)
 
 match_count = 0
@@ -12,20 +12,18 @@ cost = 0
 
 
 def validate_match(match_count):
-    pick = random.sample(range(1,99), 6)
-        # print(pick)
-    for element in pick:
-        # print(element)
-        index = pick.index(element)
-        # print(index)
+    pick = random.sample(range(1,99), 6)   # This is a list contains 
+    for element in pick:                   # print(element)
+        index = pick.index(element)        # print(index)
         winning_number = ticket[index]
         # print(winning_number)
         if element == winning_number:
             match_count += 1            
         else:
             pass  
+        print(match)
     cost = 2
-    print(f"Current # of mathces: {match_count}")
+    print(f"Current # of mathces: {match_count}")   
     # Function_output = {"Cost": 0 ,"Match_Count": 0}
     return(cost)
 
@@ -34,8 +32,8 @@ while number_of_ticket in range(1,11):
     cost += validate_match(match_count)
     number_of_ticket += 1
 
-print(match_count)
-print(cost)
+# print(match_count)
+# print(cost)
 
 
 payoff = {
