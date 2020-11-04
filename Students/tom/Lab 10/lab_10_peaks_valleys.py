@@ -27,23 +27,11 @@ def print_text_results(data):
     for key in data:
         print (f'A peak was located at index location {key} with a value of {data[key]}')
 
-# def print_graph(data, data_length):
-#     for indexes in data:
-#         if data[indexes] = 9:
-            
-
-
-
-
-#     print ('{} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {}'.format(, ))
 
 def main():
     peaks = peak(data, data_length)
     valleys = valley(data)
     print_text_results(peaks)
     print_text_results(valleys)
-    # print_graph(data)
-
-
 
 main()
