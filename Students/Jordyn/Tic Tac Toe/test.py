@@ -188,79 +188,79 @@ class Cpu:
             self.weighted_board[5] += 5
 
         #Horizontal weights
-        if self.game_board[2] == self.player.player_2 and self.game_board[3] == self.player.player_2:
+        if self.game_board[2] == 'X' and self.game_board[3] == 'X':
             if self.game_board[1] == ' ':
                 self.weighted_board[1] += 1
-        if self.game_board[1] == self.player.player_2 and self.game_board[2] == self.player.player_2:
+        if self.game_board[1] == 'X' and self.game_board[2] == 'X':
             if self.game_board[3] == ' ':
                 self.weighted_board[3] += 1
-        if self.game_board[1] == self.player.player_2 and self.game_board[3] == self.player.player_2:
+        if self.game_board[1] == 'X' and self.game_board[3] == 'X':
             if self.game_board[2] == ' ':
                 self.weighted_board[2] += 1
 
-        if self.game_board[4] == self.player.player_2 and self.game_board[5] == self.player.player_2:
+        if self.game_board[4] == 'X' and self.game_board[5] == 'X':
             if self.game_board[6] == ' ':
                 self.weighted_board[6] += 1
-        if self.game_board[5] == self.player.player_2 and self.game_board[6] == self.player.player_2:
+        if self.game_board[5] == 'X' and self.game_board[6] == 'X':
             if self.game_board[4] == ' ':
                 self.weighted_board[4] += 1
-        if self.game_board[4] == self.player.player_2 and self.game_board[6] == self.player.player_2:
+        if self.game_board[4] == 'X' and self.game_board[6] == 'X':
             if self.game_board[5] == ' ':
                 self.weighted_board[5] += 1
 
-        if self.game_board[7] == self.player.player_2 and self.game_board[8] == self.player.player_2:
+        if self.game_board[7] == 'X' and self.game_board[8] == 'X':
             if self.game_board[9] == ' ':
                 self.weighted_board[9] += 1
-        if self.game_board[8] == self.player.player_2 and self.game_board[9] == self.player.player_2:
+        if self.game_board[8] == 'X' and self.game_board[9] == 'X':
             if self.game_board[7] == ' ':
                 self.weighted_board[7] += 1
-        if self.game_board[7] == self.player.player_2 and self.game_board[9] == self.player.player_2:
+        if self.game_board[7] == 'X' and self.game_board[9] == 'X':
             if self.game_board[8] == ' ':
                 self.weighted_board[8] += 1
         
         #Vertical weights
-        if self.game_board[1] == self.player.player_2 and self.game_board[4] == self.player.player_2:
+        if self.game_board[1] == 'X' and self.game_board[4] == 'X':
             if self.game_board[7] == ' ':
                 self.weighted_board[7] += 1
-        if self.game_board[4] == self.player.player_2 and self.game_board[7] == self.player.player_2:
+        if self.game_board[4] == 'X' and self.game_board[7] == 'X':
             if self.game_board[1] == ' ':
                 self.weighted_board[1] += 1
-        if self.game_board[1] == self.player.player_2 and self.game_board[7] == self.player.player_2:
+        if self.game_board[1] == 'X' and self.game_board[7] == 'X':
             if self.game_board[4] == ' ':
                 self.weighted_board[4] += 1
 
-        if self.game_board[2] == self.player.player_2 and self.game_board[5] == self.player.player_2:
+        if self.game_board[2] == 'X' and self.game_board[5] == 'X':
             if self.game_board[8] == ' ':
                 self.weighted_board[8] += 1
-        if self.game_board[5] == self.player.player_2 and self.game_board[8] == self.player.player_2:
+        if self.game_board[5] == 'X' and self.game_board[8] == 'X':
             if self.game_board[2] == ' ':
                 self.weighted_board[2] += 1
-        if self.game_board[2] == self.player.player_2 and self.game_board[8] == self.player.player_2:
+        if self.game_board[2] == 'X' and self.game_board[8] == 'X':
             if self.game_board[5] == ' ':
                 self.weighted_board[5] += 1
 
-        if self.game_board[7] == self.player.player_2 and self.game_board[8] == self.player.player_2:
+        if self.game_board[7] == 'X' and self.game_board[8] == 'X':
             if self.game_board[9] == ' ':
                 self.weighted_board[9] += 1
-        if self.game_board[8] == self.player.player_2 and self.game_board[9] == self.player.player_2:
+        if self.game_board[8] == 'X' and self.game_board[9] == 'X':
             if self.game_board[7] == ' ':
                 self.weighted_board[7] += 1
-        if self.game_board[7] == self.player.player_2 and self.game_board[9] == self.player.player_2:
+        if self.game_board[7] == 'X' and self.game_board[9] == 'X':
             if self.game_board[8] == ' ':
                 self.weighted_board[8] += 1
 
         # #Diagonal weights
-        if self.game_board[5] == self.player.player_2:
-            if self.game_board[1] == self.player.player_2:
+        if self.game_board[5] == 'X':
+            if self.game_board[1] == 'X':
                 if self.game_board[9] == ' ':
                     self.weighted_board[9] += 1
-            if self.game_board[3] == self.player.player_2:
+            if self.game_board[3] == 'X':
                 if self.game_board[7] == ' ':
                     self.weighted_board[7] += 1
-            if self.game_board[7] == self.player.player_2:
+            if self.game_board[7] == 'X':
                 if self.game_board[3] == ' ':
                     self.weighted_board[3] += 1
-            if self.game_board[9] == self.player.player_2:
+            if self.game_board[9] == 'X':
                 if self.game_board[1] == ' ':
                     self.weighted_board[1] += 1
         
@@ -270,76 +270,76 @@ class Cpu:
         print(self.player.player_1, "<<< Player Token")
 
         #Horizontal weights
-        if self.game_board[2] == self.player.player_1 and self.game_board[3] == self.player.player_1:
+        if self.game_board[2] == 'O' and self.game_board[3] == 'O':
             if self.game_board[1] == ' ':
                 self.weighted_board[1] += 1
-        if self.game_board[1] == self.player.player_1 and self.game_board[2] == self.player.player_1:
+        if self.game_board[1] == 'O' and self.game_board[2] == 'O':
             if self.game_board[3] == ' ':
                 self.weighted_board[3] += 1
-        if self.game_board[1] == self.player.player_1 and self.game_board[3] == self.player.player_1:
+        if self.game_board[1] == 'O' and self.game_board[3] == 'O':
             if self.game_board[2] == ' ':
                 self.weighted_board[2] += 1
 
-        if self.game_board[4] == self.player.player_1 and self.game_board[5] == self.player.player_1:
+        if self.game_board[4] == 'O' and self.game_board[5] == 'O':
             if self.game_board[6] == ' ':
                 self.weighted_board[6] += 1
-        if self.game_board[5] == self.player.player_1 and self.game_board[6] == self.player.player_1:
+        if self.game_board[5] == 'O' and self.game_board[6] == 'O':
             if self.game_board[4] == ' ':
                 self.weighted_board[4] += 1
-        if self.game_board[4] == self.player.player_1 and self.game_board[6] == self.player.player_1:
+        if self.game_board[4] == 'O' and self.game_board[6] == 'O':
             if self.game_board[5] == ' ':
                 self.weighted_board[5] += 1
 
-        if self.game_board[7] == self.player.player_1 and self.game_board[8] == self.player.player_1:
+        if self.game_board[7] == 'O' and self.game_board[8] == 'O':
             if self.game_board[9] == ' ':
                 self.weighted_board[9] += 1
-        if self.game_board[8] == self.player.player_1 and self.game_board[9] == self.player.player_1:
+        if self.game_board[8] == 'O' and self.game_board[9] == 'O':
             if self.game_board[7] == ' ':
                 self.weighted_board[7] += 1
-        if self.game_board[7] == self.player.player_1 and self.game_board[9] == self.player.player_1:
+        if self.game_board[7] == 'O' and self.game_board[9] == 'O':
             if self.game_board[8] == ' ':
                 self.weighted_board[8] += 1
         
         #Vertical weights
-        if self.game_board[1] == self.player.player_1 and self.game_board[4] == self.player.player_1:
+        if self.game_board[1] == 'O' and self.game_board[4] == 'O':
             if self.game_board[7] == ' ':
                 self.weighted_board[7] += 1
-        if self.game_board[4] == self.player.player_1 and self.game_board[7] == self.player.player_1:
+        if self.game_board[4] == 'O' and self.game_board[7] == 'O':
             if self.game_board[1] == ' ':
                 self.weighted_board[1] += 1
-        if self.game_board[1] == self.player.player_1 and self.game_board[7] == self.player.player_1:
+        if self.game_board[1] == 'O' and self.game_board[7] == 'O':
             if self.game_board[4] == ' ':
                 self.weighted_board[4] += 1
 
-        if self.game_board[2] == self.player.player_1 and self.game_board[5] == self.player.player_1:
+        if self.game_board[2] == 'O' and self.game_board[5] == 'O':
             if self.game_board[8] == ' ':
                 self.weighted_board[8] += 1
-        if self.game_board[5] == self.player.player_1 and self.game_board[8] == self.player.player_1:
+        if self.game_board[5] == 'O' and self.game_board[8] == 'O':
             if self.game_board[2] == ' ':
                 self.weighted_board[2] += 1
-        if self.game_board[2] == self.player.player_1 and self.game_board[8] == self.player.player_1:
+        if self.game_board[2] == 'O' and self.game_board[8] == 'O':
             if self.game_board[5] == ' ':
                 self.weighted_board[5] += 1
 
-        if self.game_board[7] == self.player.player_1 and self.game_board[8] == self.player.player_1:
+        if self.game_board[7] == 'O' and self.game_board[8] == 'O':
             if self.game_board[9] == ' ':
                 self.weighted_board[9] += 1
-        if self.game_board[8] == self.player.player_1 and self.game_board[9] == self.player.player_1:
+        if self.game_board[8] == 'O' and self.game_board[9] == 'O':
             if self.game_board[7] == ' ':
                 self.weighted_board[7] += 1
-        if self.game_board[7] == self.player.player_1 and self.game_board[9] == self.player.player_1:
+        if self.game_board[7] == 'O' and self.game_board[9] == 'O':
             if self.game_board[8] == ' ':
                 self.weighted_board[8] += 1
 
         #Diagonal weights
-        if self.game_board[5] == self.player.player_1:
-            if self.game_board[1] == self.player.player_1:
+        if self.game_board[5] == 'O':
+            if self.game_board[1] == 'O':
                 self.weighted_board[9] += 1
-            if self.game_board[3] == self.player.player_1:
+            if self.game_board[3] == 'O':
                 self.weighted_board[7] += 1
-            if self.game_board[7] == self.player.player_1:
+            if self.game_board[7] == 'O':
                 self.weighted_board[3] += 1
-            if self.game_board[9] == self.player.player_1:
+            if self.game_board[9] == 'O':
                 self.weighted_board[1] += 1
         
         return self.weighted_board
