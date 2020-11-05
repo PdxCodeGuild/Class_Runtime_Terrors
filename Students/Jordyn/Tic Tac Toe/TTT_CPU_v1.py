@@ -172,16 +172,13 @@ class Player:
         return players
 
 class Cpu:
-    def __init__(self, Party):
-        pass
-    
-    def smart_choice(self, Game):
+    def smart_choice(self, Game, Player):
         self.game_board = Game.game_board
 
     def weights(self):
-        self.weighted_board = {7: '0', 8: '0', 9: '0',
-                               4: '0', 5: '1', 6: '0',
-                               1: '0', 2: '0', 3: '0'}
+        self.weighted_board = {7: 0, 8: 0, 9: 0,
+                               4: 0, 5: 1, 6: 0,
+                               1: 0, 2: 0, 3: 0}
 
 
 def main():
