@@ -23,6 +23,9 @@ def symbol_clarity(exchange, base_currancy, quote_currency):
         # look up required syntax
     elif exchange == "GEMINI":
         return gemini_symbol
+    elif exchange == "BINANCE":
+        binance_symbol = quote_currency + base_currancy
+        return binance_symbol
 symbol_clarity = symbol_clarity(exchange, base_currancy, quote_currency)
 print(symbol_clarity)
 
@@ -33,8 +36,8 @@ print (time)
 
 # .get f string needs to be compiled according to input variables
 
-# r = requests.get(f'https://finnhub.io/api/v1/crypto/candle?symbol={exchange}:{symbol_clarity}&resolution=D&from=1572651390&to=1575243390&token=buh2utf48v6s9c138qlg')
-# print(r.json())
+r = requests.get(f'https://finnhub.io/api/v1/crypto/candle?symbol={exchange}:{symbol_clarity}&resolution=D&from=1572651390&to=1575243390&token=buh2utf48v6s9c138qlg')
+print(r.json())
 
 
 # Crypto Exchange
@@ -44,8 +47,8 @@ print (time)
 # print(finnhub_client.crypto_symbols(f'{exchange}'))
 
 # Crypto Candles
-symbol = (f"{exchange}:{symbol_clarity}")
-print(symbol)
+# symbol = (f"{exchange}:{symbol_clarity}")
+# print(symbol)
 
 
 # for symbol in finnhub_client.crypto_symbols(f'{exchange}'):
@@ -53,11 +56,17 @@ print(symbol)
 #         print(symbol)
 
 
-# original print(finnhub_client.crypto_candles('BINANCE:BTCUSDT', 'D', 1590988249, 1591852249))
 
 # print(finnhub_client.crypto_candles(symbol, resolution, 1590988249, 1591852249))
 
-print(finnhub_client.crypto_candles('KRAKEN:XETHXXBT', '1', 1590988249, 1591852249))
+# time = int(datetime.datetime.utcnow().timestamp())
+# start_time = int(time - 60)
+
+# print(start_time)
+# print (time)
+
+# #print(finnhub_client.crypto_candles('BINANCE:BTCUSDT', 'D', 1590988249, 1591852249))
+# print (finnhub_client.crypto_candles('KRAKEN:XETHXXBT', 'D', 1590988249, 1591852249))
 
 
 
