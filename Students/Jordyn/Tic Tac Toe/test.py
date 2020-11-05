@@ -18,9 +18,9 @@ class Game:
         self.game_over = False
         self.has_won = False
         self.valid_input = False
-        self.game_board = {7: "O", 8: " ", 9: "O",
-                           4: " ", 5: "O", 6: " ",
-                           1: "X", 2: "X", 3: " "}
+        self.game_board = {7: " ", 8: " ", 9: " ",
+                           4: " ", 5: " ", 6: " ",
+                           1: " ", 2: " ", 3: " "}
 
     def display_board(self):
         game_board = self.game_board
@@ -36,6 +36,7 @@ class Game:
     def play_game(self, players, computer):
         mark = []
         mark = players
+        self.difficulty = self.difficulty
         while not self.game_over:
             if self.move < 1:  
                 choice = self.user_input(mark[0])
@@ -52,20 +53,41 @@ class Game:
                     break
 
             elif self.move == 1:
-                pass
+                
                 self.smart_pos = computer.computer_placement()
-                # choice = self.user_input(mark[1])
-                # self.game_board[choice] = mark[1]
-                # self.display_board()
-                # self.move -= 1
-                # self.check_win(mark[1])
-                # if self.has_won == True:
-                #     self.game_over = True
-                #     break
-                # if self.is_board_full():
-                #     self.game_over = True
-                #     print("Game board is full")
-                #     break
+
+                dif_val = random.randint(1, 10)
+                
+                if dif_val <= self.difficulty: #Succeeds difficulty setting
+                    if self.game_board[self.smart_pos[0]] != ' ':
+                        while True:
+                            x = random.randint(1,9)
+                            if self.game_board[x] == ' ':
+                                self.game_board[x] = mark[1]
+                                break
+
+                    self.game_board[self.smart_pos[0]] = mark[1]
+                    print(f"Computer has placed in position: {self.smart_pos[0]}")
+                
+                elif dif_val > self.difficulty: #Fails difficulty setting
+                    rand_index = random.randint(1,9)
+                    if self.game_board[rand_index] != ' ':
+                        for x in random.randint(1,9):
+                            if self.game_board[x] == ' ':
+                                self.game_board = mark[1]
+                    self.game_board[self.smart_pos[rand_index]] = mark[1]
+                    print(f"Computer has placed in position: {self.smart_pos[rand_index]}")
+
+                self.display_board()
+                self.move -= 1
+                self.check_win(mark[1])
+                if self.has_won == True:
+                    self.game_over = True
+                    break
+                if self.is_board_full():
+                    self.game_over = True
+                    print("Game board is full")
+                    break
 
     def user_input(self, mark):
         user = 0
@@ -197,11 +219,11 @@ class Cpu:
 
     def smart_choice_cpu(self):
         
-        print(self.player.player_2, "<<< Computer Token")
+        # print(self.player.player_2, "<<< Computer Token")
         
         #if middle space is open, take it
         if self.game_board[5] == ' ':
-            self.weighted_board[5] += 5
+            self.weighted_board[5] += 1
 
         #Horizontal weights
         if self.game_board[2] == self.player.player_2 and self.game_board[3] == self.player.player_2:
@@ -281,7 +303,9 @@ class Cpu:
                     self.weighted_board[1] += 1
         
     def smart_choice_player(self):
-        print(self.player.player_1, "<<< Player Token")
+        # print(self.player.player_1, "<<< Player Token")
+        if self.game_board[5] == ' ':
+            self.weighted_board[5] += 1
 
         #Horizontal weights
         if self.game_board[2] == self.player.player_1 and self.game_board[3] == self.player.player_1:
@@ -368,6 +392,7 @@ class Cpu:
               f"{weighted_board[2]}" + ' |' + f"{weighted_board[3]}")
 
     def computer_placement(self):
+        self.weighted_board = smart_choice_cpu()
         self.sorted_weights = sorted(self.weighted_board.items(), key=operator.itemgetter(1), reverse=True) #arranges locations with highest weight
 
         position = []
@@ -376,7 +401,7 @@ class Cpu:
             weight += 0 #Throw away line
             position.append(t_position)
         
-        print(position)
+        # print(position)
 
         return position #returns locations of value
         
@@ -389,7 +414,7 @@ def main():
 
     computer.smart_choice_cpu()
     computer.smart_choice_player()
-    computer.display_board()
+    # computer.display_board()
     game.display_board()
 
     computer.computer_placement()
