@@ -1,12 +1,25 @@
+import operator
+import random
+
 class Game:
     def __init__(self):
+        self.breaker = 0
+        while self.breaker != 1:
+                try:
+                    self.difficulty = int(input("Please choose your difficulty 1-10. 1 being easiest and 10 being impossible.\n> "))
+                    if self.difficulty not in range(1, 11):
+                        print("Invalid selection")
+                    elif self.difficulty in range(1, 11):
+                        self.breaker += 1
+                except ValueError:
+                    print("Please only use whole numbers")
         self.move = 0
         self.board_full = False
         self.game_over = False
         self.has_won = False
         self.valid_input = False
-        self.game_board = {7: " ", 8: " ", 9: "O",
-                           4: " ", 5: " ", 6: "O",
+        self.game_board = {7: "O", 8: " ", 9: "O",
+                           4: " ", 5: "O", 6: " ",
                            1: "X", 2: "X", 3: " "}
 
     def display_board(self):
@@ -20,7 +33,7 @@ class Game:
         print(game_board[1] + ' |' +
               game_board[2] + ' |' + game_board[3])
 
-    def play_game(self, players):
+    def play_game(self, players, computer):
         mark = []
         mark = players
         while not self.game_over:
@@ -39,18 +52,20 @@ class Game:
                     break
 
             elif self.move == 1:
-                choice = self.user_input(mark[1])
-                self.game_board[choice] = mark[1]
-                self.display_board()
-                self.move -= 1
-                self.check_win(mark[1])
-                if self.has_won == True:
-                    self.game_over = True
-                    break
-                if self.is_board_full():
-                    self.game_over = True
-                    print("Game board is full")
-                    break
+                pass
+                self.smart_pos = computer.computer_placement()
+                # choice = self.user_input(mark[1])
+                # self.game_board[choice] = mark[1]
+                # self.display_board()
+                # self.move -= 1
+                # self.check_win(mark[1])
+                # if self.has_won == True:
+                #     self.game_over = True
+                #     break
+                # if self.is_board_full():
+                #     self.game_over = True
+                #     print("Game board is full")
+                #     break
 
     def user_input(self, mark):
         user = 0
@@ -178,6 +193,7 @@ class Cpu:
                                1: 0, 2: 0, 3: 0}
         self.game_board = game.game_board
         self.player = player
+        self.difficulty = game.difficulty
 
     def smart_choice_cpu(self):
         
@@ -188,161 +204,157 @@ class Cpu:
             self.weighted_board[5] += 5
 
         #Horizontal weights
-        if self.game_board[2] == 'X' and self.game_board[3] == 'X':
+        if self.game_board[2] == self.player.player_2 and self.game_board[3] == self.player.player_2:
             if self.game_board[1] == ' ':
                 self.weighted_board[1] += 1
-        if self.game_board[1] == 'X' and self.game_board[2] == 'X':
+        if self.game_board[1] == self.player.player_2 and self.game_board[2] == self.player.player_2:
             if self.game_board[3] == ' ':
                 self.weighted_board[3] += 1
-        if self.game_board[1] == 'X' and self.game_board[3] == 'X':
+        if self.game_board[1] == self.player.player_2 and self.game_board[3] == self.player.player_2:
             if self.game_board[2] == ' ':
                 self.weighted_board[2] += 1
 
-        if self.game_board[4] == 'X' and self.game_board[5] == 'X':
+        if self.game_board[4] == self.player.player_2 and self.game_board[5] == self.player.player_2:
             if self.game_board[6] == ' ':
                 self.weighted_board[6] += 1
-        if self.game_board[5] == 'X' and self.game_board[6] == 'X':
+        if self.game_board[5] == self.player.player_2 and self.game_board[6] == self.player.player_2:
             if self.game_board[4] == ' ':
                 self.weighted_board[4] += 1
-        if self.game_board[4] == 'X' and self.game_board[6] == 'X':
+        if self.game_board[4] == self.player.player_2 and self.game_board[6] == self.player.player_2:
             if self.game_board[5] == ' ':
                 self.weighted_board[5] += 1
 
-        if self.game_board[7] == 'X' and self.game_board[8] == 'X':
+        if self.game_board[7] == self.player.player_2 and self.game_board[8] == self.player.player_2:
             if self.game_board[9] == ' ':
                 self.weighted_board[9] += 1
-        if self.game_board[8] == 'X' and self.game_board[9] == 'X':
+        if self.game_board[8] == self.player.player_2 and self.game_board[9] == self.player.player_2:
             if self.game_board[7] == ' ':
                 self.weighted_board[7] += 1
-        if self.game_board[7] == 'X' and self.game_board[9] == 'X':
+        if self.game_board[7] == self.player.player_2 and self.game_board[9] == self.player.player_2:
             if self.game_board[8] == ' ':
                 self.weighted_board[8] += 1
         
         #Vertical weights
-        if self.game_board[1] == 'X' and self.game_board[4] == 'X':
+        if self.game_board[1] == self.player.player_2 and self.game_board[4] == self.player.player_2:
             if self.game_board[7] == ' ':
                 self.weighted_board[7] += 1
-        if self.game_board[4] == 'X' and self.game_board[7] == 'X':
+        if self.game_board[4] == self.player.player_2 and self.game_board[7] == self.player.player_2:
             if self.game_board[1] == ' ':
                 self.weighted_board[1] += 1
-        if self.game_board[1] == 'X' and self.game_board[7] == 'X':
+        if self.game_board[1] == self.player.player_2 and self.game_board[7] == self.player.player_2:
             if self.game_board[4] == ' ':
                 self.weighted_board[4] += 1
 
-        if self.game_board[2] == 'X' and self.game_board[5] == 'X':
+        if self.game_board[2] == self.player.player_2 and self.game_board[5] == self.player.player_2:
             if self.game_board[8] == ' ':
                 self.weighted_board[8] += 1
-        if self.game_board[5] == 'X' and self.game_board[8] == 'X':
+        if self.game_board[5] == self.player.player_2 and self.game_board[8] == self.player.player_2:
             if self.game_board[2] == ' ':
                 self.weighted_board[2] += 1
-        if self.game_board[2] == 'X' and self.game_board[8] == 'X':
+        if self.game_board[2] == self.player.player_2 and self.game_board[8] == self.player.player_2:
             if self.game_board[5] == ' ':
                 self.weighted_board[5] += 1
 
-        if self.game_board[7] == 'X' and self.game_board[8] == 'X':
+        if self.game_board[3] == self.player.player_2 and self.game_board[6] == self.player.player_2:
             if self.game_board[9] == ' ':
                 self.weighted_board[9] += 1
-        if self.game_board[8] == 'X' and self.game_board[9] == 'X':
-            if self.game_board[7] == ' ':
-                self.weighted_board[7] += 1
-        if self.game_board[7] == 'X' and self.game_board[9] == 'X':
-            if self.game_board[8] == ' ':
-                self.weighted_board[8] += 1
+        if self.game_board[6] == self.player.player_2 and self.game_board[9] == self.player.player_2:
+            if self.game_board[3] == ' ':
+                self.weighted_board[3] += 1
+        if self.game_board[3] == self.player.player_2 and self.game_board[9] == self.player.player_2:
+            if self.game_board[6] == ' ':
+                self.weighted_board[6] += 1
 
         # #Diagonal weights
-        if self.game_board[5] == 'X':
-            if self.game_board[1] == 'X':
+        if self.game_board[5] == self.player.player_2:
+            if self.game_board[1] == self.player.player_2:
                 if self.game_board[9] == ' ':
                     self.weighted_board[9] += 1
-            if self.game_board[3] == 'X':
+            if self.game_board[3] == self.player.player_2:
                 if self.game_board[7] == ' ':
                     self.weighted_board[7] += 1
-            if self.game_board[7] == 'X':
+            if self.game_board[7] == self.player.player_2:
                 if self.game_board[3] == ' ':
                     self.weighted_board[3] += 1
-            if self.game_board[9] == 'X':
+            if self.game_board[9] == self.player.player_2:
                 if self.game_board[1] == ' ':
                     self.weighted_board[1] += 1
-        
-        return self.weighted_board
         
     def smart_choice_player(self):
         print(self.player.player_1, "<<< Player Token")
 
         #Horizontal weights
-        if self.game_board[2] == 'O' and self.game_board[3] == 'O':
+        if self.game_board[2] == self.player.player_1 and self.game_board[3] == self.player.player_1:
             if self.game_board[1] == ' ':
                 self.weighted_board[1] += 1
-        if self.game_board[1] == 'O' and self.game_board[2] == 'O':
+        if self.game_board[1] == self.player.player_1 and self.game_board[2] == self.player.player_1:
             if self.game_board[3] == ' ':
                 self.weighted_board[3] += 1
-        if self.game_board[1] == 'O' and self.game_board[3] == 'O':
+        if self.game_board[1] == self.player.player_1 and self.game_board[3] == self.player.player_1:
             if self.game_board[2] == ' ':
                 self.weighted_board[2] += 1
 
-        if self.game_board[4] == 'O' and self.game_board[5] == 'O':
+        if self.game_board[4] == self.player.player_1 and self.game_board[5] == self.player.player_1:
             if self.game_board[6] == ' ':
                 self.weighted_board[6] += 1
-        if self.game_board[5] == 'O' and self.game_board[6] == 'O':
+        if self.game_board[5] == self.player.player_1 and self.game_board[6] == self.player.player_1:
             if self.game_board[4] == ' ':
                 self.weighted_board[4] += 1
-        if self.game_board[4] == 'O' and self.game_board[6] == 'O':
+        if self.game_board[4] == self.player.player_1 and self.game_board[6] == self.player.player_1:
             if self.game_board[5] == ' ':
                 self.weighted_board[5] += 1
 
-        if self.game_board[7] == 'O' and self.game_board[8] == 'O':
+        if self.game_board[7] == self.player.player_1 and self.game_board[8] == self.player.player_1:
             if self.game_board[9] == ' ':
                 self.weighted_board[9] += 1
-        if self.game_board[8] == 'O' and self.game_board[9] == 'O':
+        if self.game_board[8] == self.player.player_1 and self.game_board[9] == self.player.player_1:
             if self.game_board[7] == ' ':
                 self.weighted_board[7] += 1
-        if self.game_board[7] == 'O' and self.game_board[9] == 'O':
+        if self.game_board[7] == self.player.player_1 and self.game_board[9] == self.player.player_1:
             if self.game_board[8] == ' ':
                 self.weighted_board[8] += 1
         
         #Vertical weights
-        if self.game_board[1] == 'O' and self.game_board[4] == 'O':
+        if self.game_board[1] == self.player.player_1 and self.game_board[4] == self.player.player_1:
             if self.game_board[7] == ' ':
                 self.weighted_board[7] += 1
-        if self.game_board[4] == 'O' and self.game_board[7] == 'O':
+        if self.game_board[4] == self.player.player_1 and self.game_board[7] == self.player.player_1:
             if self.game_board[1] == ' ':
                 self.weighted_board[1] += 1
-        if self.game_board[1] == 'O' and self.game_board[7] == 'O':
+        if self.game_board[1] == self.player.player_1 and self.game_board[7] == self.player.player_1:
             if self.game_board[4] == ' ':
                 self.weighted_board[4] += 1
 
-        if self.game_board[2] == 'O' and self.game_board[5] == 'O':
+        if self.game_board[2] == self.player.player_1 and self.game_board[5] == self.player.player_1:
             if self.game_board[8] == ' ':
                 self.weighted_board[8] += 1
-        if self.game_board[5] == 'O' and self.game_board[8] == 'O':
+        if self.game_board[5] == self.player.player_1 and self.game_board[8] == self.player.player_1:
             if self.game_board[2] == ' ':
                 self.weighted_board[2] += 1
-        if self.game_board[2] == 'O' and self.game_board[8] == 'O':
+        if self.game_board[2] == self.player.player_1 and self.game_board[8] == self.player.player_1:
             if self.game_board[5] == ' ':
                 self.weighted_board[5] += 1
 
-        if self.game_board[7] == 'O' and self.game_board[8] == 'O':
+        if self.game_board[7] == self.player.player_1 and self.game_board[8] == self.player.player_1:
             if self.game_board[9] == ' ':
                 self.weighted_board[9] += 1
-        if self.game_board[8] == 'O' and self.game_board[9] == 'O':
+        if self.game_board[8] == self.player.player_1 and self.game_board[9] == self.player.player_1:
             if self.game_board[7] == ' ':
                 self.weighted_board[7] += 1
-        if self.game_board[7] == 'O' and self.game_board[9] == 'O':
+        if self.game_board[7] == self.player.player_1 and self.game_board[9] == self.player.player_1:
             if self.game_board[8] == ' ':
                 self.weighted_board[8] += 1
 
         #Diagonal weights
-        if self.game_board[5] == 'O':
-            if self.game_board[1] == 'O':
+        if self.game_board[5] == self.player.player_1:
+            if self.game_board[1] == self.player.player_1:
                 self.weighted_board[9] += 1
-            if self.game_board[3] == 'O':
+            if self.game_board[3] == self.player.player_1:
                 self.weighted_board[7] += 1
-            if self.game_board[7] == 'O':
+            if self.game_board[7] == self.player.player_1:
                 self.weighted_board[3] += 1
-            if self.game_board[9] == 'O':
+            if self.game_board[9] == self.player.player_1:
                 self.weighted_board[1] += 1
-        
-        return self.weighted_board
 
     def display_board(self):
         weighted_board = self.weighted_board
@@ -355,19 +367,33 @@ class Cpu:
         print(f"{weighted_board[1]}" + ' |' +
               f"{weighted_board[2]}" + ' |' + f"{weighted_board[3]}")
 
+    def computer_placement(self):
+        self.sorted_weights = sorted(self.weighted_board.items(), key=operator.itemgetter(1), reverse=True) #arranges locations with highest weight
+
+        position = []
+        for x in range(len(self.sorted_weights)): #creates a list of locations from highest value to lowest
+            t_position,weight = self.sorted_weights[x]
+            weight += 0 #Throw away line
+            position.append(t_position)
+        
+        print(position)
+
+        return position #returns locations of value
+        
+
 def main():
-    player = Player()
+    game = Game() #defualts and difficulty
+    player = Player() #player tokens
     player.player1()
-    game = Game()
-    player.player1()
+    computer = Cpu(game, player) #Creates computer
 
-
-
-    computer = Cpu(game, player)
-    computer.game_board = computer.smart_choice_cpu()
-    computer.game_board = computer.smart_choice_player()
+    computer.smart_choice_cpu()
+    computer.smart_choice_player()
     computer.display_board()
     game.display_board()
 
+    computer.computer_placement()
+
+    game.play_game(player.player1(), computer)
 
 main()
