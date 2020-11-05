@@ -4,21 +4,20 @@ import datetime
 
 finnhub_client = finnhub.Client(api_key= 'buh2utf48v6s9c138qlg')
 
-exchange = input("please type the exchange: ").upper()
-resolution = input("resolution (1, 5, 15, 30, 60, D, W, M): ").upper()
-base_currancy = input("base currency = ").upper()
-quote_currency = input("quote currency = ").upper()
-
-
+exchange = input(" Exchange =  ").upper()
+base_currancy = input(" Base currency = ").upper()
+quote_currency = input(" Quote currency = ").upper()
+resolution = input(" Candle resolution (1, 5, 15, 30, 60, D, W, M) = ").upper()
+back_time = input(" Candle QTY = ")
+back_time = int(back_time)
+print(back_time)
 print(quote_currency + base_currancy)
 print (exchange)
 print (resolution)
 
 def symbol_clarity(exchange, base_currancy, quote_currency):
     if exchange == "KRAKEN":
-        kraken_symbol = quote_currency + base_currancy
-        if quote_currency == "ETH":
-            kraken_symbol = "X"+kraken_symbol
+        kraken_symbol = "X" + quote_currency + "X" + base_currancy
         return kraken_symbol
         # look up required syntax
     elif exchange == "GEMINI":
@@ -27,18 +26,16 @@ def symbol_clarity(exchange, base_currancy, quote_currency):
         binance_symbol = quote_currency + base_currancy
         return binance_symbol
 symbol_clarity = symbol_clarity(exchange, base_currancy, quote_currency)
-print(symbol_clarity)
 
 # UNIX required for intial and end of candle
 
-time = datetime.datetime.utcnow().timestamp()
+time = int(datetime.datetime.utcnow().timestamp())
 print (time)
 
 # .get f string needs to be compiled according to input variables
 
-r = requests.get(f'https://finnhub.io/api/v1/crypto/candle?symbol={exchange}:{symbol_clarity}&resolution=D&from=1572651390&to=1575243390&token=buh2utf48v6s9c138qlg')
+r = requests.get(f'https://finnhub.io/api/v1/crypto/candle?symbol={exchange}:{symbol_clarity}&resolution={resolution}&from=1572651390&to={time}&token=buh2utf48v6s9c138qlg')
 print(r.json())
-
 
 # Crypto Exchange
 # print(finnhub_client.crypto_exchanges())
@@ -54,8 +51,6 @@ print(r.json())
 # for symbol in finnhub_client.crypto_symbols(f'{exchange}'):
 #     if symbol == symbol:
 #         print(symbol)
-
-
 
 # print(finnhub_client.crypto_candles(symbol, resolution, 1590988249, 1591852249))
 
