@@ -4,22 +4,27 @@
 # 100, 50, 25, 10, 5, and 1. Print result
 
 #prompt input
-jar = int(input('''How much, in 1 cent increments, do you 
+jar = float(input('''How much, in dollars and cents ?.??, do you 
 have to convert? '''))
 
-s = jar // 100
-sd = s * 100
-h = (jar - sd)//50
-hd = h * 50
-q = (jar - sd - hd)//25
-qd = q * 25
-d = (jar - sd - hd - qd)//10
-dd = d * 10
-p = (jar - sd - hd - qd - dd)
+jar = int(jar * 100)
+
+Sacajawea = jar // 100 
+remainder = jar %
+half_dollars = jar % 100 // 50
+
+quarters = jar % 50 // 25
+
+dimes = jar % 25 // 10
+
+nickels = jar % 10 // 5
+
+pennys = jar % 5 // 1
 
 print(f'''Your change is; 
-{s} Sacagawea dollars, 
-{h} half dollars, 
-{q} quarters, 
-{d} dimes, 
-and {p} pennys''')
+{Sacajawea} Sacagawea dollars, 
+{half_dollars} half dollars, 
+{quarters} quarters, 
+{dimes} dimes, 
+{nickels} nickels,
+and {pennys} pennys''')

@@ -8,16 +8,33 @@ import requests
 def main():
     endgame = False
     apikey = "8af2aa7fa978da0c3dc608a85406875c"
-
+    bull = False
     while not endgame:
+        while not bull:      
+            choice = input("Do you want to know current weather or a 5 day forecast? 'w' or 'f' ").lower()
+            if choice == 'w':
+                choice = 'weather'
+                bull = True
+            elif choice == 'f':
+                choice = 'forecast'
+                bull = True
+            else:
+                print("I don't understand.")
         
-        choice = input("Enter a city name: ").lower()
+        city = input("Enter a city name: ").lower()
 
-        weather = requests.get(f"https://api.openweathermap.org/data/2.5/weather?q={choice}&appid={apikey}")
+        weather = requests.get(f"https://api.openweathermap.org/data/2.5/{choice}?q={city}&units=imperial&appid={apikey}")
 
         cast = weather.json()
-
-        print(cast)
+        
+        i = 0
+        if choice == 'weather':
+            print(round(cast['main']['temp']))
+        else: 
+            while (i < 5):
+                print(f"Day {i+1}: ", round(cast['list'][i]['main']['temp']))
+                i += 1
+                
 
         end = input("Check another city? y/n ")
         if end == 'n':

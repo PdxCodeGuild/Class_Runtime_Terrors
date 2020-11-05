@@ -10,16 +10,21 @@ have to convert? '''))
 jar = int(jar * 100)
 
 Sacajawea = jar // 100 
-remainder = jar %
-half_dollars = jar % 100 // 50
+remainder = jar % 100
 
-quarters = jar % 50 // 25
+half_dollars = remainder // 50
+remainder = remainder % 50
 
-dimes = jar % 25 // 10
+quarters = remainder // 25
+remainder = remainder % 25
 
-nickels = jar % 10 // 5
+dimes = remainder // 10
+remainder = remainder % 10
 
-pennys = jar % 5 // 1
+nickels = remainder // 5
+remainder = remainder % 5
+
+pennys = remainder
 
 print(f'''Your change is; 
 {Sacajawea} Sacagawea dollars, 
