@@ -48,7 +48,7 @@ class Game:
                 print("Please only use whole numbers")
             except TypeError:
                 print("Please use the numbers on your keyboard")
-        return user 
+        return user
 
     def is_board_full(self):
         d = 0
