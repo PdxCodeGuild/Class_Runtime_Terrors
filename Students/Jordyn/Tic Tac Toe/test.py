@@ -18,8 +18,8 @@ class Game:
         self.game_over = False
         self.has_won = False
         self.valid_input = False
-        self.game_board = {7: "X", 8: "O", 9: " ",
-                           4: "X", 5: "O", 6: " ",
+        self.game_board = {7: " ", 8: " ", 9: " ",
+                           4: " ", 5: " ", 6: " ",
                            1: " ", 2: " ", 3: " "}
 
     def display_board(self):
@@ -38,7 +38,9 @@ class Game:
         mark = players
         self.difficulty = self.difficulty
         while not self.game_over:
-            if self.move < 1:  
+
+            if self.move < 1:  #Player Turn
+
                 choice = self.user_input(mark[0])
                 self.game_board[choice] = mark[0]
                 self.display_board()
@@ -52,42 +54,42 @@ class Game:
                     print("Game board is full")
                     break
 
-            elif self.move == 1:
+            elif self.move == 1:    #Computer Turn
                 
-                self.smart_pos = computer.computer_placement()
-                print(self.smart_pos)
-                print(computer.display_board())
+                computer.weight_reset()
+
+                computer.display_board()
+
+                win = computer.computer_placement_win()
+                block = computer.computer_placement_block()
+
                 dif_val = random.randint(1, 10)
+                played = 0
                 
                 if dif_val <= self.difficulty: #Succeeds difficulty setting
-                    if self.game_board[self.smart_pos[0]] != ' ':
-
-                        while True: #continues loop till empty space is found
-                            x = random.randint(1,9)
-                            if self.game_board[x] == ' ':
-                                self.game_board[x] = mark[1]
-                                print(f"Computer has placed in position: {x}")
-                                break
-
-                    else:
-                        print(self.smart_pos)
-                        self.game_board[self.smart_pos[0]] = mark[1]
-                        print(f"Computer has placed in position: {self.smart_pos[0]}")
-
                     
-                
-                elif dif_val > self.difficulty: #Fails difficulty setting
-                    rand_index = random.randint(1,9)
-                    if self.game_board[rand_index] != ' ':
-                        while True:
-                            x = random.randint(1,9)
-                            if self.game_board[x] == ' ':
-                                self.game_board = mark[1]
+                    
+                    for x in range(len(win)): #Chooses places with win condition
+                        if win[x][1] >= 1:
+                            self.game_board[win[x][0]] = mark[1]
+                            print("win used")
+                            played += 1
+                            break
+                    
+                    if played == 0:
+                        for x in range(len(block)): #Chooses places with block condition
+                            if block[x][1] >= 1:
+                                self.game_board[block[x][0]] = mark[1]
+                                print("block used")
                                 break
-                    else:
-                        self.game_board[self.smart_pos[rand_index]] = mark[1]
-                        print(f"Computer has placed in position: {self.smart_pos[rand_index]}")
-                        
+
+                            elif block[x][1] == 0: #Chooses random location
+                                for rand in range(random.randint(1, 9)):
+                                    if self.game_board[rand] == ' ':
+                                        self.game_board[rand] = mark[1]
+                                        print("random used")
+                    
+                                       
 
                 self.display_board()
                 self.move -= 1
@@ -234,9 +236,11 @@ class Cpu:
         self.player = player
         self.difficulty = game.difficulty
 
-    def smart_choice_cpu(self):
-        
+    def weight_reset(self):
         self.weighted_board_win = self.weighted_board_defualt
+        self.weighted_board_block = self.weighted_board_defualt
+
+    def smart_choice_cpu(self):
         
         #if middle space is open, take it
         if self.game_board[5] == ' ':
@@ -320,10 +324,10 @@ class Cpu:
             if self.game_board[9] == self.player.player_2:
                 if self.game_board[1] == ' ':
                     self.weighted_board_win[1] += 1
+
+        # self.display_board_win()
         
     def smart_choice_player(self):
-        
-        self.weighted_board_block = self.weighted_board_defualt
 
         player_mark = self.player.player_1
 
@@ -399,6 +403,8 @@ class Cpu:
                 self.weighted_board_block[3] += 1
             if self.game_board[9] == player_mark:
                 self.weighted_board_block[1] += 1
+
+        # self.display_board_block()
                 
 
     def display_board(self):
@@ -424,21 +430,55 @@ class Cpu:
         print(f"{weighted_board_2[1]}" + ' |' +
               f"{weighted_board_2[2]}" + ' |' + f"{weighted_board_2[3]}")
 
+    def display_board_win(self):
+        weighted_board_1 = self.weighted_board_win
+        print("Win Table")
+        print(f"{weighted_board_1[7]}" + ' |' +
+              f"{weighted_board_1[8]}" + ' |' + f"{weighted_board_1[9]}")
+        print('--+--+--')
+        print(f"{weighted_board_1[4]}" + ' |' +
+              f"{weighted_board_1[5]}" + ' |' + f"{weighted_board_1[6]}")
+        print('--+--+--')
+        print(f"{weighted_board_1[1]}" + ' |' +
+              f"{weighted_board_1[2]}" + ' |' + f"{weighted_board_1[3]}")
+
+    def display_board_block(self):
+        weighted_board_2 = self.weighted_board_block
+        print("Blocking Table")
+        print(f"{weighted_board_2[7]}" + ' |' +
+              f"{weighted_board_2[8]}" + ' |' + f"{weighted_board_2[9]}")
+        print('--+--+--')
+        print(f"{weighted_board_2[4]}" + ' |' +
+              f"{weighted_board_2[5]}" + ' |' + f"{weighted_board_2[6]}")
+        print('--+--+--')
+        print(f"{weighted_board_2[1]}" + ' |' +
+              f"{weighted_board_2[2]}" + ' |' + f"{weighted_board_2[3]}")
+
     def computer_placement_win(self):
         self.smart_choice_cpu()
         self.sorted_weights_win = sorted(self.weighted_board_win.items(), key=operator.itemgetter(1), reverse=True) #arranges locations with highest weight
         
-        print("Wins")
-        print(self.sorted_weights_win)
+        sorted_weights_win_list = []
+        for x in range(len(self.sorted_weights_win)):
+            a,b = self.sorted_weights_win[x]
+            sorted_weights_win_list.append([a, b])
 
+        print("Wins")
+        print(sorted_weights_win_list)
+        return sorted_weights_win_list
 
     def computer_placement_block(self):
-            self.smart_choice_player()
-            self.sorted_weights_block = sorted(self.weighted_board_block.items(), key=operator.itemgetter(1), reverse=True) #arranges locations with highest weight
-            
-            print("Blocks")
-            print(self.sorted_weights_block)
+        self.smart_choice_player()
+        self.sorted_weights_block = sorted(self.weighted_board_block.items(), key=operator.itemgetter(1), reverse=True) #arranges locations with highest weight
         
+        sorted_weights_block_list = []
+        for x in range(len(self.sorted_weights_block)):
+            a,b = self.sorted_weights_block[x]
+            sorted_weights_block_list.append([a, b])
+
+        print("Block")
+        print(sorted_weights_block_list)
+        return sorted_weights_block_list
 
 def main():
     game = Game() #defualts and difficulty
@@ -446,15 +486,12 @@ def main():
     player.player1()
     computer = Cpu(game, player) #Creates computer
 
-    # computer.smart_choice_cpu()
-    # computer.smart_choice_player()
-    # computer.display_board()
     game.display_board()
 
     computer.computer_placement_win()
     computer.computer_placement_block()
-    computer.display_board()
+    # computer.display_board()
 
-    # game.play_game(player.player1(), computer)
+    game.play_game(player.player1(), computer)
 
 main()
