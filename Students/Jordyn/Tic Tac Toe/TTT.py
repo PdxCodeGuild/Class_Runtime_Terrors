@@ -1,6 +1,3 @@
-#Tic Tac Toe
-#By: Jordyn, Andrew, Ben
-
 class Game:
     def __init__(self):
         self.move = 0
@@ -82,8 +79,6 @@ class Game:
             return True
         else:
             return False
-
-  
   
     def is_occupied(self, choice):
         if self.game_board[choice] != " ":
@@ -176,6 +171,18 @@ class Player:
         players = [self.player_1, self.player_2]
         return players
 
+class Cpu:
+    def __init__(self, Party):
+        pass
+    
+    def smart_choice(self, Game):
+        self.game_board = Game.game_board
+
+    def weights(self):
+        self.weighted_board = {7: '0', 8: '0', 9: '0',
+                               4: '0', 5: '1', 6: '0',
+                               1: '0', 2: '0', 3: '0'}
+
 
 def main():
     player = Player()
@@ -183,5 +190,6 @@ def main():
     game = Game()
     game.display_board()
     game.play_game(player.player1())
+
 
 main()
