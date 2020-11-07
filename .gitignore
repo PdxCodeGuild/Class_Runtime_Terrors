@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+Students/*
+!Students/Ben
+!Students/Ben/*
+=======
 
 # Created by https://www.toptal.com/developers/gitignore/api/macos
 # Edit at https://www.toptal.com/developers/gitignore?templates=macos
@@ -32,3 +37,4 @@ Temporary Items
 .apdisk
 
 # End of https://www.toptal.com/developers/gitignore/api/macos
+>>>>>>> 1d0c2c57c2bb1a00b763ab7a70ebfede5a00158c
