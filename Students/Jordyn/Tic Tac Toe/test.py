@@ -33,92 +33,6 @@ class Game:
         print(game_board[1] + ' |' +
               game_board[2] + ' |' + game_board[3])
 
-    # def play_game(self, players, computer):
-    #     mark = []
-    #     mark = players
-    #     self.difficulty = self.difficulty
-    #     while not self.game_over:
-
-    #         if self.move < 1:  #Player Turn
-
-    #             computer.weight_reset()
-    #             # computer.display_board_win()
-    #             # computer.display_board_block()
-
-    #             choice = self.user_input(mark[0])
-    #             self.game_board[choice] = mark[0]
-    #             self.display_board()
-    #             self.move += 1
-    #             self.check_win(mark[0])
-    #             if self.has_won == True:
-    #                 self.game_over = True
-    #                 break
-    #             if self.is_board_full():
-    #                 self.game_over = True
-    #                 print("Game board is full")
-    #                 break
-
-    #         elif self.move == 1:    #Computer Turn
-                
-    #             computer.weight_reset()
-    #             computer.weighted_board_win = computer.weighted_board_defualt
-    #             computer.weighted_board_win = computer.weighted_board_defualt
-    #             computer.display_board_win()
-    #             computer.display_board_block()
-
-    #             # computer.display_board()
-
-    #             win = computer.computer_placement_win()
-    #             block = computer.computer_placement_block()
-
-    #             dif_val = random.randint(1, 10)
-    #             played = 0
-                
-    #             if dif_val <= self.difficulty: #Succeeds difficulty setting
-                    
-                    
-    #                 for x in range(len(win)): #Chooses places with win condition
-    #                     if win[x][1] >= 1:
-    #                         self.game_board[win[x][0]] = mark[1]
-    #                         print("win used")
-    #                         played += 1
-    #                         break
-                    
-    #                 if played == 0:
-    #                     for x in range(len(block)): #Chooses places with block condition
-    #                         if block[x][1] >= 1:
-    #                             self.game_board[block[x][0]] = mark[1]
-    #                             print("block used")
-    #                             break
-
-    #                         elif block[x][1] == 0: #Chooses random location
-
-    #                             # for rand in range(var_name):
-    #                             #     if self.game_board[rand] == ' ':
-    #                             #         self.game_board[rand] = mark[1]
-    #                             #         print("random used")
-
-    #                             while True:
-    #                                 rand = random.randint(1,9)
-    #                                 if self.game_board[rand] == ' ':
-    #                                     self.game_board[rand] = mark[1]
-    #                                     print("random used")
-    #                                     break
-    #                             break
-                    
-                                       
-
-    #             self.display_board()
-    #             self.move -= 1
-    #             self.check_win(mark[1])
-    #             if self.has_won == True:
-    #                 self.game_over = True
-    #                 break
-    #             if self.is_board_full():
-    #                 self.game_over = True
-    #                 print("Game board is full")
-    #                 break
-
     def user_input(self, mark):
         user = 0
         while user != range(1, 10):
@@ -488,8 +402,8 @@ class Cpu:
             a,b = self.sorted_weights_win[x]
             sorted_weights_win_list.append([a, b])
 
-        print("Wins")
-        print(sorted_weights_win_list)
+        # print("Wins")
+        # print(sorted_weights_win_list)
         return sorted_weights_win_list
 
     def computer_placement_block(self):
@@ -501,8 +415,8 @@ class Cpu:
             a,b = self.sorted_weights_block[x]
             sorted_weights_block_list.append([a, b])
 
-        print("Block")
-        print(sorted_weights_block_list)
+        # print("Block")
+        # print(sorted_weights_block_list)
         return sorted_weights_block_list
 
 '''                                    CHANGING THINGS UP                                             '''
@@ -534,11 +448,11 @@ def play_game(game, players, computer):
 
         elif game.move == 1:    #Computer Turn
             
-            computer.weight_reset()
-            computer.weighted_board_win = computer.weighted_board_defualt
-            computer.weighted_board_win = computer.weighted_board_defualt
-            computer.display_board_win()
-            computer.display_board_block()
+            # computer.weight_reset()
+            # computer.weighted_board_win = computer.weighted_board_defualt
+            # computer.weighted_board_win = computer.weighted_board_defualt
+            # computer.display_board_win()
+            # computer.display_board_block()
 
             # computer.display_board()
 
@@ -554,7 +468,7 @@ def play_game(game, players, computer):
                 for x in range(len(win)): #Chooses places with win condition
                     if win[x][1] >= 1:
                         game.game_board[win[x][0]] = mark[1]
-                        print("win used")
+                        print(f"Computer plays {mark[1]} at location {win[x][0]}")
                         played += 1
                         break
                 
@@ -562,24 +476,26 @@ def play_game(game, players, computer):
                     for x in range(len(block)): #Chooses places with block condition
                         if block[x][1] >= 1:
                             game.game_board[block[x][0]] = mark[1]
-                            print("block used")
+                            print(f"Computer plays {mark[1]} at location {block[x][0]}")
                             break
 
                         elif block[x][1] == 0: #Chooses random location
-
-                            # for rand in range(var_name):
-                            #     if game_board[rand] == ' ':
-                            #         game_board[rand] = mark[1]
-                            #         print("random used")
 
                             while True:
                                 rand = random.randint(1,9)
                                 if game.game_board[rand] == ' ':
                                     game.game_board[rand] = mark[1]
-                                    print("random used")
+                                    print(f"Computer plays {mark[1]} at location {rand}")
                                     break
                             break
                 
+            elif dif_val > difficulty:
+                while True:
+                    rand = random.randint(1,9)
+                    if game.game_board[rand] == ' ':
+                        game.game_board[rand] = mark[1]
+                        print(f"Computer plays {mark[1]} at location {rand}")
+                        break
                                     
 
             game.display_board()
