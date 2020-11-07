@@ -33,75 +33,6 @@ class Game:
         print(game_board[1] + ' |' +
               game_board[2] + ' |' + game_board[3])
 
-    def play_game(self, players, computer):
-        mark = []
-        mark = players
-        self.difficulty = self.difficulty
-        while not self.game_over:
-
-            if self.move < 1:  #Player Turn
-
-                choice = self.user_input(mark[0])
-                self.game_board[choice] = mark[0]
-                self.display_board()
-                self.move += 1
-                self.check_win(mark[0])
-                if self.has_won == True:
-                    self.game_over = True
-                    break
-                if self.is_board_full():
-                    self.game_over = True
-                    print("Game board is full")
-                    break
-
-            elif self.move == 1:    #Computer Turn
-                
-                computer.weight_reset()
-
-                computer.display_board()
-
-                win = computer.computer_placement_win()
-                block = computer.computer_placement_block()
-
-                dif_val = random.randint(1, 10)
-                played = 0
-                
-                if dif_val <= self.difficulty: #Succeeds difficulty setting
-                    
-                    
-                    for x in range(len(win)): #Chooses places with win condition
-                        if win[x][1] >= 1:
-                            self.game_board[win[x][0]] = mark[1]
-                            print("win used")
-                            played += 1
-                            break
-                    
-                    if played == 0:
-                        for x in range(len(block)): #Chooses places with block condition
-                            if block[x][1] >= 1:
-                                self.game_board[block[x][0]] = mark[1]
-                                print("block used")
-                                break
-
-                            elif block[x][1] == 0: #Chooses random location
-                                for rand in range(random.randint(1, 9)):
-                                    if self.game_board[rand] == ' ':
-                                        self.game_board[rand] = mark[1]
-                                        print("random used")
-                    
-                                       
-
-                self.display_board()
-                self.move -= 1
-                self.check_win(mark[1])
-                if self.has_won == True:
-                    self.game_over = True
-                    break
-                if self.is_board_full():
-                    self.game_over = True
-                    print("Game board is full")
-                    break
-
     def user_input(self, mark):
         user = 0
         while user != range(1, 10):
@@ -242,6 +173,10 @@ class Cpu:
 
     def smart_choice_cpu(self):
         
+        self.weighted_board_win = {7: 0, 8: 0, 9: 0,
+                                   4: 0, 5: 0, 6: 0,
+                                   1: 0, 2: 0, 3: 0}
+
         #if middle space is open, take it
         if self.game_board[5] == ' ':
             self.weighted_board_win[5] += 1
@@ -329,79 +264,83 @@ class Cpu:
         
     def smart_choice_player(self):
 
-        player_mark = self.player.player_1
+        self.weighted_board_block = {7: 0, 8: 0, 9: 0,
+                                     4: 0, 5: 0, 6: 0,
+                                     1: 0, 2: 0, 3: 0}
+
+        # player_mark = self.player.player_1
 
         #Horizontal weights
-        if self.game_board[2] == player_mark and self.game_board[3] == player_mark:
+        if self.game_board[2] == self.player.player_1 and self.game_board[3] == self.player.player_1:
             if self.game_board[1] == ' ':
                 self.weighted_board_block[1] += 1
-        if self.game_board[1] == player_mark and self.game_board[2] == player_mark:
+        if self.game_board[1] == self.player.player_1 and self.game_board[2] == self.player.player_1:
             if self.game_board[3] == ' ':
                 self.weighted_board_block[3] += 1
-        if self.game_board[1] == player_mark and self.game_board[3] == player_mark:
+        if self.game_board[1] == self.player.player_1 and self.game_board[3] == self.player.player_1:
             if self.game_board[2] == ' ':
                 self.weighted_board_block[2] += 1
 
-        if self.game_board[4] == player_mark and self.game_board[5] == player_mark:
+        if self.game_board[4] == self.player.player_1 and self.game_board[5] == self.player.player_1:
             if self.game_board[6] == ' ':
                 self.weighted_board_block[6] += 1
-        if self.game_board[5] == player_mark and self.game_board[6] == player_mark:
+        if self.game_board[5] == self.player.player_1 and self.game_board[6] == self.player.player_1:
             if self.game_board[4] == ' ':
                 self.weighted_board_block[4] += 1
-        if self.game_board[4] == player_mark and self.game_board[6] == player_mark:
+        if self.game_board[4] == self.player.player_1 and self.game_board[6] == self.player.player_1:
             if self.game_board[5] == ' ':
                 self.weighted_board_block[5] += 1
 
-        if self.game_board[7] == player_mark and self.game_board[8] == player_mark:
+        if self.game_board[7] == self.player.player_1 and self.game_board[8] == self.player.player_1:
             if self.game_board[9] == ' ':
                 self.weighted_board_block[9] += 1
-        if self.game_board[8] == player_mark and self.game_board[9] == player_mark:
+        if self.game_board[8] == self.player.player_1 and self.game_board[9] == self.player.player_1:
             if self.game_board[7] == ' ':
                 self.weighted_board_block[7] += 1
-        if self.game_board[7] == player_mark and self.game_board[9] == player_mark:
+        if self.game_board[7] == self.player.player_1 and self.game_board[9] == self.player.player_1:
             if self.game_board[8] == ' ':
                 self.weighted_board_block[8] += 1
         
         #Vertical weights
-        if self.game_board[1] == player_mark and self.game_board[4] == player_mark:
+        if self.game_board[1] == self.player.player_1 and self.game_board[4] == self.player.player_1:
             if self.game_board[7] == ' ':
                 self.weighted_board_block[7] += 1
-        if self.game_board[4] == player_mark and self.game_board[7] == player_mark:
+        if self.game_board[4] == self.player.player_1 and self.game_board[7] == self.player.player_1:
             if self.game_board[1] == ' ':
                 self.weighted_board_block[1] += 1
-        if self.game_board[1] == player_mark and self.game_board[7] == player_mark:
+        if self.game_board[1] == self.player.player_1 and self.game_board[7] == self.player.player_1:
             if self.game_board[4] == ' ':
                 self.weighted_board_block[4] += 1
 
-        if self.game_board[2] == player_mark and self.game_board[5] == player_mark:
+        if self.game_board[2] == self.player.player_1 and self.game_board[5] == self.player.player_1:
             if self.game_board[8] == ' ':
                 self.weighted_board_block[8] += 1
-        if self.game_board[5] == player_mark and self.game_board[8] == player_mark:
+        if self.game_board[5] == self.player.player_1 and self.game_board[8] == self.player.player_1:
             if self.game_board[2] == ' ':
                 self.weighted_board_block[2] += 1
-        if self.game_board[2] == player_mark and self.game_board[8] == player_mark:
+        if self.game_board[2] == self.player.player_1 and self.game_board[8] == self.player.player_1:
             if self.game_board[5] == ' ':
                 self.weighted_board_block[5] += 1
 
-        if self.game_board[7] == player_mark and self.game_board[8] == player_mark:
+        if self.game_board[3] == self.player.player_1 and self.game_board[6] == self.player.player_1:
             if self.game_board[9] == ' ':
                 self.weighted_board_block[9] += 1
-        if self.game_board[8] == player_mark and self.game_board[9] == player_mark:
-            if self.game_board[7] == ' ':
-                self.weighted_board_block[7] += 1
-        if self.game_board[7] == player_mark and self.game_board[9] == player_mark:
-            if self.game_board[8] == ' ':
-                self.weighted_board_block[8] += 1
+        if self.game_board[6] == self.player.player_1 and self.game_board[9] == self.player.player_1:
+            if self.game_board[3] == ' ':
+                self.weighted_board_block[3] += 1
+        if self.game_board[3] == self.player.player_1 and self.game_board[9] == self.player.player_1:
+            if self.game_board[6] == ' ':
+                self.weighted_board_block[6] += 1
 
         #Diagonal weights
-        if self.game_board[5] == player_mark:
-            if self.game_board[1] == player_mark:
+        if self.game_board[5] == self.player.player_1:
+            if self.game_board[1] == self.player.player_1:
                 self.weighted_board_block[9] += 1
-            if self.game_board[3] == player_mark:
+            if self.game_board[3] == self.player.player_1:
                 self.weighted_board_block[7] += 1
-            if self.game_board[7] == player_mark:
+            if self.game_board[7] == self.player.player_1:
                 self.weighted_board_block[3] += 1
-            if self.game_board[9] == player_mark:
+            if self.game_board[9] == self.player.player_1:
                 self.weighted_board_block[1] += 1
 
         # self.display_board_block()
@@ -463,8 +402,8 @@ class Cpu:
             a,b = self.sorted_weights_win[x]
             sorted_weights_win_list.append([a, b])
 
-        print("Wins")
-        print(sorted_weights_win_list)
+        # print("Wins")
+        # print(sorted_weights_win_list)
         return sorted_weights_win_list
 
     def computer_placement_block(self):
@@ -476,9 +415,99 @@ class Cpu:
             a,b = self.sorted_weights_block[x]
             sorted_weights_block_list.append([a, b])
 
-        print("Block")
-        print(sorted_weights_block_list)
+        # print("Block")
+        # print(sorted_weights_block_list)
         return sorted_weights_block_list
+
+'''                                    CHANGING THINGS UP                                             '''
+
+def play_game(game, players, computer):
+    mark = []
+    mark = players
+    difficulty = game.difficulty
+    while not game.game_over:
+
+        if game.move < 1:  #Player Turn
+
+            computer.weight_reset()
+            # computer.display_board_win()
+            # computer.display_board_block()
+
+            choice = game.user_input(mark[0])
+            game.game_board[choice] = mark[0]
+            game.display_board()
+            game.move += 1
+            game.check_win(mark[0])
+            if game.has_won == True:
+                game.game_over = True
+                break
+            if game.is_board_full():
+                game.game_over = True
+                print("Game board is full")
+                break
+
+        elif game.move == 1:    #Computer Turn
+            
+            # computer.weight_reset()
+            # computer.weighted_board_win = computer.weighted_board_defualt
+            # computer.weighted_board_win = computer.weighted_board_defualt
+            # computer.display_board_win()
+            # computer.display_board_block()
+
+            # computer.display_board()
+
+            win = computer.computer_placement_win()
+            block = computer.computer_placement_block()
+
+            dif_val = random.randint(1, 10)
+            played = 0
+            
+            if dif_val <= difficulty: #Succeeds difficulty setting
+                
+                
+                for x in range(len(win)): #Chooses places with win condition
+                    if win[x][1] >= 1:
+                        game.game_board[win[x][0]] = mark[1]
+                        print(f"Computer plays {mark[1]} at location {win[x][0]}")
+                        played += 1
+                        break
+                
+                if played == 0:
+                    for x in range(len(block)): #Chooses places with block condition
+                        if block[x][1] >= 1:
+                            game.game_board[block[x][0]] = mark[1]
+                            print(f"Computer plays {mark[1]} at location {block[x][0]}")
+                            break
+
+                        elif block[x][1] == 0: #Chooses random location
+
+                            while True:
+                                rand = random.randint(1,9)
+                                if game.game_board[rand] == ' ':
+                                    game.game_board[rand] = mark[1]
+                                    print(f"Computer plays {mark[1]} at location {rand}")
+                                    break
+                            break
+                
+            elif dif_val > difficulty:
+                while True:
+                    rand = random.randint(1,9)
+                    if game.game_board[rand] == ' ':
+                        game.game_board[rand] = mark[1]
+                        print(f"Computer plays {mark[1]} at location {rand}")
+                        break
+                                    
+
+            game.display_board()
+            game.move -= 1
+            game.check_win(mark[1])
+            if game.has_won == True:
+                game.game_over = True
+                break
+            if game.is_board_full():
+                game.game_over = True
+                print("Game board is full")
+                break
 
 def main():
     game = Game() #defualts and difficulty
@@ -488,10 +517,6 @@ def main():
 
     game.display_board()
 
-    computer.computer_placement_win()
-    computer.computer_placement_block()
-    # computer.display_board()
-
-    game.play_game(player.player1(), computer)
+    play_game(game, player.player1(), computer)
 
 main()

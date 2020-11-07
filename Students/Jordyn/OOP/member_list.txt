@@ -1,7 +1,7 @@
 [
   {
     "name": "Defualt",
-    "accountNumber": "123456",
+    "accountNumber": "1234567",
     "balance": 500
   },
   {
@@ -14,9 +14,4 @@
     "accountNumber": "1910310",
     "balance": 792.0
   },
-  {
-    "name": "Kyle",
-    "accountNumber": "1049107",
-    "balance": 0
-  }
 ]

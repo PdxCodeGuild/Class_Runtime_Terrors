@@ -21,7 +21,7 @@ def button_click_dot(number): # Input onto Display Fuction
 def button_clear(): # Clear Display
 	cell.delete(0, END)
 
-def float_check(first_number):
+def float_check(first_number): # Check for Float
 	global f_num
 	global operation 
 	try:
