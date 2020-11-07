@@ -21,13 +21,15 @@ metric = {
     "inch": 0.0254
 }
 
-distance = input("What is the distance?: ")
+distance = float(input("What is the distance?: "))
 unit_to_be_convert = input("What are the units? \nchoose from m, km, mi, feet, yard, inch : ")
 
-def unit_convert(distance):
-    m = distance_in_feet * 0.3048
+def unit_convert(distance,unit_to_be_convert):
+    m = distance * metric[unit_to_be_convert]
+    # print (m)
+    # print(metric[unit_to_be_convert])
     meter = round(m,4)
-    print(f"{distance_in_feet} ft is {meter} m")
+    print(f"{distance} {unit_to_be_convert} is {meter} m")
     return(meter)
 
-feet_to_meter(distance_in_feet)
+unit_convert(distance,unit_to_be_convert)
