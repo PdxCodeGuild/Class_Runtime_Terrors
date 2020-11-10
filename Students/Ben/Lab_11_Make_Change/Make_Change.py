@@ -25,12 +25,12 @@ while proceed == "yes":
 else:    
     print("Have a good day!")
 
-# Version 2
-Coins = [
-    ('half-dollar', 50),
-    ('quarter', 25),
-    ('dime', 10),
-    ('nickel', 5),
-    ('penny', 1)
-]
-print(Coins[0][1])
+# # Version 2
+# Coins = [
+#     ('half-dollar', 50),
+#     ('quarter', 25),
+#     ('dime', 10),
+#     ('nickel', 5),
+#     ('penny', 1)
+# ]
+# print(Coins[0][1])

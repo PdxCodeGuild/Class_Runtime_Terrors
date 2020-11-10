@@ -13,7 +13,7 @@ soup = BeautifulSoup(page.content, 'html.parser')
 #print(soup.get_text()) # alt getText
 results = soup.find(id='ResultsContainer')
 #print(results.get_text())
-jobElems= results.find_all('section', class_='card-content')
+#jobElems= results.find_all('section', class_='card-content')
 # for jobElem in jobElems:
 #     print(jobElem.get_text(), end='\n\*2')
 # for jobElem in jobElems:

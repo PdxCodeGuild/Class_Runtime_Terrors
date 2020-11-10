@@ -1,4 +1,4 @@
-# import requests
+import requests
 
 # response = requests.get('https://api.ipify.org')
 # print(response.text) # 76.105.187.182
@@ -56,3 +56,6 @@ with open("book.txt", "r") as document_read:
     with open("copy_book.txt", 'w') as document_write:
         for line in document_read:
             document_write.write(line)
+
+
+
