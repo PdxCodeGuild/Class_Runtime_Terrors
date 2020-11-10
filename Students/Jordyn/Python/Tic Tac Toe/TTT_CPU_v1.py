@@ -256,6 +256,8 @@ class Cpu:
             if self.game_board[9] == self.player.player_2:
                 if self.game_board[1] == ' ':
                     self.weighted_board_win[1] += 1
+
+        self.display_board_win()
         
     def smart_choice_player(self):
 
@@ -336,7 +338,7 @@ class Cpu:
             if self.game_board[9] == self.player.player_1:
                 self.weighted_board_block[1] += 1
 
-        # self.display_board_block()
+        self.display_board_block()
                 
 
     def display_board(self):
