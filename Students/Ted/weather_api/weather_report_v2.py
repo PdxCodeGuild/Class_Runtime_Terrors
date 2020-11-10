@@ -25,7 +25,7 @@ class Mico:
         return data
 
     def direction(self):
-
+        data = self.current()
         deg_num = data['wind']['deg']
         if deg_num >= 22.5 and deg_num < 67.5:
             return('NorthEast')
@@ -43,16 +43,18 @@ class Mico:
             return('NorthWest')
         elif deg_num >= 337.5 or deg_num < 22.5:
             return('North')
+
 doit = Mico('texas',[45.297173, -121.807282])
-print(doit.current())
+second = Mico('texas',[45.50848, -122.177388])
+data = doit.current()
 
 
-#         temp = data['main']['temp']
-# speed = data['wind']['speed']
+temp = data['main']['temp']
+speed = data['wind']['speed']
 
 
-# print(f'Current temp near the hedgehogs is {temp}')
-# print(f'The wind speed is {speed}mph, from the {direction()}')
+print(f'Current temp near the hedgehogs is {temp}')
+print(f'The wind speed is {speed}mph, from the {doit.direction()}')
 
 #loc_1 = Mico.location(Government_camp, 45.297173, -121.807282)
 #larch_mt = 45.50848,-122.177388
