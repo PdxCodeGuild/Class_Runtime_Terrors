@@ -1,0 +1,34 @@
+
+
+
+img {
+    float: left;
+}
+
+body {
+    background-color: powderblue;
+    margin: auto;
+    width: 50%;
+    border: 10px solid rgb(45, 39, 133);
+    padding: 50px;
+}
+
+h1 {
+    color: blue;
+}
+
+p {
+    color: rgb(84, 145, 49);
+}
+
+a:link {
+    background-color: yellow;
+}
+
+  a:link {
+    color: red;
+  }
+
+  a:visited {
+    color: green;
+  }
