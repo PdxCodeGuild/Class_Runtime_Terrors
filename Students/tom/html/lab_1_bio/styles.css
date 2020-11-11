@@ -3,6 +3,7 @@
 
 img {
     float: left;
+    border-radius: 50px;
 }
 
 body {
@@ -25,10 +26,15 @@ a:link {
     background-color: yellow;
 }
 
-  a:link {
+a:link {
     color: red;
-  }
+}
 
-  a:visited {
-    color: green;
-  }
+a:visited {
+  color: green;
+}
+
+ul{
+  list-style-position: inside;
+  list-style-type: upper-roman;
+}
