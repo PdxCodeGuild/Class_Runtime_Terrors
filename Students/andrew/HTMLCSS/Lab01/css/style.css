@@ -1,0 +1,140 @@
+body{
+    background-color: gray;
+}
+.column-layout{
+    max-width: 1300px;
+    background-color:#FFF;
+    margin: 40px auto 0 auto;
+    line-height: 1.65;
+    padding: 20px 50px;
+    display: flex;
+
+}
+
+header{
+    height: 75px;
+    font-weight: bolder;
+    font-size: 4em;
+    text-align: center;
+}
+
+#bio-headline{
+    text-align: center;
+}
+
+ul #list{
+    padding: 0;
+}
+
+li.bullet{
+list-style-image: url("/img/bullet-ico.png");
+}
+
+li.wiki{
+    list-style: none;
+}
+article, p{
+    background-color: gainsboro;
+    padding: 0.5em;
+    font-style: italic;
+}
+#floated{
+    height: 300px;
+    width: 250px;
+    float: left;
+    border: outset;
+    margin: 10px;
+}
+
+
+
+#sharingan {
+    height: 150px;
+    width: 150px;
+    float: left;
+    border: outset;
+    margin: 10px;
+}
+
+#em-sharingan{
+    height: 150px;
+    width: 150px;
+    float: left;
+    border: outset;
+    margin: 10px;
+
+}
+
+#rinnegan{
+    height: 150px;
+    width: 150px;
+    float: left;
+    border: outset;
+    margin: 10px;
+}
+.main-column{
+    flex: 1;
+    order: 2;
+    background-color: #ffe7de;
+    padding:  20px;
+
+}
+
+.sidebar-one{
+    flex: .5;
+    order: 1;
+    margin: 5px;
+    padding: 10px;
+}
+
+.sidebar-two{
+    flex: .5;
+    order: 3;
+    margin: 15px;
+}
+
+.callouts-container{
+    max-width: 1400px;
+    margin: 40px auto 0 auto;
+    
+}
+
+.call-out{
+    padding: 20px;
+    box-sizing: border-box;
+    padding-bottom: 20px;
+    flex-basis: 30%;
+    
+
+}
+
+@media (min-width: 900px){
+    .callouts-container{
+    display: flex;
+    justify-content: space-between;
+    }
+}
+
+.call-out:nth-child(1){background-color: #C25321;}
+.call-out:nth-child(2){background-color: #8F6E60;}
+.call-out:nth-child(3){background-color: #F54542;}
+
+.equal-height-container{
+    max-width:  900px;
+    margin: 3em auto;
+    display: flex;
+}
+
+
+
+.footer-banner {
+   display: flex;
+}
+.footer-content{
+    margin-top: 20px;
+    margin-bottom: auto;
+    flex: auto;
+    background-color: #3f3f3f;
+    text-align: center;
+
+}
