@@ -75,6 +75,8 @@ article, p{
 .main-column{
     flex: 1;
     order: 2;
+    background-color: #ffe7de;
+    padding:  20px;
 
 }
 
