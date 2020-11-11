@@ -1,0 +1,43 @@
+@counter-style rosette {
+    system: fixed;
+    symbols: 🏵 🏵 🏵
+}
+body{
+    text-align: center;
+    background-color: thistle;
+    background-color: lavenderblush;
+    
+}
+img{
+    float: inline-end;
+    border-radius: 150px;
+}
+p{
+    padding: 15px;
+    color: royalblue;
+}
+/*ol{
+    list-style: rosette;
+}*/
+li{
+    list-style: rosette;
+    padding: 5px;
+    color: royalblue;
+}
+/*.item {
+    color: royalblue;
+    list-style: rosette;
+}*/
+a{
+    
+    color: goldenrod;
+}
+a:hover{
+    color: gold;
+}
+blockquote {
+    color: tomato;
+}
+.res {
+    padding: 0px;
+}
