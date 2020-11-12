@@ -4,12 +4,24 @@ h1{
     text-align: center;
 
 }
-
+h3{
+    align-self: center;
+    color: #FF8C00;
+    font-family: 'Antic Didone';
+}
 img{
     width: 30%;
     height: 20%;
     display: flex;
     align-self: center;
-    margin: 0 auto
+    margin: 0 auto;
+}
+div{
+    list-style-type: none;
+    margin: 0 auto;
+    text-align: center;
+}
+p{
+    margin: 20 20 20 20
 
 }
