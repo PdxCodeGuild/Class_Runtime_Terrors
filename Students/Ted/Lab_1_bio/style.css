@@ -5,15 +5,11 @@ h1{
 
 }
 
-.pic {
-    align-self: center;
-
-
-}
 img{
     width: 30%;
     height: 20%;
     display: flex;
     align-self: center;
+    margin: 0 auto
 
 }
