@@ -1,0 +1,26 @@
+.btn-group button {
+
+  margin-right: -4px;
+}
+
+.jumbotron {
+background-image: url("../img/jumbo-bg.jpg") !important;
+background-size: cover;
+
+}
+
+.card-header {
+
+  background-color: #f4feff
+}
+
+.card-header a {
+
+  color: black;
+  text-decoration: none;
+}
+
+.card-body p {
+padding-top: 10px;
+
+}
