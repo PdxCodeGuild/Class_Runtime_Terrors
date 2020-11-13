@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Full Stack Conf</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="CSS/custom.css">
+  </head>
+  <body id="home" data-spy="scroll" data-target=".navbar" data-offset="100"> <!-- the target is the navbar (class navbar = .navbar) the ID is the starting point and is given by the top nav link -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+
+      <a class="navbar-brand order-1 mr-0" href="#" target="_blank">Conference</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ">
+          <a class="nav-item nav-link " href="#home">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-item nav-link" href="#about">About</a>
+          <a class="nav-item nav-link" href="#speakers">Speakers</a>
+          <a class="nav-item nav-link " href="#schedule" tabindex="-1" aria-disabled="true">Schedule</a>
+        </div>
+
+        </div>
+      </div>
+    </nav>      <!-- navbar -->
+
+  <!-- Jumbotron -->
+      <div class="jumbotron jumbotron-fluid bg-light">
+
+        <div class="container text-sm-center pt-5 ">
+          <h1 class="display-2 text-white ">Full Stack Conf</h1>
+          <p class="lead text-white">A One-Day Conference About all Things Javascript</p>
+        </div>
+
+        <div class="btn-group d-block text-sm-center " role="group" aria-label="Callout buttons">
+          <button type="button" id="button1" class="btn btn-light btn-lg" data-toggle="modal" data-target="#register">Register Now</button>
+          <a class="btn btn-secondary btn-lg" href="#speaker">See Speakers</a>
+      </div>
+
+
+      </div> <!-- /Jumbotron -->
+
+    <!-- about content -->
+
+    <div class="container pt-4" id="about">
+      <div class="row">
+        <div class="col-lg order-lg-2 "> <!-- creates equal width colum after the breakpoint. Before it, they stack hotizontally.  -->
+            <h3 class="mb-4">About Full Stack Conf</h3>
+            <img src="img/pdx.jpg" alt="Portland" class="mb-4 img-fluid rounded d-none d-sm-block" >
+            <p>The beautiful city of Portland, Oregon will be the host city for Full Stack Conf!</p>
+            <p>Explore the future of JavaScript with a lineup of industry professionals. Discover new techniques to advance your career as a web developer.</p>
+        </div>
+        <div class="col-lg order-lg-1">
+          <h3 class="mb-4">Expert Speakers</h3>
+          <p>Our expert speaker lineup was just announced, so don't wait too long before grabbing your tickets!</p>
+          <p>Want to meet the international JavaScript community and share skills with some of the world's top experts, hackers, and makers? Be the first to know what to expect for the future of JavaScript.</p>
+          <p>Full Stack Conf is committed to being inclusive and welcoming for everyone. We look forward to another intensive day of learning and sharing.</p>
+
+        </div>
+      <div class="col-lg order-lg-3 col-xl-4 ">
+        <h3 class="mb-4">What You'll Learn</h3>
+          <div class="list-group">
+            <a href="#" class="list-group-item list-group-item-action"><strong>MongoDB</strong>: NoSQL database</a>
+            <a href="#" class="list-group-item list-group-item-action"><strong>Express</strong>: Framework for Node</a>
+            <a href="#" class="list-group-item list-group-item-action"><strong>React</strong>: JavaScript library</a>
+            <a href="#" class="list-group-item list-group-item-action"><strong>Node.js</strong>: JavaScript environment</a>
+            <a href="#" class="list-group-item list-group-item-action"><strong>ES2015</strong>: Latest version of JavaScript</a>
+            <a href="#" class="list-group-item list-group-item-action"><strong>Babel</strong>: JavaScript compiler</a>
+          </div>
+        </div>
+      </div>  <!-- /about  -->
+
+      <!-- speakers -->
+      <h1 id="speakers" class="display-4 text-center my-5 text-muted">Speakers</h1>
+
+      <div class="row">
+
+        <div class="col-md-6 col-xl-4">
+          <div class="card mb-3">
+            <img src="img/vivianne.png" class="card-img-top" alt="Vivianne">
+            <div class="card-body">
+              <h4 class="card-title">Vivianne McVue</h4>
+              <p class="card-text">Vivianne is a web developer and teacher who is passionate about building scalable, data-driven web apps, especially ones that address old problems with new tech!</p>
+            </div>
+        </div>
+      </div>
+
+        <div class="col-md-6 col-xl-4">
+          <div class="card mb-3">
+            <img src="img/nodestradamus.png" class="card-img-top" alt="nodestradamus">
+            <div class="card-body">
+              <h4 class="card-title">NodeStradamus</h4>
+              <p class="card-text">"NodeStra" is a software engineer and philosopher trying to leave the world better than he found it. He codes for non-profits, eCommerce, and large-scale web apps.</p>
+            </div>
+        </div>
+        </div>
+
+        <div class="col-md-6 col-xl-4">
+          <div class="card mb-3">
+            <img src="img/robbie.png" class="card-img-top" alt="Robbie">
+            <div class="card-body">
+              <h4 class="card-title">Robbie Redux</h4>
+              <p class="card-text">Robbie is a JavaScript developer working on large-scale applications. He's also a teacher who strives to support students in removing barriers to learning code.</p>
+            </div>
+        </div>
+        </div>
+
+        <div class="col-md-6 col-xl-4">
+          <div class="card mb-3">
+            <img src="img/ecma.png" class="card-img-top" alt="Ecma">
+            <div class="card-body">
+              <h4 class="card-title">Ecma Scriptnstuff</h4>
+              <p class="card-text">Ecma found her passion for programming and teaching over 15 years ago. She is excited to introduce you to all of the wonders of JavaScript.</p>
+            </div>
+        </div>
+        </div>
+
+        <div class="col-md-6 col-xl-4">
+          <div class="card mb-3">
+            <img src="img/jay.png" class="card-img-top" alt="Jay">
+            <div class="card-body">
+              <h4 class="card-title">Jay Query</h4>
+              <p class="card-text">Jay is a developer, author of CSS: The Missing Manual, JavaScript &amp; jQuery: The Missing Manual, and web development teacher.</p>
+            </div>
+        </div>
+        </div>
+
+        <div class="col-md-6 col-xl-4">
+          <div class="card mb-3">
+            <img src="img/json.png" class="card-img-top" alt="Json">
+            <div class="card-body">
+              <h4 class="card-title">Json Babel</h4>
+              <p class="card-text">All of his professional life, Json has worked with computers online; he is a polyglot programmer and likes using the right tools for the job.</p>
+        </div>
+        </div>
+      </div>
+
+    </div><!-- /speakers -->
+
+
+
+      <div class="accordion md-accordion accordion-3 z-depth-1-hal" id="accordionEx194" role="tablist" aria-multiselectable="true"> <!--Accordion wrapper-->
+
+      <div class="row">
+
+      <div class="col-lg-6 mb-3">
+
+      <div class="card"><!-- Accordion card -->
+
+       <!-- Card header -->
+       <div class="card-header" role="tab" id="heading1">
+         <a data-toggle="collapse" data-parent="#accordionEx194" href="#collapse1" aria-expanded="true"
+           aria-controls="collapse1" class="nav-brand">
+             <div class="d-flex justify-content-between">
+               <h5 class="mb-1">Keynote: Internet of Things</h5>
+               <span class="badge badge-pill badge-info p-2">9:00am</span>
+             </div>
+           <p class="mb-1">NodeStradamus</p>
+           </h3>
+         </a>
+       </div>
+
+       <!-- Card body -->
+       <div id="collapse1" class="collapse show " role="tabpanel" aria-labelledby="heading4"
+         data-parent="#accordionEx194"> <!-- collapse show - shows the content on load. needs to go in body -->
+         <div class="card-body pt-0">
+           <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
+             wolf moon officia aute,
+             non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch
+             3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
+             shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
+             sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
+             farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them
+             accusamus labore sustainable VHS.</p>
+         </div>
+       </div>
+      </div>
+   </div>
+
+    <div class="col-lg-6 mb-3">
+     <div class="card"><!-- Accordion card -->
+
+      <!-- Card header -->
+      <div class="card-header" role="tab" id="heading2">
+        <a data-toggle="collapse" data-parent="#accordionEx194" href="#collapse2" aria-expanded="true"
+          aria-controls="collapse2" class="nav-brand">
+            <div class="d-flex justify-content-between">
+              <h5 class="mb-1">Keynote: Internet of Things</h5>
+              <span class="badge badge-pill badge-info p-2">9:00am</span>
+            </div>
+          <p class="mb-1">NodeStradamus</p>
+          </h3>
+        </a>
+      </div>
+
+      <!-- Card body -->
+      <div id="collapse2" class="collapse " role="tabpanel" aria-labelledby="heading2"
+        data-parent="#accordionEx194">
+        <div class="card-body pt-0">
+          <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
+            wolf moon officia aute,
+            non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch
+            3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
+            shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
+            sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
+            farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them
+            accusamus labore sustainable VHS.</p>
+        </div>
+      </div>
+     </div>
+   </div><!-- closing /col -->
+
+   <div class="col-lg">
+  <div class="card"><!-- Accordion card -->
+
+   <!-- Card header -->
+   <div class="card-header" role="tab" id="heading4">
+     <a data-toggle="collapse" data-parent="#accordionEx194" href="#collapse4" aria-expanded="true"
+       aria-controls="collapse4" class="nav-brand">
+         <div class="d-flex justify-content-between">
+           <h5 class="mb-1">Keynote: Internet of Things</h5>
+           <span class="badge badge-pill badge-info p-2">9:00am</span>
+         </div>
+       <p class="mb-1">NodeStradamus</p>
+       </h3>
+     </a>
+   </div>
+
+   <!-- Card body -->
+   <div id="collapse4" class="collapse " role="tabpanel" aria-labelledby="heading4"
+     data-parent="#accordionEx194">
+     <div class="card-body pt-0">
+       <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
+         wolf moon officia aute,
+         non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch
+         3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
+         shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
+         sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
+         farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them
+         accusamus labore sustainable VHS.</p>
+       </div>
+     </div>
+    </div>
+  </div><!-- closing /col -->
+
+   </div><!-- closing /row -->
+    <!-- Accordion card -->
+   </div><!--/Accordion wrapper-->
+
+
+<!--normal form starts here-->
+<!-- list starts here. The DIV inside the LI serves only to wrap the description below  === -->
+         <ul class="list-group" id="schedule">
+
+        <li class="list-group-item ">
+          <div class="d-flex justify-content-between">
+            <h5 class="mb-1">Keynote: Internet of Things</h5>
+            <span class="badge badge-pill badge-info p-2">9:00am</span>
+          </div>
+        <p class="mb-1">NodeStradamus</p>
+        </li>
+
+
+
+        <li class="list-group-item">
+           <div class="d-flex justify-content-between">
+             <h5 class="mb-1">React Basics</h5>
+             <span class="badge badge-pill badge-info p-2">10:00am</span>
+           </div>
+           <p class="mb-1">Vivianne McVue</p>
+         </li>
+
+         <li class="list-group-item">
+           <div class="d-flex justify-content-between">
+             <h5 class="mb-1">Hey, Mongo!</h5>
+             <span class="badge badge-pill badge-info p-2">11:00am</span>
+           </div>
+           <p class="mb-1">Jay Query</p>
+         </li>
+
+         <li class="list-group-item list-group-item-success">
+           <div class="d-flex justify-content-between">
+             <h5 class="mb-1">Lunch</h5>
+             <span class="badge badge-pill badge-info p-2">12:00pm</span>
+           </div>
+           <p class="mb-1">Free pizza for everyone!</p>
+         </li>
+
+         <li class="list-group-item">
+           <div class="d-flex justify-content-between">
+             <h5 class="mb-1">Introducing ES2015</h5>
+             <span class="badge badge-pill badge-info p-2">1:00pm</span>
+           </div>
+           <p class="mb-1">Ecma Scriptnstuff</p>
+         </li>
+
+         <li class="list-group-item">
+           <div class="d-flex justify-content-between">
+             <h5 class="mb-1">Getting Started With Redux</h5>
+             <span class="badge badge-pill badge-info p-2">2:00pm</span>
+           </div>
+           <p class="mb-1">Robbie Redux</p>
+         </li>
+
+         <li class="list-group-item">
+           <div class="d-flex justify-content-between">
+             <h5 class="mb-1">What's Babel?</h5>
+             <span class="badge badge-pill badge-info p-2">3:00pm</span>
+           </div>
+           <p class="mb-1">Json Babel</p>
+         </li>
+
+       </ul>
+        <!-- callout -->
+
+        <button type="button" class="btn btn-outline-secondary btn-lg d-block mx-auto my-5" data-toggle="modal" data-target="#register">Don't miss out, register now!</button>
+
+
+        <!-- signup form -->
+        <hr>
+        <div class="row py-4 text-muted">
+         <div class="col-md col-xl-5">
+           <p><strong>About Treehouse</strong></p>
+           <p>Treehouse brings affordable technology education to people everywhere to help them achieve their dreams and change the world.</p>
+         </div>
+         <div class="col-md col-xl-5 ml-auto">
+           <p><strong>Stay up-to-date on Full Stack Conf</strong></p>
+           <div class="input-group">
+             <input type="text" class="form-control" placeholder="Email">
+             <span class="input-group-btn">
+               <button class="btn btn-primary" type="button">Sign up</button>
+             </span>
+           </div>
+         </div>
+        </div>
+        <hr><!-- /signup form -->
+
+          <!-- footer -->
+          <div class="row py-3">
+            <div class="col-md-7">
+
+                <ul class="nav">
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Community</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Tracks</a>
+                    </li>
+                    <li class="nav-item">
+
+                      <div class="btn-group dropup">
+                        <button type="button" class="btn btn-outline-info">Other confs</button>
+                        <button type="button" class="btn btn-outline-info dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <div class="dropdown-menu">
+                          <a class="dropdown-item" href="#">CSS Conf</a>
+                          <a class="dropdown-item" href="#">Python Conf</a>
+                          <a class="dropdown-item" href="#">Java Conf</a>
+                          <a class="dropdown-item" href="#">Swift Conf</a>
+                        </div>
+                      </div>
+
+                    </li>
+                </ul>
+
+            </div>
+
+           <div class="col-md text-md-right">
+          <small>&copy; 2017 Full Stack Conf &amp; Treehouse</small>
+          </div>
+          </div> <!-- /footer -->
+
+
+  </div> <!-- /container -->
+
+  <!--=====================================
+       FORM MODAL
+      =====================================-->
+      <!-- Modal -->
+  <div class="modal fade" id="register" tabindex="-1" role="dialog" aria-labelledby="regiter form" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content bg-light">
+        <div class="modal-header bg-info text-white">
+          <h5 class="modal-title" id="exampleModalLongTitle">Register for Full Stack Conf</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <div class="modal-body">
+
+          <form><!-- registration form -->
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+              <strong>Hurry!</strong> Early bird registration ends in two days!
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <h5 class="mb-4">Basic Info</h5>
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" class="form-control" id="name" >
+            </div>
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="email" class="form-control" id="email">
+            </div>
+            <div class="form-group">
+              <label for="role">Job Role</label>
+              <select class="form-control custom-select" id="role">  <!-- custom select makes the form look consistent -->
+                <option value="full stack js developer">Full Stack JavaScript Developer</option>
+                <option value="front end developer">Front End Developer</option>
+                <option value="back end developer">Back End Developer</option>
+                <option value="designer">Designer</option>
+                <option value="student">Student</option>
+              </select>
+            </div>
+
+            <hr class="my-4">
+            <h5 class="mb-4">Which Topics Interest You Most</h5>
+
+            <div class="custom-control custom-checkbox mb-2">
+              <input type="checkbox" class="custom-control-input" id="customCheck1">
+              <label class="custom-control-label" for="customCheck1">Javascript Framework</label>
+          </div>
+          <div class="custom-control custom-checkbox mb-2">
+            <input type="checkbox" class="custom-control-input" id="js-library">
+            <label class="custom-control-label" for="js-library">Javascript Libraries</label>
+        </div>
+        <div class="custom-control custom-checkbox mb-2">
+          <input type="checkbox" class="custom-control-input" id="node-JS">
+          <label class="custom-control-label" for="node-JS">Node JS</label>
+      </div>
+      <div class="custom-control custom-checkbox mb-2">
+        <input type="checkbox" class="custom-control-input" id="build-tools">
+        <label class="custom-control-label" for="build-tools">Build Tools</label>
+    </div>
+
+    <div class="custom-control custom-checkbox mb-2">
+      <input type="checkbox" class="custom-control-input" id="ES2019">
+      <label class="custom-control-label" for="ES2019">ES2019</label>
+  </div>
+
+    <hr class="mb-4">
+    <h5 class="mb-4">Payment Info</h5>
+
+    <div class="form-row">  <!-- form-row is a variant of "row". it's container including 3 divs. The container is set to row and applied "col" children -->
+
+        <div class="col-lg-6 form-group">
+          <label for="cc-num">Card Number:</label>
+          <input class="form-control" id="cc-num" type="text">
+        </div>
+
+        <div class="col-lg form-group">
+          <label for="zip">Zip Code:</label>
+          <input class="form-control" id="zip" type="text">
+        </div>
+
+        <div class="col-lg form-group">
+          <label for="cvv">CVV:</label>
+          <input class="form-control" id="cvv" type="text">
+        </div>
+
+    </div>
+
+    <div class="form-row">
+      <label class="col-lg-12">Expiration Date:</label>
+
+
+  <div class="form-group col-lg-8">  <!-- two groups nested -->
+
+     <select class="custom-select form-control" id="exp-month">
+        <option value="1">1 - January</option>
+        <option value="2">2 - February</option>
+        <option value="3">3 - March</option>
+        <option value="4">4 - April</option>
+        <option value="5">5 - May</option>
+        <option value="6">6 - June</option>
+        <option value="7">7 - July</option>
+        <option value="8">8 - August</option>
+        <option value="9">9 - September</option>
+        <option value="10">10 - October</option>
+        <option value="11">11 - November</option>
+        <option value="12">12 - December</option>
+    </select>
+
+      </div>
+
+      <div class="form-group col-lg">
+     <select class="custom-select form-control" id="exp-year">
+        <option value="2016">2016</option>
+        <option value="2017">2017</option>
+        <option value="2018">2018</option>
+        <option value="2019">2019</option>
+        <option value="2020">2020</option>
+    </select>
+      </div>
+
+   </div>
+
+
+  <hr class="mb-4">
+  <button type="submit" class="d-block m-auto btn btn-secondary btn-lg ">Register</button>
+
+</div> <!-- ending of modal body  -->
+
+
+          </form>  <!-- /registration form  -->
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+  </body>
+</html>
