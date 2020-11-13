@@ -1,19 +1,35 @@
+body{
+    height: 2048px;
+
+}
 .navbar {
     overflow: hidden;
-    background-color: #333;
+    background-color: white;
     position: fixed;
     top: 0;
     width: 100%;
+    height: 4em;
     display: flex;
     justify-content: center;
+    z-index: 300;
 }
 
-.navbar a {
 
+.navbar div{
+    color: black;
+    flex: 1;
+    padding: 20px;
+    font-family: 'Playfair Display SC', serif;
+
+}
+
+
+.navbar a {
+    font-family: 'Playfair Display SC', serif;
     justify-content: space-around;
-    color: #f2f2f2;
+    color: black;
     text-align: center;
-    padding: 14px 16px;
+    padding: 19px 16px;
     text-decoration: none;
     font-size: 17px;
 }
@@ -23,23 +39,125 @@
     color: black;
 }
 
-.main {
-    position: relative;
-    min-height: 100vh;
-    padding: 16px;
-    margin-top: 30px;
-
+.site-tag{
+    font-size: 20px;
 }
-.content-wrap{
-    padding-bottom: 2.5rem;
-}
-
-
-#footer {
+.pic-banner{
     overflow: hidden;
-    background-color: #333333;
+    display: flex;
+    /*justify-content: space-between;*/
+
+
+}
+
+.container{
+    font-family: 'Playfair Display SC', serif;
+    background-color: white;
+    font-size: xx-large;
+    padding-top: 25px;
+    display: grid;
+   justify-content: center;
+}
+
+.center-logo{
+
+margin-bottom: 25px;
+}
+
+.pix{
+    width: 630px;
+    height: 655px;
+}
+.main {
+    display: grid;
+    min-height: 100vh;
+    width: 100%;
+
+
+}
+.col-wrapper{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+.row{
+    margin-top: 15px;
+    margin-left: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    font-size: 14px;
+
+}
+
+
+.column{
+    width: 550px;
+    margin: 25px;
+    font-family: 'Playfair Display SC', serif;
+    padding: 25px;
+    /*border: solid gray .09em;*/
+    display: flex;
+
+}
+
+.column > article{
+    border: solid burlywood 1px;
+    padding-left: 10px;
+}
+
+.column > img{
+    width: 300px;
+    height: 300px;
+
+
+}
+
+.column > p{
+    border: solid black 1px;
+
+}
+.col-wrapper > button{
+    border: black solid 1px;
+    margin-left: 300px;
+    position: static;
+    width: 100px;
+
+}
+
+.button {
+    background-color: burlywood;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+/*#footer {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    font-family: 'Playfair Display SC', serif;
+    font-size: small;
+    overflow: hidden;
+    background-color: white;
     position: fixed;
     bottom: 0;
     width: 100%;
-    height: 2.5rem;
+    height: 2.0rem;
+}
+*/
+
+#footer{
+    font-family: 'Playfair Display SC', serif;
+    display: flex;
+    justify-content: center;
+    padding-top: 15px;
+    position: absolute;
+
+    width: 100%;
+    height: 2.0rem;
+
+
 }
