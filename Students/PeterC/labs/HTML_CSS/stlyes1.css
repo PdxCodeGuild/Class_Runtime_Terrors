@@ -1,0 +1,42 @@
+body {
+  background-color: lightblue;
+}
+
+h2 {
+  color: blue;
+  font-size: 25px;
+  background-color: yellow;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border: 4px solid green;
+  text-align: center;
+
+}
+h3 {
+font-size: 25px;
+}
+#tesla1 {
+  float: left;
+}
+#tesla2 {
+  float: right;
+  padding-left: 1%;
+  border-radius: 25px;
+  border: 5px solid #73AD21;
+}
+#tesla3 {
+float: center;
+}
+
+#live {
+    list-style-type: georgian;
+}    
+#qoute {
+    font-family: "Impact, Charcoal, sans-serif";
+    font-style: italic;
+}
+#qoutes {
+    font-family: "Comic Sans MS";
+    font-style: italic;
+    font-size: 20;
+    list-style: radial-gradient();
+    }
