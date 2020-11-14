@@ -44,17 +44,22 @@ class Mico:
         elif deg_num >= 337.5 or deg_num < 22.5:
             return('North')
 
-doit = Mico('texas',[45.297173, -121.807282])
-second = Mico('texas',[45.50848, -122.177388])
-data = doit.current()
+while True:
+    lat = float(input('what latitude? '))
+    lon = float(input('what longitude? '))
 
 
-temp = data['main']['temp']
-speed = data['wind']['speed']
+    doit = Mico('texas',[lat, lon])
+    #second = Mico('texas',[45.50848, -122.177388])
+    data = doit.current()
 
 
-print(f'Current temp near the hedgehogs is {temp}')
-print(f'The wind speed is {speed}mph, from the {doit.direction()}')
+    temp = data['main']['temp']
+    speed = data['wind']['speed']
+
+
+    print(f'Current temp near the hedgehogs is {temp}')
+    print(f'The wind speed is {speed}mph, from the {doit.direction()}')
 
 #loc_1 = Mico.location(Government_camp, 45.297173, -121.807282)
 #larch_mt = 45.50848,-122.177388
