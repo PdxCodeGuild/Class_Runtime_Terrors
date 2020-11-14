@@ -7,7 +7,7 @@ import smtplib
 HOST = "smtp.gmail.com"
 PORT = 465
 username = "cadillacjackproductions@gmail.com"
-password = "462606Jk!$"
+password = ""
 server = smtplib.SMTP_SSL(HOST, PORT)
 
 my_site = requests.get (f"http://api.openweathermap.org/data/2.5/weather?zip=97230,us&units=imperial&appid=f13b34adc98e544c0e9b823946d44c29")

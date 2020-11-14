@@ -4,7 +4,7 @@ import smtplib
 HOST = "smtp.gmail.com"
 PORT = 465
 username = "cadillacjackproductions@gmail.com"
-password = "462606Jk!$"
+password = ""
 server = smtplib.SMTP_SSL(HOST, PORT)
 
 with open("weather.txt") as wet:
