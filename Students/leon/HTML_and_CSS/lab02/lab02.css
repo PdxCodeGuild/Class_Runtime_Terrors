@@ -10,10 +10,7 @@
     flex: 1 100%;
   }
   
-  /* .header {
-    background: rgb(14, 13, 13);
-  }
-   */
+
 li{
     list-style: none;
     padding: 20px;
@@ -35,10 +32,18 @@ li a:hover {
 }
 
 ul{
+    position: -webkit-sticky;
+    position: sticky;
     display: flex;
     background-color: slategray;
     justify-content: center;
   }
+  .header {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 1px;
+  }
+
 
   .logo{
     margin-right: auto
