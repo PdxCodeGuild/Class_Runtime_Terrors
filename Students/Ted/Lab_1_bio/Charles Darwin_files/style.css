@@ -16,12 +16,12 @@ h3{
     font-family: 'Antic Didone';
 }
 
-.picture{
+img{
     width: 30%;
     height: 20%;
+    display: flex;
+    align-self: center;
     margin: 0 auto;
-    border-radius: 30%;
-    display: block;
 }
 
 div{
@@ -31,12 +31,5 @@ div{
 }
 
 p{
-    text-align: center;
-    margin: 20 50 20 50
-}
-
-blockquote{
-    background-color: rgb(181, 199, 80);
-    font-family: 'Aguafina Script','Arial Black','Comic Sans MS';
-
+    margin: 20 20 20 20
 }

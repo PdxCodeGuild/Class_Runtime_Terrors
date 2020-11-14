@@ -21,14 +21,32 @@ header{
 #bio-headline{
     text-align: center;
 }
+ul{
+    list-style-image: url("../img/bullet-20px.png");
+}
 
 ul #list{
     padding: 0;
 }
 
-li.bullet{
-list-style-image: url("/img/bullet-ico.png");
+li{
+
 }
+
+/*li::before{
+    content: "hi";
+    position: relative;
+    top: 0;
+
+}
+*/
+
+
+/*li.bullet{
+    list-style-image: url("../img/bullet-ico.png");
+    width: 14px;
+    */
+
 
 li.wiki{
     list-style: none;
