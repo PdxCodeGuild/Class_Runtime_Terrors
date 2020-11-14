@@ -1,0 +1,36 @@
+header {
+    text-align: center;
+
+}
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background-color: grey;
+    align-content: center;
+}
+ p {
+    display: flex;
+    flex-direction: row;
+    
+    margin-left: 5px;
+    margin-top: 0;
+    margin-bottom: 0px;
+    text-align: center;
+    color: white;
+    align-self: flex-end;
+} 
+#whisper{
+    display: flex;
+    /* background-color: rgb(40, 40, 145); */
+}
+.top_nav {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: darkcyan;
+}
+.top_nav a {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: white;
+}
