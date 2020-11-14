@@ -1,0 +1,15 @@
+img {
+    width: 50px;
+    align-self: center;
+}
+
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background-color: black;
+}
+
+nav > p{
+    color: white;
+}

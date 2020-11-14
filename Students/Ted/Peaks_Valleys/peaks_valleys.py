@@ -32,6 +32,6 @@ def peaks_and_valleys(data):
 
 print(peaks_and_valleys(data))
 
-for num in data:
-    print('x' * num)
+#for num in data:
+    #print('x' * num)
 
