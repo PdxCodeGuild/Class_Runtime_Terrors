@@ -27,15 +27,14 @@ h2 {
   font-size: 20px;
 }
 .centered {
-    position: relative;
-    left: 20px;
-    margin: auto;
-    width: 50%;
-
+  position: relative;
+  left: 20px;
+  margin: auto;
+  width: 50%;
 }
-ul{
-    text-indent: 50px;
-    list-style-type: square;
+ul {
+  text-indent: 50px;
+  list-style-type: square;
 }
 p {
   color: #000000;
