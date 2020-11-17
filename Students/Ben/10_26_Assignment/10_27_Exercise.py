@@ -41,30 +41,30 @@
 # mgr_1.print_emps()
 
 ###### Exercise Number 1 #######
-class Rectangle():
-    def __init__(self, length = 0, width = 0, perimeter = 0, area = 0): # set default value if user not input it
-        self.length = length
-        self.width = width
-        self.perimeter = (self.length + self.width) * 2
-        self.area = self.width * self.length
-    def Perimeter(self):
-        return (self.length + self.width) * 2
-    def Area(self):
-        return self.width * self.length
-    def Display(self):
-        return(print(f"length = {self.length}, width = {self.width}, perimeter = {self.Perimeter()}, and area = {self.Area()}"))
+# class Rectangle():
+#     def __init__(self, length = 0, width = 0, perimeter = 0, area = 0): # set default value if user not input it
+#         self.length = length
+#         self.width = width
+#         self.perimeter = (self.length + self.width) * 2
+#         self.area = self.width * self.length
+#     def Perimeter(self):
+#         return (self.length + self.width) * 2
+#     def Area(self):
+#         return self.width * self.length
+#     def Display(self):
+#         return(print(f"length = {self.length}, width = {self.width}, perimeter = {self.Perimeter()}, and area = {self.Area()}"))
 
 
-class Parallelepipede(Rectangle):
-    def __init__(self, length, width, perimeter, area, height):
-        super().__init__(length, width, perimeter, area)
-        self.height = height # define the additional attribute
-    def Volume(self):
-        return print(self.length * self.width * self.height)
+# class Parallelepipede(Rectangle):
+#     def __init__(self, length, width, perimeter, area, height):
+#         super().__init__(length, width, perimeter, area)
+#         self.height = height # define the additional attribute
+#     def Volume(self):
+#         return print(self.length * self.width * self.height)
 
-shape_1 = Rectangle(2,3)
-volume_1 = Parallelepipede(2,3,0,0,4)
-volume_1.Volume()
+# shape_1 = Rectangle(2,3)
+# volume_1 = Parallelepipede(2,3,0,0,4)
+# volume_1.Volume()
 
 ####### Exercise 2 #######
 # Create a method that based on today’s time can return the person’s age
@@ -74,11 +74,12 @@ volume_1.Volume()
 import datetime
 
 class Database():
-    def __init__(self, name, lastname, surname, address, age, telephone, email):
-        self.name = self.lastname + ' ' + self.surname
+    def __init__(self, lastname, surname, name = "", address ="", age = 0, telephone = "", email = ""):
         self.lastname = lastname
         self.surname = surname
+        self.name = self.lastname + ' ' + self.surname
         self.address = address
         self.age = age
         self.telephone = telephone
         self.email = email 
+

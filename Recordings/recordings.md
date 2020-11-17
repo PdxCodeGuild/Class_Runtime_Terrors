@@ -19,3 +19,9 @@
 [10-27-2020 - Passcode: 9&r^1eq4](https://zoom.us/rec/share/mIP1rYDkmaqA88MO3-ER9MQJwWyNLA75u0VNtOXcsCRt7UUX1tKv5ZfFkn_6frHA.fgcy569iO4yDHbRJ)
 
 [10-27-2020 - Passcode: XqE%Z7hl](https://zoom.us/rec/share/cGXCa0R6lTA-s8rTqYzcb1DeAaqQDBcJFf9ATMlijPvnfu4dTPwnaUrcZ63_bBpC.Ro-cYTc-qCoYdGXH)
+
+[11-02-2020 - Passcode: .7!FdSyN](https://zoom.us/rec/share/GBAfg3q-ZiCu6me56uG-F56uCzn9Ahop820SUf5aTczox34ZFRTHgBvbuTOU58he.sZOcA-wcRkSwFygj )
+
+[11-09-2020 - Passcode: em=940uy](https://zoom.us/rec/share/Ue3NQqjHTiXudu8JdL_B_EjOFr5HoY0edyGqtwzfEbMdE2kbHRW5LUa5Ejr6xUVi.8i3ZvOMUs6s--eac)
+
+[11-12-2020 - Passcode: *NrZVe*1](https://zoom.us/rec/share/EpFfl-WdWCOuAv4VLv4fQEoDyJ2V6SHETkChrCYHQS2rtYlV1VLjqBG2h-AIjma-.6Oi23ZoB8lTPEHkd)
