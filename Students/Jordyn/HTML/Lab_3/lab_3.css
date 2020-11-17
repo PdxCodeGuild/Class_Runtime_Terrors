@@ -26,11 +26,10 @@ a{
     justify-self: end;
     grid-area: right-nav;
 }
-.right-flex{
-    display: flex;
-    flex-direction: row;
-    position: relative;
+.right-nav-extra{
+    justify-self: top;
 }
+
 .profile-img{
     width: 45px;
 }
