@@ -1,4 +1,6 @@
 #lab 1 turtle
+#using the example for N-sided figure and color fill
+
 from turtle import *
 fillcolor('green')
 begin_fill()
