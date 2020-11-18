@@ -7,16 +7,11 @@
   <component name="ChangeListManager">
     <list default="true" id="abf15828-93ca-49cb-b272-1e66cef46d29" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../../../Ted/Lab11/lab11_make_change.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab01/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab01/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lab02/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab02/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab02/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab02/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/lab03.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/lab03.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab15/lab15.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab15/lab15.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../OOP/My_rectangle/Ex2.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../OOP/My_rectangle/Ex2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../app.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../cadillacjack/lab11/make_change.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -61,7 +56,8 @@
       <updated>1605245017495</updated>
       <workItem from="1605245018560" duration="998000" />
       <workItem from="1605319952577" duration="13000" />
-      <workItem from="1605655745718" duration="5391000" />
+      <workItem from="1605655745718" duration="5979000" />
+      <workItem from="1605667065145" duration="8621000" />
     </task>
     <servers />
   </component>
@@ -85,5 +81,9 @@
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="720" y="382" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1160@0.0.1920.1160" timestamp="1605656762860" />
+    <state x="777" y="431" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605675587791">
+      <screen x="0" y="0" width="1920" height="1034" />
+    </state>
+    <state x="777" y="431" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1920.-362.1920.1034/0.0.1920.1034/-1920.10.1920.1040@0.0.1920.1034" timestamp="1605675587791" />
   </component>
 </project>

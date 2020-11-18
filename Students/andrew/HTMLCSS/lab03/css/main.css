@@ -63,6 +63,68 @@ hr{
     padding: 30px;
 }
 
+.lower-third{
+    justify-content: center;
+
+
+}
+
+#lower-third-title{
+    margin-bottom: 20px;
+}
+
+.form-group{
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+    padding: 15px;
+    border:  #cadfee solid 3px;
+}
+
+#emailHelp{
+    margin: 5px;
+}
+
+.form-check{
+    margin: 5px;
+
+}
+
 .title {
     justify-content: center;
+}
+
+.footer-col{
+    display: grid;
+    justify-content: center;
+
+}
+
+.footer-col2{
+    display: grid;
+    justify-content: center;
+    padding-bottom: 50px;
+
+}
+
+.footer-col3{
+    display: grid;
+    justify-content: center;
+    padding-bottom: 50px;
+
+}
+
+#footer-left{
+    padding: 5px;
+    width: 250px;
+}
+.footer-ul{
+    list-style: none;
+    margin-top: 10px;
+}
+
+
+
+i{
+    margin: 10px;
 }
