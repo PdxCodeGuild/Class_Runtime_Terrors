@@ -8,7 +8,6 @@
     <list default="true" id="851248ef-2c52-48d4-af60-3befb462ca09" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../../../Ted/Lab11/lab11_make_change.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lab02/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab02/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lab02/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab02/css/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lab02/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab02/index.html" afterDir="false" />
@@ -52,7 +51,8 @@
       <workItem from="1605067860091" duration="1630000" />
       <workItem from="1605073650166" duration="1470000" />
       <workItem from="1605110592974" duration="1294000" />
-      <workItem from="1605151121279" duration="2433000" />
+      <workItem from="1605151121279" duration="3353000" />
+      <workItem from="1605233023227" duration="61000" />
     </task>
     <servers />
   </component>

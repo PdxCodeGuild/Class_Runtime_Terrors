@@ -1,27 +1,23 @@
 import datetime
 
 class Person():
-    def __init__(self, name, last_name, address, age, telephone, email):
+    def __init__(self, name, last_name, address, telephone, email):
         self.name = name
         self.last_name = last_name
         self.surname  = last_name
         self.address = address
-        self.age = age
         self.telephone =telephone
         self.email = email
+        self.birthdate  = input("Please enter your birthday in yyyy-mm-dd formay")
         
-    def birthday(self):
-        today = datetime.datetime.today()
-        birthyear = today.year - self.age
-        print(f'You were born in the year {birthyear}')
+  
         
         
         
         
-p1 = Person('Drew', 'Babcock','123 main st', 41, "1324655555","drew@mymail.com")
+p1 = Person('Drew', 'Babcock','123 main st', "1324655555","drew@mymail.com")
 
-my_int = 2
+#print(p1.birthdate)
 
 
 
-p1.birthday()
