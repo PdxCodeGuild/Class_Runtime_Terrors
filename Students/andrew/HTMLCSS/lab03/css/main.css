@@ -25,8 +25,15 @@
 }
 
 .jumbotron {
-    background-image: url("../img/jumbo-bg.jpg") !important;
+    /*background-image: url("../img/jumbo-bg.jpg") !important;*/
     background-size: cover;
+}
+
+hr{
+    margin-left: 300px;
+    margin-right: 300px;
+    width: auto;
+    border-top: solid 1px #545b62;
 }
 
 .card-header {
@@ -38,8 +45,22 @@
     text-decoration: none;
 }
 
+.my-card{
+    width: auto;
+    height: auto;
+}
+
+.my-row {
+    justify-content: space-around;
+    margin: 50px;
+}
 .card-body p {
     padding-top: 10px;
+}
+
+.my-col{
+    width: 400px;
+    padding: 30px;
 }
 
 .title {

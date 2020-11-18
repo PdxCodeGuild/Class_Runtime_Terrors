@@ -7,7 +7,7 @@ function deferVideo() {
         var video = this.parentElement;
         video.load();
         // uncomment if video is not autoplay
-        //video.play();
+        video.play();
     });
 
 }

@@ -10,6 +10,10 @@
       <change beforePath="$PROJECT_DIR$/../Lab01/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab01/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lab02/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab02/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lab02/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab02/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Lab15/lab15.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab15/lab15.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../OOP/My_rectangle/Ex2.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../OOP/My_rectangle/Ex2.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../app.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../app.py" afterDir="false" />
@@ -43,6 +47,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -56,6 +61,7 @@
       <updated>1605245017495</updated>
       <workItem from="1605245018560" duration="998000" />
       <workItem from="1605319952577" duration="13000" />
+      <workItem from="1605655745718" duration="5391000" />
     </task>
     <servers />
   </component>
@@ -73,5 +79,11 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="720" y="382" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605656762860">
+      <screen x="0" y="0" width="1920" height="1160" />
+    </state>
+    <state x="720" y="382" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1160@0.0.1920.1160" timestamp="1605656762860" />
   </component>
 </project>
