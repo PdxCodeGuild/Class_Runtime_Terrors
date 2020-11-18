@@ -1,0 +1,40 @@
+body {
+  background: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.searchbar {
+  padding: 20px;
+  width: 250px;
+  border-radius: 50px;
+  border: none;
+  font-size: 17px;
+  display: block;
+  margin: auto;
+}
+
+.container {
+  border: 1px solid black;
+  overflow: hidden;
+}
+
+.searchbar:focus {
+  outline: none !important;
+}
+
+.icon {
+  width: 25px;
+  position: relative;
+  right: 276px;
+  top: 60px;
+  transition: 0.2s;
+  opacity: 0;
+}
+
+.container:hover > .icon {
+  top: 8px;
+  opacity: 1;
+}
