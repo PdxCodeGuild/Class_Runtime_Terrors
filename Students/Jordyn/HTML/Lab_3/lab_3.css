@@ -5,9 +5,9 @@ a{
 
 .grid-container{
     display: grid;
-    grid-template-columns: auto 600px auto;
     grid-template-rows: 
-    80px 150px 150px auto auto;
+    auto 120px 150px auto auto;
+    grid-template-columns: 1fr 3fr 1fr;
     grid-template-areas: 
     'left-nav . right-nav'
     ". . ."
@@ -19,33 +19,62 @@ a{
 }
 
 .left-nav{
-    justify-self: start;
+    place-self: start start;
     grid-area: left-nav;
+    padding-top: 14px;
+    padding-left: 15px;
 }
-.right-nav{
-    justify-self: end;
-    grid-area: right-nav;
-}
-.right-nav-extra{
-    justify-self: top;
+.left-nav-extra{
+    padding-right: 13px;
+    font-size: 14px;
 }
 
+.right-nav{
+    display: flex;
+    align-items: center;
+    place-self: start end;
+    grid-area: right-nav;
+    padding-right: 20px;
+    padding-top: 5px;
+}
+.right-nav-extra{
+    padding-left: 5px;
+    padding-right: 12px;
+    font-size: 14px;
+}
 .profile-img{
-    width: 45px;
+    width: 33px;
 }
 .box-img{
-    width: 32px;
+    width: 24px;
 }
+
 .google{
     grid-area: google;
 }
 .google > img{
-    width: 200px;
+    width: 325px;
 }
+
 .search{
+    display: flex;
+    align-items: center;
     grid-area: search;
     margin: 5px;
 }
+.input-box{
+    background: rgba(148, 98, 98, 0);
+    border: 1px solid  rgb(204, 203, 203);
+    border-radius: 3px;
+    width: 494px;
+    height: 30px;
+    outline: none;
+}
+.search-images{
+    height: 22px;
+    padding: 0px 5px;
+}
+
 .buttons{
     grid-area: buttons;
     display: flex;
@@ -53,16 +82,20 @@ a{
     margin-top: 20px;
 }
 .left-btn{
-    margin-right: 20px;
+    margin-left: 20px;
     padding: 5px 20px;
-    background-color: rgb(212, 211, 211);
-    border-radius: 5px;
+    border: 1px solid rgb(255, 255, 255);
+}
+.left-btn:hover{
+    border: 1px solid rgb(204, 203, 203);
+    border-radius: 2px;
 }
 .right-btn{
     margin-left: 20px;
     padding: 5px 20px;
+    border: 1px solid rgb(255, 255, 255);
 }
 .right-btn:hover{
-    border: 1px solid rgb(218, 218, 218);
+    border: 1px solid rgb(204, 203, 203);
     border-radius: 2px;
 }
