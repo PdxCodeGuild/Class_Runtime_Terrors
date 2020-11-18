@@ -30,7 +30,9 @@
    `django-admin startproject my_project_name .`
 
 4. test to make sure the server runs<br>
-   `python manage.py runserver`<br>
+   `python3 manage.py runserver`<br>
+   or
+   `python manage.py runserver`
    if everything was done correctly, you should see the default server page with the animated rocket.
    [](./django_scrnsht.png)
 
@@ -171,7 +173,7 @@ There are many ways to approach a django project. this is just one version of ho
    ]
 ```
 
-9. We saw that views return a simple message includes in a string. This isn't that efficient. We can return entire pages. You'll need to think about how you want the user to interact with your app to determine what templates you'll need. since it depends on how you want your app laid out, I'll show you a simple setup for a base template called _base.html_, and how you can extend that base template with another template.
+9. We saw that views return a simple message included in a string. This isn't that efficient. We can return entire pages. You'll need to think about how you want the user to interact with your app to determine what templates you'll need. Since it depends on how you want your app laid out, I'll show you a simple setup for a base template called _base.html_, and how you can extend that base template with another template.
 
    _templates/base.html_
 
@@ -218,13 +220,15 @@ There are many ways to approach a django project. this is just one version of ho
 def todo_list(request):
     return HttpResponse('hello from todo')
 ```
+
 for 
+
 ```python
 def todo_list(request):
     return render(request, 'todos/todo_list.html')
 ```
 
-10. Go back to pages > views.py and change everything for:
+10. Go back to pages > views.py and change everything to:
 
 ```python
 

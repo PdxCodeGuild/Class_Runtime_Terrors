@@ -8,7 +8,7 @@ import datetime
 HOST = "smtp.gmail.com"
 PORT = "465"
 BASEURL = "api.openweathermap.org/data/2.5/weather?zip="
-API_KEY = ""
+API_KEY = "5a830f6e482d42180ff40c3a399aa799"
 
 
 default_user = "pythonweatherapp1@gmail.com"
@@ -16,10 +16,10 @@ to_address = "mlastof@gmail.com"
 username = "pythonweatherapp1@gmail.com"
 password = getpass.getpass("Enter gmail password")
 zip_code = input("Ener a zipcode for your weather information: \n")
-to_addr = input("Enter a recipiant")
+to_addr = input("Enter a recipiant: ")
 server = smtplib.SMTP_SSL(HOST, PORT)
 server.login(username, password)
-weather_report = ""
+
 
 
 def weather():
@@ -47,12 +47,10 @@ def weather():
         return "Sorry, there seem to be an error." + error
 
 
+weather_report = ""
 get_weather = weather()
-#print(get_weather)
-weather_report = get_weather.encode(encoding='UTF-8')
-server.sendmail(
-    default_user,
-    to_addr,
-    weather_report,
-)
+msg = get_weather
+
+
+server.sendmail(default_user, to_addr, msg)
 server.quit()

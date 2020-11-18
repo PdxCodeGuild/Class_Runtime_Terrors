@@ -115,3 +115,19 @@ Filtering:
 - run `a = Todo.objects.all()` to see all todos
 - run `a[0]` to access the first element
 - run `a[0].delete()` to delete the first element
+
+
+## Part 4. Superuser
+
+Exit the shell typing `exit()`. Let's discover the Admin panel and see all the todos that we have created. In todo_app > admin.py folder add the following:
+
+```python
+from django.contrib import admin
+
+from . import models
+
+admin.site.register(models.Todo)
+
+```
+- In the terminal run `python manage.py createsuperuser`
+- Go to` http://localhost:8000/admin/` to explore and add more todos
