@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+
+
+body {
+    /* display: flex;
+    flex-direction: column; */
+    /* justify-content: space-evenly; */
+    /* text-align: center;
+     */
+    color: rgb(58, 53, 53);
+    font-family: 'Roboto';
+}
+/* _____________________Landing_________________________________________ */
+.landing_page{
+    background-color: #102b01;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    opacity: 89%;
+}
+.vault {
+    text-align: center;
+    justify-content: center;
+    padding: 0%;
+    
+}
+.Merka{
+    color: rgb(189, 211, 191);
+    width: 50%;
+
+}
+input{
+    padding: 20px;
+    width: 250px;
+    height: 0px;
+    border-radius: 5px;
+    border-color: black;
+    border-width: medium;
+    font-size: 17px;
+    display: block;
+    margin: auto;
+}
+.right_third{
+    background-image: url("C:/Users/17196/Desktop/Personal/Crypto/Maker/Bricks_right.jpg");
+    background-size: 100%;
+    font-size: 168.4;;
+    /* text-align: right; */
+    justify-self: right;
+    width: 30vw;
+    height: 100vh;
+    opacity: 50%;
+
+}
+.left_third{
+    background-image: url("C:/Users/17196/Desktop/Personal/Crypto/Maker/Bricks_left.jpg");
+    background-size: 100%;
+    font-size: 168.4;;
+    justify-self: left;
+    width: 30vw;
+    height: 100vh;
+    opacity: 50%;
+}
+/* -----------------------Elemental------------------------------------- */
+.Elemental{
+    background-color: rgb(164, 1, 79);
+    color: cornsilk;
+    font-family: DauphinPlain;
+    text-align: center;
+    justify-content: center;
+    padding: 11%;
+}
+/* =======================FUll STack==================================== */
+.movement{
+    display: grid;
+    
+}
