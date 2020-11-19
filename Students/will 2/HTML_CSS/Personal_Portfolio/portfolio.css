@@ -73,5 +73,23 @@ input{
 /* =======================FUll STack==================================== */
 .movement{
     display: grid;
-    
+}
+.timer{
+    justify-self: center;
+}
+.red_circle{
+    background-color: rgb(253, 72, 0);
+    border-radius: 100px;
+}
+.blue_circle{
+    background-color: rgb(0, 140, 255);
+    border-radius: 100px;
+}
+.yellow_circle{
+    background-color: rgb(200, 255, 0);
+    border-radius: 100px;
+}
+.black_circle{
+    background-color: rgb(0, 0, 0);
+    border-radius: 100px;
 }

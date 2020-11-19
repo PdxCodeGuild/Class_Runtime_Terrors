@@ -2,7 +2,7 @@
 
 * {
   box-sizing: border-box;
-  margin: 10;
+  margin: 0;
   padding: 0;
 }
 
@@ -28,16 +28,16 @@ p {
 
 .container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   grid-gap: 10px;
-  /* height: 25%;
-  width: 25%;    */
-     
+  background: url('C:/Users/17196/Desktop/code_guild/Class_Runtime_Terrors/Students/will 2/HTML_CSS/Blog/imagine/jacobean.png');
+  opacity: 90%;
 }
 
 .container > div {
   cursor: pointer;
-    background-size: cover;
+  height: 210px;
+  background-size: cover;
   background-attachment: fixed;
 
   display: flex;
@@ -59,23 +59,29 @@ p {
 }
 
 .container > div:nth-of-type(6) {
-  grid-column: 1 / 5;
+  grid-column: 3 / 5;
 }
 
 .container > div:nth-of-type(9) {
-  grid-column: 1 / 5;
+  grid-column: 3 / 5;
 }
 
 .container > div:nth-of-type(10) {
   grid-column: 1 / 3;
 }
 
+
 .bg1 {
-    background-image: url('https://www.beavertonplumbing.com/');
+    background-image: url('C:/Users/17196/Desktop/code_guild/Class_Runtime_Terrors/Students/will 2/HTML_CSS/Blog/imagine/irgate.jpg');
+    opacity: 10% ;
+    color: rgb(244, 245, 247);
+    border-radius: 100px;  
   }
   
 .bg2 {
-    background: url('https://i.ibb.co/Fb5jb3J/bg2.jpg');
-    color: rgb(197, 234, 255);
+    background-image: url('C:/Users/17196/Desktop/code_guild/Class_Runtime_Terrors/Students/will 2/HTML_CSS/Blog/imagine/irgate.jpg');
+    
+    opacity: 10% ;
+    color: rgb(244, 245, 247);
     border-radius: 100px;
   }
