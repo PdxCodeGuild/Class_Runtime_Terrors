@@ -76,7 +76,7 @@
 ############################################################
 # Version 5
 import random
-answer = int(input("Please enter the number you would like company to guess: "))
+answer = int(input("Please enter the number you would like computer to guess: "))
 guess = False
 while guess is False:
     computer = random.randint(0,1000)
