@@ -1,0 +1,63 @@
+body{
+    background-image: url("/my_page/images/mountains.jpg") !important;
+    font-family: fantasy;
+}
+
+.item1{
+    background-image: url("https://cdn.mos.cms.futurecdn.net/pNhFRNzeqBsAJ4ppRGFYzd-1024-80.jpg");
+    object-fit: cover;
+    color: honeydew;
+    font-style: italic;
+}
+
+.item2{
+    font-size: larger !important;
+}
+
+.item3{
+    background-color: gray !important;
+    font-size: larger !important;
+    display: grid;
+    height: 500px !important;
+    width: 400px !important;
+}
+
+.item4{
+    font-size: larger !important;
+}
+
+.item5{
+    display: flexbox;
+    flex-direction: row;
+}
+
+.headline{
+    text-decoration: underline;
+}
+
+nav{
+    text-decoration: underline;
+    background-color: transparent !important;
+}
+.nav-link{
+    color: white !important;
+}
+
+.navbar-brand{
+    color: white !important;
+}
+
+
+.navbar-light{
+    align-items: baseline !important;
+}
+
+.navbar-expand-lg .navbar-collapse{
+    align-items: baseline;
+}
+
+.carousel-item{
+    background-image: url("https://photographingspace.com/wp-content/uploads/2017/03/5.jpg");
+    object-fit: cover;
+}
+
