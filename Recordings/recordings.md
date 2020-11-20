@@ -27,3 +27,5 @@
 [11-12-2020 - Passcode: *NrZVe*1](https://zoom.us/rec/share/EpFfl-WdWCOuAv4VLv4fQEoDyJ2V6SHETkChrCYHQS2rtYlV1VLjqBG2h-AIjma-.6Oi23ZoB8lTPEHkd)
 
 [11-16-2020 - Passcode: =N30*k=7](https://zoom.us/rec/share/VbEoHPEo3C35Fmw8G6zxVe5gu_mFVY16Lg-51vcGlfI2NbTro-lHrpKALyriZ9hp.il2CBp9W3dVx4YBU)
+
+[11-17-2020 - Passcode: b^q22W^m](https://zoom.us/rec/share/JGItwXU2lqgp4SQUC8ormnfRFBgWOxTLMol-duRz19CIHzORz4xcLSmcwDNWiC2R.y9Nt3YlQfdHfNKRt )
