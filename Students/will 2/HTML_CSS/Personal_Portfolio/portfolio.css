@@ -12,7 +12,7 @@ body {
 }
 /* _____________________Landing_________________________________________ */
 .landing_page{
-    background-color: #102b01;
+    background-color: #f1456a;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -63,33 +63,35 @@ input{
 }
 /* -----------------------Elemental------------------------------------- */
 .Elemental{
-    background-color: rgb(164, 1, 79);
+    background-color: rgb(150, 140, 145);
     color: cornsilk;
     font-family: DauphinPlain;
     text-align: center;
     justify-content: center;
     padding: 11%;
 }
-/* =======================FUll STack==================================== */
-.movement{
+/* =======================FUll Stack==================================== */
+.wrapper{
     display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    background-color: rgb(0, 59, 78);
+    grid-column-gap: 1px;
+    grid-row-gap: 5px;
+    justify-content: center;
+
 }
-.timer{
-    justify-self: center;
-}
-.red_circle{
-    background-color: rgb(253, 72, 0);
-    border-radius: 100px;
-}
-.blue_circle{
-    background-color: rgb(0, 140, 255);
-    border-radius: 100px;
-}
-.yellow_circle{
-    background-color: rgb(200, 255, 0);
-    border-radius: 100px;
-}
-.black_circle{
-    background-color: rgb(0, 0, 0);
-    border-radius: 100px;
+.boxes{
+    background-color: rgb(0,0,0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    font-size: 30px;
+    color: white;                     
+    line-height: 1;
+    border-radius: 25px;
+    border-color: goldenrod;
+    border-style: solid;
+    width: 50px;
+    height: 50px;
 }
