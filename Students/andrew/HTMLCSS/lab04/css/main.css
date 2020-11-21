@@ -2,6 +2,18 @@ body{
     font-family: 'Ubuntu', sans-serif;
 }
 
+
+.top-page{
+
+    justify-content: center;
+    height: 500px;
+    width: 100vw;
+    background-color: #ff5500;
+}
+
+#svg{
+
+}
 #h3-interest{
     margin: 1em;
 }
@@ -13,9 +25,11 @@ body{
     background-color: #ff5500;
     /*background-color: #9fcdff;*/
 
-
 }
 
+.my-row{
+    justify-content: center;
+}
 h1{
     margin: 1rem;
 }
@@ -71,4 +85,24 @@ h1{
 
 .my-footer{
     text-align: center;
+}
+
+.sco{
+    display: flex;
+    padding: 2em;
+    justify-content: center;
+    background-color: #ff5500;
+}
+
+.sco i{
+    margin: auto;
+}
+
+#follow {
+    padding: 30px;
+    text-align: center;
+    background-color: #ff5500;
+}
+.fa{
+    color: aliceblue;
 }
