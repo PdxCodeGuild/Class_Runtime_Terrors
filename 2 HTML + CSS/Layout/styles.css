@@ -1,0 +1,79 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    max-width: 1400px;
+}
+nav ul {
+    display: flex;
+    padding: 0 15px;
+
+}
+nav ul li{
+    padding: 10px;
+    list-style-type: none;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FFDAC1;
+}
+.hero-image{
+    background-image:url("https://cdn.hipwallpaper.com/m/12/53/Z4xAUT.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 350px;
+}
+
+.hero-image{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-image h1{
+    color: white;
+    font-size: 4em;
+}
+
+.fashion-1{
+    width: 300px;
+}
+
+.first-article,.second-article{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    margin-top: 50px;
+    align-items: center;
+}
+
+.article-top, .article-bottom{
+    width: 200px
+}
+
+.article-top h1, .article-bottom h1{
+    margin-bottom: 30px;
+    font-size: 25px;
+}
+.article-top button, .article-bottom button{
+    margin-top: 10px;
+}
+
+.side-products{
+    display: grid;
+    grid-gap: 50px;
+    grid-template-columns: repeat(2, 1fr);
+    background-color: cornsilk;
+    width: 100%;
+    text-align: center;
+}
+
+
+
+

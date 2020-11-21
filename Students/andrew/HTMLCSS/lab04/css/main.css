@@ -1,0 +1,74 @@
+body{
+    font-family: 'Ubuntu', sans-serif;
+}
+
+#h3-interest{
+    margin: 1em;
+}
+
+.top-box {
+    padding: 30px;
+    width: 100vw;
+    height: 200px;
+    background-color: #ff5500;
+    /*background-color: #9fcdff;*/
+
+
+}
+
+h1{
+    margin: 1rem;
+}
+
+.my-box {
+
+    justify-content: center;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: auto;
+    background-color: #ff5500;
+    /*background-color: #9fcdff;*/
+
+
+}
+
+.my-content{
+    margin: 1rem;
+    justify-content:space-evenly ;
+    padding: 1rem;
+    text-align: center;
+    height: auto;
+
+}
+
+.my-card{
+    box-shadow: black;
+    margin: 3rem;
+
+}
+
+.my-container{
+    width: 100vw;
+    display: grid;
+}
+
+.wave-2{
+    position: relative;
+    top: 20px;
+
+}
+
+.w2{
+    width: auto;
+}
+
+.wave-3{
+    position: relative;
+    top: 20px;
+}
+
+.my-footer{
+    text-align: center;
+}
