@@ -62,7 +62,6 @@ a{
     grid-area: search;
     margin: 5px;
     border: 1px solid black;
-    width: 100%;
 }
 
 /* .search-container{
@@ -71,12 +70,12 @@ a{
 } */
 
 .input-box{
-    flex: 1 50px;
+    /* flex: 1 50px; */
     margin: auto;
     background: rgba(148, 98, 98, 0);
     border: 1px solid  rgb(204, 203, 203);
     border-radius: 4px;
-    /* width: 100%; */
+    width: 308px;
     height: 30px;
     outline: none;
 }

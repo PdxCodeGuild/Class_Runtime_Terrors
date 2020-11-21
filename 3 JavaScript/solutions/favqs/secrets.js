@@ -1,0 +1,1 @@
+const myKey = '8352a26c4edd33ab223599b4673e47ea'
