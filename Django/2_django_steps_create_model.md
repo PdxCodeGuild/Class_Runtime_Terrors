@@ -1,14 +1,14 @@
 
-## part 3: Create a Model
+## part 2: Create a Model
 
 
-A model is a representation of your object in the Database. 
+A model is a representation of your object in the Database. There are different ways to define a relationship between elements in the database:
 
 - `OneToOneField` represents a [one-to-one relationship](https://docs.djangoproject.com/en/2.0/topics/db/examples/one_to_one/)
 - `ForeignKey` represents a [many-to-one relationship](https://docs.djangoproject.com/en/2.0/topics/db/examples/many_to_one/)
 - `ManyToManyField` represents a [many-to-many relationship](https://docs.djangoproject.com/en/2.0/topics/db/examples/many_to_many/)
 
-* `Many-to-one relationships¶`. This can be the relationship between a car manufacturer and the Car
+* `Many-to-one relationships`. This can be the relationship between a car manufacturer and a car. A manufacturer can build different cars. But all the cars have one manufacturer in common.
 
 ```python
 
@@ -22,7 +22,7 @@ class Car(models.Model):
 
 ```
 
-* `Many-to-many relationships¶`. For example, if a Pizza has multiple Topping objects – that is, a Topping can be on multiple pizzas and each Pizza has multiple toppings – here’s how you’d represent that
+* `Many-to-many relationships`. For example, if a Pizza has multiple Topping objects – that is, a Topping can be on multiple pizzas and each Pizza has multiple toppings – here’s how you’d represent that:
 
 ```python
 
@@ -35,7 +35,7 @@ class Pizza(models.Model):
     toppings = models.ManyToManyField(Topping)
 ```
 
-* `One-to-one relationships`  A OneToOneField would be like an Engine, where a Car object can have one and only one.`
+* `One-to-one relationships`  A OneToOneField would be like an Engine, where a Car object can have one and only one engine.`
 
 ```python
 class Engine(models.Model):
@@ -53,8 +53,7 @@ class Car(models.Model):
 
 ```
 
-
-1.Back to code! Open the *models.py* file inside of the todo_app folder. inspect the following snippet and make your *models.py* file match:
+1.Back to code! Open the *models.py* file inside of the todo_app folder. Inspect the following snippet and make your *models.py* file match:
 
     ```python
     from django.db import models
@@ -79,18 +78,17 @@ class Car(models.Model):
             return self.title
     ```
 
-once your *models.py* file matches, run `python manage.py makemigrations` and then `pythom manage.py migrate`.
+Once your *models.py* file matches, run `python manage.py makemigrations` and then `pythom manage.py migrate`.
 
 makemigrations changes the configuration of the database
 
 2. Create superuser
 
 - run `python manage.py createsuperuser`
-- explore the Admin panel and add todos
 
 3. The shell
 
- (Making Queries [here](https://docs.djangoproject.com/en/3.1/topics/db/queries/))
+ (Making Queries, click [here](https://docs.djangoproject.com/en/3.1/topics/db/queries/))
 
 - In the terminal run `python manage.py shell`
 - run `from todo_app.models import Todo`
@@ -130,4 +128,4 @@ admin.site.register(models.Todo)
 
 ```
 - In the terminal run `python manage.py createsuperuser`
-- Go to` http://localhost:8000/admin/` to explore and add more todos
+- Go to` http://localhost:8000/admin/` to explore and add more todos.
