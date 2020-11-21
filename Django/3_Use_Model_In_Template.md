@@ -1,6 +1,6 @@
-## Use the Model inside your template
+## How to use a model and database inside your template
 
-0. Go back to the Todo_app folder > views.py
+0. Go back to the todo_app folder > views.py
 1. Import the model created with:
    ```python
    from .models import Todo
@@ -30,9 +30,10 @@ def todo_list(request):
 # context is sent to 'todos/todo_list.html'
 ```
 
-3. You need to start displaying all the tasks in the template, since you passed in the object to it. Go to the templates folder > todos > todo_list.html and add under `{% extends 'base.html' %}`:
+3. We want to display all the tasks in a html page. Go to the templates folder > todos > todo_list.html and add the following:
 
 ```html
+{% extends 'base.html' %}
 {% block content %}
 <a href="http://localhost:8000/todo/add">add task</a>
 <ul>
@@ -47,11 +48,12 @@ def todo_list(request):
 {% endblock %}
 ```
 
-4. Let's add more Todos! Go to the templates folder > todos and add a page named add.html.
+4. Let's add more Todos! To achieve this, we need to create a form. Go to the templates folder > todos and add a page named add.html.
 
-In that page, add the following under `{% extends 'base.html' %}`:
+In that page, add the following:
 
 ```html
+{% extends 'base.html' %}
 {% block content %}
 <form action="{% url 'add' %}" method="POST">
   {% csrf_token %} title: <br />
@@ -72,7 +74,7 @@ type todo description here</textarea
 {% endblock %}
 ```
 
-5. We need to connect the page to its endpoint. In todo_app views.py add :
+5. Remeber, we still need to connect the page to its endpoint. In todo_app > views.py add :
 
 ```python
 def add_todo(request):
@@ -91,10 +93,10 @@ def add_todo(request):
         return redirect('list')
 ```
 
-6. In todo_app urls.py add:
+6. In todo_app > urls.py add:
 
 ```python
-    path('about/', views.about, name='about')
+    path('add/', views.add_todo, name = 'add'),
 ```
 
 It should look like this:
@@ -104,12 +106,11 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('', views.index, name = 'home'),
-    path('about/', views.about, name='about')
+    path('', views.todo_list, name = 'list'),
+    path('add/', views.add_todo, name = 'add'),
 ]
 ```
-
-7. Let's say that we want to click on each todo and display a page with 2 options: "update" and "delete". To do this, we'll need to create a link to each specific todo using its unique ID. Remember, each time you create an element in the database it has an ID specific to that element.
+7. Let's say that we want to click on each todo and display a page with 2 options: "update" and "delete". To do this, we'll need to create a link to each specific todo using its unique ID. Remember, each time you create an element in the database it gets assigned an ID.
 
 - In templates > todos add a page `detail.html` with the following:
 
@@ -123,7 +124,7 @@ urlpatterns = [
 {% endblock %}
 ```
 
-- Let's return this page by a view. inside the todo_app folder go to views.py page and add:
+- Let's connect this page to a view. Inside the todo_app > views.py page and add:
 
 ```python
 
@@ -134,7 +135,7 @@ def details(request, id):
 
 ```
 
-- Connect the view vith its URL. In the todo_app folder go to urls.py and add:
+- Connect the view to its URL. In the todo_app folder go to urls.py and add:
 
 ```python
     path('details/<int:id>', views.details, name = 'details'),
