@@ -1,0 +1,28 @@
+.container {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    /* width: 680px; */
+    height: 500px;
+}
+
+.item {
+    margin-bottom: 15px;
+}
+
+#cookie-jar {
+    border: 1px solid black;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    margin: 15px;
+}
