@@ -173,11 +173,11 @@ There are many ways to approach a django project. This is just one version of ho
    ]
 ```
 
-9. We saw that views return a simple message included in a string. This isn't that efficient. We can return entire pages. You'll need to think about how you want the user to interact with your app to determine what templates you'll need. Since it depends on how you want your app laid out, I'll show you a simple setup for a base template called _base.html_, and how you can extend that base template with another template.
+9. We are able to return a simple message included in a string. This isn't that efficient. We can return entire pages. You'll need to think about how you want the user to interact with your app to determine what templates you'll need. Since it depends on how you want your app laid out, I'll show you a simple setup for a base template called _base.html_, and how you can extend that base template with another template.
 
    _templates/base.html_
 
-   ```python
+   ```html
        {% load static %}
        <!DOCTYPE html>
        <html lang="en">
@@ -198,7 +198,7 @@ There are many ways to approach a django project. This is just one version of ho
 
    _templates/pages/index.html_
 
-   ```python
+   ```html
    {% extends 'base.html' %}
    {% block content %}
        <h1>hello from the index template</h1>
@@ -207,7 +207,7 @@ There are many ways to approach a django project. This is just one version of ho
 
    _templates/todos/list.index.html_
 
-   ```python
+   ```html
    {% extends 'base.html' %}
    {% block content %}
        <h1>hello from the todo list template</h1>
