@@ -19,7 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97e2c77b-9243-46c6-9eb2-55920a413e2c" name="Default Changelist" comment="" />
+    <list default="true" id="97e2c77b-9243-46c6-9eb2-55920a413e2c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/main.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,11 +39,17 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="W:/Class_Runtime_Terrors/Students/andrew/HTMLCSS/lab04" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/css" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -49,7 +59,10 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605836691168</updated>
-      <workItem from="1605836692218" duration="7774000" />
+      <workItem from="1605836692218" duration="8103000" />
+      <workItem from="1605910261044" duration="7359000" />
+      <workItem from="1605923014981" duration="838000" />
+      <workItem from="1605924670783" duration="35000" />
     </task>
     <servers />
   </component>
@@ -66,5 +79,12 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2660" y="-87" key="FileChooserDialogImpl" timestamp="1605924704202">
+      <screen x="1920" y="-362" width="1920" height="1034" />
+    </state>
+    <state x="2660" y="-87" key="FileChooserDialogImpl/1920.-362.1920.1034/0.0.1920.1034/-1920.10.1920.1040@1920.-362.1920.1034" timestamp="1605924704202" />
   </component>
 </project>

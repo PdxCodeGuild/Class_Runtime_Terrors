@@ -2,6 +2,10 @@ body{
     font-family: 'Ubuntu', sans-serif;
 }
 
+#h3-interest{
+    margin: 1em;
+}
+
 .top-box {
     padding: 30px;
     width: 100vw;
@@ -18,9 +22,10 @@ h1{
 
 .my-box {
 
-    justify-content: space-evenly;
+    justify-content: center;
     padding: 40px;
-    display: grid;
+    display: flex;
+    flex-direction: column;
     width: 100vw;
     height: auto;
     background-color: #ff5500;
@@ -40,7 +45,7 @@ h1{
 
 .my-card{
     box-shadow: black;
-    margin: auto;
+    margin: 3rem;
 
 }
 
