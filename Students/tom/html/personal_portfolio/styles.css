@@ -11,25 +11,19 @@ html {
   }
   
   .header-pic {
-    /* display: flex;
-    flex-direction: column;
-    align-content: space-between; */
-    
     background-position: center;
     background-image: linear-gradient(rgba(235, 21, 21, 0.5), rgba(0, 0, 0, 0.5)), url("Blackhawk.jpg");
-    height: 50%;
+    height: 60%;
     background-size: cover;
     font-size:30px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
   
   .header-text {
     border: 1px solid black;
-    /* margin: 0; */
-    /* padding: 0; */
-    /* top: 10%; */
-    /* left: 50%; */
-    /* transform: translate(-50%, -50%); */
   }
 
   .header-pic h1{
@@ -38,28 +32,35 @@ html {
   }
 
   .header-pic p{
-    position: relative;
+    /* position: relative; */
     top: 300px;
   }
 
-  /* .header-text h1{
-      flex: 4
-      vertical-align: top;
+  .main-body{
+    display: flex;
   }
 
-  .header-text p{
-      flex: 5;
-      vertical-align: bottom;
-  } */
+  #left-column{
+    width: 5000px;
+    border: 1px solid black;
+    margin: 15px;
+    
+  }
+  
+  #right-column{
+    border: 1px solid black;
+    margin: 15px 10px 100px 10px;
+  }
 
 footer{
-position: fixed;
+  position: fixed;
    left: 0;
    bottom: 0;
    width: 100%;
    background-color: red;
    color: white;
    text-align: center;
+   margin-top: 20px;
 }
 
   footer ul{
