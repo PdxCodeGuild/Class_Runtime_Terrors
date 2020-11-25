@@ -1,0 +1,71 @@
+html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  body {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .header-pic {
+    background-position: center;
+    background-image: linear-gradient(rgba(235, 21, 21, 0.5), rgba(0, 0, 0, 0.5)), url("Blackhawk.jpg");
+    height: 60%;
+    background-size: cover;
+    font-size:30px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .header-text {
+    border: 1px solid black;
+  }
+
+  .header-pic h1{
+    top: 0;
+    margin: 0;
+  }
+
+  .header-pic p{
+    /* position: relative; */
+    top: 300px;
+  }
+
+  .main-body{
+    display: flex;
+  }
+
+  #left-column{
+    width: 5000px;
+    border: 1px solid black;
+    margin: 15px;
+    
+  }
+  
+  #right-column{
+    border: 1px solid black;
+    margin: 15px 10px 100px 10px;
+  }
+
+footer{
+  position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: red;
+   color: white;
+   text-align: center;
+   margin-top: 20px;
+}
+
+  footer ul{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: teal;
+  }
