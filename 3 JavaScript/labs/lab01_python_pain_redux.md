@@ -30,7 +30,7 @@ You can now handle user input in a similar way to how it was done in python. Use
 
 ```javascript
 let userInput = parseInt(readline.question('enter a number: '));
-console.log(`you entered: {${userInput}`);
+console.log(`you entered: ${userInput}`);
 ```
 
 

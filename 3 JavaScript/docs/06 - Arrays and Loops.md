@@ -52,12 +52,12 @@ while (i < 10) {
 For loops have three parts, separated by semi-colons. The first is the **initialization**, the second is the **condition** and the third is the **increment**.
 
 ```javascript
-let fruits = ["apple", "bananana", "pear"];
+let fruits = ["apple", "banana", "pear"];
 fruits.push("cherry");
 for (let i = 0; i < fruits.length; ++i) {
   console.log(fruits[i]);
 }
-console.log(fruits.indexOf("bananana")); // 1
+console.log(fruits.indexOf("banana")); // 1
 ```
 
 # for...of statement
@@ -80,7 +80,7 @@ The for...in statement iterates over all enumerable properties of an object that
 let car = {
   engine: "honda",
   wheels: 4,
-  color: "grey",
+  color: "gray",
 };
 
 for (let item in car) {
