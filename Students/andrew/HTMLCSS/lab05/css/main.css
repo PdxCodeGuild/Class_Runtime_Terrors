@@ -1,0 +1,46 @@
+@media only screen and (max-width: 994px) {
+    .main-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+.logo {
+    display: grid;
+}
+
+#logo {
+    background-color: #ffd700;
+}
+
+svg {
+    width: 100vw;
+}
+
+.header-row {
+    padding: 1em;
+}
+
+#image {
+    padding: 1em;
+    width: 150px;
+}
+
+#customize {}
+
+.your-burrito {
+    margin-top: 1em;
+}
+
+#total {
+    padding: 1em;
+}
+
+.card {
+    border: solid 1px black;
+}
+
+.card-burrito-img {
+    height: 18em;
+}
