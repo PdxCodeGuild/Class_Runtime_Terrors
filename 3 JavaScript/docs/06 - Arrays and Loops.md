@@ -80,7 +80,7 @@ The for...in statement iterates over all enumerable properties of an object that
 let car = {
   engine: "honda",
   wheels: 4,
-  color: "gray",
+  color: "grey",
 };
 
 for (let item in car) {

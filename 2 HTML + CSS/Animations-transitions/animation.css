@@ -1,0 +1,48 @@
+/* body{
+    background-color: #333;
+} */
+
+.box{
+    /* width: 200px;
+    height: 200px;
+    position: relative;
+    background-color: white; */
+    /* animation-iteration-count: infinite; */
+    /* animation-delay: 1s; */
+    /* animation-direction: reverse; */
+    /* animation-fill-mode: forwards; */
+    /* animation-timing-function: ease-in; */
+}
+
+/* @keyframes move-around{
+    0%{background-color: white; top: 0px; left: 0px; border-radius: 0 0 0 0;}
+    25%{background-color: red; top: 0px; left: 200px; border-radius: 50% 0 0 0;}
+    50%{background-color: blue; top : 200px ; left: 200px; border-radius: 50% 50% 0 0;}
+    75%{background-color: green;  top : 200px ; left: 0px; border-radius: 50% 50% 50% 0;}
+    100%{background-color: white; top: 0px; left: 0px; border-radius: 50% 50% 50% 50% }
+} */
+
+
+body{
+    background: #333
+}
+.box{
+    height: 200px;
+    width: 200px;
+    background-color: white;
+    position: relative;
+    /* animation-name: move-around;
+    animation-duration: 2s;
+    animation-fill-mode: forwards; */
+    /* animation: */
+}
+
+@keyframes move-around{
+    0%{
+        background-color: white; border-radius: 0 0 0 0;
+    }
+    25%{background-color: red;  border-radius: 50% 0 0 0;}
+    50%{background-color: blue;  border-radius: 50% 50% 0 0;}
+    75%{background-color: green; border-radius: 50% 50% 50% 0;}
+    100%{background-color: white;   border-radius: 50% 50% 50% 50%;}
+}
