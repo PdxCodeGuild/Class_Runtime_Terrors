@@ -3,7 +3,7 @@
 
 ## Introductory Example
 
-ES6 introduced a much easier way of writing classes. Below is an example comparing the use of a class to that of an object. The object behaves similarly, except you'll have to re-write the entire structure every time you create an instance. Also, each instance will have its own copy of the `get_balance` function, resulting in greater memory overhead.
+ES6 introduced a much easier way of writing classes. Below is an example comparing the use of a class to that of an object. The object behaves similarly, except you'll have to re-write the entire structure every time you create an instance. Also, each instance will have its own copy of the `get_balance` function, resulting in greater memory overhead. 
 
 ```javascript
 // using a class
@@ -70,8 +70,6 @@ myDog.move(); // logs 'walk', 'dog moving'
 myDog.bark(); // logs 'ruff'
 ```
 
-
-
 The way to do classes is ES5 is much more awkward, but you may see it in the wild, so it's worth knowing.
 
 ```javascript
@@ -105,3 +103,72 @@ myDog.move(); // logs 'walk'
 myDog.bark(); // logs 'ruff'
 ```
 
+You've heard the expression "Functions in JavaScript are first-class objects (or “first-class citizens”)". First-class citizenship, within the world of programming, means that a given entity (such as a function) supports all the operational properties inherent to other entities; properties such as being able to be assigned to a variable, passed around as a function argument, returned from a function, etc. Basically, first-class citizenship simply means “being able to do what everyone else can do.” In JavaScript, functions are objects (hence the designation of first-class object). 
+
+They inherit from the Object prototype and they can be assigned key: value pairs. These pairs are referred to as *properties* and can themselves be functions (i.e., *methods*). 
+
+We said above that functions are objects. The most important thing to remember: Classes are just normal JavaScript functions and could be completely replicated without using the class syntax. It is special syntactic sugar added in ES6 to make it easier to declare and inherit complex objects. Let's see an example:
+
+```javascript
+function createNewPerson(name) {
+  const obj = {};
+  obj.name = name;
+  obj.greeting = function() {
+    alert('Hi! I\'m ' + obj.name + '.');
+  };
+  return obj;
+}
+const john = createNewPerson('John');
+john.name;
+john.greeting();
+```
+
+To simplify, the same can be written as the following:
+
+```javascript
+
+function Person(name) {
+  this.name = name;
+  this.greeting = function() {
+    alert('Hi! I\'m ' + this.name + '.');
+  };
+}
+
+let person1 = new Person('Bob');
+let person2 = new Person('Sarah');
+```
+
+
+```javascript
+function Person(name) {
+  this.name = name;
+  this.greeting = function() {
+    alert('Hi! I\'m ' + this.name + '.');
+  };
+}
+
+let person1 = new Person('Bob');
+console.log(person1.greeting())
+
+```
+
+Here's how inheritance looks like using functions:
+
+```javascript
+function Brick() {
+  this.width = 10;
+  this.height = 20;
+}
+
+function BlueGlassBrick() {
+  Brick.call(this);
+
+  this.opacity = 0.5;
+  this.color = 'blue';
+}
+
+let shape = new BlueGlassBrick()
+
+console.log(shape.width)
+
+```
