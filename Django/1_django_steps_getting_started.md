@@ -31,8 +31,7 @@
 
 4. test to make sure the server runs<br>
    `python3 manage.py runserver`<br>
-   or
-   `python manage.py runserver`
+  
    if everything was done correctly, you should see the default server page with the animated rocket.
    [](./django_scrnsht.png)
 
@@ -40,9 +39,9 @@
 
 There are many ways to approach a django project. This is just one version of how i do it. It's a general pattern i usually follow, but there are times when i deviate from this for no other reason than my thought process may not be the same from app to app. Many of the steps are purely organizational and can be changed to fit whatever organizational scheme makes the most sense to you.
 
-1. create an app with the command<br>
-   `python manage.py startapp todo_app` <br>
-   `python manage.py startapp pages_app`
+1. Exit the server by pressing control + c. Create an app with the command<br>
+   `python3 manage.py startapp todo_app` <br>
+   `python3 manage.py startapp pages_app`
 
    go into your _my_project_name/settings.py_ file and install your apps. Add the name of your app to the list of installed apps like so:
 
