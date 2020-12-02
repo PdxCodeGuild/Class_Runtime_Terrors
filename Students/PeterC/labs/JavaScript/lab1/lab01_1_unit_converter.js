@@ -18,5 +18,4 @@ So we can get the output in meters by multiplying the input distance by 0.3048. 
 
 const readline = require('readline-sync');
 let userInput = parseInt(readline.question('What is the distance in feet?: '));
-// console.log(`You entered: ${userInput} feet`);
-console.log(`You entered: ${userInput} feet, which is equivalent to ${userInput * 0.3048.toFixed(3)} meters.`);
+console.log(`You entered: ${userInput} feet, which is equivalent to ${userInput * 0.3048.toFixed(4)} meters.`);
