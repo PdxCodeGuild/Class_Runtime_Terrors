@@ -15,7 +15,6 @@ let unitOut = readline.question("Enter the unit you wish to convert to : ")
 
 function convert(){
     let unit = dist * conversionTable[unitIn]
-    console.log(unit)
     let unit1 = unit / conversionTable[unitOut]
     console.log(`${dist} ${unitIn} is equal to ${unit1.toFixed(5)} ${unitOut}`)
 }
