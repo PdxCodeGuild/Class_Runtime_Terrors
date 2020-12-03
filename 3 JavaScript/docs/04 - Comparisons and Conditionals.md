@@ -36,9 +36,9 @@ Conditionals in JavaScript require parantheses and curly-braces.
 
 ```javascript
 let temperature = 56;
-if (x < 60) {
+if (temperature < 60) {
     alert('cold');
-} else if (x < 80) {
+} else if (temperature < 80) {
     alert('warm');
 } else {
     alert('hot');
