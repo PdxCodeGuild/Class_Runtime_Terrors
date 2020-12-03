@@ -23,7 +23,7 @@ video.return_obj()
 ## Second Scenario - the function isn't part of an object
 
 ```javascript
-const test(){
+function test(){
     console.log(this)
 }
 test()

@@ -8,9 +8,7 @@ a {
 }
 
 body {
-  background:  rgba(5,0,9,1);
-  /* width: 100vh;
-  height: 100vh; */
+  background: rgba(5, 0, 9, 1);
 }
 
 .container {
@@ -35,13 +33,19 @@ body {
   color: white;
   width: calc(100% + 10px);
 
-  background: linear-gradient(90deg, 
-  rgba(5,0,9,1) 0%, rgba(5,0,10,1) 40%, 
-  rgb(16, 0, 19) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(5, 0, 9, 1) 0%,
+    rgba(5, 0, 10, 1) 40%,
+    rgb(16, 0, 19) 100%
+  );
 }
 
-.header a{
+.header a {
   padding: 3px;
+
+  animation: header 2.5s;
+  position: relative;
 }
 
 .header a:hover {
@@ -55,6 +59,7 @@ body {
   flex-direction: row;
   justify-content: space-between;
   width: 150px;
+  align-items: center;
 }
 
 #home {
@@ -64,9 +69,9 @@ body {
   flex-wrap: nowrap;
 }
 
-
 .header-line {
-  padding: 30px 2px;
+  height: 55px;
+  width: 4px;
   background-color: rgb(31, 14, 36);
   border-radius: 2px;
 }
@@ -101,10 +106,6 @@ body {
   }
 }
 
-#perpro {
-  width: 120px;
-}
-
 .sidebar {
   grid-area: sidebar;
   display: flex;
@@ -112,7 +113,7 @@ body {
   align-items: center;
   color: white;
 
-  background: rgba(5,0,9,1);
+  background: rgba(5, 0, 9, 1);
 }
 
 .sidebar-header {
@@ -137,32 +138,66 @@ body {
   padding-top: 10px;
 }
 
-.sidebar-links a{
-  /* margin-bottom: 60px; */
+.sidebar-links a {
   padding: 3px;
 }
 
+#s_one{
+    animation: sidebar 1.5s;
+    position: relative;
+}
+
+#s_two{
+    animation: sidebar 1.9s;
+    position: relative;
+}
+
+#s_three{
+    animation: sidebar 2.3s;
+    position: relative;
+}
+
+#s_four{
+    animation: sidebar 2.7s;
+    position: relative;
+}
+
+#s_five{
+    animation: sidebar 3.1s;
+    position: relative;
+}
+
+#s_six{
+    animation: sidebar 3.5s;
+    position: relative;
+}
+
 .sidebar-links a:hover {
-  /* text-decoration: underline; */
-  text-decoration-color: rgb(170, 50, 189);
-  text-decoration-thickness: 3px;
-  background-color: rgb(55, 11, 59);
+  background-color: rgb(55, 11, 59, 0.8);
   border-radius: 4px;
   padding: 3px;
+  
 }
 
 .main {
   grid-area: main;
-  background: linear-gradient(270deg, 
-  rgb(7, 0, 12) 0%, 
-  rgba(11,0,18,1) 33%, 
-  rgb(13, 0, 17) 100%);
-  border-top: 6px solid rgb(20, 7, 24);
-  border-left: 6px solid rgb(20, 7, 24);
+  background: linear-gradient(
+    270deg,
+    rgb(7, 0, 12) 0%,
+    rgba(11, 0, 18, 1) 50%,
+    rgb(13, 0, 17) 120%
+  );
+  border-top: 6px solid rgb(38, 0, 49);
+  border-left: 6px solid rgb(38, 0, 49);
   width: calc(100% + 10px);
   height: calc(100% + 10px);
   display: flex;
   flex-direction: column;
+}
+
+.cube {
+  height: 100%;
+  width: 100%;
 }
 
 footer {
@@ -171,22 +206,19 @@ footer {
 
   margin-left: -6px;
 
-  background: rgb(11,0,18);
-  background: linear-gradient(0deg, 
-  rgba(5,0,9,1) 0%, 
-  rgba(11,0,18,1) 90%, 
-  rgba(53,0,69,1) 100%, 
-  rgba(0,0,0,1) 100%);
-  border-left: 6px solid rgb(20, 7, 24);
+  background: rgb(11, 0, 18);
+  background: linear-gradient(
+    0deg,
+    rgba(5, 0, 9, 1) 0%,
+    rgba(11, 0, 18, 1) 90%,
+    rgba(53, 0, 69, 1) 100%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  border-left: 6px solid rgb(38, 0, 49);
 
   display: flex;
   justify-content: flex-end;
   align-items: center;
-}
-
-.cube{
-  height: 100%;
-  width: 100%;
 }
 
 footer a {
@@ -195,13 +227,61 @@ footer a {
   font-size: 12px;
 }
 
-footer p{
+footer p {
   color: white;
   padding-right: 30px;
   font-size: 12px;
 }
 
-#at-image{
+.contact{
+    display: flex;
+    align-items: center;
+}
+
+.contact:hover{
+    animation: mail 1s infinite forwards;
+    animation-play-state: running;
+}
+
+#at-image {
   width: 16px;
   margin-right: 5px;
+}
+
+@keyframes sidebar{
+    0% {left:-120px;
+        top: 0px;
+    }
+    100% {
+        left: 0px;
+        top: 0px;
+    }
+}
+
+@keyframes header{
+    0% {left: 0px;
+        top: -50px;
+    }
+    100% {
+        left: 0px;
+        top: 0px;
+    }
+}
+
+@keyframes mail{
+    0% {
+        transform: rotate(1deg);
+    }
+    25%{
+        transform: rotate(-2deg);
+    }
+    50%{
+        transform: rotate(2deg);
+    }
+    75%{
+        transform: rotate(-2deg);
+    }
+    100%{
+        transform: rotate(1deg);
+    }
 }
