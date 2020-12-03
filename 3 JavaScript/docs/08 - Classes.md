@@ -7,7 +7,7 @@ ES6 introduced a much easier way of writing classes. Below is an example compari
 
 ```javascript
 // using a class
-class ATM {
+class Atm {
     constructor(balance=0) {
       this.balance = balance;
     }
@@ -16,8 +16,8 @@ class ATM {
     }
 }
 
-let atm = new ATM(5.0);
-alert(atm.get_balance());
+let wellsFargo = new Atm();
+console.log(wellsFargo.get_balance());
 
 // using an object
 let atm = {
@@ -27,7 +27,7 @@ let atm = {
   }
 };
 
-alert(atm.get_balance())
+console.log(atm.get_balance())
 ```
 
 ## Inheritance
@@ -103,11 +103,9 @@ myDog.move(); // logs 'walk'
 myDog.bark(); // logs 'ruff'
 ```
 
-You've heard the expression "Functions in JavaScript are first-class objects (or “first-class citizens”)". First-class citizenship, within the world of programming, means that a given entity (such as a function) supports all the operational properties inherent to other entities; properties such as being able to be assigned to a variable, passed around as a function argument, returned from a function, etc. Basically, first-class citizenship simply means “being able to do what everyone else can do.” In JavaScript, functions are objects (hence the designation of first-class object). 
+Functions are objects. They inherit from the Object prototype and they can be assigned key: value pairs. These pairs are referred to as *properties* and can themselves be functions (i.e., *methods*).
 
-They inherit from the Object prototype and they can be assigned key: value pairs. These pairs are referred to as *properties* and can themselves be functions (i.e., *methods*). 
-
-We said above that functions are objects. The most important thing to remember: Classes are just normal JavaScript functions and could be completely replicated without using the class syntax. It is special syntactic sugar added in ES6 to make it easier to declare and inherit complex objects. Let's see an example:
+The most important thing to remember is that classes are just normal JavaScript functions and could be completely replicated without using the class syntax. It is special syntactic sugar added in ES6 to make it easier to declare and inherit complex objects. Let's see an example:
 
 ```javascript
 function createNewPerson(name) {
@@ -124,20 +122,6 @@ john.greeting();
 ```
 
 To simplify, the same can be written as the following:
-
-```javascript
-
-function Person(name) {
-  this.name = name;
-  this.greeting = function() {
-    alert('Hi! I\'m ' + this.name + '.');
-  };
-}
-
-let person1 = new Person('Bob');
-let person2 = new Person('Sarah');
-```
-
 
 ```javascript
 function Person(name) {
