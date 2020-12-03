@@ -2,7 +2,7 @@
 
 What is *this* in Javascript? This references the object that is executing the current function.
 
-If the function is part of an object, then it's a method. Therefore, *this* references the object itself
+If the function is part of an object, then the function is a method. Therefore, *this* (inside the function)references the object itself.
 
 If the function isn't part of an object, then *this* references the global object, which is the *window* object in browsers, and *global* in Node.
 
