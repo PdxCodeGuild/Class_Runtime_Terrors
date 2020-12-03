@@ -112,7 +112,7 @@ function createNewPerson(name) {
   const obj = {};
   obj.name = name;
   obj.greeting = function() {
-    alert('Hi! I\'m ' + obj.name + '.');
+    console.log('Hi! I\'m ' + obj.name + '.');
   };
   return obj;
 }
@@ -127,7 +127,7 @@ To simplify, the same can be written as the following:
 function Person(name) {
   this.name = name;
   this.greeting = function() {
-    alert('Hi! I\'m ' + this.name + '.');
+    console.log('Hi! I\'m ' + this.name + '.');
   };
 }
 
