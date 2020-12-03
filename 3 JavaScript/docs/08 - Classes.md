@@ -3,7 +3,7 @@
 
 ## Introductory Example
 
-ES6 introduced a much easier way of writing classes. Below is an example comparing the use of a class to that of an object. The object behaves similarly, except you'll have to re-write the entire structure every time you create an instance. Also, each instance will have its own copy of the `get_balance` function, resulting in greater memory overhead. 
+ES6 introduced a much easier way of writing classes. Below is an example comparing the use of a class to that of an object. The object behaves similarly, except you'll have to re-write the entire structure every time you create an instance. Also, each instance will have its own copy of the `getBalance` function, resulting in greater memory overhead. 
 
 ```javascript
 // using a class
@@ -11,7 +11,7 @@ class Atm {
     constructor(balance=0) {
       this.balance = balance;
     }
-    get_balance() {
+    getBalance() {
       return this.balance;
     }
 }
@@ -22,12 +22,12 @@ console.log(wellsFargo.get_balance());
 // using an object
 let atm = {
   balance: 5.0,
-  get_balance: function() {
+  getBalance: function() {
     return this.balance;
   }
 };
 
-console.log(atm.get_balance())
+console.log(atm.getBalance())
 ```
 
 ## Inheritance
@@ -103,7 +103,7 @@ myDog.move(); // logs 'walk'
 myDog.bark(); // logs 'ruff'
 ```
 
-Functions are objects. They inherit from the Object prototype and they can be assigned key: value pairs. These pairs are referred to as *properties* and can themselves be functions (i.e., *methods*).
+Functions and classes are objects. Functions inherit from the Object prototype and they can be assigned key: value pairs. These pairs are referred to as *properties* and can themselves be functions (i.e., *methods*).
 
 The most important thing to remember is that classes are just normal JavaScript functions and could be completely replicated without using the class syntax. It is special syntactic sugar added in ES6 to make it easier to declare and inherit complex objects. Let's see an example:
 
