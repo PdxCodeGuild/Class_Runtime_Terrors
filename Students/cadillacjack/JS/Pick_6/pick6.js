@@ -12,8 +12,8 @@ let winnings = 0
 let cost = 0
 let looper = 100000
 while(looper > 0){
-    for (var winNum=[],i=0;i<6;++i) winNum[i]=Math.ceil(Math.random()*99);
-    for (var myNum=[],i=0;i<6;++i) myNum[i]=Math.ceil(Math.random()*99);
+    for (let winNum=[],i=0;i<6;++i) winNum[i]=Math.ceil(Math.random()*99);
+    for (let myNum=[],i=0;i<6;++i) myNum[i]=Math.ceil(Math.random()*99);
     
     function winCheck(){
         let i = 0
