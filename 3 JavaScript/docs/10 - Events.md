@@ -1,7 +1,39 @@
 
 # Events
 
-Event handlers let you execute JavaScript when certain events occur. You can read more about events on the [MDN](https://developer.mozilla.org/en-US/docs/Web/Events).
+An event can be something the browser does, or something a user does. Event handlers can be used to handle, and verify, user input, user actions, and browser actions: 
+
+- Things that should be done every time a page loads
+- Things that should be done when the page is closed
+- Action that should be performed when a user clicks a button
+- Content that should be verified when a user inputs data
+- And more ...
+
+You can read more about events on the [MDN](https://developer.mozilla.org/en-US/docs/Web/Events).
+
+
+## Event Target
+
+The target property of the Event interface is a reference to the object onto which the event was dispatched. The *event.target* property can be used in order to implement event delegation.
+
+```html
+<body>
+    <ul id= 'my-list'>
+        <li>rain</li>
+        <li>snow</li>
+        <li>sun</li>
+    </ul>
+<script>
+    function hide(event) {
+        event.target.style.visibility = 'hidden';
+        console.log(event.target, event.target.tagName)
+    }
+    let list = document.querySelector('#my-list');
+    list.addEventListener('click', hide);
+</script>
+</body>
+
+```
 
 ## Defining Events
 
@@ -34,7 +66,11 @@ A third way is to use **listeners**. You can have multiple listeners for a singl
     });
 </script>
 ```
+## The Event
 
+An HTML event can be something the browser does, or something a user does.
+
+The target property returns the element that triggered the event, and not necessarily the eventlistener's element.
 
 ## Event Propagation
 
@@ -105,7 +141,6 @@ The `input` and `change` events can be used with `input` elements to detect when
 
 ```
 
-
 ### Keyboard Events
 
 You can view a list of keycodes on [css-tricks.com](https://css-tricks.com/snippets/javascript/javascript-keycodes/).
@@ -124,7 +159,6 @@ You can view a list of keycodes on [css-tricks.com](https://css-tricks.com/snipp
     }
 </script>
 ```
-
 
 ### Mouse Events
 
@@ -153,7 +187,6 @@ cnv.onclick = function(event) {
 }
 </script>
 ```
-
 
 ### Handling Dragging
 
