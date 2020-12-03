@@ -1,9 +1,9 @@
 /*
 ************************************************
-Filename: lab01_3_unit_converter.js
+Filename: lab01_4_unit_converter.js
 Course: Full Stack Developer Evening Bootcamps
 Author: Peter Chow, Student
-Assignment: Lab 1: Unit converter in JavaScript - Version 3
+Assignment: Lab 1: Unit converter in JavaScript - Version 4
 Date: 12/01/2020
 Version 1.0
 ************************************************
