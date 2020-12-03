@@ -1,4 +1,6 @@
 ## Promises
+//
+https://medium.com/@hassanahmedkhan/a-beginners-guide-to-promise-api-in-javascript-c8a2fe365cdc
 
 A Promise is an object representing the eventual completion or failure of an asynchronous operation. What does asynchronous mean?
 
@@ -42,6 +44,27 @@ promise
     })
 ```
 *then()* takes two arguments, a callback for a success case, and another for the failure case. Both are optional, so you can add a callback for the success or failure case only.
+
+The code below is a good example of how promises allow asynchronous code to run
+
+```javascript
+console.log('Hello Promise');
+let p = new Promise((resolve, reject)=> {
+ console.log('Promise started working');
+ console.log('Promise is doing some important work…');
+ console.log('Promise has completed, about to resolve');
+ resolve('Promise resolved');
+});
+p.then((message) => { console.log('Resolved!!!')} );
+console.log('Normal work flow');
+let count = 0
+for (let i = 0; i < 10000; i++) {
+ count += 1;
+}
+console.log('Count: ', count);
+setTimeout(() => {console.log('Timed out');}, 0);
+console.log('Goodbye dear Promise');
+```
 
 Let's take a closer look to a real API call with Promises using an XMLHttpRequest:
 
