@@ -68,7 +68,7 @@ let wpick6 = pick66();
 for (let i = 0; i < 100000; i++) 
     {
     startmoney = startmoney + 2;
-    lpick6 = pick66();
+    let lpick6 = pick66();
     let match = (num_matches(wpick6,lpick6));
     winmoney = winmoney + winning(match)
     }
@@ -77,9 +77,7 @@ let roi = ((winmoney - startmoney)/startmoney)*100
 roi = roi.toFixed(5);
 
 console.log("You just bought 100,000 Tickets at 2 bucks each!")  
-
 console.log("You spent: "+startmoney);
 console.log("You won: "+winmoney);
-
 console.log("For a ROI of : "+roi+"%");
 
