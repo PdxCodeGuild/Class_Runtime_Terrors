@@ -45,7 +45,7 @@ promise
 ```
 *then()* takes two arguments, a callback for a success case, and another for the failure case. Both are optional, so you can add a callback for the success or failure case only.
 
-The code below is a good example of how promises allow asynchronous code to run
+The code below is a good example of how promises allow asynchronous code to run:
 
 ```javascript
 console.log('Hello Promise');
