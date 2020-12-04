@@ -198,6 +198,45 @@ body {
 .cube {
   height: 100%;
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card{
+  width: 400px;
+  height: 520px;
+  position: relative;
+  margin: auto;
+  transition: transform .8s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  transform-origin: center right;
+}
+
+.card__face {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  backface-visibility: hidden;
+  color: white;
+  text-align: center;
+  font-size: 40px;
+  line-height: 220px;
+  border-radius: 5px;
+}
+
+.card__face--front{
+  background: red;
+}
+
+.card__face--back{
+  background: blue;
+  transform: rotateY(180deg);
+}
+
+.card.is-flipped{
+  transform: translateX(-100%) rotateY(-180deg);
 }
 
 footer {
@@ -238,14 +277,19 @@ footer p {
     align-items: center;
 }
 
-.contact:hover{
-    animation: mail 1s infinite forwards;
-    animation-play-state: running;
-}
+/* #at-image:hover{
+  animation: mail 1s infinite forwards;
+  animation-play-state: running;
+} */
 
-#at-image {
+.at_image {
   width: 16px;
   margin-right: 5px;
+}
+
+.contact:hover .at_image{
+    animation: mail 1s infinite forwards;
+    animation-play-state: running;
 }
 
 @keyframes sidebar{
@@ -270,18 +314,18 @@ footer p {
 
 @keyframes mail{
     0% {
-        transform: rotate(1deg);
+        transform: rotate(3deg);
     }
     25%{
-        transform: rotate(-2deg);
+        transform: rotate(-6deg);
     }
     50%{
-        transform: rotate(2deg);
+        transform: rotate(6deg);
     }
     75%{
-        transform: rotate(-2deg);
+        transform: rotate(-6deg);
     }
     100%{
-        transform: rotate(1deg);
+        transform: rotate(3deg);
     }
 }
