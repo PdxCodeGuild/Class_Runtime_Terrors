@@ -31,3 +31,7 @@
 [11-17-2020 - Passcode: b^q22W^m](https://zoom.us/rec/share/JGItwXU2lqgp4SQUC8ormnfRFBgWOxTLMol-duRz19CIHzORz4xcLSmcwDNWiC2R.y9Nt3YlQfdHfNKRt )
 
 [11-19-2020 - Passcode: ur5M#D+1](https://zoom.us/rec/share/cDa59xl3R0DVQFs6r-kiaCgJxNuFEMnjyvCfJwfjg0oUDFSAN43ldVqQUYfBelW3.g5SWiDXYpaez3wLe)
+
+[12-02-2020 - Classes in Javascript Passcode: *dF&E!d5](https://zoom.us/rec/share/Yx5aT1podscLkQUwCCaPgZV3PYePw-XUbqNHYhVUjeGTAtHMbLzublptIalFxYaG.bHhzJ7IBNtArhhqP )
+
+

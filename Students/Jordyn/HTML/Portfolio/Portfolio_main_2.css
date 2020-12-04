@@ -1,0 +1,287 @@
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+body {
+  background: rgba(5, 0, 9, 1);
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  grid-template-rows: 80px 1fr;
+  grid-template-areas:
+    ". header"
+    "sidebar main";
+  height: calc(100vh - 8px);
+  width: calc(100% + 8px);
+  margin-left: -10px;
+  margin-top: -10px;
+}
+
+.header {
+  grid-area: header;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  width: calc(100% + 10px);
+
+  background: linear-gradient(
+    90deg,
+    rgba(5, 0, 9, 1) 0%,
+    rgba(5, 0, 10, 1) 40%,
+    rgb(16, 0, 19) 100%
+  );
+}
+
+.header a {
+  padding: 3px;
+
+  animation: header 2.5s;
+  position: relative;
+}
+
+.header a:hover {
+  background-color: rgb(57, 13, 61);
+  border-radius: 4px;
+  padding: 3px;
+}
+
+.home-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 150px;
+  align-items: center;
+}
+
+#home {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  flex-wrap: nowrap;
+}
+
+.header-line {
+  height: 55px;
+  width: 4px;
+  background-color: rgb(31, 14, 36);
+  border-radius: 2px;
+}
+
+.right-header {
+  display: flex;
+  flex-direction: row;
+  width: max-content;
+  height: max-content;
+  justify-content: center;
+  align-items: center;
+  padding-right: 30px;
+}
+
+#exp {
+  margin: 0px 30px;
+}
+
+@media screen and (max-width: 700px) {
+  .right-header {
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+    height: max-content;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    justify-content: center;
+    align-items: center;
+  }
+  #exp {
+    padding: 5px;
+  }
+}
+
+.sidebar {
+  grid-area: sidebar;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  color: white;
+
+  background: rgba(5, 0, 9, 1);
+}
+
+.sidebar-header {
+  padding-top: 15px;
+  padding-bottom: 10px;
+}
+
+.sidebar-line {
+  padding: 2px 65px;
+  background-color: rgb(31, 14, 36);
+  margin-bottom: 30px;
+  border-radius: 2px;
+}
+
+.sidebar-links {
+  display: flex;
+  height: 70%;
+  width: 100%;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+}
+
+.sidebar-links a {
+  padding: 3px;
+}
+
+#s_one{
+    animation: sidebar 1.5s;
+    position: relative;
+}
+
+#s_two{
+    animation: sidebar 1.9s;
+    position: relative;
+}
+
+#s_three{
+    animation: sidebar 2.3s;
+    position: relative;
+}
+
+#s_four{
+    animation: sidebar 2.7s;
+    position: relative;
+}
+
+#s_five{
+    animation: sidebar 3.1s;
+    position: relative;
+}
+
+#s_six{
+    animation: sidebar 3.5s;
+    position: relative;
+}
+
+.sidebar-links a:hover {
+  background-color: rgb(55, 11, 59, 0.8);
+  border-radius: 4px;
+  padding: 3px;
+  
+}
+
+.main {
+  grid-area: main;
+  background: linear-gradient(
+    270deg,
+    rgb(7, 0, 12) 0%,
+    rgba(11, 0, 18, 1) 50%,
+    rgb(13, 0, 17) 120%
+  );
+  border-top: 6px solid rgb(38, 0, 49);
+  border-left: 6px solid rgb(38, 0, 49);
+  width: calc(100% + 10px);
+  height: calc(100% + 10px);
+  display: flex;
+  flex-direction: column;
+}
+
+.cube {
+  height: 100%;
+  width: 100%;
+}
+
+footer {
+  height: 60px;
+  width: calc(100% + 6px);
+
+  margin-left: -6px;
+
+  background: rgb(11, 0, 18);
+  background: linear-gradient(
+    0deg,
+    rgba(5, 0, 9, 1) 0%,
+    rgba(11, 0, 18, 1) 90%,
+    rgba(53, 0, 69, 1) 100%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  border-left: 6px solid rgb(38, 0, 49);
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+footer a {
+  color: white;
+  padding-right: 30px;
+  font-size: 12px;
+}
+
+footer p {
+  color: white;
+  padding-right: 30px;
+  font-size: 12px;
+}
+
+.contact{
+    display: flex;
+    align-items: center;
+}
+
+.contact:hover{
+    animation: mail 1s infinite forwards;
+    animation-play-state: running;
+}
+
+#at-image {
+  width: 16px;
+  margin-right: 5px;
+}
+
+@keyframes sidebar{
+    0% {left:-120px;
+        top: 0px;
+    }
+    100% {
+        left: 0px;
+        top: 0px;
+    }
+}
+
+@keyframes header{
+    0% {left: 0px;
+        top: -50px;
+    }
+    100% {
+        left: 0px;
+        top: 0px;
+    }
+}
+
+@keyframes mail{
+    0% {
+        transform: rotate(1deg);
+    }
+    25%{
+        transform: rotate(-2deg);
+    }
+    50%{
+        transform: rotate(2deg);
+    }
+    75%{
+        transform: rotate(-2deg);
+    }
+    100%{
+        transform: rotate(1deg);
+    }
+}

@@ -1,6 +1,6 @@
 /*
 ************************************************
-Filename: lab01_1_unit_converter.js
+Filename: lab01_2_unit_converter.js
 Course: Full Stack Developer Evening Bootcamps
 Author: Peter Chow, Student
 Assignment: Lab 1: Unit converter in JavaScript - Version 2
