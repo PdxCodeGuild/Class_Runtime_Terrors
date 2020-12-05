@@ -12,7 +12,7 @@ console.log(2)
 console.log(3)
 ```
 
-This below is am example of asynchronous code that is possible thanks to the *event loop*
+This below is an example of asynchronous code that is possible thanks to the *event loop*
 
 ```javascript
 console.log(1)
@@ -22,7 +22,7 @@ setTimeout(() => {
 console.log(3)
 ///returns 1, 3, hey!
 ```
-Imagine that setTimeout is an API call that takes a long time to run, and 'console.log(3)' is the ability to scroll down a web page. Because of the *event loop* and asynchronous code, we can perform other operations while lenghty code is being executed.
+Imagine that setTimeout is an API call that takes a long time to run, and 'console.log(3)' represents the ability to scroll down a web page. Because of the *event loop* and asynchronous code, we can perform other operations while lenghty code is being executed.
 
 setTimeout is momentarily queued in a separate stack called *task queue*, that's why other code runs before it. The same happens with API calls, or other asynchronous code. It gets momentarily taken away from the stack into a separate queue, and brought back when ready by the *event loop*.
 
@@ -33,7 +33,9 @@ The event loop handles this with the concepts of a *stack* and a *queue*. Take a
 
 ## Call Stack
 
-Think about one line of bricks stacked vertically. A bit like Jenga the game. Every time a function gets executed in JavaScript, a brick (the function itself) gets added to the Stack. After its execution, it is removed from the stack. Slow code can be temporarily queued in a secondary queue (*task queue*). How does it end there? Thanks to a callback function. The queued code can be brought back to the call stack for its final execution by the event loop.
+You should imagine the call stack like one line of bricks stacked vertically. Bricks repesent code or functions. Every time a function gets executed in JavaScript, a brick gets added to the Stack. After its execution, it is removed from the stack. Slow code can be temporarily queued in a secondary queue (*task queue*). 
+
+How does slow code end up in a separate queue? Thanks to a callback function. Then, the queued code can be brought back to the call stack for its final execution by the event loop.
 
 ## Queue (task queue)
 
