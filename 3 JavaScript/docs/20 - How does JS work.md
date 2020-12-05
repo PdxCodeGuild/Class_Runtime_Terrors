@@ -22,7 +22,7 @@ setTimeout(() => {
 console.log(3)
 ///returns 1, 3, hey!
 ```
-Imagine that setTimeout is an API call that takes a long time to run, and 'console.log(3)' represents the ability to scroll down a web page. Because of the *event loop* and asynchronous code, we can perform other operations while lenghty code is being executed.
+Imagine that setTimeout is an API call that takes a long time to run, and `console.log(3)` represents the ability to scroll down a web page. Because of the *event loop* and asynchronous code, we can perform other operations while lenghty code is being executed.
 
 setTimeout is momentarily queued in a separate stack called *task queue*, that's why other code runs before it. The same happens with API calls, or other asynchronous code. It gets momentarily taken away from the stack into a separate queue, and brought back when ready by the *event loop*.
 
