@@ -2,7 +2,7 @@
 
 You can also view a short video about this lecture [here](https://www.youtube.com/watch?v=8aGhZQkoFbQ)
 
-Javascript is capable of asynchronous operations through the single thread of execution. This means that an event such as an API call can be performed while other events can still computed such as a user scrolling or entering data.
+Javascript is a single threaded language, however it is capable of asynchronous operations. This means that an event such as an API call can be performed while other events can still computed such as a user scrolling or entering data.
 
 Just to make some clear examples, this is synchornous code running:
 
