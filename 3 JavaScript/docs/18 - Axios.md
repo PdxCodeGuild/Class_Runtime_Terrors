@@ -1,6 +1,6 @@
 ## Axios
 
-Axios is a popular, promise-based HTTP client that sports an easy-to-use API and can be used in both the browser and Node. js. Making HTTP requests to fetch or save data is one of the most common tasks a client-side JavaScript application will need to do. Axios is recommended over _fetch_ for its wider browser support.
+Axios is a popular, promise-based HTTP client that sports an easy-to-use API and can be used in both the browser and Node. js. Making HTTP requests to fetch or save data is one of the most common tasks a client-side JavaScript application will need to do. Axios is recommended over *fetch* for its wider browser support.
 
 [Axios official documentation](https://github.com/axios/axios/blob/master/README.md)
 
