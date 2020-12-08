@@ -19,32 +19,48 @@ let sm = small.split('');
 // let otr = other.split()
 
 let strIn = stringInput.split('');
-
+let answer
+let answerArray = []
 let outArray = []
 function innumerate(character){
    
     for (letter in sm){
        
         if (sm[letter] === character){
-            
+            // console.log(letter);
             outArray.push(letter);
+
+            let n = parseInt(letter);
+            // console.log(n)
+            n += rotInput;
+            // console.log(n)
+            answerArray.push(sm[n]); 
+            answer = answerArray.join();
+
         }
     }
-    for (letter in outArray){
-        letter = letter + rotInput
-    }
+    // for (i=0;i<outArray.length;i++){
+        
+
+    //     let n = parseInt(outArray[i]);
+    //     console.log(n)
+    //     n += rotInput;
+    //     console.log(n)
+    //     answerArray.push(sm[n]);
+    // }
+    // console.log(outArray,answerArray);
 }
 strIn.forEach(innumerate);
 
-let answerArray = []
-function codedArray(character){
-    // let answerArray = []
-    for (letter in sm){
-        if (letter === character){
-            answerArray.push(letter);
-        }
-    }
-}
+// let answerArray = []
+// function codedArray(character){
+//     // let answerArray = []
+//     for (letter in sm){
+//         if (letter === character){
+//             answerArray.push(letter);
+//         }
+//     }
+// }
 // function innumerate(character){
 //     let outArray = [];
 //     let letter = strIn.indexOf(character);
@@ -59,7 +75,11 @@ function codedArray(character){
 //    else if(letter in other === character){
 //     outArray.push(index of letter);
 //    }
+innumerate()
+console.log(answerArray)
 console.log(outArray)
+console.log(`Your answer is: ${answer}`)
+
 
 
 // function addRot()
