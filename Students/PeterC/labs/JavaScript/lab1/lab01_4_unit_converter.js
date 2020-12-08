@@ -65,5 +65,3 @@ else if (userInputUnitsIn == "km" && userInputUnitsOut == "m") {
 else if (userInputUnitsIn == "km" && userInputUnitsOut == "km") {
     console.log(`You entered: ${userInputDist} for distance, your Input units is in "${userInputUnitsIn}" and your Output unit is ${(userInputDist)} in "${userInputUnitsOut}".`)
 }
-
-
