@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="cf6d02ca-dd92-4c76-9fe3-710379f9c44c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/lab01.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rot13/text.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/.npmignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/.travis.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/Gruntfile.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/bower.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/component.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/karma-ci.conf.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/locales.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/locales/bg.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/locales/chs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/locales/cs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/locales/da-dk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/locales/de-ch.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/locales/de.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/locales/en-au.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/locales/en-gb.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/locales/en-za.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/locales/es-es.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/locales/es.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/locales/et.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/locales/fi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/locales/fr-ca.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/locales/fr-ch.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/locales/fr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/locales/hu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/locales/it.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/locales/ja.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/locales/lv.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/locales/nl-be.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/locales/nl-nl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/locales/no.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/locales/pl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/locales/pt-br.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/locales/pt-pt.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/locales/ru-ua.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/locales/ru.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/locales/sk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/locales/sl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/locales/th.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/locales/tr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/locales/uk-ua.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/locales/vi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/min/locales.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/min/locales/be-nl.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/min/locales/bg.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/min/locales/chs.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/min/locales/cs.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/min/locales/da-dk.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/min/locales/de-ch.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/min/locales/de.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/min/locales/en-au.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/min/locales/en-gb.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/min/locales/en-za.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/min/locales/es-es.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/min/locales/es.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/min/locales/et.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/min/locales/fi.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/min/locales/fr-ca.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/min/locales/fr-ch.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/min/locales/fr.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/min/locales/hu.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/min/locales/it.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/min/locales/ja.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/min/locales/lv.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/min/locales/nl-be.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/min/locales/nl-nl.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/min/locales/no.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/min/locales/pl.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/min/locales/pt-br.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/min/locales/pt-pt.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/min/locales/ru-ua.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/min/locales/ru.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/min/locales/sk.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/min/locales/sl.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/min/locales/th.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/min/locales/tr.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/min/locales/uk-ua.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/min/locales/vi.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/min/numeral.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/numeral.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/src/formats/bps.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/src/formats/bytes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/src/formats/currency.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/src/formats/exponential.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/src/formats/ordinal.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/src/formats/percentage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/src/formats/time.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/src/locales/bg.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/src/locales/chs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/src/locales/cs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/src/locales/da-dk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/src/locales/de-ch.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/src/locales/de.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/src/locales/en-au.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/src/locales/en-gb.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/src/locales/en-za.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/src/locales/es-es.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/src/locales/es.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/src/locales/et.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/src/locales/fi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/src/locales/fr-ca.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/src/locales/fr-ch.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/src/locales/fr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/src/locales/hu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/src/locales/it.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/src/locales/ja.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/src/locales/lv.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/src/locales/nl-be.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/src/locales/nl-nl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/src/locales/no.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/src/locales/pl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/src/locales/pt-br.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/src/locales/pt-pt.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/src/locales/ru-ua.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/src/locales/ru.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/src/locales/sk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/src/locales/sl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/src/locales/th.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/src/locales/tr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/src/locales/uk-ua.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/src/locales/vi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/src/numeral.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/templates/anon.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/templates/types.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/tests/formats/bps.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/tests/formats/bytes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/tests/formats/currency.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/tests/formats/exponential.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/tests/formats/ordinal.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/tests/formats/percentage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/tests/formats/time.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/tests/locales/bg.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/tests/locales/chs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/tests/locales/cs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/tests/locales/da-dk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/tests/locales/de-ch.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/tests/locales/de.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/tests/locales/en-au.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/tests/locales/en-gb.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/tests/locales/en-za.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/tests/locales/es-es.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/tests/locales/es.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/tests/locales/et.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/tests/locales/fi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/tests/locales/fr-ca.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/tests/locales/fr-ch.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/tests/locales/fr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/tests/locales/hu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/tests/locales/it.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/tests/locales/ja.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/tests/locales/lv.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/tests/locales/nl-be.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/tests/locales/nl-nl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/tests/locales/no.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/tests/locales/pl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/tests/locales/pt-br.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/tests/locales/pt-pt.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/tests/locales/ru-ua.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/tests/locales/ru.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/tests/locales/sk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/tests/locales/sl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/tests/locales/th.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/tests/locales/tr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/tests/locales/uk-ua.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/tests/locales/vi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/numeral/tests/numeral.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pick6/pick6.js" beforeDir="false" afterPath="$PROJECT_DIR$/Pick6/pick6.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rot13/rot13.js" beforeDir="false" afterPath="$PROJECT_DIR$/Rot13/rot13.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/unitconvert.js" beforeDir="false" afterPath="$PROJECT_DIR$/unitConverter/unitConverter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="ProjectId" id="1l7cZQjrTmqNChFV2HmfpLBNhsv" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RunManager" selected="Node.js.unitConverter.js">
+    <configuration name="pick6.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/Pick6/pick6.js" working-dir="$PROJECT_DIR$/Pick6">
+      <method v="2" />
+    </configuration>
+    <configuration name="rot13.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/Rot13/rot13.js" working-dir="$PROJECT_DIR$/Rot13">
+      <method v="2" />
+    </configuration>
+    <configuration name="unitConverter.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/unitConverter/unitConverter.js" working-dir="$PROJECT_DIR$/unitConverter">
+      <method v="2" />
+    </configuration>
+    <configuration name="unitconvert.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/node_modules/unitconvert.js" working-dir="$PROJECT_DIR$/node_modules">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.unitConverter.js" />
+        <item itemvalue="Node.js.rot13.js" />
+        <item itemvalue="Node.js.pick6.js" />
+        <item itemvalue="Node.js.unitconvert.js" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cf6d02ca-dd92-4c76-9fe3-710379f9c44c" name="Default Changelist" comment="" />
+      <created>1606951624463</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1606951624463</updated>
+      <workItem from="1606951625533" duration="6598000" />
+      <workItem from="1607138894345" duration="735000" />
+      <workItem from="1607300795538" duration="632000" />
+      <workItem from="1607370068815" duration="135000" />
+      <workItem from="1607376079222" duration="17470000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1607370178888">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1607370178888" />
+    <state width="958" height="286" key="GridCell.Tab.0.bottom" timestamp="1607400381908">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="958" height="286" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1607400381908" />
+    <state width="958" height="286" key="GridCell.Tab.0.center" timestamp="1607400381907">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="958" height="286" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1607400381907" />
+    <state width="958" height="286" key="GridCell.Tab.0.left" timestamp="1607400381907">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="958" height="286" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1607400381907" />
+    <state width="958" height="286" key="GridCell.Tab.0.right" timestamp="1607400381907">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="958" height="286" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1607400381907" />
+    <state width="958" height="347" key="GridCell.Tab.1.bottom" timestamp="1607396055798">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="958" height="347" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1607396055798" />
+    <state width="958" height="347" key="GridCell.Tab.1.center" timestamp="1607396055798">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="958" height="347" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1607396055798" />
+    <state width="958" height="347" key="GridCell.Tab.1.left" timestamp="1607396055798">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="958" height="347" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1607396055798" />
+    <state width="958" height="347" key="GridCell.Tab.1.right" timestamp="1607396055798">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="958" height="347" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1607396055798" />
+    <state width="958" height="347" key="GridCell.Tab.2.bottom" timestamp="1607396055798">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="958" height="347" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1607396055798" />
+    <state width="958" height="347" key="GridCell.Tab.2.center" timestamp="1607396055798">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="958" height="347" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1607396055798" />
+    <state width="958" height="347" key="GridCell.Tab.2.left" timestamp="1607396055798">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="958" height="347" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1607396055798" />
+    <state width="958" height="347" key="GridCell.Tab.2.right" timestamp="1607396055798">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="958" height="347" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1607396055798" />
+    <state width="958" height="347" key="GridCell.Tab.3.bottom" timestamp="1607396055798">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="958" height="347" key="GridCell.Tab.3.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1607396055798" />
+    <state width="958" height="347" key="GridCell.Tab.3.center" timestamp="1607396055798">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="958" height="347" key="GridCell.Tab.3.center/0.0.1920.1040@0.0.1920.1040" timestamp="1607396055798" />
+    <state width="958" height="347" key="GridCell.Tab.3.left" timestamp="1607396055798">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="958" height="347" key="GridCell.Tab.3.left/0.0.1920.1040@0.0.1920.1040" timestamp="1607396055798" />
+    <state width="958" height="347" key="GridCell.Tab.3.right" timestamp="1607396055798">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="958" height="347" key="GridCell.Tab.3.right/0.0.1920.1040@0.0.1920.1040" timestamp="1607396055798" />
+    <state x="1032" y="252" key="Vcs.Push.Dialog.v2" timestamp="1607401083853">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1032" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1607401083853" />
+  </component>
+</project>
