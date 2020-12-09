@@ -1,0 +1,47 @@
+body{
+    padding: 25vw;
+    padding-top: 10vh;
+    
+}
+
+.header h3{
+    text-align: center;
+
+}
+
+.header{
+    padding: 15px;
+    border: solid 1px black;
+}
+
+.input-content {
+     display: flex;
+     justify-content: center;
+ }
+
+ li{
+     display: flex;
+     justify-content: space-between;
+ }
+
+ ul li {
+    padding: 10px 8px 10px 20px;
+    list-style-type: none;
+    background: #eee;
+    font-size: 18px;
+
+ }
+
+ ul li.checked {
+    background: #888;
+    color: #fff;
+    text-decoration: line-through;
+  }
+
+  ul li.unchecked {
+    background: #eee;
+    text-decoration: none;
+  }
+li > button{
+    
+}
