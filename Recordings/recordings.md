@@ -34,4 +34,6 @@
 
 [12-02-2020 - Classes in Javascript Passcode: *dF&E!d5](https://zoom.us/rec/share/Yx5aT1podscLkQUwCCaPgZV3PYePw-XUbqNHYhVUjeGTAtHMbLzublptIalFxYaG.bHhzJ7IBNtArhhqP )
 
+[12-02-2020 - DOM Passcode: 9.TqJ!1b](https://zoom.us/rec/share/8o4lGJAeZT8zNBPKuYmx-UwsxSKZbPTUN32fduxYssT6U3BP1bObMrY83IFny8rh.DwUSqIctKzulMzXs )
+
 
