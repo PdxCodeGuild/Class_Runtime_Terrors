@@ -1,0 +1,10 @@
+body{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+}
+#clock{
+  text-align: center;
+  margin-top: 15rem;
+  position: relative;
+}
