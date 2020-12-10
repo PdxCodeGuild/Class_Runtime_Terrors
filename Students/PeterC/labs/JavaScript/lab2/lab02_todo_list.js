@@ -34,5 +34,3 @@ fin.addEventListener('click', function () {
         }
     }
 })
-
-
