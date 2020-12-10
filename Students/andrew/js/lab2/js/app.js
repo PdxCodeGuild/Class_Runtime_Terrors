@@ -58,18 +58,6 @@ function complete(){
   
   
 
- /*
-  var button = document.getElementsByTagName("button");
-    	for(var i = 0; i<button.length;i++){
-button[i].addEventListener('click', function() {
-    				if(this.parentElement.style.textDecoration == 'line-through'){
-    					this.parentElement.style.textDecoration = 'none';
-    				} else {
-              this.parentElement.style.textDecoration = "line-through";
-
- 
-  */
-
   
   
   
