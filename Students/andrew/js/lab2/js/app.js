@@ -6,36 +6,49 @@ function addItem(){
   }
   
   function addTodo(){
-     let ul = document.getElementById("ul-content")
      let li = document.createElement("li");
-     let btn = document.createElement('button');
+     let dv = document.createElement("div");
+     let clearBtn = document.createElement('button');
+     let completeBtn = document.createElement('button');
      let todo = document.getElementById("inputfield").value;
      let text = document.createTextNode(todo);
-     btn.innerText = "clear";
-     li.appendChild(text);
-     li.appendChild(btn);
-     btn.setAttribute('onclick', 'clearItem()');
+
+     clearBtn.innerText = "clear";
+     completeBtn.innerText = "complete";
+     dv.innerText = todo;
+     li.appendChild(dv);
+     li.appendChild(clearBtn);
+     li.appendChild(completeBtn);
+
+     //completeBtn.setAttribute('onclick', 'parentElement.style.text-decoration = "line-through"');
+     completeBtn.addEventListener('click', function(){
+     dv.style.setProperty("text-decoration", "line-through");
+      })
+
+
+     clearBtn.setAttribute('onclick', 'parentElement.style.display = "none"');
+     
+
      if(todo === ''){
         alert('Please add text.')
      }
      else{
-        document.getElementById("ul-content").appendChild(li).setAttribute('class', 'clear-btn');
-        document.getElementById("li").appendChild(btn);
+        document.getElementById("ul-content").appendChild(li).setAttribute('class', 'btn');
+        
+        
     }
     
   }
 
+function complete(){
+  let btn = document.getElementsByClassName('btn');
+  console.log(btn.parentElement);
+}
 
-  function clearItem(){
-     
-  }
   
   function clearList(){
     let ul = document.getElementById("ul-content");
-    let li = document.createElement('li');
     let i;
-    console.log(ul.children.length);
-  
     for ( i = ul.children.length; i > 0; i--){
       ul.innerHTML = "";
     }
@@ -43,25 +56,19 @@ function addItem(){
   }
   
   
-  function complete(){
-        let list = document.querySelector('ul');
-        list.addEventListener('click', function(ev) {
-         if (ev.target.tagName === 'LI') {
-           ev.target.classList.toggle('checked');
-           let sp = document.createElement('span');
-           sp.innerText = "Completed";
-           ev.target.appendChild(sp);
-           isComplete = true;  
-         }
-       }, false);
-      
-  }
-
- 
   
 
+ /*
+  var button = document.getElementsByTagName("button");
+    	for(var i = 0; i<button.length;i++){
+button[i].addEventListener('click', function() {
+    				if(this.parentElement.style.textDecoration == 'line-through'){
+    					this.parentElement.style.textDecoration = 'none';
+    				} else {
+              this.parentElement.style.textDecoration = "line-through";
+
  
-  
+  */
 
   
   

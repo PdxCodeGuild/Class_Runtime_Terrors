@@ -21,7 +21,7 @@ body{
 
  li{
      display: flex;
-     justify-content: space-between;
+     justify-content: space-around;
  }
 
  ul li {
@@ -32,16 +32,9 @@ body{
 
  }
 
- ul li.checked {
-    background: #888;
-    color: #fff;
-    text-decoration: line-through;
-  }
+
 
   ul li.unchecked {
     background: #eee;
     text-decoration: none;
   }
-li > button{
-    
-}
