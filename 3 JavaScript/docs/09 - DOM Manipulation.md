@@ -94,9 +94,17 @@ Similarly, you can also access the values of input fields. You can read more abo
 
 ```html
 <input id="user_input" type="text"/>
+<button id='trigger'>click me</button>
+<div id = 'output'> </div>
 <script>
     let text_field = document.getElementById('user_input');
-    let user_input = text_field.value;
+    let output = document.getElementById('output');
+    let trigger = document.getElementById('trigger')
+    
+    trigger.addEventListener('click', function(){
+        console.log(text_field.value)
+        output.innerHTML  = text_field.value
+    })
 </script>
 ```
 
@@ -129,6 +137,25 @@ We can also create elements from scratch.
 </script>
 ```
 
+## Find Children
 
+```html
+<ul>
+  <li>rain</li>
+  <li>sun</li>
+  <li>snow</li>
+</ul>
 
+<script>
 
+//two identical ways to find children starting from the parent. This is an example of document traversal
+
+let ul = document.getElementsByTagName('ul');
+//because it returns an array, we have to select the index first.
+console.log(ul[0].children)
+
+children = document.querySelectorAll('ul li');
+console.log(children)
+</script>
+
+```
