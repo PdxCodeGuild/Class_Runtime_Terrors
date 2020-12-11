@@ -212,6 +212,7 @@ body {
   transform-style: preserve-3d;
   cursor: pointer;
   transform-origin: center right;
+  user-select: none;
 }
 
 .card__face {
