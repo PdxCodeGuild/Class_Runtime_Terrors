@@ -4,17 +4,45 @@
 [jQuery](https://jquery.com/) is a JavaScript library that can make general DOM manipulation easier, enables some operations that are difficult in 'Vanilla' JS, and standardizes cross-browser compatibility. It's still very popular (and thus worth familiarizing yourself with), but it was more useful in the past. JavaScript got better, and front-end frameworks like Angular, React, and Vue emerged. You shouldn't build complex pages using jQuery because they quickly become unmanageable, but it's still very common and useful for simpler pages. You can learn more about jQuery [here](https://learn.jquery.com/) and [here](https://www.w3schools.com/jquery/default.asp). There's also [jQuery Mobile](http://jquerymobile.com/) and [jQuery UI](https://jqueryui.com/). There's also an [anti-jQuery blog](https://blog.garstasio.com/you-dont-need-jquery/).
 
 
-You can include jQuery by adding a script tag to a cdn in your head, you can find links [here](http://code.jquery.com/). The 'minified' code has newlines and spaces removed so it's smaller and faster to parse. The 'slim' version has some features (e.g. ajax and animations) removed so it's more lightweight. 
+You can include jQuery by adding a script tag to a cdn in the HTML head, you can find links [here](http://code.jquery.com/). The 'minified' code has newlines and spaces removed so it's smaller and faster to parse. The 'slim' version has some features (e.g. ajax and animations) removed so it's more lightweight. 
 
 ## Wrappers
 
 jQuery uses special 'wrappers' around elements in order to add additional functionality.
 
+```html
+<body>
+  <div id='mydiv'>
+
+  </div>
+</body>
+
+```
+
 ```javascript
-let mydiv = document.getElementById('mydiv'); // vanilla js
-mydiv.innerText = 'hello world!';
-$(mydiv).text('hello world!'); // wrap mydiv in a jquery wrapper and set the text
-$(mydiv)[0].innerText = 'hello again!'; // wrap and unwrap
+
+//element targeted in JS
+let mydiv = document.getElementById('mydiv').innerText = 'hello world!'; 
+//element targeted in jQuery
+$('#mydiv').text('hello world!'); 
+```
+
+You can also create a variable using the $ sign and assign a complext HTML element in a more easy way:
+
+```html
+<input type="text" value="" id = 'text-field'>
+<button id= 'btn-list'>click to Add to List</button>
+<ul id = 'list'>
+  <li>snow</li>
+  <li>sleet</li>
+  <li>wind</li>
+</ul>
+<script>
+  $('#btn-list').on('click', function(){
+  let $li = "<li>" + $("#text-field").val() + "</li>"
+  $("#list").append($li)
+})
+</script>
 ```
 
 ## Executing On Page Load
@@ -162,6 +190,25 @@ $('li').fadeIn();
 $('li').animate({
     left: '+=100'
 });
+```
+
+## This in jQuery
+
+Whatever be the event/method – like click, hover, each, blur. You can refer to the DOM element with $(this).
+
+```html
+<ul>
+    <li>first</li>
+    <li>second</li>
+    <li>third</li>
+    <li>forth</li>
+</ul>
+
+<script>
+$("li").click(function () {
+     $(this).css("color", "orange");
+ });
+</script>
 ```
 
 ## AJAX
