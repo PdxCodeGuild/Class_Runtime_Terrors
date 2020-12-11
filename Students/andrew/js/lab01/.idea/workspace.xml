@@ -19,9 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cf6d02ca-dd92-4c76-9fe3-710379f9c44c" name="Default Changelist" comment="lab1 complete">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="cf6d02ca-dd92-4c76-9fe3-710379f9c44c" name="Default Changelist" comment="lab1 complete" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -47,7 +45,7 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../lab6clock" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -86,6 +84,7 @@
       <workItem from="1607300795538" duration="632000" />
       <workItem from="1607370068815" duration="135000" />
       <workItem from="1607376079222" duration="18459000" />
+      <workItem from="1607649003085" duration="117000" />
     </task>
     <task id="LOCAL-00001" summary="lab1 complete">
       <created>1607401323858</created>
@@ -117,10 +116,11 @@
     <option name="LAST_COMMIT_MESSAGE" value="lab1 complete" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1607370178888">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="740" y="307" key="FileChooserDialogImpl" timestamp="1607649119290">
+      <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1607370178888" />
+    <state x="740" y="307" key="FileChooserDialogImpl/0.0.1920.1160/1920.0.1280.680@0.0.1920.1160" timestamp="1607649119290" />
     <state width="958" height="286" key="GridCell.Tab.0.bottom" timestamp="1607457507879">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

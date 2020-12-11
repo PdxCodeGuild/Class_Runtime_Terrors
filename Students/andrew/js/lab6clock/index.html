@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Clock & Stop Watch</title>
+</head>
+<body onload="setInterval('updateClock()', 1000 )">
+    
+
+
+<div class="card">
+    <h1>Current Time</h1>
+    <div class="container">
+        <span id="clock"> </span>
+        <span id="hour"></span>
+        <span id="min"></span>
+        <span id="sec"></span>
+        <span id="timeofday">&nbsp;</span>
+    </div>
+</div>
+
+<div class="card">
+    <h1>Stopwatch</h1>
+    <div class="container">
+        <span id="lap">00:00:00</span>
+        <div><button onclick="start()" id="start">Start</button></div>
+        <div><button onclick="lap()" id="lap">Lap</button></div>
+        <div><button onclick="stop" id="Stop">Stop</button></div>
+        <div><button onclick="reset()" id="reset">Reset</button></div>
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+<script src="js/app.js"></script>    
+</body>
+</html>
