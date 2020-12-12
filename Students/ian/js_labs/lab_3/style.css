@@ -1,0 +1,13 @@
+.even {
+  background-color: aquamarine;
+}
+.todo-item {
+  padding: 10px;
+}
+.todo-item button {
+  padding: 5px 10px;
+  margin-left: 15px;
+}
+#completedTodos {
+  text-decoration: line-through;
+}
