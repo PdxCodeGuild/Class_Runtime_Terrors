@@ -37,3 +37,9 @@
 [12-02-2020 - DOM Passcode: 9.TqJ!1b](https://zoom.us/rec/share/8o4lGJAeZT8zNBPKuYmx-UwsxSKZbPTUN32fduxYssT6U3BP1bObMrY83IFny8rh.DwUSqIctKzulMzXs )
 
 
+[12-09-2020 - Event Delegation Passcode: kq4i&zlk](https://zoom.us/rec/share/I9wVP__5646BXEJjuCdseq-Ta47YfgWAAjsNjATfiX8KHNGs9ZOFyhLpKyMnbaia.a4AwdW2_YqKcXAiC )
+
+
+[12-10-2020 - jQuery Passcode:  UYP.1Npg](https://zoom.us/rec/share/yX5mkRCD0WaZRBoYfaZyeLB5sH4__Ef4fXw2murXmr7m5DEBbPQDOVRxIkfii2hl.8QtHGljo69oNS3r7  )
+
+

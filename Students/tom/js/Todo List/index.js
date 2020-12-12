@@ -8,7 +8,7 @@ addToList.addEventListener('click', function(){
     addedItem = document.createElement('li') //create list item
     itemText = document.createTextNode(newItem.value) //create a node for the text
     addedItem.appendChild(itemText) //add text to the list item
-    document.getElementById('incompleteTasks').appendChild(addedItem) //addes item to list
+    incompleteTasks.appendChild(addedItem) //addes item to list
 })
 
 removeFromList.addEventListener('click', function(){  //this is for the remove button
@@ -18,10 +18,10 @@ removeFromList.addEventListener('click', function(){  //this is for the remove b
 
 // move from incomplete to complete
 incompleteTasks.addEventListener('click', function(event){
-    document.getElementById('completedTasks').appendChild(event.target)
+    completedTasks.appendChild(event.target).style.textDecoration='line-through'
 })
 
 // move from complete to incomplete 
 completedTasks.addEventListener('click', function(event){
-    document.getElementById('incompleteTasks').appendChild(event.target)
+    incompleteTasks.appendChild(event.target)
 })
