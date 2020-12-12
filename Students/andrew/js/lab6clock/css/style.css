@@ -1,10 +1,76 @@
+
+@font-face {
+    font-family: 'digital-7regular';
+    src: url('digital-7-webfont.woff2') format('woff2'),
+         url('digital-7-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 body{
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
+    display: flex;
+    justify-content: center;
 }
-#clock{
-  text-align: center;
-  margin-top: 15rem;
-  position: relative;
-}
+.card {
+    /* Add shadows to create the "card" effect */
+    margin:15px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 400px;
+    height: 400px;
+    padding: 15px;
+    text-align: center;
+    
+    
+   
+    
+  }
+  
+  /* On mouse-over, add a deeper shadow */
+  .card:hover {
+    box-shadow: 0 16px 32px 0 rgba(0,0,0,0.2);
+  }
+  
+  /* Add some padding inside the card container */
+  .container {
+    padding: 2px 16px;
+    display: flex;
+    flex-direction: column;
+    
+    
+  }
+
+  #hour{
+      font-size: 5rem;
+      font-family: 'digital-7regular';
+      font-weight: normal;
+      font-style: normal;
+      text-align: center;
+    
+
+  }
+
+  #min{
+      font-size: 5rem;
+      font-family: 'digital-7regular';
+      font-weight: normal;
+      font-style: normal;
+      text-align: center;
+  }
+
+  #sec{
+      font-size: 5rem;
+      font-family: 'digital-7regular';
+      font-weight: normal;
+      font-style: normal;
+      text-align: center;
+  }
+
+  #timeofday{
+    font-size: 5rem;
+    font-family: 'digital-7regular';
+    font-weight: normal;
+    font-style: normal;
+    text-align: center;
+  }
