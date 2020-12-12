@@ -9,11 +9,18 @@ let todo = $('#todo');
 let done = $('#done');
 
 $('#add').on('click',function(){
-   
-    let $li = "<li>" + item.val() + '</li>'
+    let $li = "<li>" + item.val() + "</li>";
     todo.append($li);
-
-    $('#input_field').text('');
+    $('#input_field').val('');
 })
+
+$('#todo').on('click', 'li', function(){
+
+    let $li = "<li>" + $(todo, 'li' + "</li>");
+    done.append($(this).text());
+    // todo.remove($li);
+    console.log($(this).text());
+})
+
 
 
