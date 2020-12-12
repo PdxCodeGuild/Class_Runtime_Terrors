@@ -13,6 +13,9 @@ $('#add').on('click',function(){
     todo.append($li);
     $('#input_field').val('');
 })
+$('#delete').click(function(){
+    $(item.val()).remove();
+})
 
 $('#todo').on('click', 'li', function(){
     let $li = "<li>" + ('todo li') + "</li>";
@@ -20,7 +23,9 @@ $('#todo').on('click', 'li', function(){
     $(this).remove();
     
 })
-$('#done li').css("text-decoration", "line-through");
+
+
+// $('#done li').css("text-decoration", "line-through");
 
 
 
