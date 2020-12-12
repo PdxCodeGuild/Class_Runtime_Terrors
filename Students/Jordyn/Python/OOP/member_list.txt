@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Defualt",
+    "accountNumber": "1234567",
+    "balance": 500
+  },
+  {
+    "name": "Kyle",
+    "accountNumber": "1049107",
+    "balance": -105.0
+  },
+  {
+    "name": "Jordyn",
+    "accountNumber": "1910310",
+    "balance": 792.0
+  },
+]

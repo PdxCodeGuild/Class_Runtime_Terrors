@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloggy Blog</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <nav>
+        <a href="https://www.ford.com/" target="_blank">Ford</a>
+        <a href="https://www.chevrolet.com/" target="_blank">Chevrolet</a>
+        <a href="https://www.dodge.com/" target="_blank">Dodge</a>
+    </nav>
+    
+    <header>
+        <h1>Blog About Cars</h1>
+    </header>
+
+
+<!-- Dropdown Menu -->
+    <label for="manufacturer">Choose a manufacturer:</label>
+    <select name="manufacturer" id="manufacturer">
+        <option value="Ford">Ford</option>
+        <option value="Chevrolet">Chevrolet</option>
+        <option value="Dodge">Dodge</option>
+    </select>
+
+<!-- Checkbox -->
+    <div>
+        <input type="checkbox">
+        <label class="container">Ford
+        <span class="checkmark"></span>
+        </label><br>
+        <input type="checkbox">
+        <label class="container">Chevrolet
+        <span class="checkmark"></span>
+        </label><br>
+        <input type="checkbox">
+        <label class="container">Dodge
+        <span class="checkmark"></span>
+        </label>
+    </div>
+    <br>
+
+    <!-- Radio Buttons -->
+    <div>
+        <input type="radio" id="ford" name="manufacturer" value="ford">
+        <label for="ford">Ford</label><br>
+        <input type="radio" id="chevrolet" name="manufacturer" value="chevrolet">
+        <label for="chevrolet">Chevrolet</label><br>
+        <input type="radio" id="dodge" name="manufacturer" value="dodge">
+        <label for="dodge">Dodge</label>
+    </div>
+
+    <!-- A random section -->
+    <section>
+        <h1>The dropdown, checkboxes, and radio buttons to the left don't do anything.</h1>
+    </section>
+
+    <!-- Start of blog posts -->
+    <article class="manufacturer">
+        <h1>Ford</h1>
+        <p>Ford is committed to be a trusted steward of the personal information you share with us. We collect and use this data to help fulfill and build on Henry Ford’s vision of providing affordable, safe transportation to everyone. </p>
+    </article>
+
+    <article class="manufacturer">
+        <h1>Chevy</h1>
+        <p>The Manufacturer's Suggested Retail Price excludes destination freight charge, tax, title, license, dealer fees and optional equipment.</p>
+    </article>
+
+    <article class="manufacturer">
+        <h1>Dodge</h1>
+        <p>Chrysler, Dodge, Jeep, Ram, Mopar and SRT are registered trademarks of FCA US LLC.</p>
+    </article>
+
+    <div class="flex-container">
+        <div class="box-1">
+            <h2>Ford</h2>
+        </div>
+        <div class="box-2">
+            <h2>Chevrolet</h2>
+        </div>
+        <div class="box-3">
+            <h2>Dodge</h2>
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer>
+        <address>
+            This blog is poorly maintained by <a href="mailto:me@mail.com">me</a>.<br>
+            Address: 123 Main St, Here, There, 12345<br>
+            <a href="address.com>Address.com">address.com</a><br>
+        </address>
+    </footer>
+
+</body>
+</html>

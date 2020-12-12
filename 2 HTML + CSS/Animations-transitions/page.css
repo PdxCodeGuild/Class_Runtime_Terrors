@@ -1,0 +1,59 @@
+body{
+    text-align: center;
+    background-color: #FBFBFD;
+    width: 50%;
+    margin: auto;
+}
+
+button{
+    /* border: none; */
+    background: none;
+    padding: 20px;
+    /* border: 1px solid back; */
+}
+
+h1{
+    position: relative;
+    top: -200px;
+    animation-name: from-top;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+
+}
+
+p {
+    position: relative;
+    left: -800px;
+    animation-name: from-left;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+    animation-delay: .5s;
+}
+
+button{
+    position: relative;
+    opacity: 0;
+    top: 100px;
+    animation-name: animated-button;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+
+}
+
+
+@keyframes from-top{
+    0%{ top: -200px;}
+    100%{ top: 0px;}
+
+}
+
+@keyframes from-left{
+    0%{  left: -800px}
+    100%{left: 0px}
+}
+
+@keyframes animated-button{
+    0%{ opacity: 0}
+    100%{opacity: 1; top: 0}
+}
+

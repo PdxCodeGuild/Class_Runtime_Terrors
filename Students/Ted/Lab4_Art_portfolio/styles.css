@@ -1,0 +1,90 @@
+.wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1em;
+    grid-auto-rows: 1fr 1fr 1fr;
+}
+
+.title{
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+.box img{
+    position: relative;
+    left: 0px;
+    right: 0px;
+    z-index: -1;
+}
+.box{
+    position: relative;
+     height: 545px;
+     overflow: hidden;
+ }
+.box p{
+    text-align: center;
+}
+.grtext{
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    color: rgb(11, 84, 40);
+}
+.rdtext{
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    color: rgb(184, 13, 7);
+}
+.brtext{
+    position: absolute;
+    left: 80px;
+    top: 470px;
+    color: rgb(210,105,30);
+}
+.litext{
+    position: absolute;
+    text-align: center;
+    padding: 10px;
+    top: 450px;
+    color: rgb(10, 128, 207);
+}
+.box #Glass_roof{
+    grid-column: 2/3;
+    grid-row: 1/2;
+    overflow: hidden;
+    width: 410px;
+}
+.box #window{
+    width: 410px;
+    overflow: hidden;
+} 
+.box #Pole{
+    width: 410px;
+    overflow: hidden; 
+} 
+.box #my_face{
+    width: 410px;
+    overflow: hidden;
+} 
+.box #shower{
+    width: 410px;
+    overflow: hidden;
+} 
+.box #ipe_sink{
+    width: 410px;
+    overflow: hidden;
+} 
+.box #lofted_ceiling{
+    width: 410px;
+    overflow: hidden;
+} 
+.box #Solar{
+    width: 410px;
+    overflow: hidden;
+} 
+footer{
+    grid-column: 1/5;
+    grid-row: 4;
+    height: 100px;
+    background-color: forestgreen;
+}  
