@@ -48,7 +48,7 @@ xhttp.onreadystatechange = function() {
         console.log(this.responseText);
     }
 };
-xhttp.open("GET", 'https://api.iify.org/?format=json');
+xhttp.open("GET", 'https://jsonplaceholder.typicode.com/todos/1');
 xhttp.send();
 ```
 
@@ -74,7 +74,7 @@ function http_get(url, success) {
     xhttp.send();
 }
 
-http_get("https://api.ipify.org/?format=json", function(data) {
+http_get("https://jsonplaceholder.typicode.com/todos/1", function(data) {
     console.log(data);
 });
 ```
