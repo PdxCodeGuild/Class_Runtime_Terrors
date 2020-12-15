@@ -48,7 +48,7 @@ This is how you do it with Fetch
 
 const myHeaders = new Headers();
 
-myHeaders.append('Authorization',  'Token token=" "');
+myHeaders.append('Authorization',  'Token token="  PASTE YOUR API KEY  "');
 
 fetch(url, {
   method: 'GET',
