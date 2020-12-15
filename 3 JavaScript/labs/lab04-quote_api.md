@@ -20,7 +20,7 @@ The API also supports browsing quotes. You can use the `page` and `filter` param
 
 `"https://favqs.com/api/quotes?page="+page_id+"&filter=" + text`. For example, you could use this syntax:
 
-`https://favqs.com/api/quotes?1&filter=mark` 
+`https://favqs.com/api/quotes?page=1&filter=mark` 
 
 The syntax above will return a set of quotes with the keyword `mark`
 
