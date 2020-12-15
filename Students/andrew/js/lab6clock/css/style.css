@@ -9,6 +9,7 @@
 }
 
 body{
+  padding: 10%;
     display: flex;
     justify-content: center;
 }
@@ -39,6 +40,25 @@ body{
     flex-direction: column;
     
     
+  }
+
+button {
+  margin-right: 1em;
+}
+
+
+#buttons{
+  display: flex;
+  justify-content: center;
+}
+
+  #stopwatch{
+    font-size: 5rem;
+      font-family: 'digital-7regular';
+      font-weight: normal;
+      font-style: normal;
+      text-align: center;
+      padding-bottom: 5%;
   }
 
   #hour{
