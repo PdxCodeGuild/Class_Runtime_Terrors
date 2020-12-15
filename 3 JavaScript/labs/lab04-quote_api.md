@@ -48,7 +48,7 @@ This is how you do it with Fetch
 
 const myHeaders = new Headers();
 
-myHeaders.append('Authorization',  'Token token="f514304ddef8b446988e18e4854b4639"');
+myHeaders.append('Authorization',  'Token token=" "');
 
 fetch(url, {
   method: 'GET',
