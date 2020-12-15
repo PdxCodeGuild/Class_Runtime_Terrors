@@ -1,45 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <script
-			  src="https://code.jquery.com/jquery-3.4.1.min.js"
-			  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-			  crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./site.css">
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./site.css" />
     <title>ToDo List</title>
-</head>
+  </head>
 
-<body>
-    <div class="container">
-        <input type="text" class="task-input" placeholder="enter a task">
-        <button class="task-submit">submit task</button>
-        <div class="task-list">
-            <h3>incomplete tasks</h3>
-            <div class="incomplete-task-list">
-                <div class="task incomplete-task">take out the garbage</div>
-                <div class="task incomplete-task">walk the dog</div>
-                <div class="task incomplete-task">clean shelagog's cage</div>
-                <div class="task incomplete-task">activate the alarm system</div>
-                <div class="task incomplete-task">get a new calendar</div>
-            </div>
-        </div>
-        <div class="task-list">
-            <h3>completed tasks</h3>
-            <div class="completed-task-list">
-                <div class="task completed-task">install electical and data</div>
-                <div class="task completed-task">sheetrock basement</div>
-                <div class="task completed-task">sand and paint sheetrock</div>
-                <div class="task completed-task">put up ceiling</div>
-                <div class="task completed-task">install shelving</div>
-            </div>
-        </div>
-    </div>
-    <!-- <script src="./tasks.js"></script> -->
-    <script src="./tasks_jq.js"></script>
-</body>
+  <body>
+    <h1>TODO</h1>
 
+    <input type="text" value="" id="text-field" />
+    <button id="btn-list">click to Add to List</button>
+    <button id="btn-remove">click to Remove from List</button>
+    <div id="word"></div>
+
+    <p>Incomplete</p>
+    <ul id="list">
+      <li>snow</li>
+      <li>sleet</li>
+      <li>wind</li>
+    </ul>
+
+    <p>Complete List</p>
+    <ul id="completeList"></ul>
+    <script src="tasks_jq.js"></script>
+  </body>
 </html>

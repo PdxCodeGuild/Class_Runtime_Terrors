@@ -1,39 +1,30 @@
-// create an array of classes for the new div
-// !! THESE ENTRIES ARE SPECIFIC TO MY IMPLEMENTATION
-let newDivClasses = ['task incomplete-task'];
+let field = document.getElementById("text-field");
+let word = document.getElementById("word");
+let btnList = document.getElementById("btn-list");
+let btnRemove = document.getElementById("btn-remove");
 
-// submit task creates a new task from the user's input
-// it uses createClassString to assign the div's classes
-let submitTask = () => {
-    let newDiv = document.createElement('div')
-    newDiv.classList = newDivClasses
-    newDiv.innerText = document.querySelector('.task-input').value
-    document.querySelector('.incomplete-task-list').append(newDiv)
-    document.querySelector('.task-input').focus()
-    document.querySelector('.task-input').value = ''
-}
+let list = document.getElementById("list");
+let completeList = document.getElementById("completeList");
 
 
-document.querySelector('.task-submit').addEventListener('click', () => {
-    submitTask();
-})
+btnList.addEventListener("click", function (event) {
+  let li = document.createElement("li");
+  li.innerHTML = field.value;
+  list.appendChild(li);
+});
 
-// allow the user to use the enter key to submit tasks
-document.querySelector('.task-input').addEventListener('keyup', event => {
-    if (event.keyCode === 13)
-        submitTask();
-})
+btnRemove.addEventListener("click", function (event) {
+  let child = list.children[0];
+  list.removeChild(child);
 
-// when clicking on a task in the incomplete tasks list, move that task to the
- // completed tasks list
-document.querySelector('.incomplete-task-list').addEventListener('click', event => {
-    event.target.classList.remove('incomplete-task');
-    event.target.classList.add('completed-task');
-    document.querySelector('.completed-task-list').append(event.target);
+  if (list.childElementCount == 0) {
+    alert("no more");
+  }
+});
 
-})
-
-// when clicking on a task in the completed tasks list, remove it form the list
-document.querySelector('.completed-task-list').addEventListener('click', event => {
-    event.target.remove();
-})
+list.addEventListener("click", function (event) {
+  if (event.target.tagName == "LI") {
+    event.target.classList.add("strike");
+    completeList.appendChild(event.target);
+  }
+});

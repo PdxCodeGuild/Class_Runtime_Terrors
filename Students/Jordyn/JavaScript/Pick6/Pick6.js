@@ -1,59 +1,80 @@
-let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-var correct_number = -1
-let attempts = 0
-let last_guess = 0
-let historic_guess = [0]
-let guess = 0
-let absolute_difference = 0
+const winning_ticket = pick6()
 
-while (true){
-    correct_number = prompt('Please give a number from 1-10 for the computer to guess.')
-    correct_number = parseInt(correct_number)
-    if (!(numbers.includes(correct_number))){
-        console.log('Your number was not within the range of 1-10, the computer will only guess within this range')
-    } else {
-        break
+function pick6(){
+    let random_list = []
+    let loop_2 = 1
+    while (loop_2 <= 6){
+        random_list.push(Math.floor(Math.random() * 99) + 1)
+        loop_2 += 1
+    }
+    return random_list
+}
+
+function num_matches(ticket){
+    let matching = 0
+    let index = 0
+    while (index <=5){
+        if (winning_ticket[index] === ticket[index]){
+            matching += 1
+            index += 1
+        } else if (!(winning_ticket[index] === ticket[index])){
+            matching += 0
+            index += 1
+        }
+    }
+    return matching
+}
+
+function matching_value(matched){
+    let value = -2
+    if (matched === 0){
+        return value
+    } else if (matched === 1){
+        value += 4
+        return value
+    } else if (matched === 2){
+        value += 7
+        return value
+    } else if (matched === 3){
+        value += 100
+        return value
+    } else if (matched === 4){
+        value += 50000
+        return value
+    } else if (matched === 5){
+        value += 1000000
+        return value
+    } else if (matched === 6){
+        value += 25000000
+        return value
     }
 }
 
-while (true){
-    console.log(attempts)
-    while (0 in historic_guess){
-        guess = Math.floor(Math.random() * 10 + 1)
-        if (!(historic_guess.includes(guess))){
-            historic_guess.push(guess)
-            break
-        } else if (historic_guess.includes(guess)){
-            continue
-        }
+let matched = undefined
+let ticket_value = undefined
+let ticket = undefined
+let value = 0
+let loop = 0
+let loop_limit = 100000
+
+while (loop < loop_limit){
+    ticket = pick6()
+    // console.log(loop)
+    matched = num_matches(ticket)
+    if (matched === 6){
+        console.log("JACKPOT!")
     }
-    setTimeout(function(){console.log('This is a delay')}, 1000)
-    let message1 = `Please guess a number between 1 and 10. > ${guess}`
-    console.log(message1)
-    absolute_difference = Math.abs(correct_number - guess)
-    // setTimeout(function(){return 0}, 1000)
-    if (guess === correct_number){
-        attempts += 1
-        let message2 = `Congradulations! ${guess} was the correct number!\nYou guessed ${attempts} times.`
-        console.log(message2)
-        break
-    } else if (!(guess === correct_number)) {
-        if (last_guess === 0){
-            attempts += 1
-            last_guess = absolute_difference
-            console.log('Your guess was incorrect')
-        } else if (absolute_difference === last_guess){
-            attempts += 1
-            last_guess = absolute_difference
-            console.log('Your guess was incorrect and was no closer than your last guess')
-        } else if (absolute_difference < last_guess){
-            attempts += 1
-            last_guess = absolute_difference
-            console.log('Your guess was incorrect and was closer than your last guess')
-        } else if (absolute_difference > last_guess){
-            attempts += 1
-            last_guess = absolute_difference
-            console.log('Your guess was incorrect and was further than your last guess')
-        }
-    }
+    ticket_value = matching_value(matched)
+    value += ticket_value
+    loop += 1
+}
+let roi = value / (loop_limit * 2)
+if (value < 0){
+    console.log(`You have lost \$${value}.`)
+    console.log(`Your ROI is: ${roi}`)
+}
+
+if (value >= 0){
+    console.log(`You have earned \$${value}.`)
+    console.log(`Your ROI is: ${roi}`)
 }

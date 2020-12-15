@@ -1,7 +1,7 @@
 
 # Events
 
-An event can be something the browser does, or something a user does. Event handlers can be used to handle, and verify, user input, user actions, and browser actions: 
+An event can be something the browser does, or something a user does. Event handlers can be used to handle, verify user input, user actions, and browser actions: 
 
 - Things that should be done every time a page loads
 - Things that should be done when the page is closed
@@ -171,6 +171,29 @@ You can view a list of keycodes on [css-tricks.com](https://css-tricks.com/snipp
 | `mouseleave` | the mouse has exited the element
 | `mousemove` | the mouse has moved on the element |
 
+```html
+<body>
+  <div id='container'></div>
+   <style>
+   #container{
+    width: 200px;
+    height: 200px;
+    background: red;
+   }
+   </style> 
+    <script>
+    let container = document.querySelector('#container')
+    container.addEventListener('mouseenter', function(event){
+        if (event.target.style.backgroundColor == 'blue'){
+            event.target.style.backgroundColor = 'red'
+        } else {
+            event.target.style.backgroundColor = 'blue'
+        }
+    })
+    </script>
+</body>
+
+```
 
 ### Determining the Mouse's Position
 

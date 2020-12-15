@@ -1,4 +1,6 @@
-# Map, Sort, Filter, Reduce. These are functions that you can use on arrays. They can receive other functions as arguments.
+# Map, Sort, Filter, Reduce. 
+
+These are functions that you can use on arrays. They receive other functions as arguments therefore are higher order functions.
 
 ## Map
 
@@ -115,7 +117,7 @@ const sortedCompanies = companies.sort((a, b) => (a.start > b.start ? 1 : -1));
 
 ## Reduce
 
-Let's summ all the ages without _reduce_:
+Let's sum all the ages without _reduce_:
 
 ```javascript
 let total = 0;

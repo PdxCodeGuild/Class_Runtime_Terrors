@@ -16,7 +16,7 @@ Use the [favqs.com](https://favqs.com/api/) api to show a random quote. To start
 
 ## Version 2
 
-The API also supports browsing quotes. You can use the `page` and `filter` parameters to get a bunch of quotes. You can add page buttons and/or a text `input` field and `button` for filtering.
+The API also supports browsing quotes. You can use the `page` and `filter` parameters to get a bunch of quotes. You can add page buttons and/or a text `input` field and `button` for filtering. 
 
 `"https://favqs.com/api/quotes?page="+page_id+"&filter=" + text`.
 
@@ -40,4 +40,29 @@ function http_get(url, success) {
     xhttp.open("GET", url);
     xhttp.send();
 }
+```
+
+This is how you do it with Fetch
+
+```Javascript
+
+const myHeaders = new Headers();
+
+myHeaders.append('Authorization',  'Token token="  PASTE YOUR API KEY  "');
+
+fetch(url, {
+  method: 'GET',
+  headers: myHeaders,
+})
+ .then(function(response){
+    return response.json()
+  })
+ .then(function(data){
+    //or pass a callback function to handle data
+    console.log(data)  
+})
+  .catch(function(error){
+    console.error('There has been a problem with your fetch operation:', error);
+  });
+
 ```
