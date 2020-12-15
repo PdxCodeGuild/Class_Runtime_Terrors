@@ -1,43 +1,31 @@
 /**
- * Let's make a simple todo-list which supports the following operations:
-with jquery
-add an item to the list
-remove an item from the list
-mark an item as completed
-Removed items should disappear entirely. Completed items should appear at the bottom (or in a separate list) with a line through them. Use vanilla JS to select and manipulate the DOM elements. No jQuery
+ * Lab 3: Random Redirector
+Create a page which randomly redirectly to another. 
+Create an array of urls (as strings), and randomly pick one using Math.random(). 
+Then redirect to the page using window.location.
+
+Version 2
+Using JavaScript's timing events show a 5-second countdown to the user.
+ When the countdown is finished, redirect to a random page.
  */
-let count = 0;
-const input = document.getElementById("addItem");
-const todoList = document.getElementById("todos");
-const completedList = document.getElementById("completedTodos");
 
-const handleAddItem = () => input?.value && todoList.appendChild(genTodoItem());
-const handleCompleteItem = item => {
-  item.removeChild(item.children[1]); // complete button
-  item.remove();
-  completedList.appendChild(item);
+const URLs = [
+  "https://google.com",
+  "https://bing.com",
+  "https://startpage.com",
+];
+
+const randRedir = () => {
+  window.location = URLs[Math.floor(Math.random() * URLs.length)];
 };
-const handleRemoveItem = item => item.remove();
+// randRedir();
+let countDown = 5;
 
-const genTodoItem = () => {
-  ++count;
-  const todo = document.createElement("div");
-  todo.innerHTML = input.value;
-  input.value = "";
-  todo.setAttribute("id", `todo-item-${count}`);
-  todo.className = `todo-item ${count % 2 ? "even" : "odd"}`;
-  const rmBtn = document.createElement("button");
-  rmBtn.innerHTML = "delete";
-  rmBtn.onclick = () => handleRemoveItem(todo);
-  todo.appendChild(rmBtn);
-  const completeBtn = document.createElement("button");
-  completeBtn.innerHTML = "complete";
-  completeBtn.onclick = () => handleCompleteItem(todo);
-  todo.appendChild(completeBtn);
-  return todo;
-};
+const app = document.getElementById("app");
+const setTime = time => (app.innerHTML = time);
 
-$("#addBtn").on("click", () => {
-  const $div = genTodoItem();
-  $("#todos").append($div);
-});
+setInterval(() => {
+  --countDown;
+  setTime(countDown);
+  if (countDown < 1) randRedir();
+}, 1000);
