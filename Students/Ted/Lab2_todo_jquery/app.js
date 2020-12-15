@@ -13,14 +13,19 @@ $('#add').on('click',function(){
     todo.append($li);
     $('#input_field').val('');
 })
+$('#delete').click(function(){
+    $(item.val()).remove();
+})
 
 $('#todo').on('click', 'li', function(){
-
-    let $li = "<li>" + $(todo, 'li' + "</li>");
-    done.append($(this).text());
-    // todo.remove($li);
-    console.log($(this).text());
+    let $li = "<li>" + ('todo li') + "</li>";
+    done.append(('<li>' + $(this).text() + '</li>'));
+    $(this).remove();
+    
 })
+
+
+// $('#done li').css("text-decoration", "line-through");
 
 
 
