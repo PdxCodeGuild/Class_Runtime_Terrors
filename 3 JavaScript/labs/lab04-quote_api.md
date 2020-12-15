@@ -18,7 +18,11 @@ Use the [favqs.com](https://favqs.com/api/) api to show a random quote. To start
 
 The API also supports browsing quotes. You can use the `page` and `filter` parameters to get a bunch of quotes. You can add page buttons and/or a text `input` field and `button` for filtering. 
 
-`"https://favqs.com/api/quotes?page="+page_id+"&filter=" + text`.
+`"https://favqs.com/api/quotes?page="+page_id+"&filter=" + text`. For example, you could use this syntax:
+
+`https://favqs.com/api/quotes?1&filter=mark` 
+
+The syntax above will return a set of quotes with the keyword `mark`
 
 Then you can show those quotes in a list.Note that if the text has spaces or special characters will have to encode the parameters using [encodeURIComponent](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent) which takes a string and returns a new encoded string.
 
