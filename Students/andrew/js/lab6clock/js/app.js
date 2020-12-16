@@ -1,5 +1,76 @@
+//Stopwatch Card
+
+const startBtn = document.getElementById("start");
+const stopBtn = document.getElementById("stop");
+const lapBtn = document.getElementById("lap");
+let dispayClock = document.getElementById("stopwatch");
+let list = document.querySelector(".list");
+let timeStart = null,
+    timeStopped = null,
+    stoppedDuration = 0,
+    started = null;
 
 
+
+function start() {
+    if (timeStart === null) {
+        timeStart = new Date();
+    }
+
+    if (timeStopped != null) {
+        stoppedDuration += (new Date() - timeStopped);
+    }
+
+    // Diagnostic-> console.log(stoppedDuration);
+    started = setInterval(stopWatchCounting, 25);
+
+    // Diagnostic-> console.log("Clicked");
+
+}
+
+function _stop() {
+    timeStopped = new Date();
+    clearInterval(started)
+
+}
+
+
+function lap() {
+    const newEl = document.createElement("li");
+    let text = document.createTextNode(dispayClock.textContent);
+    newEl.appendChild(text);
+    list.appendChild(newEl);
+    // Diagnostic-> console.log("Clicked");
+    console.log(list.children.length);
+}
+
+function stopWatchCounting() {
+    var currentTime = new Date()
+        , timeElapsed = new Date(currentTime - timeStart - stoppedDuration)
+        , hour = timeElapsed.getHours()
+        , min = timeElapsed.getMinutes()
+        , sec = timeElapsed.getSeconds()
+        , ms = timeElapsed.getMilliseconds().toFixed(0);
+
+    dispayClock.textContent = min + ":" + sec + ": " + ms;
+}
+
+function reset() {
+
+    clearInterval(started);
+    stoppedDuration = 0;
+    timeStart = null;
+    timeStopped = null;
+    document.getElementById("stopwatch").textContent = "00:00:00";
+}
+
+//Not working for some reason?!?
+function clear() {
+
+    alert("");
+}
+
+//Clock Card
 function updateClock() {
     let currentTime = new Date();
     let currentHours = currentTime.getHours();
@@ -35,39 +106,3 @@ function updateClock() {
 
 }
 
-function stopwatch(){
-    let stopTime = new Date();
-
-    let stopHour = stopTime.getHours();
-    let stopMinute = stopTime.getMinutes();
-    let stopSec = stopTime.getSeconds();
-
-    let hour = document.getElementById("stophour");
-    let minute = document.getElementById("stopmin");
-    let second = document.getElementById("stopsec");
-
-    let displayStopwatch = document.getElementById('lap');
-
-
-}
-
-
-function reset(){
-
-}
-
-function start(){
-
-}
-
-function stop(){
-
-}
-
-function lap(){
-
-}
-
-
-
-stopwatch();

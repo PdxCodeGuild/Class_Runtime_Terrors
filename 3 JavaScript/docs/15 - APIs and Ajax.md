@@ -48,7 +48,7 @@ xhttp.onreadystatechange = function() {
         console.log(this.responseText);
     }
 };
-xhttp.open("GET", 'https://api.iify.org/?format=json');
+xhttp.open("GET", 'https://jsonplaceholder.typicode.com/todos/1');
 xhttp.send();
 ```
 
@@ -74,7 +74,7 @@ function http_get(url, success) {
     xhttp.send();
 }
 
-http_get("https://api.ipify.org/?format=json", function(data) {
+http_get("https://jsonplaceholder.typicode.com/todos/1", function(data) {
     console.log(data);
 });
 ```
@@ -141,3 +141,54 @@ JSON and XML are two popular ways of formatting data. Most APIs either return in
 
 - [a list on github](https://github.com/toddmotto/public-apis)
 - [list on data.gov](https://catalog.data.gov/dataset?q=-aapi+api+OR++res_format%3Aapi#topic=developers_navigation)
+
+
+## Display Information on a page using HTTP requests
+
+
+```html
+
+<img id="demo">
+
+<script>
+function myImage(some) {
+  let img
+  document.getElementById("demo").src = some;
+}
+
+function getFile(myImage) {
+  let req = new XMLHttpRequest();
+  req.open('GET', "https://api.thecatapi.com/v1/images/search?size=full'");
+  req.onload = function() {
+    if (req.status == 200) {
+      let img = JSON.parse(this.responseText)
+      myImage(img[0].url);
+    } else {
+      myImage("Error: " + req.status);
+    }
+  }
+  req.send();
+}
+
+getFile(myImage);
+
+</script>
+
+```
+
+The same syntax can be simplified using fetch:
+
+```Javascript
+fetch('https://api.thecatapi.com/v1/images/search?size=full')
+  .then(function(response){
+    return response.json() 
+})
+  .then(function(data) {
+    //use the callback function to display data in the DOM
+    myImage(data[0].url)
+})
+  .catch(function(error){
+    console.error('There has been a problem with your fetch operation:', error);
+  });
+
+```

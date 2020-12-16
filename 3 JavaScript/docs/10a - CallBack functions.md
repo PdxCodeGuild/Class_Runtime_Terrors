@@ -66,3 +66,66 @@ btn.addEventListener('click', function() {
    //using an anonimous function as well
 });
 ```
+
+Here's an example of a callback function to change the color of squares:
+
+```html
+<div id='red'></div>
+<div id='blue'></div>
+<div id='yellow'></div>
+
+<style>
+div{
+  width: 500px;
+  height: 500px;
+  border: 1px solid black;
+}
+</style>
+
+<script>
+
+function myElement(elem, color){
+  document.getElementById(elem).style.backgroundColor = color;
+}
+
+function changeColor(elem, color) {
+  myElement(elem, color);
+}
+
+changeColor("red", 'red')
+changeColor("blue", 'blue')
+changeColor("yellow", 'yellow')
+
+</script>
+
+```
+
+The perfect example of a callback function is with loading external files. If you create a function to load an external resource (like a script or a file), you cannot use the content before it is fully loaded.
+
+This is the perfect time to use a callback.
+
+```html
+<img id="demo">
+<script>
+function myImage(some) {
+  let img
+  document.getElementById("demo").src = some;
+}
+
+function getFile(myImage) {
+  let req = new XMLHttpRequest();
+  req.open('GET', "https://api.thecatapi.com/v1/images/search?size=full'");
+  req.onload = function() {
+    if (req.status == 200) {
+      let img = JSON.parse(this.responseText)
+      myImage(img[0].url);
+    } else {
+      myImage("Error: " + req.status);
+    }
+  }
+  req.send();
+}
+
+getFile(myImage);
+</script>
+```

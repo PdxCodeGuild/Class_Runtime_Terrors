@@ -1,6 +1,5 @@
 ## Promises
-//
-https://medium.com/@hassanahmedkhan/a-beginners-guide-to-promise-api-in-javascript-c8a2fe365cdc
+
 
 A Promise is an object representing the eventual completion or failure of an asynchronous operation. What does asynchronous mean?
 

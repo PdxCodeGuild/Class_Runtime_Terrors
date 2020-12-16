@@ -1,6 +1,6 @@
 
 function addItem(){
-    let newElement = document.createElement('li');
+  let newElement = document.createElement('li');
   newElement.textContent = "I am a new element";
   let list = document.getElementById("my-list");
   }
