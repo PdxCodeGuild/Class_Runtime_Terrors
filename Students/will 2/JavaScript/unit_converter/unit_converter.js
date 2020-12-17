@@ -14,4 +14,7 @@ conversionFactor = {
     'inch': 0.0254,
 }
 
+
+
 console.log(`${data[0]} ${data[1]} is ${(parseInt(data[0]) * conversionFactor[data[1]]) / conversionFactor[convertTo]} ${convertTo}`)
+
