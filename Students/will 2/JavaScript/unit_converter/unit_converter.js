@@ -1,7 +1,7 @@
 const readline = require('readline-sync');
 
 const distance = readline.question('enter the distance: ');
-const convertTo = readline.question('enter the units to conver to: ');
+const convertTo = readline.question('enter the units to convert to: ');
 
 data = distance.split(" ")
 
