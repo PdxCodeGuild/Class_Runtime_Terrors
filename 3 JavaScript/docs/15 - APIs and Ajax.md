@@ -187,7 +187,7 @@ fetch('https://api.thecatapi.com/v1/images/search?size=full')
     //use the callback function to display data in the DOM
     myImage(data[0].url)
 })
-  .catch(error => {
+  .catch(function(error){
     console.error('There has been a problem with your fetch operation:', error);
   });
 
