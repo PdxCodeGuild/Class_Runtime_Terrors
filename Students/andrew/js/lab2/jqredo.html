@@ -4,18 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TODO LIST</title>
+    <title>jQuery TODO</title>
+    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
-
     <div id="headerDiv" class="header">
-        <h3>TODO LIST</h3>
+        <h3>jQuery TODO LIST</h3>
         <div class="input-content">
             <input type="text" id="inputfield" placeholder="Add TODO item here...">
-            <span> <button class="btn" onclick="addTodo()"> Add</button></span>
-            <span> <button class="btn" onclick="clearList()"> Clear all</button></span>
+            <span> <button class="add" id="add-btn"> Add</button></span>
+            <span> <button class="clear" id="clear-btn" onclick="clearList()"> Clear all</button></span>
         </div>
     </div>
 
@@ -23,7 +24,9 @@
 
     </ul>
 
-    <script src=js/app.js></script>
+    <script src="js/jqapp.js">
+       
+    </script>
 </body>
 
 </html>
