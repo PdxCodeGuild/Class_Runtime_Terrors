@@ -1,28 +1,44 @@
 let apiKey = myKey;
 
+
 console.log(apiKey);
 
-const quotesArray = (data) => {
-    for (let i = 0; i < 5; i++) {
 
-        console.log(data['quotes'][i]['author']);
-        console.log(data['quotes'][i]['body']);
-        if (data['quotes'][i]['tags'][0] === undefined) {
-            //set innerText to something else
-            console.log("NO TAG")
-        } else {
-            console.log(data['quotes'][i]['tags'][0]);
+// function quotesArray(data){
+//     for (let i = 0; i < 5; i++) {
+
+//         console.log(data['quotes'][i]['author']);
+//         console.log(data['quotes'][i]['body']);
+//         if (data['quotes'][i]['tags'][0] === undefined) {
+//             //set innerText to something else
+//             console.log("NO TAG")
+//         } else {
+//             console.log(data['quotes'][i]['tags'][0]);
+//         }
+
+
+//     }
+//     cardArray(data)
+    
+// }
+
+
+
+const cardArray = (quotesArray) => {
+    let qt = quotesArray;
+
+    //console.log(qt['quotes']);
+    let tag =""
+    for (let i = 0; i < 5; i++) {
+        let author = qt['quotes'][i]['author'];
+        let body = qt['quotes'][i]['body'];
+
+        if ( qt['quotes'][i]['tags'][0] === undefined){
+            tag = "NO TAG";
+        }else{
+            tag = qt['quotes'][i]['tags'];
         }
 
-
-    }
-    return data;
-};
-
-
-const cardArray = (qt) => {
-    
-    for (let i = 0; i < 5; i++) {
         const bod = document.getElementById('body');
         const cardMain = document.createElement('div');
         cardMain.setAttribute('class', 'card');
@@ -33,9 +49,10 @@ const cardArray = (qt) => {
         cardBody.setAttribute('id', i);
 
         let card = document.getElementsByClassName('card');
-        let authorNode = document.createTextNode("Author");
-        let quoteNode = document.createTextNode('quote')
-        let tagNode = document.createTextNode('Tag');
+        let authorNode = document.createTextNode("Author -" +author);
+        
+        let quoteNode = document.createTextNode(body);
+        let tagNode = document.createTextNode("Tag: "+ tag);
 
         let authDiv = document.createElement('div');
         let quoteDiv = document.createElement('div');
@@ -55,6 +72,8 @@ const cardArray = (qt) => {
         authDiv.appendChild(authorNode);
 
         cardBody.appendChild(tagNode);
+
+        
     }
 
     
@@ -78,7 +97,7 @@ const sendReq = (method, url, data) => {
 
         xhr.onload = () => {
             const data = JSON.parse(xhr.response); // takes the response data and converts it into js
-            quotesArry(data);
+            cardArray(data);
 
 
 
