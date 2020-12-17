@@ -1,6 +1,6 @@
 const theHeaders = new Headers()
 
-theHeaders.append('Authorization', 'Token token="83ff6c5e1850ac35856e1869206dd66e"');
+theHeaders.append('Authorization', 'Token token="API KEY HERE"');
 
 let item = document.getElementById('id')
 let originator = document.getElementById('author')
