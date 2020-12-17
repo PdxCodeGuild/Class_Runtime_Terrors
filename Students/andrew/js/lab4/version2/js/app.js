@@ -1,40 +1,87 @@
 let apiKey = myKey;
-let text = {};
+
 console.log(apiKey);
 
-function http_get(url, success) {
-    let xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-        if (this.readyState === 1) {
-            xhttp.setRequestHeader('Authorization', 'Token token=' + apiKey)
-        } else if (this.readyState === 4 && this.status === 200) {
-            let data = JSON.parse(xhttp.responseText);
-            success(data);
-        } else if (this.readyState === 4 && this.status === 404) {
-            //Alert user to a 404 exception
-            alert("404 error!")
+const quotesArray = (data) => {
+    for (let i = 0; i < 5; i++) {
+
+        console.log(data['quotes'][i]['author']);
+        console.log(data['quotes'][i]['body']);
+        if (data['quotes'][i]['tags'][0] === undefined) {
+            //set innerText to something else
+            console.log("NO TAG")
+        } else {
+            console.log(data['quotes'][i]['tags'][0]);
         }
 
-        console.log()
-    };
-    xhttp.open("GET", url);
-    xhttp.send();
-}
+
+    }
+    return data;
+};
+
+
+const cardArray = (qt) => {
+    
+    for (let i = 0; i < 5; i++) {
+        const bod = document.getElementById('body');
+        const cardMain = document.createElement('div');
+        cardMain.setAttribute('class', 'card');
+        cardMain.setAttribute('style', 'width: 18rem');
+
+        const cardBody = document.createElement('div');
+        cardBody.setAttribute('class', 'card-body');
+        cardBody.setAttribute('id', i);
+
+        let card = document.getElementsByClassName('card');
+        let authorNode = document.createTextNode("Author");
+        let quoteNode = document.createTextNode('quote')
+        let tagNode = document.createTextNode('Tag');
+
+        let authDiv = document.createElement('div');
+        let quoteDiv = document.createElement('div');
+        let tagDiv = document.createElement('div');
+
+        authDiv.setAttribute('id', i);
+        quoteDiv.setAttribute('id', i);
+        tagDiv.setAttribute('id', i);
+
+        cardBody.appendChild(quoteDiv);
+        cardBody.appendChild(authDiv);
+        cardBody.appendChild(tagDiv);
+
+        bod.appendChild(cardMain);
+        cardMain.appendChild(cardBody);
+        quoteDiv.appendChild(quoteNode);
+        authDiv.appendChild(authorNode);
+
+        cardBody.appendChild(tagNode);
+    }
+
+    
+ 
+};
+
+
 
 const sendReq = (method, url, data) => {
     const promise = new Promise((resolve, reject) => {
         const xhr = new XMLHttpRequest();
 
         xhr.open(method, url);
-        if (data) {
-            xhr.setRequestHeader('Content-Type', 'application/json');
-        }
+
+        xhr.setRequestHeader("Authorization", "Token token=" + apiKey.KEY);
+
+
+
         //xhr.responseType = 'json'; Optional, use in stead of JSON.parse()
         //xhr.response; <- This is now the same data as JSON.parse(xhr.response)
 
         xhr.onload = () => {
-            const data = JSON.parse(xhr.response);// takes the response data and converts it into js
-            console.log(data);
+            const data = JSON.parse(xhr.response); // takes the response data and converts it into js
+            quotesArry(data);
+
+
+
         };
 
         xhr.onerror = () => {
@@ -45,7 +92,7 @@ const sendReq = (method, url, data) => {
             }
         };
 
-        xhr.send(JSON.stringify(data));
+        xhr.send();
 
     });
     return promise;
@@ -56,25 +103,13 @@ const sendReq = (method, url, data) => {
 
 
 const getData = () => {
-    sendReq('GET', 'https://reqres.in/api/users/').then(responseData => {
-        console.log(responseData);
-    });
-};
-
-const sendData = () => {
-    sendReq('POST', 'https://reqres.in/api/register', {
-        email: "eve.holt@reqres.in",
-        password: "pistol"
-
-    }).then(responseData => {
-        console.log(responseData);
-    }).catch(err => {
-        console.log(err);
+    sendReq('GET', 'https://favqs.com/api/quotes').then(responseData => {
     });
 };
 
 
 
-getData();
 
-sendData();
+
+
+
