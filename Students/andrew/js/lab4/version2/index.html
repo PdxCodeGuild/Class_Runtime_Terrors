@@ -10,30 +10,43 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
         crossorigin="anonymous"></script>
-    <title>Document</title>
+    <title>Quotes Requesting via API's</title>
 </head>
 
 <body id="body">
+    <div class="row">
+        <div class="card" style="width: 18rem;">
 
-    <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">XMLHttpRequest</h5>
+                <p class="card-text">This button gets quotes using Javascript's "XMLHttpRequest" object.</p>
+                <button type="button" class="btn btn-primary" onclick="getData()"> Get quotes</button>
+                <button type="button" class="btn btn-danger" onclick="location.reload()"> Refresh</button>
+            </div>
+        </div>
 
-        <div class="card-body">
-            <h5 class="card-title">XMLHttpRequest</h5>
-            <p class="card-text">This button gets quotes using Javascript's "XMLHttpRequest" object.</p>
-            <button type="button" class="btn btn-primary" onclick="getData()"> Get quotes</button>
+
+        <div class="card" style="width: 18rem;">
+
+            <div class="card-body">
+                <h5 class="card-title">Fetch</h5>
+                <p class="card-text"> This button gets quotes using Javascript's "Fetch" API (and uses a lot less code!)
+                </p>
+                <button type="button" class="btn btn-primary" onclick="sendFetchReq()"> Get quotes</button>
+                <button type="button" class="btn btn-danger" onclick="location.reload()"> Refresh</button>
 
             </div>
+        </div>
     </div>
 
-    <div class="card" style="width: 18rem;">
+    <hr>
+    <div id="qtbod" class="row"></div>
 
-        <div class="card-body">
-            <h5 class="card-title">Fetch</h5>
-            <p class="card-text"> This button gets quotes using Javascript's "Fetch" API</p>
-            <button type="button" class="btn btn-primary"> Get quotes</button>
 
-            </div>
-    </div>
+
+
+
+
 
 
 

@@ -9,4 +9,9 @@ body{
     border-radius: 5px; /* 5px rounded corners */
     margin: 20px;
   }
-  
+  .row{
+      justify-content: center;
+
+  }
+
+  #

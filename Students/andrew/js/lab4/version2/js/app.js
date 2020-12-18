@@ -1,33 +1,13 @@
 let apiKey = myKey;
 
-
 console.log(apiKey);
-
-
-// function quotesArray(data){
-//     for (let i = 0; i < 5; i++) {
-
-//         console.log(data['quotes'][i]['author']);
-//         console.log(data['quotes'][i]['body']);
-//         if (data['quotes'][i]['tags'][0] === undefined) {
-//             //set innerText to something else
-//             console.log("NO TAG")
-//         } else {
-//             console.log(data['quotes'][i]['tags'][0]);
-//         }
-
-
-//     }
-//     cardArray(data)
-    
-// }
+let card = document.getElementsByClassName('card');
 
 
 
-const cardArray = (quotesArray) => {
-    let qt = quotesArray;
+const cardArray = (quotes) => {
+    let qt = quotes;
 
-    //console.log(qt['quotes']);
     let tag =""
     for (let i = 0; i < 5; i++) {
         let author = qt['quotes'][i]['author'];
@@ -39,7 +19,7 @@ const cardArray = (quotesArray) => {
             tag = qt['quotes'][i]['tags'];
         }
 
-        const bod = document.getElementById('body');
+        const bod = document.getElementById('qtbod');
         const cardMain = document.createElement('div');
         cardMain.setAttribute('class', 'card');
         cardMain.setAttribute('style', 'width: 18rem');
@@ -48,7 +28,7 @@ const cardArray = (quotesArray) => {
         cardBody.setAttribute('class', 'card-body');
         cardBody.setAttribute('id', i);
 
-        let card = document.getElementsByClassName('card');
+        
         let authorNode = document.createTextNode("Author -" +author);
         
         let quoteNode = document.createTextNode(body);
@@ -70,14 +50,10 @@ const cardArray = (quotesArray) => {
         cardMain.appendChild(cardBody);
         quoteDiv.appendChild(quoteNode);
         authDiv.appendChild(authorNode);
-
         cardBody.appendChild(tagNode);
-
         
     }
-
     
- 
 };
 
 
@@ -90,16 +66,12 @@ const sendReq = (method, url, data) => {
 
         xhr.setRequestHeader("Authorization", "Token token=" + apiKey.KEY);
 
-
-
         //xhr.responseType = 'json'; Optional, use in stead of JSON.parse()
         //xhr.response; <- This is now the same data as JSON.parse(xhr.response)
 
         xhr.onload = () => {
             const data = JSON.parse(xhr.response); // takes the response data and converts it into js
             cardArray(data);
-
-
 
         };
 
@@ -116,8 +88,6 @@ const sendReq = (method, url, data) => {
     });
     return promise;
 
-
-
 };
 
 
@@ -127,7 +97,15 @@ const getData = () => {
 };
 
 
+let fetchQuotes = [];
+function sendFetchReq(){
+    let init = {headers: {"Authorization": "Token token=" + apiKey.KEY}};
+    fetch('https://favqs.com/api/quotes',init)
+    .then(response => response.json())
+    .then(showData => cardArray(showData));
 
+    
+}
 
 
 
