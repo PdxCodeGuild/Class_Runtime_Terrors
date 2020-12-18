@@ -17,8 +17,9 @@ function num_matches(winner, ticket){
     return matches
 }
 
-function main(){
+function main() {
     const earnings = {
+        0: 0,
         1: 4,
         2: 7,
         3: 100,

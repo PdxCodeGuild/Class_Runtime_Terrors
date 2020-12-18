@@ -5,7 +5,6 @@ function pick6(){
     for (i = 0; i < 6; i++) 
         ticket.push(Math.floor(Math.random() * (1 + high - low)) + low);
     return ticket;
-      
 }
 
 
