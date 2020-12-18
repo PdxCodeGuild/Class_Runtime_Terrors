@@ -5,7 +5,6 @@ function pick6(){
     for (i = 0; i < 6; i++) 
         ticket.push(Math.floor(Math.random() * (1 + high - low)) + low);
     return ticket;
-      
 }
 
 
@@ -18,10 +17,8 @@ function num_matches(winner, ticket){
     return matches
 }
 
-
-function main() {
-    const prizes = {
-        0: 0,
+function main(){
+    const earnings = {
         1: 4,
         2: 7,
         3: 100,
@@ -29,22 +26,18 @@ function main() {
         5: 1000000,
         6: 25000000,
     }
-    
 
-    let gains = 0;
+    let loops = 99999;
     let costs = 0;
+    let gains = 0;
     let i = 0;
-    const loops = 99999;
     const winner = pick6();
     while (i <= loops) {
         let ticket = pick6();
         costs += 2;
-        gains += prizes[num_matches(winner, ticket)];
+        gains += earnings[num_matches(winner, ticket)];
         i++;
     }
-
-
     console.log(`\nwinnings: ${gains}\nexpenses: ${costs}\nroi: ${(gains - costs) / costs}\n`)
 }
-
 main()
