@@ -45,19 +45,20 @@ function lapTime(){
 }
 setInterval(startClock, 500);
 
-
+let laps = undefined
 startLap.addEventListener('click',function(){    
-  let laps = setInterval(lapTime, 1000)
+  laps = setInterval(lapTime, 1000)
   
-  let stopLap = document.getElementById('stopBtn')
-  
-  stopLap.addEventListener('click',function(){
-    clearTimeout(laps)
-    let lap = document.createElement('li')
-    lap.id = 'lap'+lapList[0].children.length
-    lap.innerHTML = timer.getHours() + ":" + checkTime(timer.getMinutes()) + ":" + checkTime(timer.getSeconds())
-    lapList[0].appendChild(lap)
-    console.log(lapList[0].children)    
-    timer = new Date(0,0,0,0)
-  })
 })
+let stopLap = document.getElementById('stopBtn')
+stopLap.addEventListener('click',function(){
+  clearTimeout(laps)
+  let lap = document.createElement('li')
+  lap.id = 'Lap'+lapList[0].children.length
+  lap.innerHTML = "Lap "+lapList[0].children.length + ": "+ timer.getHours() + ":" + checkTime(timer.getMinutes()) + ":" + checkTime(timer.getSeconds())
+  lapList[0].appendChild(lap)
+  console.log(lapList[0].children)    
+  timer = new Date(0,0,0,0)
+})
+
+

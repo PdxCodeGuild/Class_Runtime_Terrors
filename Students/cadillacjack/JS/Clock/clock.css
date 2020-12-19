@@ -17,17 +17,38 @@ body{
     text-align: center;
     background-image: url(https://esotericawakening.com/wp-content/uploads/2018/08/time-crystals-.jpg);
     color: blanchedalmond;
+  }
+  
+.side{
+  grid-area: sidebar;
+  border: 2px solid black;
+  background-image: url('https://www.ducksters.com/sports/trackandfield2.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.side{
-    grid-area: sidebar;
-    border: 2px solid black;
-    /* align-items: center; */
+li{
+  list-style: none;
+  margin-bottom: 2%;
+  text-align: center;
+  color: cornsilk;
+  font-size: x-large;
+  text-shadow: 2px 1px black;
 }
+
 
 .clocks{
-    grid-area: main;
-    border: 2px solid black;
+  grid-area: main;
+  border: 2px solid black;
+  background-image: url('https://www.aier.org/wp-content/uploads/2019/01/clock.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.clocked{
+  text-align: center;
+  font-size: 500%;
+  color: aliceblue;
+  text-shadow: 2px 2px black;
 }
 
 .foot{
@@ -68,3 +89,15 @@ body{
   }
   .dropdown-content a:hover {background-color: #ddd}
   .show {display:block;}
+
+  .btn{
+    background-color: aliceblue;
+    position: relative;
+    left: 41%;
+    height: 30px;
+    font-size: large;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 2px 2px;
+  }
