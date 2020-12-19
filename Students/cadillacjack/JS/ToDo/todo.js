@@ -20,9 +20,7 @@ addIt.addEventListener('click',function(){
         for(let i=0; i<incomplete.children.length; i++){
             if (li.children[0].checked){
                 li.children[0].checked=false;
-                console.log('Make Money Money')
                 incomplete.removeChild(li) 
-                console.log(incomplete)
             }
         }
     })
