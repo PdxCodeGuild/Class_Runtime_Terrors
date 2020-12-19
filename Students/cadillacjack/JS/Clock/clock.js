@@ -2,7 +2,6 @@ let timer = new Date(0,0,0,0)
 let startLap = document.getElementById('startBtn')
 const lapList = document.getElementsByClassName('laps')
 
-
 function startClock(){
     let now = new Date()
     let h = now.getHours();
@@ -18,23 +17,6 @@ function checkTime(i){
     if (i<10){i = '0'+i}
     return i;
 }
-
-function myFunction() {
-      document.getElementById("myDropdown").classList.toggle("show");
-    }
-  
-    window.onclick = function(event) {
-        if (!event.target.matches('.dropbtn')) {
-            var dropdowns = document.getElementsByClassName("dropdown-content");
-            var i;
-            for (i = 0; i < dropdowns.length; i++) {
-                var openDropdown = dropdowns[i];
-                if (openDropdown.classList.contains('show')) {
-                    openDropdown.classList.remove('show');
-                  }
-                }
-              }
-            }
           
 function lapTime(){
   timer.setSeconds(timer.getSeconds()+1)
@@ -43,13 +25,14 @@ function lapTime(){
   document.getElementsByClassName('clocked')[0].innerHTML =
   timer.getHours() + ":" + m + ":" + s;
 }
+
 setInterval(startClock, 500);
 
 let laps = undefined
 startLap.addEventListener('click',function(){    
   laps = setInterval(lapTime, 1000)
-  
 })
+
 let stopLap = document.getElementById('stopBtn')
 stopLap.addEventListener('click',function(){
   clearTimeout(laps)
@@ -60,5 +43,3 @@ stopLap.addEventListener('click',function(){
   console.log(lapList[0].children)    
   timer = new Date(0,0,0,0)
 })
-
-
