@@ -1,0 +1,70 @@
+body{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+    "nav nav nav nav"
+    "sidebar main main main"
+    "sidebar main main main"
+    "footer footer footer footer";
+    border: 2px solid black;
+}
+
+.welcome{
+    grid-area: nav;
+    object-fit: fill;
+    position: relative;
+    text-align: center;
+    background-image: url(https://esotericawakening.com/wp-content/uploads/2018/08/time-crystals-.jpg);
+    color: blanchedalmond;
+}
+
+.side{
+    grid-area: sidebar;
+    border: 2px solid black;
+    /* align-items: center; */
+}
+
+.clocks{
+    grid-area: main;
+    border: 2px solid black;
+}
+
+.foot{
+    grid-area: footer;
+    border: 2px solid black;
+}
+
+.dropbtn{
+    position: relative;
+    align-self: center;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #75a1be;
+    border-radius: 5px;
+  }
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    right: 0px;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 100%;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  .dropdown-content a:hover {background-color: #ddd}
+  .show {display:block;}

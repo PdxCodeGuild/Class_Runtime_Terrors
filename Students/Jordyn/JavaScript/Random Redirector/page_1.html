@@ -7,9 +7,16 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="content">
-        <a class="a" onclick="clickable()">Page 1</a>
-        <a class="a" onclick="clickable()">Click For Random Page</a>
+    <div id="overlay">
+        <div class="background">
+            <p id="countdown">5</p>
+        </div>
+
+    </div>
+
+    <div id="content">
+        <a class="a" onclick="countTimer(),makeVisible()">Page 1</a>
+        <a class="a" onclick="countTimer(),makeVisible()">Click For Random Page</a>
     </div>
 
     <script src="source.js"></script>
