@@ -4,13 +4,13 @@ pre.setHours(0,0,0,0);
 let hour = pre.getHours();
 let minute = pre.getMinutes();
 
- 
 let butstart = document.getElementById('start')
 let butlap = document.getElementById('lap')
 let clock = document.getElementById('clock')
 let midlap = document.getElementById('laplist')
 
 butstart.addEventListener('click',function(){
+    
     let start = setInterval(function() {
     let second = pre.getSeconds();
     second += 1;
