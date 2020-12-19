@@ -1,20 +1,21 @@
 const readline = require('readline-sync');
+let unenOrEn = readline.question('encrypting? y/n ');
 let unencryptedMsg = readline.question('enter a string: ');
-unencryptedMsgArray = unencryptedMsg.split('')
 let letters = 'abcdefghijklmnopqrstuvwxyz';
-letterArray = letters.split('')
-charArray = 
-rotatedLetters = letters.substr(13, 26) + letters.substr(0, 13)
-rotatedLettersArray = rotatedLetters.split('')
-encryptedArray = []
+let rotation = readline.question('enter the rotation: ')
+rotation = rotation % 26
+let upperLetters = letters.toUpperCase();
+encryptedArray = [];
 
-for (const element of unencryptedMsgArray) {
+for (const element of unencryptedMsg) {
     if (letters.includes(element)){
-        encryptedArray.push(rotatedLettersArray[letterArray.indexOf(element)] + '#');
+        encryptedArray.push(letters[letters.indexOf(element)+ rotation]);
+    } else if (upperLetters.includes(element)){
+        encryptedArray.push(upperLetters.toUpperCase()[upperLetters.indexOf(element)+ rotation]);
     } else {
-        encryptedArray.push(element)
+        encryptedArray.push(element);
     }
 }
-console.log(encryptedArray)
 console.log(encryptedArray.join(""))
-console.log("code has run")
+
+console.log(letters.indexOf("a") + rotation)
