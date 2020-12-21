@@ -8,7 +8,7 @@
 </head>
 <body>
     <header class="welcome">
-        <h1 class="name">Cadillac Jacks Time Crystal</h1>
+        <h1 class="name">Cadillac Jacks Timer Apps</h1>
         <h2 class="now"></h2>
     </header>
     <sidebar class="side">
@@ -19,20 +19,18 @@
 
     </sidebar>
     <main class="clocks">
+        <h1 class="clocked">00:00:00</h1>
         <button class="btn" id="startBtn">Start Lap</button>
         <button class="btn" id="stopBtn">Stop Lap</button>
-        <h1 class="clocked"></h1>
     </main>
     <footer class="foot">
         <ul id=times>
             <li class="units">Hours</li>
-            <li class="units">Ten Minutes</li>
             <li class="units">Minutes</li>
-            <li class="units">Ten Seconds</li>
             <li class="units">Seconds</li>
         </ul>
         <div class="countDown" id="countDown">
-            <select name="halfDay" size="1" class="listbox">  
+            <select name="tenHour" size="1" class="listbox" id="tenHour">  
                 <option value="0"> 0 </option>  
                 <option value="1"> 1 </option>  
                 <option value="2"> 2 </option> 
@@ -42,11 +40,22 @@
                 <option value="6"> 6 </option>
                 <option value="7"> 7 </option>
                 <option value="8"> 8 </option>
-                <option value="9"> 9 </option>
-                <option value="10"> 10 </option>
-                <option value="11"> 11 </option>   
+                <option value="9"> 9 </option>  
             </select>
-            <select name="tenMinutes" size="1" class="listbox">  
+            <select name="hour" size="1" class="listbox" id="hour">  
+                <option value="0"> 0 </option>  
+                <option value="1"> 1 </option>  
+                <option value="2"> 2 </option> 
+                <option value="3"> 3 </option>  
+                <option value="4"> 4 </option>  
+                <option value="5"> 5 </option>
+                <option value="6"> 6 </option>
+                <option value="7"> 7 </option>
+                <option value="8"> 8 </option>
+                <option value="9"> 9 </option>  
+            </select>
+            <p class="colon" id="hourCol">:</p>
+            <select name="tenMinutes" size="1" class="listbox" id="tenMin">  
                 <option value="0"> 0 </option>  
                 <option value="1"> 1 </option>  
                 <option value="2"> 2 </option>  
@@ -54,7 +63,7 @@
                 <option value="4"> 4 </option>  
                 <option value="5"> 5 </option>  
             </select>
-            <select name="Minutes" size="1" class="listbox">  
+            <select name="Minutes" size="1" class="listbox" id="min">  
                 <option value="0"> 0 </option>  
                 <option value="1"> 1 </option>  
                 <option value="2"> 2 </option>  
@@ -66,7 +75,8 @@
                 <option value="8"> 8 </option>
                 <option value="9"> 9 </option>  
             </select>
-            <select name="tenSeconds" size="1" class="listbox">  
+            <p class="colon" id="minCol">:</p>
+                <select name="tenSeconds" size="1" class="listbox" id="tenSec">  
                 <option value="0"> 0 </option>  
                 <option value="1"> 1 </option>  
                 <option value="2"> 2 </option>  
@@ -74,7 +84,7 @@
                 <option value="4"> 4 </option>  
                 <option value="5"> 5 </option>  
             </select>
-            <select name="Seconds" size="1" class="listbox">  
+            <select name="Seconds" size="1" class="listbox" id="sec">  
                 <option value="0"> 0 </option>  
                 <option value="1"> 1 </option>  
                 <option value="2"> 2 </option>  
@@ -87,6 +97,8 @@
                 <option value="9"> 9 </option>  
             </select>
         </div>
+        <button class="timerBtn" id="startTimer">Start Timer</button>
+        <p class="timerTime">00:00:00</p>
 
     </footer>
     

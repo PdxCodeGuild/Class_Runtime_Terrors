@@ -1,30 +1,31 @@
 body{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: .5fr 1fr 1fr;
     grid-template-areas: 
-    "nav nav nav nav"
-    "sidebar main main main"
-    "sidebar main main main"
-    "footer footer footer footer";
-    border: 2px solid black;
+    "nav nav nav"
+    "sidebar main main"
+    "footer footer footer";
+    /* border: 2px solid black; */
+    background-image: url('https://www.nature.com/news/polopoly_fs/7.42815.1488879577!/image/time_crystals_finalCMYK.jpg_gen/derivatives/landscape_630/time_crystals_finalCMYK.jpg') !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+
 }
 
 .welcome{
+    height: fit-content;
     grid-area: nav;
     object-fit: fill;
     position: relative;
     text-align: center;
-    background-image: url(https://esotericawakening.com/wp-content/uploads/2018/08/time-crystals-.jpg);
     color: blanchedalmond;
   }
   
 .side{
+  min-height: 130px;
   grid-area: sidebar;
-  border: 2px solid black;
-  background-image: url('https://www.ducksters.com/sports/trackandfield2.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
+  /* border: 2px solid black; */
 }
 
 li{
@@ -39,21 +40,19 @@ li{
 
 .clocks{
   grid-area: main;
-  border: 2px solid black;
-  background-image: url('https://www.aier.org/wp-content/uploads/2019/01/clock.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
+  /* border: 2px solid black; */
 }
 .clocked{
   text-align: center;
-  font-size: 500%;
+  font-size: 700%;
   color: aliceblue;
   text-shadow: 2px 2px black;
+  margin: 0%;
 }
 
 .foot{
     grid-area: footer;
-    border: 2px solid black;
+    /* border: 2px solid black; */
 }
 
 
@@ -64,10 +63,10 @@ li{
   left: 41%;
   height: 30px;
   font-size: large;
-  margin-top: 5px;
+  /* margin-bottom: 25px; */
   border-radius: 5px;
   border: none;
-  box-shadow: 2px 2px;
+  box-shadow: 2px 2px black;
 }
 
 .countDown{
@@ -77,21 +76,90 @@ li{
 }
 
 .listbox{
+  color: aliceblue;
+  background-color: transparent;
+  position: relative;
   margin-left: 10px;
   margin-right: 10px;
+  border: none;
+  font-size: 125%;
 }
 
 #times{
   display: flex;
   flex-direction: row;
   justify-content: center;
-  /* color: blue !important; */
 }
 
 .units{
+  font-size: 250%;
   margin-left: 10px;
   margin-right: 10px;
-  color: blue !important;
+  margin-bottom: 0% !important;
+  color: rgb(255, 255, 255) !important;
+  text-shadow: 2px 2px rgb(0, 0, 0);
 }
 
+#tenHour{
+  left: 3%;
+}
+#hour{
+  left: 2%;
+}
 
+#tenMin{
+  left: 1%;
+}
+#min{
+  left: 0%;
+}
+
+#tenSec{
+  left: 0%;
+}
+
+#sec{
+  left: -1%;
+}
+
+.now{
+  font-size: 350%;
+  margin: 0.15em;
+}
+.name{
+  margin: 0.15em;
+}
+
+.colon{
+  position: relative;
+  font-size: 101px;
+  color: aliceblue;
+  margin: 0%;
+}
+#hourCol{
+  left: 2%;
+}
+#minCol{
+  left: 0%;
+}
+
+.timerBtn{
+  position: relative;
+  left: 48%;
+}
+.timerTime{
+  position: relative;
+  left: 41%;
+  font-size: 500%;
+  color: aliceblue;
+  margin: 0% !important;
+}
+
+/* #startBtn{
+  top: 0%;
+  left: 0%;
+}
+#stopBtn{
+  top: 0%;
+  left: 0%;
+} */
