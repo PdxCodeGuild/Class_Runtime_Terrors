@@ -40,8 +40,7 @@ function startClock(){
     let lap = document.createElement('li')
     lap.id = 'Lap'+lapList[0].children.length
     lap.innerHTML = "Lap "+lapList[0].children.length + ": "+ timer.getHours() + ":" + checkTime(timer.getMinutes()) + ":" + checkTime(timer.getSeconds())
-    lapList[0].appendChild(lap)
-    console.log(lapList[0].children)    
+    lapList[0].appendChild(lap)    
     timer = new Date(0,0,0,0)
     document.getElementsByClassName('clocked')[0].innerHTML =
       0+0 + ":" + 0+0 + ":" +0+0;
@@ -63,7 +62,6 @@ timerBtn.addEventListener('click',function(){
 
 function timeLeft(){
   timers.setSeconds(timers.getSeconds()-1);
-  // console.log(timers)
   document.getElementsByClassName('timerTime')[0].innerHTML =
   checkTime(timers.getHours()) + ':' + checkTime(timers.getMinutes()) + ':' + checkTime(timers.getSeconds()) ;
   if(checkTime(timers.getHours())==00){
