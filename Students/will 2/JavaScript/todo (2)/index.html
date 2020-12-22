@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./site.css" />
+    <title>ToDo List</title>
+  </head>
+
+  <body>
+    <h1>TODO</h1>
+
+    <input type="text" value="" id="text-field" />
+    <button id="btn-list">click to Add to List</button>
+    <button id="btn-remove">click to Remove from List</button>
+    <div id="word"></div>
+
+    <p>Incomplete</p>
+    <ul id="list">
+      <li>snow</li>
+      <li>sleet</li>
+      <li>wind</li>
+    </ul>
+
+    <p>Complete List</p>
+    <ul id="completeList"></ul>
+    <script src="tasks_jq.js"></script>
+  </body>
+</html>
