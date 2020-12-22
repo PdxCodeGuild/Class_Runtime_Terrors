@@ -1,18 +1,23 @@
-$(document).ready(function () {
-    console.log("Page Loaded... jQuery seems to be functioning.");
+$('#add-btn').click(function (){
+    
+    let text = $('#inputfield').val();
+    let li = $('<li></li>').text(text);
+    let clear = $('<button/>').text('clear').click(function (){
+        alert();
+    });
+    let complete = $('<button id="comp"></button>').text("Complete").click(function (){
+        $('#complete').append(li);
+
+
+    });
+   
+    if (text === ""){
+        alert("Please enter a TODO in the text field.")
+    }else{
+        
+        $('#todo').append(li);
+        $(li).append(complete);
+    }
+    
 });
 
-$('#add-btn').click(function () {
-    alert('click');
-    let todo = $('#inputfield').val();
-    let newEl = $("<li></li>").text()
-});
-
-
-var txt2 = $("<p></p>").text("Text.");   // Create with jQuery
-let li = document.createElement("li");
-     let dv = document.createElement("div");
-     let clearBtn = document.createElement('button');
-     let completeBtn = document.createElement('button');
-     let todo = document.getElementById("inputfield").value;
-     let text = document.createTextNode(todo);

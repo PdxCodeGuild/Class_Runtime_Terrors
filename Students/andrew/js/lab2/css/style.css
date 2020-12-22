@@ -1,5 +1,5 @@
 body{
-    padding: 25vw;
+    padding: 30vw;
     padding-top: 10vh;
     
 }
@@ -32,9 +32,13 @@ body{
 
  }
 
-
-
   ul li.unchecked {
     background: #eee;
     text-decoration: none;
+  }
+
+  .list-container{
+      display: flex;
+      
+      
   }

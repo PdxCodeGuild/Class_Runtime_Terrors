@@ -1,32 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>jQuery TODO</title>
-    
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="css/main.css">
 </head>
-
 <body>
-    <div id="headerDiv" class="header">
-        <h3>jQuery TODO LIST</h3>
-        <div class="input-content">
-            <input type="text" id="inputfield" placeholder="Add TODO item here...">
-            <span> <button class="add" id="add-btn"> Add</button></span>
-            <span> <button class="clear" id="clear-btn" onclick="clearList()"> Clear all</button></span>
+
+    <div class="container">
+
+        <div>
+            <h1 id="comp">jQuery TODO</h1>
+        </div>
+        <div class="input-row">
+            <input type="text" id="inputfield" placeholder="Add TODO item here..">
+            <span> <button id="add-btn"> Add</button></span>
+            <span> <button id="clear-btn"> Clear all</button></span>
         </div>
     </div>
-
-    <ul id="ul-content">
-
-    </ul>
-
-    <script src="js/jqapp.js">
-       
-    </script>
+<div class="list-container">
+    <div class="list-col-txt">TODO</div>
+    <div class="column">
+        <ul id="todo">
+           
+        </ul>
+    </div>
+    <div class="list-col-txt">Complete</div>
+    <div class="column">
+        <ul id="complete">
+            
+        </ul>
+    </div>
+</div>
+    
+    <script src="js/jqapp.js"></script>
 </body>
-
 </html>
