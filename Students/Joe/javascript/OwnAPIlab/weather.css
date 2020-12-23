@@ -1,0 +1,23 @@
+#outputter{
+    color: green;
+}
+
+#outputter{
+    display:flex;
+}
+#city{
+    margin: 3px;
+}
+#temperature{
+    margin: 3px;
+}
+
+.fa-cloud{
+    color: red;
+    font-size: 80px;
+} 
+
+.fa-cloud-rain{
+    color: red;
+    font-size: 80px; 
+}
