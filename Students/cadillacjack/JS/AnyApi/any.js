@@ -3,9 +3,6 @@ const divPic = document.getElementById('picDiv')
 const owner = document.getElementById('copyright')
 const explanation = document.getElementById('explanation')
 const searchBtn = document.getElementById('searchBtn')
-// let year = undefined
-// let month = undefined
-// let day = undefined
 
 function getData(){
     fetch(url)
@@ -30,20 +27,12 @@ function getData(){
 }
 getData()
 searchBtn.addEventListener('click',function(){
+    url = 'https://api.nasa.gov/planetary/apod?api_key=4sGZ9oQpr4FqOaBewnmjODONv5FPIoOYB4dq6acz'
     year = document.getElementById('years').value
-    console.log(typeof year)
     month = document.getElementById('months').value
-    console.log(typeof month)
     day = document.getElementById('days').value
-    console.log(typeof day)
     divPic.innerHTML = ""
-    url += ("&date="+year+"-"+month+"-"+day)
-    console.log(url)
+    url = (url+"&date="+year+"-"+month+"-"+day)
     getData()
-    url -= ("&date="+year+"-"+month+"-"+day)
-    // let year = undefined
-    // let month = undefined
-    // let day = undefined
-    // let url = 'https://api.nasa.gov/planetary/apod?api_key=4sGZ9oQpr4FqOaBewnmjODONv5FPIoOYB4dq6acz'
-
+    
 })
