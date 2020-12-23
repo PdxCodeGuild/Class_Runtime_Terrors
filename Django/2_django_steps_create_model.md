@@ -1,5 +1,5 @@
 
-## part 3: Create a Model
+## part 2: Create a Model
 
 
 A model is a representation of your object in the Database. There are different ways to define a relationship between elements in the database:
@@ -78,7 +78,7 @@ class Car(models.Model):
             return self.title
     ```
 
-once your *models.py* file matches, run `python manage.py makemigrations` and then `pythom manage.py migrate`.
+Once your *models.py* file matches, run `python manage.py makemigrations` and then `pythom manage.py migrate`.
 
 makemigrations changes the configuration of the database
 
@@ -128,4 +128,4 @@ admin.site.register(models.Todo)
 
 ```
 - In the terminal run `python manage.py createsuperuser`
-- Go to` http://localhost:8000/admin/` to explore and add more todos
+- Go to` http://localhost:8000/admin/` to explore and add more todos.

@@ -1,4 +1,4 @@
-## How to use a model and database inside your template
+## How to use a model and a database inside your template
 
 0. Go back to the todo_app folder > views.py
 1. Import the model created with:
@@ -7,14 +7,6 @@
    ```
 2. You want to start to retrieve items from the database using the following syntax:
 
-```python
-   todos = Todo.objects.all()
-      context = {
-        'todos': todos
-    }
-```
-
-The final format will be:
 
 ```python
 
@@ -48,9 +40,9 @@ def todo_list(request):
 {% endblock %}
 ```
 
-4. Let's add more Todos! To achieve this, we need to create a form. Go to the templates folder > todos and add a page named add.html.
+4. Let's add more Todos! To achieve this, we need to create a form. Go to the templates folder > todos and add a html page named "add":
 
-In that page, add the following:
+In that page, include the following:
 
 ```html
 {% extends 'base.html' %}
@@ -110,7 +102,7 @@ urlpatterns = [
     path('add/', views.add_todo, name = 'add'),
 ]
 ```
-7. Let's say that we want to click on each todo and display a page with 2 options: "update" and "delete". To do this, we'll need to create a link to each specific todo using its unique ID. Remember, each time you create an element in the database it gets assigned an ID.
+7. Let's say that we want to click on each todo and display a secondary page with 2 options: "update" and "delete". To do this, we'll need to create a link to each specific todo using its unique ID. Remember, each time you create an element in the database it gets assigned an ID.
 
 - In templates > todos add a page `detail.html` with the following:
 
@@ -217,13 +209,13 @@ def update(request, id):
 ```html
 <a href="{% url 'update' todo.id %}">update</a>
 ```
-You can also add the following to go back one step
+You can also add the following to go back to the main list of todos
 
 ```html
 <a href ="http://localhost:8000/todo/">Back to main todo list</a>
 ```
 
-9. Let's implement a function to remove a todo. This time we do not need much, we just need to ask the database to remove something. Let's implement the function in the todo_app > views.py page:
+9. Let's implement a function to delete a todo. This time we do not need much, we just need to ask the database to delete something. Let's implement the function in the todo_app > views.py page:
 
 ```python
 # view to remove a specific todo from the database specified by its id

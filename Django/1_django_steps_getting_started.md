@@ -31,8 +31,7 @@
 
 4. test to make sure the server runs<br>
    `python3 manage.py runserver`<br>
-   or
-   `python manage.py runserver`
+  
    if everything was done correctly, you should see the default server page with the animated rocket.
    [](./django_scrnsht.png)
 
@@ -40,9 +39,9 @@
 
 There are many ways to approach a django project. This is just one version of how i do it. It's a general pattern i usually follow, but there are times when i deviate from this for no other reason than my thought process may not be the same from app to app. Many of the steps are purely organizational and can be changed to fit whatever organizational scheme makes the most sense to you.
 
-1. create an app with the command<br>
-   `python manage.py startapp todo_app` <br>
-   `python manage.py startapp pages_app`
+1. Exit the server by pressing control + c. Create an app with the command<br>
+   `python3 manage.py startapp todo_app` <br>
+   `python3 manage.py startapp pages_app`
 
    go into your _my_project_name/settings.py_ file and install your apps. Add the name of your app to the list of installed apps like so:
 
@@ -173,11 +172,11 @@ There are many ways to approach a django project. This is just one version of ho
    ]
 ```
 
-9. We saw that views return a simple message included in a string. This isn't that efficient. We can return entire pages. You'll need to think about how you want the user to interact with your app to determine what templates you'll need. Since it depends on how you want your app laid out, I'll show you a simple setup for a base template called _base.html_, and how you can extend that base template with another template.
+9. We are able to return a simple message included in a string. This isn't that efficient. We can return entire pages. You'll need to think about how you want the user to interact with your app to determine what templates you'll need. Since it depends on how you want your app laid out, I'll show you a simple setup for a base template called _base.html_, and how you can extend that base template with another template.
 
    _templates/base.html_
 
-   ```python
+   ```html
        {% load static %}
        <!DOCTYPE html>
        <html lang="en">
@@ -198,7 +197,7 @@ There are many ways to approach a django project. This is just one version of ho
 
    _templates/pages/index.html_
 
-   ```python
+   ```html
    {% extends 'base.html' %}
    {% block content %}
        <h1>hello from the index template</h1>
@@ -207,7 +206,7 @@ There are many ways to approach a django project. This is just one version of ho
 
    _templates/todos/list.index.html_
 
-   ```python
+   ```html
    {% extends 'base.html' %}
    {% block content %}
        <h1>hello from the todo list template</h1>

@@ -55,15 +55,19 @@ add(5); // 6
 It's very common to pass a function as a parameter to another function. You can see an example of this in [element.addEventListener()](10%20-%20Events.md), [setTimeout()](12%20-%20Timing.md), and [windowRequestAnimationFrame()](13%20-%20Canvas%20Drawing.md). The example below performs an operation on each element of an array.
 
 ```javascript
+let nums = [1, 2, 3];
+
+//defining the function
 function perform_operation(arr, f) {
   for (let i=0; i<arr.length; ++i) {
     arr[i] = f(arr[i]);
   }
 }
-
-let nums = [1, 2, 3];
-perform_operation(nums, function(x) {
-  return x*x;
-});
-alert(nums); // [1, 4, 9]
+//argument function
+function doublers(x){
+  return x * x
+}
+//calling the function
+perform_operation(nums, doublers);
+alert(nums); 
 ```
