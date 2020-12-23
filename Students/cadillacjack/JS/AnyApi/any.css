@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(238, 235, 255);
+    background-color: #F4F4FF;
 }
 
 #pageTitle{
@@ -11,7 +11,6 @@ body{
     position: relative;
     left: 6%;
 }
-
 
 #picDiv{
     position: relative;
