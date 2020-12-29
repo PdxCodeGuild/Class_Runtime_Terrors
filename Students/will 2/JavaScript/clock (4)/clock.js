@@ -1,13 +1,23 @@
-var myVar = setInterval(myTimer, 1000);
-let count = 00
-let btnStart = document.getElementById("start")
-btnStart.addEventListener("click", function(){
-    var myVar = setInterval(myTimer, 1000);
-})
-function myTimer() {
-  var d = new Date();
-  count++
-  d.setSeconds(count);
-  let dString = `${d.getHours()} ${d.getMinutes()} ${d.getSeconds()}`
-  document.getElementById("demo").innerHTML = dString;
+var myVar = setInterval(theClock, 1000);
+let count = 0;
+function theClock() {
+  var date = new Date();
+  date.setHours(0,0,0,0,0);
+  count++;
+  date.setSeconds(count);
+  var hr = date.getHours()
+  var min = date.getMinutes();
+  var sec = date.getSeconds();
+  hr = digits(hr);
+  min = digits(min);
+  sec = digits(sec);
+  x = date.toLocaleTimeString();
+  document.getElementById("demo").innerHTML = hr + ":" + min + ":" + sec;
+}
+
+function digits(i){
+  if (i<10){
+    i = "0" + i;
+  }
+  return i;
 }
