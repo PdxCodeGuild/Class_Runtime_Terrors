@@ -27,6 +27,6 @@ function countClock(){
 }
 
 change.addEventListener('click', function() {
-    console.log('started listener');
+    alert('Start random redirect?');
     setInterval(countClock, 1000);
 })
