@@ -1,0 +1,45 @@
+
+
+
+#wrapper{
+    display: flex;
+    justify-content: space-evenly;
+
+
+}
+
+header{
+    text-align: center;
+}
+
+.window_wrapper{
+    width: 5px;
+    
+    background: white;
+}
+
+#left_window{
+    
+    height: 400px;
+    /* width: 33%; */
+    /* border: 10px solid white; */
+    /* border-radius: 5px; */
+}
+
+#center_window{
+   
+    height: 400px;
+    /* border: 10px solid white; */
+}
+
+#right_window{
+    /* min-width: 33%; */
+    height: 400px;
+    /* border: 10px solid white; */
+    
+}
+
+footer{
+    display: grid;
+    align-items: center;
+}
