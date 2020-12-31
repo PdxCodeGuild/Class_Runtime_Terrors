@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<h5 class='mt-3 text-center'>Register an author in the system</h5>
+
+<form class='mt-3' action="{% url 'add_authors' %}" method="POST">
+  {% csrf_token %}
+  <div id='author-form' class="form-group">
+    <label for="authors">Select Author</label>
+    <select class="form-control" name='author' id="authors">
+      <option value="Ernest Hemingway">Ernest Hemingway</option>
+      <option value="Joan Didion">Joan Didion</option>
+      <option value="Ray Bradbury">Ray Bradbury</option>
+      <option value="Ayn Rand">Ayn Rand</option>
+      <option value="Gillian Flynn">Gillian Flynn</option>
+      <option value="Jane Austen">Jane Austen</option>
+    </select>
+    <button type="submit" class="btn btn-primary mb-2 mt-3">Submit</button>
+  </div>
+</form>
+{% endblock %}

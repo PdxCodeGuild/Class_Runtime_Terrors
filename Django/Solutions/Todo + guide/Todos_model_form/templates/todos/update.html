@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form action="{% url 'update' todo.id %}" method="POST">
+    {% csrf_token %}
+    title: <br> <input type="text" name="title" value="{{ todo.title }}"><br>
+    description:<br> <textarea name="text" id="" cols="30" rows="10">{{ todo.text }}</textarea><br>
+    status: <br> <select name="status"><br>
+        <option value="True">True</option>
+        <option value="False" selected>False</option>
+      </select> 
+      <br>
+    <input type="submit" value="update">
+</form>
+{% endblock %}

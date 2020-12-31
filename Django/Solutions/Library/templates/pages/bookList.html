@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<a href="http://localhost:8000/books">Add a book to the list</a>
+<ul>
+  {% for book in books %}
+  <p>Author: {{ book.author }}</p>
+  <p>Title: {{ book.title }}</p>
+  <p>Pub Date: {{book.pub_date}}</p>
+  {% empty %}
+  <p>The list is empty, add books</p>
+  {% endfor %}
+</ul>
+{% endblock %}

@@ -1,6 +1,7 @@
 # Django Quickstart 1 - Creating URLs, Views and Static folders.
+## Set up Virtual Environment with Pipenv
 
-## Set up Virtual Environment with PipEnv
+This document covers the content in the folder 'Views'.
 
 If you do not have Pipenv, install it globally on your machine. In the terminal run 
 
@@ -155,5 +156,4 @@ urlpatterns = [
     path('<path>/', include('<appname>.urls')) # Note: all your app urls will start with this path
 ]
 ```
-
 
