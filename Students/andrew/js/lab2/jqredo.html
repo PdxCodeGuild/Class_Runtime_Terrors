@@ -4,29 +4,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>jQuery TODO</title>
-    
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="css/main.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <title>TODO LIST</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
+
     <div id="headerDiv" class="header">
-        <h3>jQuery TODO LIST</h3>
+        <h3>JQUERY TODO LIST</h3>
         <div class="input-content">
             <input type="text" id="inputfield" placeholder="Add TODO item here...">
-            <span> <button class="add" id="add-btn"> Add</button></span>
-            <span> <button class="clear" id="clear-btn" onclick="clearList()"> Clear all</button></span>
+            <span> <button class="btn" id="add-btn"> Add</button></span>
+            <span> <button class="btn" id="clear-all"> Clear all</button></span>
         </div>
     </div>
+<div >
+    <ul id="todo"><div class="container">
 
-    <ul id="ul-content">
+    </div>
 
     </ul>
 
-    <script src="js/jqapp.js">
-       
-    </script>
+    <ul id="complete">
+
+    </ul>
+    </div>
+
+    <script src=js/jqapp.js></script>
 </body>
 
 </html>

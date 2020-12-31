@@ -1,5 +1,5 @@
 body{
-    padding: 25vw;
+    padding: 30vw;
     padding-top: 10vh;
     
 }
@@ -25,16 +25,34 @@ body{
  }
 
  ul li {
-    padding: 10px 8px 10px 20px;
-    list-style-type: none;
-    background: #eee;
+    /*padding: 10px 8px 10px 20px;*/
+    
+    
     font-size: 18px;
+    
+    list-style-type: none;
 
  }
-
-
 
   ul li.unchecked {
     background: #eee;
     text-decoration: none;
   }
+
+  .list-container{
+      display: flex;
+      
+      
+  }
+
+  .inner{
+      display: flex;
+      justify-content: space-between;
+      /*background: #eee;*/
+  }
+
+  .inner:nth-child(even){
+      background:rgb(136, 136, 136);
+
+  }
+  

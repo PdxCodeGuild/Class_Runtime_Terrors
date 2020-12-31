@@ -1,30 +1,53 @@
 const readline = require('readline-sync');
-
-const encoderRing1 = [
-    'a','b','c','d','e','f','g','h','i','j','k','l','m',
-    'n','o','p','q','r','s','t','u','v','w','x','y','z'
-]
-
-const encoderRing2 = [
-    'n','o','p','q','r','s','t','u','v','w','x','y','z',
-    'a','b','c','d','e','f','g','h','i','j','k','l','m'
-]
-
+const encodeAlpha = "abcdefghijklmnopqrstuvwxyz"
 let secret = readline.question('What is the secret message you would like to encrypt? :\n')
-secretList = secret.split('')
+let rot = parseInt(readline.question('What is the level of encryption to use? :\n'))
+let rotate = rot%26
+let newList= ''
+let secretList=''
+let capList = encodeAlpha.toUpperCase()
 
-let encodeKey = {}
+for(i=Math.abs(rotate);i<encodeAlpha.length;i++){
+    newList += encodeAlpha[i];
+}
+for(i=0;i<Math.abs(rotate);i++){
+    newList += encodeAlpha[i];
+}
 
-function encoderRing(){
-    let i = 0;
-    while (i < 26) {
-        let j = i
-        encodeKey.j = encoderRing1[i], encoderRing2[i]
+function Scramble(){
+    i=0
+    for(element of secret){
+        j = encodeAlpha.indexOf(element.toLowerCase())
+        if(newList[j] == undefined){
+            secretList+=element
+        }
+        else if(capList.includes(element)){
+            secretList += newList[j].toUpperCase()
+        }else{
+            secretList += newList[j]
+        }
         i++
     }
 }
 
+function Unscramble(){
+    for(i=0;i<secret.length;i++){
+        let j = secret[i]
+        let k = newList.indexOf(j.toLowerCase())
+        if(encodeAlpha[k]==undefined){
+            secretList += secret[i]
+        }
+        else if(capList.includes(j)){
+            secretList += encodeAlpha[k].toUpperCase()
+        }else{
+            secretList += encodeAlpha[k]
+        }
+    } 
+}
 
-// encoderRing()
-// console.log(encodeKey)
+if(rot<0){
+    Unscramble()
+}else{
+    Scramble()
+}
 console.log(secretList)

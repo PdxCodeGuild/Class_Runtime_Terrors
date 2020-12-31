@@ -15,6 +15,8 @@ while(looper > 0){
     for (let winNum=[],i=0;i<6;++i) winNum[i]=Math.ceil(Math.random()*99);
     for (let myNum=[],i=0;i<6;++i) myNum[i]=Math.ceil(Math.random()*99);
     
+    // for (let i=0, win=0; i<6;++i) if (winNum[i]===myNum[i]){win++;};
+
     function winCheck(){
         let i = 0
         let win = 0
