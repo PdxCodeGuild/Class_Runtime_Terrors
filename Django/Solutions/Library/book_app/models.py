@@ -20,6 +20,7 @@ class Author(models.Model):
 class Book(models.Model):
     title = models.CharField(max_length=200)
     pub_date = models.DateField()
+    quantity = models.PositiveIntegerField(default=1)
     author = models.ForeignKey(Author, on_delete=models.PROTECT, blank=True)
     def __str__(self):
         return "%s %s" % (self.title, self.author)

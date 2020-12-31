@@ -34,10 +34,16 @@ def add_books(request):
     if request.method == 'GET':
         return render(request, 'pages/addBooks.html', context)
     if request.method == 'POST':
-        title = request.POST['title']
-        pub_date = request.POST['pub_date']
-        book = Book.objects.create(title=title,
+        book = Book.objects.all().filter(title=request.POST['title'])
+        if not book:
+            title = request.POST['title']
+            quantity = request.POST['quantity']
+            pub_date = request.POST['pub_date']
+            book = Book.objects.create(title=title,
                                    author=Author(id=request.POST['author']),
-                                   pub_date=pub_date)
-        return redirect('list')
-    return render(request, 'pages/addBooks.html', context)
+                                   pub_date=pub_date, quantity = quantity)
+            messages.success(request, 'Book added in the Database!')
+            return redirect('dashboard')
+        else: ## Otherwise print error and stay in the form view
+            messages.warning(request, 'Book already in the database')
+            return render(request, 'pages/addBooks.html', context)
