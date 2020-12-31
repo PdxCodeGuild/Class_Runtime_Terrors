@@ -31,8 +31,7 @@ function processData(){
     }
   }
   
-  averagePopulation = (totalPopulation / i).toFixed() //Averages state populations
-  
+  averagePopulation = (totalPopulation / i).toFixed() //Averages state populations  
   selectedStatePopulation = (census_data.data[stateNumber].Population) //Population of state
   
   if (selectedStatePopulation > averagePopulation){ //Determines Greater than / Less than
