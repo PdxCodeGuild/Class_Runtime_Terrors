@@ -1,4 +1,6 @@
 from django.db import models
+from django.contrib.auth.models import User
+import datetime
 
 class Author(models.Model):
     writer = (
@@ -22,3 +24,16 @@ class Book(models.Model):
     
     def __str__(self):
         return "%s %s" % (self.title, self.author)
+
+class LandBook(models.Model):
+    out = (
+        ('yes','Book is out'),
+        ('no','Book is in'),
+    )
+    book = models.ForeignKey(Book, on_delete=models.CASCADE, blank=True)
+    user = models.ForeignKey(User, on_delete = models.CASCADE, null=True, blank=True)
+    status = models.CharField(max_length = 200, choices = out, blank = True)
+    timestamp = models.DateTimeField(default=datetime.datetime.now)
+
+    def __str__(self):
+        return "%s %s %s" % (self.book, self.user, self.timestamp)
