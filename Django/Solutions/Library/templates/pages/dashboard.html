@@ -6,6 +6,9 @@
     <div class= 'd-flex justify-content-around mt-5'>
         <a href="http://localhost:8000/authors" class="btn btn-primary btn-lg" role="button">Register Authors</a>
         <a href="http://localhost:8000/books" class="btn btn-primary btn-lg" role="button">Add Books</a>
+        {%if user.is_authenticated%}
+        <a href="http://localhost:8000/list" class="btn btn-primary btn-lg" role="button">Borow a Book</a>
+        {%endif%}
         <a href="#" class="btn btn-primary btn-lg" role="button">Lend Books</a>
     </div>
 </div>

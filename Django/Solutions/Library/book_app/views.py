@@ -1,11 +1,12 @@
 from django.shortcuts import render, redirect
 from .models import Book, Author
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
 def dashboard(request):
     return render(request, 'pages/dashboard.html')
 
-
+@login_required
 def list(request):
     book = Book.objects.all()
     context = {'books': book}
