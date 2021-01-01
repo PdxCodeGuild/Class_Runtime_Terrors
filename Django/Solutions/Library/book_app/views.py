@@ -42,7 +42,7 @@ def add_books(request):
     if request.method == 'GET':
         return render(request, 'pages/addBooks.html', context)
     elif request.method == 'POST':
-        book = Book.objects.all().filter(title=request.POST['title'])
+        book = Book.objects.all().filter(title=request.POST['title']).filter(author=request.POST['author'])
         if not book:
             title = request.POST['title']
             quantity = request.POST['quantity']
@@ -69,11 +69,10 @@ def borrow_book(request, id):
             messages.warning(request, 'Not enough quantity')
             return render(request, 'pages/details.html', context)
         else:
-        #     user = request.user
-        #     status = 'no'
-        #     landed = LandBook.objects.create(book=book, user=user, status = "Book is out")
-        #     return render(request, 'pages/details.html', context)
-              return render(request, 'pages/borrow/borrowView.html', context)
+            user = request.user
+            status = 'no'
+            landed = LandBook.objects.create(book=book, user=user, status = "Book is out")
+            return render(request, 'pages/borrow/borrowView.html', context)
 
 
 
