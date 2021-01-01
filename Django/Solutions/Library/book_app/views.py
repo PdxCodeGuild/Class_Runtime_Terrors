@@ -71,6 +71,8 @@ def borrow_book(request, id):
         else:
             user = request.user
             status = 'no'
+            book.quantity = book.quantity - amount
+            book.save()
             for x in str(amount):
                 landed = LandBook.objects.create(book=book, user=user, status = "Book is out")
             return render(request, 'pages/borrow/borrowView.html', {"totalBooks": LandBook.objects.all()})
