@@ -27,12 +27,12 @@ class Book(models.Model):
 
 class LandBook(models.Model):
     out = (
-        ('yes','Book is out'),
-        ('no','Book is in'),
+        ('out','Book is out'),
+        ('in','Book is in'),
     )
     book = models.ForeignKey(Book, on_delete=models.PROTECT, blank=True)
     user = models.ForeignKey(User, on_delete = models.PROTECT, null=True, blank=True)
-    status = models.CharField(max_length = 200, choices = out, blank = True)
+    status = models.CharField(max_length = 200, choices = out,  default = 'out', blank = True)
     timestamp = models.DateTimeField(default=datetime.datetime.now)
 
     def __str__(self):
