@@ -65,17 +65,17 @@ def borrow_book(request, id):
         return render(request, 'pages/details.html', context)
     elif request.method == "POST":
         amount = int(request.POST['amount'])
-        if amount > book.quantity:
+        if amount > book.quantity or book.quantity == 0:
             messages.warning(request, 'Not enough quantity')
             return render(request, 'pages/details.html', context)
         else:
             user = request.user
             status = 'no'
             book.quantity = book.quantity - amount
-            book.save()
+            book.save() ##updates the book quantity in the book object
             for x in str(amount):
                 landed = LandBook.objects.create(book=book, user=user, status = "Book is out")
-            return render(request, 'pages/borrow/borrowView.html', {"totalBooks": LandBook.objects.all()})
+            return render(request, 'pages/borrow/borrowView.html', {"totalBooks": LandBook.objects.filter(user = user)}) ##filtering by user
 
 
 
