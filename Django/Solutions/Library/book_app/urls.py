@@ -5,5 +5,7 @@ urlpatterns = [
     path('', views.dashboard, name = 'dashboard'),
     path('authors/', views.add_authors, name = 'add_authors'),
     path('list/', views.list, name = 'list'),
-    path('books/', views.add_books, name = 'add_books')
+    path('books/', views.add_books, name = 'add_books'),
+    path('details/<int:id>', views.book_details, name = 'details'),
+    path('borrow/<int:id>', views.borrow_book, name = 'borrow'),
 ]
