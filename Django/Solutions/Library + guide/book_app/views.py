@@ -93,6 +93,3 @@ def return_book(request, id):
     find_book.save()
     borrowed_book_id.delete()
     return redirect('my_boorowed_books')
-
-
-
