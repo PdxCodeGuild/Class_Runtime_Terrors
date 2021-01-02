@@ -5,7 +5,8 @@
   <div id='author-form' class="form-group">
     <label for="book_title">Book Title</label>
     <input type="text" class="form-control" id="book_title" name="title" placeholder="enter book title" /><br /><br />
-    <input type="date" class="form-control" id="start" name="pub_date" value="2018-07-22" min="2018-01-01" max="2030-12-31">
+    <input type="text" class="form-control" id="quantity" name="quantity" placeholder="enter book quantity"><br /><br />
+    <input type="date" class="form-control" id="start" name="pub_date" value="2018-07-22" min="2018-01-01" max="2030-12-31"><br />
     <br />
     {%if authors%}
     <select class="form-control" name='author' id="authors">

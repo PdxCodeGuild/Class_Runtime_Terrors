@@ -4,7 +4,6 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib import messages
 
-
 def user_register(request):
     if request.method == 'POST':
         new_user = User(
