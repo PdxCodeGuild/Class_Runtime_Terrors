@@ -85,3 +85,14 @@ def borrowed_books_view(request):
     }
     return render(request, 'pages/borrow/borrowView.html', context)
 
+def return_book(request, id):
+    borrowed_book_id = LandBook.objects.get(id = id)
+    book_title = str(borrowed_book_id).split(' ')
+    find_book = Book.objects.filter(title__contains = book_title[0]).first() ##finds the object starting from the queryset
+    find_book.quantity = find_book.quantity + 1
+    find_book.save()
+    borrowed_book_id.delete()
+    return redirect('my_boorowed_books')
+
+
+

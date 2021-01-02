@@ -6,7 +6,7 @@
   <p><b>Book:</b> {{ book.book}}</p>
   <p><b>Status: </b>{{ book.status}}</p>
   <p><b>Borrowed date:</b> {{book.timestamp}}</p>
-  <a href=# class="btn btn-primary mb-4" role="button">Return Book</a>
+  <a href="{% url 'return' book.id%}" class="btn btn-primary mb-4" role="button">Return Book</a>
 </div>
 {%endfor%}
 {% endblock %}
