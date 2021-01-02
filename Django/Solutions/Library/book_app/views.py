@@ -73,9 +73,15 @@ def borrow_book(request, id):
             status = 'no'
             book.quantity = book.quantity - amount
             book.save() ##updates the book quantity in the book object
-            for x in str(amount):
+            for x in range(amount):
                 landed = LandBook.objects.create(book=book, user=user, status = "Book is out")
-            return render(request, 'pages/borrow/borrowView.html', {"totalBooks": LandBook.objects.filter(user = user)}) ##filtering by user
+            return redirect('dashboard')
 
 
+def borrowed_books_view(request):
+    books = LandBook.objects.filter(user=request.user)
+    context ={
+        "books" : books
+    }
+    return render(request, 'pages/borrow/borrowView.html', context)
 
