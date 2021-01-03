@@ -1,15 +1,16 @@
 let userData = document.getElementById("user_data")
 
-fetch('https://jsonplaceholder.typicode.com/users')
-    .then(function(response){
-    return response.json()
-    })
-    .then(function(data) {
-        //use the callback function to display data in the DOM
-       console.log(data[0]['name'])
-       var users = data
-       console.log(users)
-       return users
-    })
+function getUsers() {
+    axios
+    .get("https://jsonplaceholder.typicode.com/users")
+    .then((res) => {
+      console.log(res.data[0]["name"]);
+      userData.innerHTML = res.data[0]["name"];
+    });
+  }
+  
 
+getUsers();
+let map = document.getElementById("mapid")
 
+var mymap = L.map('mapid').setView([51.505, -0.09], 13);
