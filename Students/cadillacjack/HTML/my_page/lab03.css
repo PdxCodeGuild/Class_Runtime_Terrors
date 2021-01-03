@@ -50,8 +50,12 @@ main{
     grid-area: content1;
 }
 
-.card{
-    background-color: lawngreen !important;
+.card-text{
+    font-size: 75%;
+}
+
+.card-title{
+    font-size: 1.5vw;
 }
 
 #content2{
