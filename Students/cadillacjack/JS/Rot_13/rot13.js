@@ -1,23 +1,53 @@
 const readline = require('readline-sync');
-
-const encoderRing = "abcdefghijklmnopqrstuvwxyz"
-
+const encodeAlpha = "abcdefghijklmnopqrstuvwxyz"
 let secret = readline.question('What is the secret message you would like to encrypt? :\n')
 let rot = parseInt(readline.question('What is the level of encryption to use? :\n'))
-let rotate = Math.abs(13-rot)
+let rotate = rot%26
+let newList= ''
+let secretList=''
+let capList = encodeAlpha.toUpperCase()
 
-for (secretList=[],i=0;i<secret.length;i++) j = secret[i], k = encoderRing.indexOf(j.toLowerCase()), secretList.push(encoderRing[(Math.abs(k+rotate))%26]);
+for(i=Math.abs(rotate);i<encodeAlpha.length;i++){
+    newList += encodeAlpha[i];
+}
+for(i=0;i<Math.abs(rotate);i++){
+    newList += encodeAlpha[i];
+}
 
-for (element of secret){
-    let i= secret.indexOf(element);
-    if(element === element.toUpperCase()){
-        secretList.splice(i ,1,secretList[i].toUpperCase());  
-    }
-    if(element === ' '){
-        secretList.splice(i ,1,' ');
-    }
-    if(element == Number(element)){
-        secretList.splice(i ,1,element);
+function Scramble(){
+    i=0
+    for(element of secret){
+        j = encodeAlpha.indexOf(element.toLowerCase())
+        if(newList[j] == undefined){
+            secretList+=element
+        }
+        else if(capList.includes(element)){
+            secretList += newList[j].toUpperCase()
+        }else{
+            secretList += newList[j]
+        }
+        i++
     }
 }
-console.log(secretList.join(''))
+
+function Unscramble(){
+    for(i=0;i<secret.length;i++){
+        let j = secret[i]
+        let k = newList.indexOf(j.toLowerCase())
+        if(encodeAlpha[k]==undefined){
+            secretList += secret[i]
+        }
+        else if(capList.includes(j)){
+            secretList += encodeAlpha[k].toUpperCase()
+        }else{
+            secretList += encodeAlpha[k]
+        }
+    } 
+}
+
+if(rot<0){
+    Unscramble()
+}else{
+    Scramble()
+}
+console.log(secretList)

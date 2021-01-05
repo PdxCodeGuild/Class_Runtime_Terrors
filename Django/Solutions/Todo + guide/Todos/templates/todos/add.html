@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form action="{% url 'add' %}" method="POST">
+    {% csrf_token %}
+    title: <br> <input type="text" name="title" placeholder="enter todo title"><br>
+    description:<br> <textarea name="text" id="" cols="30" rows="10"></textarea><br>
+    status: <br> <select name="status"><br>
+        <option value="True">True</option>
+        <option value="False">False</option>
+      </select> 
+      <br>
+    <input type="submit" value="add">
+</form>
+{% endblock %}

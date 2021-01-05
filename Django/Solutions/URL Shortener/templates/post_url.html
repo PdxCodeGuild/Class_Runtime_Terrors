@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2 class='text-center mt-3'>Add Your URL</h2>
+<form class='mt-3' action="{% url 'add_url' %}" method="POST">
+    {% csrf_token %}
+    <div id='author-form' class="form-group">
+        <label for="book_title">URL shortener</label>
+        <input type="text" class="form-control" id="url_shortener" name="url" placeholder="enter a URL" /><br /><br />
+        <button type="submit" class="btn btn-primary mb-2 mt-3">Submit</button>
+    </div>
+</form>
+
+<h2 class='text-center'>List of URLS</h2>
+{%for url in my_urls%}
+<p class='text-center mt-3 mb-2'><a href='https://{{url.url_name}}' target='_blank'>{{url.shortened_url}}</a></p>
+{% endfor %}
+
+{% endblock %}

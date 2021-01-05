@@ -11,14 +11,14 @@
 }
 .box img{
     position: relative;
+    height: 545px;
     left: 0px;
     right: 0px;
     z-index: -1;
 }
 .box{
     position: relative;
-     height: 545px;
-     overflow: hidden;
+    height: 545px;
  }
 .box p{
     text-align: center;
@@ -27,13 +27,15 @@
     position: absolute;
     left: 10px;
     top: 10px;
-    color: rgb(11, 84, 40);
+    color: rgb(97, 199, 136);
+    text-shadow: 1px 1px 1px black, 0px 0px 1px black;
 }
 .rdtext{
     position: absolute;
     left: 10px;
     top: 10px;
     color: rgb(184, 13, 7);
+    text-shadow: 1px 1px 1px black, 0px 0px 1px grey;
 }
 .brtext{
     position: absolute;
@@ -47,6 +49,7 @@
     padding: 10px;
     top: 450px;
     color: rgb(10, 128, 207);
+    text-shadow: 1px 1px 1px black, 0px 0px 1px black;
 }
 .box #Glass_roof{
     grid-column: 2/3;

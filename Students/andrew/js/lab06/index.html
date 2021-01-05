@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <nav id='topnav'></nav>
+    </div>
+    
+   <div class="map">
+        <div id="sidebar">
+            <div>
+                <p id='name'>
+                    Name:
+                </p>
+                <p id='city'>
+                    City:
+                </p>
+                <p id='email'>
+                    Email:
+                </p>
+                
+                <p id="website">
+                    Website:
+                </p>
+                <p id="phone">
+                    Phone:
+                </p>
+
+            </div>
+            <button id="next-btn"> Next</button>
+            
+        </div>
+        <div class="midbar">
+            <h1>Instructions</h1>
+            <p>Click the next button to bring up the next user in the list of users.
+                Once you have reached the end on the list you will be notofied by an alert. Don't be alarmed,
+                dismiss the alert and the list will start over from the begining.
+            </p>
+            <p>Mouse scroll on the map to zoom in and out. As you populate the map with users, markers will apear on the map. 
+                Click on the blue marker to see geolocation data of the user. The starting point is Nebraska, there is no info there so don't click on that marker and expect information.</p>
+        </div>
+        <div id="mapid">
+        </div>
+        
+    </div>
+
+    <nav id="bottomnav">
+
+    </nav>
+    <script src="js/api.js"></script>
+    <script src="js/app.js"></script>
+
+
+</body>
+
+</html>

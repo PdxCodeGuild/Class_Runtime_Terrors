@@ -26,18 +26,9 @@ setTimeout(function() {
 setInterval(function() {
     $body.append($load);
 }, 2000);
-// setTimeout(function() {
-//     $body.append($load);
-// }, 2000);
-// setTimeout(function() {
-//     $body.append($load);
-// }, 3000);
-// setTimeout(function() {
-//     $body.append($load);
-// }, 4000);
 setTimeout(function() {
     alert("You will be redirected after closing this window");
 }, 5000);
 setTimeout(function(){
-    location.assign("http://www.mozilla.org");
+    location.assign(page);
 }, 5001);

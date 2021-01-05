@@ -9,26 +9,21 @@ $('#btn-1').on('click', function(){
     i++
 
     $('#btn-3').on("click", function(){
-        for(i=0; i<todoList[0].children.length; i++){
-            let complete = $('#li'+i)
-            // console.log(complete)
-            let completed = complete[0].children[0]
-            if (completed.checked){
-                // console.log("In the ballpark")
-                complete.remove()
+        let complete = todoList[0].children
+        for(i=0; i<complete.length; i++){
+            if (complete[i].children[0].checked){
+                complete[i].remove()
             }
         } 
     })
 
     $('#btn-2').on("click", function(){
-        for(i=0; i<todoList[0].children.length; i++){
-            let complete = $('#li'+i)
-            // console.log(complete)
-            let completed = complete[0].children[0]
+        let complete = todoList[0].children
+        for(i=0; i<complete.length; i++){
+            let completed = complete[i].children[0]
             if (completed.checked){
-                // console.log("In the ballpark");
                 completed.remove();
-                $("#complete").append(complete).css({"text-decoration": "line-through"});
+                $("#complete").append(complete[i]).css({"text-decoration": "line-through"});
                 
             }
         }  
