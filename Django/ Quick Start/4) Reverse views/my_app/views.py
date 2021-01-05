@@ -20,13 +20,12 @@ def blog_posts(request):
 def add_post(request):
     if request.method == 'GET': 
         return render(request, 'pages/add.html')
-    if request.method == 'POST':
+    elif request.method == 'POST':
         title = request.POST['title']  
         text = request.POST['text']   
         pub_date = request.POST['pub_date']
         blogs = Blog.objects.create(title = title, text = text, pub_date = pub_date)
         return redirect('posts')
-    return render(request, 'pages/add.html')
 
 def see_details(request, id):
     post = Blog.objects.get(id = id)
