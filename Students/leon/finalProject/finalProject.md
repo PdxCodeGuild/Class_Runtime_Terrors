@@ -1,17 +1,4 @@
-Capstone Proposal
-
-required Sections
-
-NAME (capstone name)
-
-OVERVIEW (capstone overview)
-
-FUNCTIONALITY (what will it do?)
-
-DATA MODEL (what data will need to be collected and stored; speficic)
-
-SCHEDULE 
-
+# Capstone Proposal
 
 ---------------------------
 ## PROJECT: At the Crossroads
