@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<h4 class = 'mt-3 text-center mt-3 mb-5'> List of Available Books</h4>
+<ul class = 'text-center mt-2'>
+  <p><b>Author:</b> {{ book.author }}</p>
+  <p><b>Title: </b>{{ book.title }}</p>
+  <p><b>Pub Date:</b> {{book.pub_date}}</p>
+  <p><b>Availability:</b> {{book.quantity}}</p>
+</ul>
+
+<form id='author-form' class='mt-3' action="{%url 'borrow' book.id%}" method="POST">
+    {% csrf_token %}
+    <label for="book_title">Select Amount</label>
+    <input type="text" class="form-control" id="amount" name="amount" placeholder="amount" /><br /><br />
+    <button type="submit" class="btn btn-dark">Borrow</button>
+  </form>
+{% endblock %}

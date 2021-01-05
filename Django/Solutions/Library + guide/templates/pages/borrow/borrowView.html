@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<h4 class = 'mt-3 text-center mt-3 mb-5'> Your Borrowed Books, {{user}}</h4>
+{%for book in books %}
+<div class = 'text-center mt-2'>
+  <p><b>Book:</b> {{ book.book}}</p>
+  <p><b>Status: </b>{{ book.status}}</p>
+  <p><b>Borrowed date:</b> {{book.timestamp}}</p>
+  <a href="{% url 'return' book.id%}" class="btn btn-primary mb-4" role="button">Return Book</a>
+</div>
+{%endfor%}
+{% endblock %}
