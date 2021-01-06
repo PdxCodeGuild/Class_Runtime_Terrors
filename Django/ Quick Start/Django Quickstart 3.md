@@ -31,7 +31,7 @@ def blog_posts(request):
 def add_post(request):
     if request.method == 'GET': # if its a GET request, just display the add.html template
         return render(request, 'pages/add.html')
-    if request.method == 'POST': # if it's a POST request ...
+    elif request.method == 'POST': # if it's a POST request ..
         title = request.POST['title']   # get the title from the POST submission, this comes from a form
         text = request.POST['text']     # get the text from the POST submission, this comes from a form
         pub_date = request.POST['pub_date']
@@ -39,7 +39,7 @@ def add_post(request):
         # don't need a separate call to the save() method
         blogs = Blog.objects.create(title = title, text = text, pub_date = pub_date)
         return redirect('posts')
-    return render(request, 'pages/add.html')
+   
 ```
 
 - In the Pages > posts.html add the following:
