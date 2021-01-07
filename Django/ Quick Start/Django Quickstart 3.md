@@ -42,7 +42,7 @@ def add_post(request):
    
 ```
 
-- In the Pages > posts.html add the following:
+- In the Pages folder create a new page `posts.html` and add the following:
 
 ```html
 {% extends 'base.html' %}
