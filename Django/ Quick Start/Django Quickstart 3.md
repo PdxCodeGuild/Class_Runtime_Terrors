@@ -1,7 +1,7 @@
 This guide covers the content in the folder **Forms and Links**.
 ## How to use a model and a database inside your template
 
-Before starting, add a new URL in the my_app > urls.py folder:
+Before continuing further, add a new URL in the my_app > urls.py folder:
 
 ```python
 urlpatterns = [
