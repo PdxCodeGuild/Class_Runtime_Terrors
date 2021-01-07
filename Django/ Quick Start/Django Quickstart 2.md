@@ -68,5 +68,6 @@ from . import models
 admin.site.register(models.Blog)
 
 ```
-- In the terminal run `python manage.py createsuperuser`
+- In the terminal, start the server and run `python manage.py runserver`
+- run `python manage.py createsuperuser`
 - Go to` http://localhost:8000/admin/` to explore the page and add more blog posts.
