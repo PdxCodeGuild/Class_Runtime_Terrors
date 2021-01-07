@@ -1,7 +1,7 @@
 This guide covers the content in the folder **Forms and Links**.
 ## How to use a model and a database inside your template
 
-Before starting, add a new URL in the my_app > urls.py folder:
+Before continuing further, add a new URL in the my_app > urls.py folder:
 
 ```python
 urlpatterns = [
@@ -22,7 +22,7 @@ from .models import Blog
 def blog_posts(request):
     blogs = Blog.objects.all()  # gets all of the blog posts from the database and store them in a variable
   
-    # create the context dictionary to send the blog posts to the template
+    # creates the context dictionary to send the blog posts to the template
     context = {
        'blogs': blogs
     }
@@ -42,7 +42,7 @@ def add_post(request):
    
 ```
 
-- In the Pages > posts.html add the following:
+- In the Pages folder create a new page `posts.html` and add the following:
 
 ```html
 {% extends 'base.html' %}
