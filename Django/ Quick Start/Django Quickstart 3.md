@@ -22,7 +22,7 @@ from .models import Blog
 def blog_posts(request):
     blogs = Blog.objects.all()  # gets all of the blog posts from the database and store them in a variable
   
-    # create the context dictionary to send the blog posts to the template
+    # creates the context dictionary to send the blog posts to the template
     context = {
        'blogs': blogs
     }
