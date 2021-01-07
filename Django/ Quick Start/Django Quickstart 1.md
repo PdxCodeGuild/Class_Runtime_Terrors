@@ -17,6 +17,10 @@ Then I run: `pipenv install django`
 
 -To exit the server, press CONTROL + C.
 
+## Set up Virtual Environment with Virtual ENV
+
+[Virtual Env with Python](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/)
+
 ## Create a project.
 
 - Create a site/project: `django-admin startproject <project_name> .` Remember to add a . (dot at the end, after the project name)
