@@ -50,7 +50,8 @@ Filtering:
 - run `b = Blog.objects.filter(id = 1)`
 - run `Blog.objects.filter(title__startswith='I made')`
 
-- run `a = Blog.objects.all()` to see all blog posts
+- run `a = Blog.objects.all()` to assign all posts to a variable
+- run `a` to see all blog posts
 - run `a[0]` to access the first element
 - run `a[0].delete()` to delete the first element
 
