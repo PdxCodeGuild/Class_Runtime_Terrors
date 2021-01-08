@@ -1,74 +1,134 @@
-# Django Quickstart
-## Set up Virtual Environment
-If you haven't install `virtualenv`, do so now:
-```
-> [sudo] pip install virtualenv
-```
+# Django Quickstart 1 - Creating URLs, Views and Static folders.
 
-Create a new project directory where you want to store your project and `cd` into it:
-```
-> mkdir project_dir_name
-> cd project_dir_name
-```
+## Set up Virtual Environment with PipEnv
 
-Create a new virtual environment:
-```
-> virtualenv ENV
-```
+If you do not have Pipenv, install it globally on your machine. In the terminal run 
 
-To enter your virtual environment: 
-In Linux/OSX:
-```
-> source ENV/bin/activate
-```
+`pip install pipenv`
 
-In Windows:
-```
-> ENV/Scripts/activate
-```
+I usually set Pipenv to the latest Python version available on my machine, so I run `pipenv --python 3.6`
 
-You are now in your virtual environment! This is a clean state with only Python and Pip installed. Install all the dependencies for your project inside this environment. 
+Then I run: `pipenv install django`
 
-For this course, install Django 2.0.0 
-```
-> pip install django==2.0.0
-```
+## Run server
 
-(Optional) To export your packages:
-```
-> pip freeze > requirements.txt
-```
+-To verify that Django was installed correctly, run the server. In the terminal run `python manage.py runserver` (if you are using Python 3 you may run `python3 manage.py runserver`)
 
-To exit your virtual environment:
-```
-> deactivate
-```
+-To exit the server, press CONTROL + C.
 
-## Create a Project and App
+## Create a project.
 
-- Create a site/project: `django-admin startproject <site/project name>`
-- Move into the site's directory: `cd <site/project name>`
-- Run migrations to create the database and user system `python manage.py migrate`
-- Create an admin account with `python manage.py createsuperuser`, and enter a username, email address, and password
+- Create a site/project: `django-admin startproject <project_name> .` Remember to add a . (dot at the end, after the project name)
 
-## Create an App
+## Create an app inside the project.
 
 - Create an app: `python manage.py startapp <app-name>`
-- Add your app (`appname.apps.AppnameConfig`) to the `INSTALLED_APPS` in `settings.py`
-	- Note: AppnameConfig is found in your `appname/apps.py` file
+- Add your app to the `INSTALLED_APPS` in `settings.py`
+
+   ```python
+   INSTALLED_APPS = [
+        .....
+       '<app-name>',
+   ]
+   ```
+-Add `import os` at the top of the Settings.py page if you do not see it there.
+
+## Setup your static files. Base.HTML, CSS and Javascript files.
+ 
+1. create a _templates_ template directory at the same level as the _project_name_ directory. **It should not** be nested inside another directory. Inside of the templates folder create a folder called _pages_. Pages will hold basic pages that display a home page, an about page, etc. Inside the folder _pages_, create a page named `home.html`that has the following:
+
+```html
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Home</h1>
+{% endblock %}
+```
+
+2. Create another page in the same folder named `about.html`:
+
+```html
+{% extends 'base.html' %}
+{% block content %}
+    <h1>About</h1>
+{% endblock %}
+```
+
+3. Create a static directory at the same level as the _project_name_ directory. _static_ **should not** be nested inside another directory. Inside of _static_, create two directories, _css_ and _js_. Inside of _css_ create a **file** _site.css_. inside of _js_ create a **file** _main.js_. inside of _site.css_ add the following css:
+
+   ```css
+   h1 {
+     color: firebrick;
+   }
+   ```
+
+   inside _main.js_ add the following:
+
+   ```javascript
+   console.log("hello from main.js");
+   ```
+
+4. We now need to tell django where to find our templates and static files. Open up _settings.py_ in the _my_project_name_ folder. Modify the templates section to look like the following snippet. specifically you need to modify the 'DIRS' line by adding `os.path.join(BASE_DIR, 'templates')`.
+
+   ```python
+   TEMPLATES = [
+       {
+           'BACKEND': 'django.template.backends.django.DjangoTemplates',
+           'DIRS': [os.path.join(BASE_DIR, 'templates')],
+           'APP_DIRS': True,
+           'OPTIONS': {
+               'context_processors': [
+                   'django.template.context_processors.debug',
+                   'django.template.context_processors.request',
+                   'django.contrib.auth.context_processors.auth',
+                   'django.contrib.messages.context_processors.messages',
+               ],
+           },
+       },
+   ]
+   ```
+
+Next, add `STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]` to the bottom of the _settings.py_ file below the line specifying `STATIC_URL`.
+
+## Adding a base HTML file.
+
+In root directory of the **templates** folder, add a base.html file:
+
+   ```html
+       {% load static %}
+       <!DOCTYPE html>
+       <html lang="en">
+       <head>
+           <meta charset="UTF-8">
+           <meta name="viewport" content="width=device-width, initial-scale=1.0">
+           <meta http-equiv="X-UA-Compatible" content="ie=edge">
+           <link rel="stylesheet" href="{% static 'css/site.css' %}">
+           <title>welcome</title>
+       </head>
+       <body>
+           {% block content %}
+           {% endblock %}
+           <script src="{% static 'js/main.js' %}"></script>
+       </body>
+       </html>
+   ```
 
 ## Create a View
 
 - In your app's `views.py`:
 ```python
+from django.shortcuts import render
 from django.http import HttpResponse
-def <viewname>(request):
-    return HttpResponse('ok')
+
+def home(request):
+    return render(request, 'pages/home.html')
+
+def about(request):
+    return render(request, 'pages/about.html')
 ```
 
-## Create a Route to the View
+## Create a Route to the Views
 
-- Create a `urls.py` inside your app
+- Create a `urls.py` inside your app folder
 - Add a route in your app's `urls.py` which points to the the view
 - Add an `app_name` to be able to look up paths when you render a template
 
@@ -76,11 +136,13 @@ def <viewname>(request):
 from django.urls import path
 from . import views
 
-app_name = '<app name>' # for namespacing
 urlpatterns = [
-    path('<path>', views.<viewname>, name='<viewname>')
+    path('', views.home, name = 'home'),
+    path('about/', views.about, name = 'about')
 ]
 ```
+
+## Hook these URLs and views to the Project URLs
 
 - Add a route in your project's `urls.py` which points to the app's `urls.py` using `include`
 
@@ -94,69 +156,4 @@ urlpatterns = [
 ]
 ```
 
-At this point, you should run the server (`python manage.py runserver`) and go to `localhost:8000/app_path/view_path` and verify that you can access the view.
 
-## Create Models
-
-- Define your models (Python classes) in the app's `models.py`
-- Stage your migrations: `python manage.py makemigrations <appname>`
-- (optional) View the SQL commands that will occur during migrations: `python manage.py sqlmigrate <appname> <migration number>`. You can find the migration number and the code that'll be executed during the migration in `<appname>/migrations/<migration number>_initial.py`
-- Perform migrations (synchronize your models with your database): `python manage.py migrate`
-
-## Add the Model to the Admin Panel
-
-- Add a `def __str__(self):` to your model so the admin interface knows how to display it.
-- Make your app visible in the admin panel by registering your models with our app's `admin.py`
-    ```py
-    admin.site.register(Model)
-    ```
-
-```python
-from django.contrib import admin
-from .models import <model name 1> <model name 2>
-admin.site.register(<model name 1>)
-admin.site.register(<model name 2>)
-```
-
-- Go to `localhost:8000/admin` in your browser, and add some data.
-
-
-## Create a Template
-
-- Create a folder inside your app called `templates`, inside of that create another folder with the name of your app, and inside of *that* create a `<filename>.html`. You can view examples of the template syntax [here](03%20-%20Templates.md).
-
-## Render a Template
-
-- Inside your view, you can use the `render` shortcut to render a template. The first parameter is the request, the second parameter is the name of the template, and the third is a dictionary containing the values you'd like to render in the template.
-
-```python
-from django.shortcuts import render
-def <view name>(request):
-    context = {<name-value pairs>}
-    return render(request, '<app name>/<template name>.html', context)
-```
-
-### Set up template directories
-In `settings.py`:
-```py
-TEMPLATES = [
-    {
-		...
-		'DIRS': [os.path.join(BASE_DIR, 'templates')],
-		...
-	}
-]
-```
-
-### Set up static directories
-In `settings.py`
-```py
-STATIC_URL = '/static/'
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-    os.path.join(
-        os.path.dirname(__file__),
-        'static',
-    ),    
-)
-```

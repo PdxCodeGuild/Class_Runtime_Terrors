@@ -1,7 +1,9 @@
-let marsday= '1'
+let marsday= '100'
 
+let i = 0
+let time = 3000
 
-fetch(`https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=${marsday}&camera=NAVCAM&api_key=mrrK6GWgF16JAzBzCdAmfgMfl4AK6NHz2WYnW3cg`, {
+fetch(`https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=${marsday}&camera=FHAZ&api_key=mrrK6GWgF16JAzBzCdAmfgMfl4AK6NHz2WYnW3cg`, {
     Method: 'GET',
     
 })
@@ -13,16 +15,13 @@ fetch(`https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=${mar
     .then(function(data){
         console.log(data)
         let image=document.createElement('img');
-        // let i = 0;
-        // while (i < Array.length){
-
-        // }
-        image.src= data.photos[3].img_src
-
+        let shots = data.photos
+        image.src= data.photos[0].img_src
+        startimage= getElementByTagName('img');
         console.log(image)
         // console.log(data.url)
         let back = document.getElementById('wrapper')
-        back.appendChild(image)
+        back.replaceChild(startimage,image)
         // document.body.style.backgroundImage= data.url
         
     })

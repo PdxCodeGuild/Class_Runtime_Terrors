@@ -1,0 +1,787 @@
+/* *{
+    box-sizing: border-box;
+    border: rgb(0, 0, 0);
+    border-width: 5px;
+    border-style: solid;
+    
+} */
+
+.container{
+    background-color: rgb(18, 37, 185);
+    display: grid;
+    height: fit-content;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: .2fr 1.5fr 1.2fr .8fr;
+    grid-template-areas: 
+        "nav nav nav nav"
+        "sidebar main main main"
+        "sidebar content1 content2 content3"
+        "sidebar footer footer footer";
+    grid-gap: .5rem;
+    padding: 5px;
+}
+
+main{
+    grid-area: main;
+    background-image: url(media/heart_russell_big.jpg);
+    font-style: italic;
+    color: aliceblue;
+    overflow: hidden;
+    align-self: center;
+    height: 100%;
+    
+}
+
+main h1{
+    margin: 0px;
+}
+
+.cadillac{
+    border: none;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: 50px;
+    top: 18%;
+    height: 92px;
+
+}
+
+.jack{
+    border: none;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: 50px;
+    top: 18%;
+}
+
+nav{
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 1fr;
+    align-items: center;
+    text-align: center;
+    grid-area: nav;
+}
+
+.nav-section{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-self: center;
+    padding: 10px;
+}
+
+.logo{
+    width: 62px;
+}
+
+.cad-pic{
+    width: 60px;
+}
+
+.greeting{
+    color: aliceblue;
+    font-family: fantasy;
+    margin: 0px;
+    height: auto;
+    justify-self: baseline;
+}
+
+.search-bar{
+    align-self: center;
+    border-radius: 5px;
+    border-style: none;
+    height: 28px;
+
+}
+
+#search-btn{
+    border-style: none;
+
+}
+
+.btn{
+    background-color: white;
+    height: 32px;
+    border-radius: 10px;
+    border: transparent;
+    margin: 2px;
+}
+
+sidebar{
+    text-align: center;
+    grid-area: sidebar;
+    color: aliceblue;
+}
+
+content1{
+    margin: auto;
+    text-align: center;
+    grid-area: content1;
+}
+content2{
+    text-align: center;
+    margin: auto;
+    grid-area: content2;
+}
+content3{
+    text-align: center;
+    margin: auto;
+    grid-area: content3;
+}
+footer{
+    text-align: center;
+    grid-area: footer;
+}
+
+#myVideo {
+    position: relative;
+    width: 100%;
+    animation-name: intro-vid;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    transition: ease-in-out;
+}
+
+#myVideo2{
+    position: relative;
+    width: 100%;
+    animation-name: spin-vid;
+    animation-duration: 6s;
+    animation-iteration-count: 1;
+    transition: ease-in;
+}
+
+#myVideo3{
+    position: relative;
+    width: 100%;
+    animation-name: bounce-vid;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    transition: ease-in-out;
+}
+.wordy-words{
+    position: relative;
+    color: aliceblue;
+}
+
+@keyframes intro-vid{
+    0%{
+        right: 500px;
+        transform: rotate(364deg);
+        opacity: 0;
+        border-radius: 100%;
+    }
+
+    50%{
+        opacity: .5;
+    }
+
+    100%{
+        right: 0px;
+        opacity: 1;
+        border-radius: 0%;
+    }
+
+}
+
+@keyframes spin-vid{
+    0%{
+        bottom: 500px;
+        transform: rotatey(364deg);
+        opacity: 0;
+        border-radius: 100%;
+    }
+
+    50%{
+        opacity: .5;
+    }
+
+    100%{
+        bottom: 0px;
+        opacity: 1;
+        border-radius: 0%;
+    }
+}
+
+@keyframes bounce-vid{
+    0%{
+        transform: translateY(0);
+        opacity: 0;
+        border-radius: 100%;
+    }
+
+    20%{
+        transform: translateY(-15px);
+    }
+
+    40%{
+        transform: translateY(-30px);
+    }
+
+    50%{
+        transform: translateY(0);
+        opacity: .5;
+    }
+
+    60%{
+        transform: translateY(-15px);
+    }
+
+    80%{
+        transform: translateY(-30px);
+    }
+
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+        border-radius: 0%;
+    }
+}
+
+.first{
+    position: relative;
+    animation-name: letter1;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    opacity: 0;
+    animation-fill-mode: forwards;
+    transition: ease-in;
+
+}
+
+@keyframes letter1{
+    0%{
+        transform: rotate(364deg);
+        top: 500px;
+        left: 500px;
+        opacity: 0;
+
+    }
+    50%{
+        opacity: .5;
+        
+
+    }
+    100%{
+        top: 0px;
+        left: 0px;
+        opacity: 1;;
+
+    }
+}
+
+.second{
+    position: relative;
+    animation-name: letter2;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-delay: .5s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+    transition: ease-in;
+    
+}
+
+@keyframes letter2{
+    0%{
+        transform: rotate(364deg);
+        bottom: 500px;
+        right: 500px;
+        opacity: 0;
+    }
+    50%{
+        opacity: .5;
+    }
+    100%{
+        bottom: 0px;
+        right: 0px;
+        opacity: 1;  
+    }
+}
+
+.third{
+    position: relative;
+    animation-name: letter3;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-delay: 1s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+    transition: ease-in;
+}
+
+@keyframes letter3{
+    0%{
+        transform: rotate(364deg);
+        top: 500px;
+        right: 500px;
+        opacity: 0;
+    }
+    50%{
+        opacity: .5;
+    }
+    100%{
+        right: 0px;
+        top: 0px;
+        opacity: 1;   
+    }
+}
+
+.fourth{
+    position: relative;
+    animation-name: letter4;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-delay: 1.5s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+    transition: ease-in;
+    
+}
+
+@keyframes letter4{
+    0%{
+        transform: rotate(364deg);
+        left: 500px;
+        bottom: 500px;
+        opacity: 0;
+    }
+    50%{
+        opacity: .5;
+    }
+    100%{
+        left: 0px;
+        bottom: 0px;
+        opacity: 1;   
+    }
+}
+
+.fifth{
+    position: relative;
+    animation-name: letter5;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-delay: 2s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+    transition: ease-in;
+    /* overflow: hidden; */
+    
+}
+
+@keyframes letter5{
+    0%{
+        transform: rotate(364deg);
+        bottom: 500px;
+        left: 500px;
+        opacity: 0;
+    }
+    50%{
+        opacity: .5;
+    }
+    100%{
+        bottom: 0px;
+        left: 0px;
+        opacity: 1;    
+    }
+}
+
+.sixth{
+    position: relative;
+    animation-name: letter6;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-delay: 2.5s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+    transition: ease-in;
+    /* overflow: hidden; */
+
+}
+
+@keyframes letter6{
+    0%{
+        transform: rotate(364deg);
+        top: 500px;
+        right: 500px;
+        opacity: 0;
+    }
+    50%{
+        opacity: .5;
+    }
+    100%{
+        top: 0px;
+        right: 0px;
+        opacity: 1;    
+    }
+}
+
+.seventh{
+    position: relative;    
+    animation-name: letter7;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-delay: 3s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+    transition: ease-in;
+
+}
+
+@keyframes letter7{
+    0%{
+        transform: rotate(364deg);
+        left: 500px;
+        top: 600px;
+        opacity: 0;
+    }
+    50%{
+        opacity: .5;
+    }
+    100%{
+        left: 0px;
+        top: 0px;
+        opacity: 1; 
+    }
+}
+
+.eighth{
+    position: relative;
+    animation-name: letter8;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-delay: 3.5s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+    transition: ease-in;
+
+}
+
+@keyframes letter8{
+    0%{
+        transform: rotate(364deg);
+        right: 500px;
+        bottom: 600px;
+        opacity: 0;
+    }
+    50%{
+        opacity: .5;
+    }
+    100%{
+        left: 0px;
+        bottom: 0px;
+        opacity: 1;   
+    }
+}
+
+.j{
+    position: relative;
+    animation-name: letter1;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    opacity: 0;
+    animation-fill-mode: forwards;
+    transition: ease-in;
+    /* overflow: hidden; */
+    width: 55px !important;
+    height: fit-content;
+    text-align: right;
+
+}
+
+.a{
+    position: relative;
+    animation-name: letter3;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-delay: 1s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+    transition: ease-in;
+
+
+}
+
+.c{
+    position: relative;
+    animation-name: letter5;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-delay: 2s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+    transition: ease-in;
+
+}
+
+.k{
+    position: relative;    
+    animation-name: letter7;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-delay: 3s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+    transition: ease-in;
+
+}
+
+.outro{
+    color: aliceblue;
+    font-family: cursive;
+    font-size: 25px;
+    font-style: italic;
+}
+
+@media only screen and (max-width:360px){
+    .container{
+        grid-template-columns: 1fr;
+        grid-template-rows: .3fr .4fr 1fr 1.2fr 1.2fr 1.2fr .4fr;
+        grid-template-areas: 
+        "nav"
+        "main"
+        "sidebar"
+        "content1"
+        "content2"
+        "content3"
+        "footer";
+        height: 100%;
+        width: 100%;
+    }
+
+    body{
+        width: 100%;
+    }
+    
+    nav{
+        flex-direction: column;
+        width: 100vw;
+        height: 70px;
+    }
+    
+    #search-btn {
+        border-style: none;
+        position: relative;    
+    }
+    
+    .search-bar {
+        position: relative;
+        align-self: center;
+        border-radius: 5px;
+        border-style: none;
+        height: 12px;
+        width: 114px;
+    }
+    
+    .nav-section {
+        display: contents;
+    }
+
+    .search-section{
+        position: relative;
+        right: 233%;
+    }
+
+    main {
+        grid-area: main;
+        position: relative;
+        width: 100%;
+        height: fit-content;
+        padding-top: 10px;
+    }
+
+
+    h1.greeting {
+        position: relative;
+        width: 100vw;
+        top: -110%;
+        left: -8%;
+    }
+
+    .btn {
+        width: fit-content;
+        height: 13px !important;
+        font-size: 8px;
+        margin: 2px;
+    }
+
+    #home-btn{
+        position: relative;
+        top: 27%;
+        right: -25%;
+    }
+
+    .dropdown{
+        position: relative;
+        top: -74%;
+        left: 502%;
+    }
+
+    /* #link-btn{
+        position: relative;
+        top: -72%;
+        right: -384%;
+    } */
+
+    #pic-btn{
+        position: relative;
+        left: -158%;
+        top: 29%;
+    }
+
+    .cadillac {
+        font-size: 19px;
+        top: -9px;
+        height: 61px;
+    }
+
+    .jack {
+        font-size: 19px;
+        top: -25px;
+        right: 21px;
+        height: 70px;
+        padding-bottom: 10px;
+    }
+
+    .logo {
+        position: relative;
+        width: fit-content;
+    }
+
+    .cad-pic{
+        width: 100%;
+    }
+
+    .outro {
+        color: aliceblue;
+        font-family: cursive;
+        font-size: 10px;
+        font-style: italic;
+        width: 330px;
+    }
+
+    footer {
+        text-align: center;
+        grid-area: footer;
+        position: relative;
+        height: 150px;
+        margin-top: 20px;
+        width: 330px;
+    }
+
+    content3 {
+        text-align: center;
+        margin: 0px;
+        position: relative;
+        grid-area: content3;
+        width: 100%;
+        height: 250px;
+    }
+
+    content2 {
+        text-align: center;
+        margin: 0px;
+        position: relative;
+        grid-area: content2;
+        width: 100%;
+        height: 250px;
+    }
+
+    content1 {
+        position: relative;
+        text-align: center;
+        grid-area: content1;
+        width: 100%;
+        margin: 0px;
+        height: 250px;
+    }
+
+    sidebar {
+        display: flex;
+        font-size: 10px;
+        flex-direction: column;
+        width: 100%;
+    }
+
+
+
+}
+
+@media only screen and (max-width:650px){
+    .container{
+        grid-template-columns: 1fr;
+        grid-template-rows: .3fr .4fr 1fr 1.2fr 1.2fr 1.2fr .4fr;
+        grid-template-areas: 
+        "nav"
+        "main"
+        "sidebar"
+        "content1"
+        "content2"
+        "content3"
+        "footer";
+        height: 100%;
+    }
+
+    sidebar{
+        display: flex;
+    }
+
+    .greeting{
+        font-size: 9px;
+        position: relative;
+        padding-right: 10px;
+    }
+
+    .btn{
+        height: 20px;
+        align-self: center;
+    }
+
+    .cadillac{
+        font-size: 32px;
+        top: -9px;
+        height: 61px;
+    }
+
+    .jack{
+        font-size: 30px;
+        top: 0px;
+        height: 61px;
+    }
+}
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+      background-color: #f1f1f1
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+  
