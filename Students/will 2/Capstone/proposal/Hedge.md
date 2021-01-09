@@ -1,15 +1,24 @@
 # Hedger
 ### Project Overview
-Hedger is a web application that maintians a simple percentage based allocation between Bitcoin and PAXGold.    
+Hedger is a web application that maintians a simple percentage based allocation between Bitcoin and PAX Gold.   
+
+
 ### Functionality
-The funcaitonality of the application will allow the users to:
--create login user name and password
--input trade only API keys from the exchange 
--choose
+The funcaitonality of the application will allow users to:
+- create login user name and password
+- input trade only API keys from the exchange 
+- select asset denomination 
+- select asset percentage allocation via a slide bar
+- turn the application on and off
+- view a chart that plots asset balances over time
+- view a ledger of transactions
+
 ### Data Model
 - USER:  
 - API KEYS:  
 - Account balances:  
+- Transactions: 
+
 ### Schedule
  - #### Milestone 1:
  - #### Milestone 2:
