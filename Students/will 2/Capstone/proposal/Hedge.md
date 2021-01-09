@@ -9,10 +9,10 @@ The funcaitonality of the application will allow the users to:
 ### Data Model
 Data that will be stored is: USER, API KEYS, Account balances, 
 ### Schedule
-#### Milestone 1:
-#### Milestone 2:
-#### Milestone 3:
-#### Milestone 4:
-#### Milestone 5:
-#### Milestone 6:
-#### Milestone 7:
+ - #### Milestone 1:
+ - #### Milestone 2:
+ - #### Milestone 3:
+ - #### Milestone 4:
+ - #### Milestone 5:
+ - #### Milestone 6:
+ - #### Milestone 7:
