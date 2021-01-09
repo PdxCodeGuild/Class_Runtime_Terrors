@@ -7,7 +7,9 @@ The funcaitonality of the application will allow the users to:
 -input trade only API keys from the exchange 
 -choose
 ### Data Model
-Data that will be stored is: USER, API KEYS, Account balances, 
+- USER:  
+- API KEYS:  
+- Account balances:  
 ### Schedule
  - #### Milestone 1:
  - #### Milestone 2:
