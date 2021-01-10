@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<a href="http://localhost:8000/add">add a blog post</a>
+<ul>
+  {% for post in blogs %}
+  <p>Title: {{ post.title }}</p>
+  <p>ID: {{ post.id }}</p>
+  <p>Description: {{ post.text }}</p>
+  <p>Pub Date: {{post.pub_date}}</p>
+  {% empty %}
+  {% endfor %}
+</ul>
+{% endblock %}

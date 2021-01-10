@@ -1,0 +1,53 @@
+ body{
+     position: relative;
+     margin: 0;
+ }
+ #topnav{
+     height: 100px;
+     background-color:darkslategray
+ }
+ #bottomnav{
+     
+     bottom: 0;
+    height: 300px;
+    background-color:darkslategray
+ }
+     .map {
+         position: relative;
+         margin: 30px;
+        display: flex;
+        justify-content: space-between;
+     }
+      #mapid{
+          height: 550px;
+          width: 550px;
+          box-shadow: 0 8px 12px 8px rgba(0,0,0,0.2);
+    
+      }
+      .midbar{
+          font-size: large;
+        padding: 1em;
+        text-align: center;
+        border: 3px solid;
+        height: 550px;
+        width: 350px;
+      }
+      #sidebar{
+          padding: 1em;
+          position: relative;
+          left: 0;
+          border: 1px solid;
+          height: 550px;
+          width: 550px;
+
+      }
+      #next-btn{
+          margin-bottom: 0.5em;
+        font-size: xx-large;
+          position: absolute;
+          bottom: 0;
+      }
+    
+    #website, #phone, #name, #email, #city{
+        font-size: xx-large;
+    }
