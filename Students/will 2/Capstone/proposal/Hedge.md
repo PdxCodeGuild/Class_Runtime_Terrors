@@ -20,10 +20,11 @@ The functionality of the application will allow users to:
 - Private User Data: balances, transations 
 
 ### Schedule
- - #### Milestone 1:
- - #### Milestone 2:
- - #### Milestone 3:
- - #### Milestone 4:
- - #### Milestone 5:
- - #### Milestone 6:
- - #### Milestone 7:
+ - #### Milestone 1: Web login and login create pages
+ - #### Milestone 2: User specific home page template
+ - log out header
+ - #### Milestone 3: API GET: market and kraken user data
+ - #### Milestone 4: GET data/trade logic
+ - #### Milestone 5: GET data visualization
+ - #### Milestone 6: API POST trade
+ - #### Milestone 7: ??????
