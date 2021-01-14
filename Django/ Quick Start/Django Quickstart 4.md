@@ -29,7 +29,7 @@ def see_details(request, id): ##we get the id of the element. Remember, all elem
     return render(request, 'pages/details.html', {"post": post}) ## we are passing the context to the page
 ```
 
-- The Templates > Pages > Posts.html page should look like the following:
+- Update the Templates > Pages > Posts.html to look like the following:
 
 ```html
 {% extends 'base.html' %}

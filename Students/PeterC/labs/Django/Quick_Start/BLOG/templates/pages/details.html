@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<p><a href=http://localhost:8000/posts>Back to main view</a></p>
+<ul>
+  <p>ID: {{ post.id }}</p>
+  <p>Description: {{ post.text }}</p>
+  <p>Pub Date: {{post.pub_date}}</p>
+</ul>
+{% endblock %}

@@ -1,0 +1,25 @@
+{%extends 'base.html'%}
+{%block content%}
+
+<h1 class='text-center'> Upload images</h1>
+
+<form enctype="multipart/form-data" action="{%url 'add_image'%}" id='author-form' class='mt-3' method="POST">
+    {% csrf_token %}
+    <label for="formFileMultiple" class="form-label">Multiple files input example</label>
+    <input name="my_image" class="form-control" type="file" id="formFileMultiple" multiple>
+    <button type="submit" class="btn btn-dark mt-3">Submit</button>
+</form>
+
+
+    <h1 class="text-center font-weight-light text-center text-lg-left mt-4 mb-5">Thumbnail Gallery</h1>
+    <div class="container gallery">
+    {%for image in images%}
+    <div>
+        <a href="{{image.my_image.url}}">
+            <img class="img-fluid img-thumbnail" src="{{image.my_image.url}}" alt="">
+        </a>
+    </div>
+    {%endfor%}
+</div>
+
+{%endblock%}

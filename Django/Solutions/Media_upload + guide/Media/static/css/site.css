@@ -1,0 +1,11 @@
+#author-form{
+    width: 50% !important;
+    margin: 50px auto !important;
+}
+img {
+    width: 200px;
+}
+.gallery{
+    display: grid !important;
+    grid-template-columns: 1fr 1fr 1fr !important;
+}

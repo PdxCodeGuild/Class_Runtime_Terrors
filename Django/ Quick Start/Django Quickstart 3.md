@@ -62,7 +62,7 @@ def add_post(request):
 
 ## Add a form to create blog posts.
 
-In the Pages > add.html page add the following:
+- In the Pages folder create a new page `add.html` and add the following:
 
 ```html
 {% extends 'base.html' %}

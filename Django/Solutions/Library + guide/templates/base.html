@@ -29,6 +29,9 @@
                     <a class="nav-link" href="{% url 'add_books'%}">Register a Book</a>
                 </li>
                 <li class="nav-item navbar-link profile">
+                    <a class="nav-link" href="{% url 'register'%}">Register a User</a>
+                </li>
+                <li class="nav-item navbar-link profile">
                 </li>
                 {%if user.is_authenticated%}
                 <li class="nav-item logout-nav-link navbar-link">
