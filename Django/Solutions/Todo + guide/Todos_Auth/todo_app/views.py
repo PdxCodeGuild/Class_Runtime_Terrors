@@ -5,8 +5,6 @@ from django.contrib.auth.decorators import login_required
 
 ##Rest
 
-##https://www.django-rest-framework.org/api-guide/filtering/
-##https://www.youtube.com/watch?v=QB9gGEwxxM4
 from rest_framework import viewsets
 from .serializers import TodoSerializer
 from rest_framework import generics
