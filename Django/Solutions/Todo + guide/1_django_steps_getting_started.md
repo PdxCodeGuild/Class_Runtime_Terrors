@@ -4,9 +4,8 @@
 0. create a directory for your project
 1. `cd` into the directory you just created, then create your virtual environment using `pipenv`
    ```python
-   pipenv --python 3.8
    pipenv shell
-   ```
+   ``` 
 2. install django and ensure it was installed
 
    ```python
