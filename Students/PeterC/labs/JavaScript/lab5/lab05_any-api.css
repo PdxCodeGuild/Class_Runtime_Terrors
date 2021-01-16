@@ -1,0 +1,44 @@
+body {
+    display: flex;
+    justify-content: center;
+  }
+  h1 {
+    color: #FFE81F;
+    font-style: italic;
+   }
+  p {
+    color: #FFE81F;
+    font-style: italic;
+    font-size: x-large;
+  }
+  .frame {
+    width: 1270px;
+    height: 1400px;
+    text-align: center;
+    background: url("https://images-na.ssl-images-amazon.com/images/I/61fCIronMPL._AC_SL1500_.jpg");
+    background-repeat: no-repeat, repeat;
+  }
+  .info-container {
+    padding: 2px 16px;
+    display: flex;
+    flex-direction: column;
+  }
+  #title {
+    margin: 1em;
+    font-size: xxx-large;
+    font-family: arial;
+    text-shadow:  4px 4px 4px #aaa;
+  }
+  .footer{
+    color: red;
+    align-self: center;
+    font-size: large;
+    font-style: oblique;
+  }
+  #button{
+    color: white;
+    align-self: center;
+    font-size: x-large;
+    background-color: gray;
+    border-radius: 5px;
+  }
