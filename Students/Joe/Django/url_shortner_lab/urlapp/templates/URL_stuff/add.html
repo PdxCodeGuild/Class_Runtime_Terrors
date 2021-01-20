@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+<div action>what do you want to shorten?</div></br>
+<form action="{% url 'add' %}" method="POST">
+  {% csrf_token %} 
+  <input type="text" name="inputter" placeholder="add url" /><br />
+
+  <input type="submit" value="add" />
+</form>
+{%for url in url_list%}
+  <div>Long URL: {{ url.long_url }}</div>
+  <div><a href='{{url.long_url }}' target='_blank'>{{url.short_url}}</a></div>
+  <!-- <div>Long URL: {{ url.long_url }}</div>
+  <div>Short URL: {{ url.short_url }} </div> -->
+  <a href="{%url 'delete' url.id %}">
+    <button class="button button-blue button-bordered">
+      <span class="button--inner">delete</span>
+    </button>
+  </a>
+{% endfor %}
+{% endblock %}
