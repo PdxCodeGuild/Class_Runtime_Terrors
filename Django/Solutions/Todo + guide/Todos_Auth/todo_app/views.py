@@ -3,20 +3,7 @@ from django.http import HttpResponse
 from .models import Todo
 from django.contrib.auth.decorators import login_required
 
-##Rest
 
-##https://www.django-rest-framework.org/api-guide/filtering/
-##https://www.youtube.com/watch?v=QB9gGEwxxM4
-from rest_framework import viewsets
-from .serializers import TodoSerializer
-from rest_framework import generics
-
-
-class TodoView(generics.ListAPIView):
-    serializer_class = TodoSerializer
-    def get_queryset(self):
-        user = self.request.user
-        return Todo.objects.filter(user=user)
 
 @login_required
 def todo_list(request):

@@ -15,7 +15,7 @@ def blog_posts(request):
         'blogs': blogs
     }
 
-    return render(request, 'pages/posts.html', context)
+    return render(request, 'templates/posts.html', context)
 
 def add_posts(request):
     if request.method == 'GET':
