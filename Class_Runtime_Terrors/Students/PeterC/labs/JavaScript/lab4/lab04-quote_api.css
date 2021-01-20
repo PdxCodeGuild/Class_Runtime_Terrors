@@ -1,0 +1,48 @@
+body {
+    display: flex;
+    justify-content: center;
+  }
+  h1 {
+    /* margin: 2em; */
+    color: rgb(172, 47, 255);
+    font-style: italic;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+   
+  }
+  .frame {
+    width: 670px;
+    height: 900px;
+    padding: 135px;
+    text-align: center;
+    background: url("https://images.freeimages.com/images/large-previews/5d1/paper-1056994.jpg");
+    
+  }
+  .container {
+    padding: 2px 16px;
+    display: flex;
+    flex-direction: column;
+  }
+  #quote {
+    font-family: cursive;
+    margin: 1em;
+    font-size: xx-large;
+    font-family: "Comic Sans MS";
+  }
+  #author {
+    margin-top: 1em;
+    font-size: x-large;
+    font-family: 'Lucida Handwriting';
+    color: red;
+  }
+  .logo{
+      background-image: url(https://cliparts.zone/img/1302966.gif);
+      margin-left: 820px;
+      width: 981px;
+      height: 300px;
+      background-repeat: no-repeat, repeat;
+      overflow: hidden;  
+  }
+  .footer{
+    position: absolute;
+    bottom: 120px; 
+  }
