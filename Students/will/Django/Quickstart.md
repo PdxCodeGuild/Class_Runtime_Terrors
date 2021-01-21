@@ -14,5 +14,6 @@
 - cd to the folder where the application will live
 - enter virtualenv for the project
 - create project: django-admin startproject <project_name> .
-- create app w/in project: python manage.py startapp <app-name>
+- create app w/in project: python manage.py startapp <app-name> .
 - add <app-name> to INSTALLED_APPS in project directory
+
