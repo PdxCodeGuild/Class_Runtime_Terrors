@@ -7,9 +7,9 @@ verify_ssl = true
 
 [packages]
 django = "*"
-rest-framework = "*"
+install = "*"
 djangorestframework = "*"
-django-rest-framework = "*"
+corsheaders = "*"
 django-cors-headers = "*"
 
 [requires]

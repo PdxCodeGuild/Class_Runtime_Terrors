@@ -4,6 +4,19 @@ from .models import Todo
 from django.contrib.auth.decorators import login_required
 
 
+<<<<<<< HEAD
+=======
+from rest_framework import viewsets
+from .serializers import TodoSerializer
+from rest_framework import generics
+
+
+class TodoView(generics.ListAPIView):
+    serializer_class = TodoSerializer
+    def get_queryset(self):
+        user = self.request.user
+        return Todo.objects.filter(user=user)
+>>>>>>> 571384829830d613bc5c535b43defbd334f5576e
 
 @login_required
 def todo_list(request):
