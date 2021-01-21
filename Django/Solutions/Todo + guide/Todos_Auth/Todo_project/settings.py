@@ -41,8 +41,11 @@ INSTALLED_APPS = [
     'todo_app',
     'pages_app',
     'accounts',
+<<<<<<< HEAD
+    
+=======
     "rest_framework",
-    'corsheaders',
+>>>>>>> 571384829830d613bc5c535b43defbd334f5576e
 ]
 
 MIDDLEWARE = [

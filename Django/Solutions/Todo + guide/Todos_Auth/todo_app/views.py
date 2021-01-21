@@ -3,8 +3,9 @@ from django.http import HttpResponse
 from .models import Todo
 from django.contrib.auth.decorators import login_required
 
-##Rest
 
+<<<<<<< HEAD
+=======
 from rest_framework import viewsets
 from .serializers import TodoSerializer
 from rest_framework import generics
@@ -15,6 +16,7 @@ class TodoView(generics.ListAPIView):
     def get_queryset(self):
         user = self.request.user
         return Todo.objects.filter(user=user)
+>>>>>>> 571384829830d613bc5c535b43defbd334f5576e
 
 @login_required
 def todo_list(request):

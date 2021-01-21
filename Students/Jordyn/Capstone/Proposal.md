@@ -2,7 +2,7 @@ checkers.game.com
 
 Project Overview:
 
-The point of this application is to be able to play the game of Checkers against a multi level difficulty AI, and, time permitting, another player. 
+The point of this application is to be able to play the game of Checkers against a multi level difficulty AI, and, time permitting, another player (or vice versa). 
 
 There will be a user login function to store data on scores like:
  - Time spent in the game
@@ -36,6 +36,22 @@ Highscore - Display the top 10 of each score type:
             - Least Turns To Win
             - Least Pieces Lost
 
+Profile P.- Display personal information:
+            - Games Played
+              - Wins
+              - Losses
+              - Ties(?)
+            - Games of type (AI/PvP)
+            - Game History
+              - Against Who
+                - Win
+                - Lose
+                - Score
+            - Change Password
+            - Change Email
+            - Change Profile Image (?)
+            - Achievements (?)
+
 Data Model:
 Checker Board + Pieces
 Username + Password
@@ -49,3 +65,7 @@ Players Matched (And how many times of same player)
 
 Schedule:
 ¯\_(ツ)_/¯
+
+==========================================================
+
+*** Items listed with "(?)" are features with low priority and will be added, time permitting.
