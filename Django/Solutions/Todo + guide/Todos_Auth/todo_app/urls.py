@@ -1,14 +1,9 @@
 from django.urls import path, include
 from . import views
 
-##rest
-from rest_framework import routers
-router = routers.DefaultRouter()
-router.register('api/', views.TodoView, basename='ApiTodos')
+
 
 urlpatterns = [
-    # path('api/', include(router.urls)),
-    path('api/', views.TodoView.as_view()),
     path('', views.todo_list, name = 'list'),
     path('add/', views.add_todo, name = 'add'),
     path('details/<int:id>', views.details, name = 'details'),
