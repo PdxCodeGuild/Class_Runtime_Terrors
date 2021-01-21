@@ -17,3 +17,23 @@
 - create app w/in project: python manage.py startapp <app-name> .
 - add <app-name> to INSTALLED_APPS in project directory
 
+## Set up static files, base HTML, and JS and CSS files
+### Template HTML
+- create templates directory at the project level
+- inside templates create pages directory
+- inside pages directory create home.html and about.html
+- in each file extend base.html {% %}
+- lastly in the project's settings.py ammend TEMPLATES DIR with os.path.join(BASE_DIR, 'templates')
+### Static files
+- at project level create static directory
+- w/in static directory create a JS directory and a CSS directory
+- w/in js dir create file main.js and css dir create file site.css
+- w/in file site.css code h1{color:firebrick;} 
+- w/in file main.js code console.log("hello from main.js");
+- lastly in the project's settings.py, below STATIC_URL add the line STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+ 
+
+
+
+
+
