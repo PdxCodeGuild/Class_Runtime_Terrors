@@ -49,7 +49,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'CodeSkunk.urls'
+ROOT_URLCONF = 'CoinSkunk.urls'
 
 TEMPLATES = [
     {
