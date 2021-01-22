@@ -26,12 +26,13 @@
 - lastly in the project's settings.py ammend TEMPLATES DIR with os.path.join(BASE_DIR, 'templates')
 ### Static files
 - at project level create static directory
-- w/in static directory create a JS directory and a CSS directory
-- w/in js dir create file main.js and css dir create file site.css
+- w/in static directory create a js directory and a css directory
+- w/in js dir create a file main.js and css dir create a file site.css
 - w/in file site.css code h1{color:firebrick;} 
 - w/in file main.js code console.log("hello from main.js");
 - lastly in the project's settings.py, below STATIC_URL add the line STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
- 
+### Base HTML
+-at root level w/in tmemplates dir create a file base.html
 
 
 
