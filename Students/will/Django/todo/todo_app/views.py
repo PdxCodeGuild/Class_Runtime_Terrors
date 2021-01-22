@@ -1,9 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 
-def home(request):
-    return render(request, 'pages/home.html')
-
-def about(request):
-    return render(request, 'pages/about.html')
-# Create your views here.
+def todo_list(request):
+    return render(request, 'todos/todo_list.html')
