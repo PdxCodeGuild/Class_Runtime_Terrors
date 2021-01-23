@@ -1,28 +1,28 @@
 from django.shortcuts import render, redirect
 from .models import Album, Image
+from django.contrib.auth.decorators import login_required
 
 
 def index(request):
     return render(request, 'navigation/index.html')
 
-
+@login_required
 def dashboard(request):
     return render(request, 'navigation/dashboard.html')
 
-
+@login_required
 def createAlbum(request):
     if request.method == 'POST':
         title = request.POST.get('title')
         album_cover = request.FILES.get('album_cover')
         user = request.user
-        print(user)
         new_album = Album.objects.create(
             title=title,
             album_cover=album_cover,
             user=user
         )
 
-        albums = Album.objects.all()
+        albums = Album.objects.filter(user=request.user)
         print(albums)
         context = {
             "albums": albums,
@@ -31,7 +31,7 @@ def createAlbum(request):
     else:
         return render(request, 'collections/create_album.html')
 
-
+@login_required
 def viewCollections(request):
     albums = Album.objects.filter(user=request.user)
     context = {
@@ -39,7 +39,7 @@ def viewCollections(request):
     }
     return render(request, 'collections/view_collections.html', context)
 
-
+@login_required
 def collectionDetails(request, id):
     cover = Album.objects.get(id=id)
     images = Image.objects.filter(album=cover.id)
@@ -49,7 +49,7 @@ def collectionDetails(request, id):
     }
     return render(request, 'collections/view_images.html', context)
 
-
+@login_required
 def delete_album(request, id):
     albums = Album.objects.get(id=id)
     albums.delete()
@@ -57,7 +57,7 @@ def delete_album(request, id):
 
 
 # Image Model Logic
-
+@login_required
 def addImages(request, id):
     cover = Album.objects.get(id=id)
     images = Image.objects.filter(album=cover.id)

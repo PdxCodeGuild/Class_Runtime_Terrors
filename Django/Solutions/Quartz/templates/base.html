@@ -21,33 +21,24 @@
               
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                   <ul class="nav navbar-nav ml-auto">
-                    
-                    <li class="nav-item navbar-link profile">
-                        <a class="nav-link" href="">Profile</a>
-                    </li>
+                    {%if user.is_authenticated%}
+
                     <li class="nav-item navbar-link dashboard">
-                      <a class="nav-link" href="">Dashboard</a>
+                      <a class="nav-link" href="{%url 'dashboard'%}">Dashboard</a>
                     </li>
                     <li class="nav-item logout-nav-link navbar-link">
-                        <a class="nav-link " href="">Logout</a>
-                    </li>
-                    <div class = 'nav-pic-container'>
-                      <li class="nav-picture" data-toggle="popover" title="{{ user.username }}" >
-                        <img class="user-nav-picture" src=''>
-                      </li>
-                      
-                      <ul id="popover-content" class="list-group" style="display: none">
-                          <a class="list-group-item tooltip-menu" href = "">Change Password</a>
-                          <a class="list-group-item tooltip-menu" href = "">Reset Password</a>
-                      </ul>
-                  </div>
-                    <li class="nav-item navbar-link register">
-                      <a class="nav-link" href="">Register</a>
-                    </li>
-                    <li class="nav-item navbar-link login ">
-                      <a class="nav-link" href=""> Login</a>
+                        <a class="nav-link " href="{%url 'logout'%}">Logout</a>
                     </li>
 
+                    {%else%}
+                    <li class="nav-item navbar-link register">
+                      <a class="nav-link" href="{%url 'register'%}">Register</a>
+                    </li>
+                    <li class="nav-item navbar-link login ">
+                      <a class="nav-link" href="{%url 'login'%}"> Login</a>
+                    </li>
+
+                    {%endif%}
                   </ul>
                 </div>
               </nav>

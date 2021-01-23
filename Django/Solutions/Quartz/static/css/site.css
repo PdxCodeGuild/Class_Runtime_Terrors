@@ -294,6 +294,12 @@ a.nav-link{
     transition: .2s;
 }
 
+#author-form{
+    width: 50% !important;
+    margin: 50px auto !important;
+}
+
+
 
 /* ///////////////////////
 ////////ALBUMS/////////
