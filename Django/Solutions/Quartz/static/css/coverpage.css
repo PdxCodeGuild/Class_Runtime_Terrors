@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+/* https://tips4devs.com/articles/build-a-spinning-diamond-with-CSS-only/#source-code */
+
+/* ///////////////////////
+////////COVER PAGE////////
+////////////////////// */
+
+
+.button-cover {
+    color: white;
+    height: 40px;
+    border-radius: 5px;
+    width: 150px;
+    margin-left: 254px;
+    background-color: black;
+    transition: .5s;
+
+}
+
+.button-cover:hover{
+
+    background-color: white;
+    border:2px solid black;
+    color: black; 
+    transition: .5s;
+}
+  
+
+/* ///////////////////////
+////////DIAMOND////////
+////////////////////// */
+
+.wrapper {
+    position: relative;
+}
+.cover-page {
+    height: 100vh;
+}
+.quartz {
+    font-family: 'Lato', sans-serif;
+    font-size: 180px;
+}
+.container-diamond {
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    top: 5%;
+    left: 45.8%;
+    transform-origin: 0 0;
+    transform-style: preserve-3d;
+    overflow: visible;
+}
+
+.button-cover{
+    margin-top: 20px;
+}
+
+.rotor-x {
+    transform: scale(0.4) rotateX(-22deg) ;
+}
+
+.rotor-y {
+    animation: spinY 12s infinite linear;
+}
+  
+/* @keyframes spinX {
+    from { transform: rotateX(0); }
+    to { transform: rotateX(360deg); }
+} */
+  
+@keyframes spinY {
+    from { transform: rotateY(0); }
+    to { transform: rotateY(360deg); }
+}
+
+.triangle {
+    position:absolute;
+    left:-100px;
+    top:-50px;
+    width: 0;
+    height: 0;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    border-bottom: 100px solid #000000; 
+    animation: lighting 12s infinite linear;
+}
+
+/* Position */
+
+.triangle.bottom {   
+    transform-origin: 50% 0%; 
+}
+.triangle.middle-bottom {
+    transform-origin: 50% 0%;
+}
+.triangle.middle-top {
+    transform-origin: 50% 100%;
+}
+.triangle.up {
+    transform-origin: 50% 0%;
+}
+
+/* Lower pieces */
+.triangle.bottom.face-1 {
+    transform: translateY(90px) rotateY(0deg) rotateX(35deg)  scaleX(.24) scaleY(-1) ; 
+    animation-delay: -3500ms; 
+}
+.triangle.bottom.face-2 {
+    transform:  translateY(90px) rotateY(45deg) rotateX(35deg)  scaleX(.24) scaleY(-1) ;
+    animation-delay: -4500ms; 
+}
+
+.triangle.bottom.face-3 { 
+    transform:  translateY(90px) rotateY(90deg) rotateX(35deg)  scaleX(.24) scaleY(-1) ;
+    animation-delay: -5500ms; 
+}
+
+.triangle.bottom.face-4 { 
+    transform:  translateY(90px) rotateY(135deg) rotateX(35deg)  scaleX(.24) scaleY(-1) ;
+    animation-delay: -6500ms; 
+}
+
+.triangle.bottom.face-5 { 
+    transform:  translateY(90px) rotateY(180deg) rotateX(35deg)  scaleX(.24) scaleY(-1) ; 
+    animation-delay: -7500ms; 
+}
+
+.triangle.bottom.face-6 { 
+    transform:  translateY(90px) rotateY(225deg) rotateX(35deg)  scaleX(.24) scaleY(-1) ; 
+    animation-delay: -8500ms; 
+}
+
+.triangle.bottom.face-7 { 
+    transform:  translateY(90px) rotateY(270deg) rotateX(35deg)  scaleX(.24) scaleY(-1) ; 
+    animation-delay: -9500ms; 
+}
+
+.triangle.bottom.face-8 { 
+    transform:  translateY(90px) rotateY(315deg) rotateX(35deg)  scaleX(.24) scaleY(-1) ;
+    animation-delay: -10500ms; 
+}
+
+/* Lower mid bottom pieces */
+
+.triangle.middle-bottom.face-1 {
+    animation-delay: -3500ms;
+    transform: rotateY(0deg) translateY(-11px) translateZ(-34px) rotateX(-50deg) scaleX(.24) scaleY(.3);
+}
+.triangle.middle-bottom.face-2 {
+    animation-delay: -4500ms;
+    transform: rotateY(45deg) translateY(-11px) translateZ(-34px) rotateX(-50deg) scaleX(.24) scaleY(.3);
+}
+.triangle.middle-bottom.face-3 {
+    animation-delay: -5500ms;
+    transform: rotateY(90deg) translateY(-11px) translateZ(-34px) rotateX(-50deg) scaleX(.24) scaleY(.3);
+}
+.triangle.middle-bottom.face-4 {
+    animation-delay: -6500ms;
+    transform: rotateY(135deg) translateY(-11px) translateZ(-34px) rotateX(-50deg) scaleX(.24) scaleY(.3);
+}
+.triangle.middle-bottom.face-5 {
+    animation-delay: -7500ms;
+    transform: rotateY(180deg) translateY(-11px) translateZ(-34px) rotateX(-50deg) scaleX(.24) scaleY(.3);
+}
+.triangle.middle-bottom.face-6 {
+    animation-delay: -8500ms;
+    transform: rotateY(225deg) translateY(-11px) translateZ(-34px) rotateX(-50deg) scaleX(.24) scaleY(.3);
+}
+.triangle.middle-bottom.face-7 {
+    animation-delay: -9500ms;
+    transform: rotateY(270deg) translateY(-11px) translateZ(-34px) rotateX(-50deg) scaleX(.24) scaleY(.3);
+}
+.triangle.middle-bottom.face-8 {
+    animation-delay: -10500ms;
+    transform: rotateY(315deg) translateY(-11px) translateZ(-34px) rotateX(-50deg) scaleX(.24) scaleY(.3);
+}
+
+/* mid pieces */
+
+.triangle.middle-top.face-1 {
+    animation-delay: -2500ms;
+    transform: rotateY(22.5deg) translateY(-111px) translateZ(-31px) rotateX(-58deg) scaleX(.13) scaleY(-.36);
+}
+.triangle.middle-top.face-2 {
+    animation-delay: -3500ms;
+    transform: rotateY(67.5deg) translateY(-111px) translateZ(-31px) rotateX(-58deg) scaleX(.13) scaleY(-.36);
+}
+.triangle.middle-top.face-3 {
+    animation-delay: -4500ms;
+    transform: rotateY(112.5deg) translateY(-111px) translateZ(-31px) rotateX(-58deg) scaleX(.13) scaleY(-.36);
+}
+.triangle.middle-top.face-4 {
+    animation-delay: -5500ms;
+    transform: rotateY(157.5deg) translateY(-111px) translateZ(-31px) rotateX(-58deg) scaleX(.13) scaleY(-.36);
+}
+.triangle.middle-top.face-5 {
+    animation-delay: -6500ms;
+    transform: rotateY(202.5deg) translateY(-111px) translateZ(-31px) rotateX(-58deg) scaleX(.13) scaleY(-.36);
+}
+.triangle.middle-top.face-6 {
+    animation-delay: -7500ms;
+    transform: rotateY(247.5deg) translateY(-111px) translateZ(-31px) rotateX(-58deg) scaleX(.13) scaleY(-.36);
+}
+.triangle.middle-top.face-7 {
+    animation-delay: -8500ms;
+    transform: rotateY(292.5deg) translateY(-111px) translateZ(-31px) rotateX(-58deg) scaleX(.13) scaleY(-.36);
+}
+.triangle.middle-top.face-8 {
+    animation-delay: -9500ms;
+    transform: rotateY(337.5deg) translateY(-111px) translateZ(-31px) rotateX(-58deg) scaleX(.13) scaleY(-.36);
+}
+
+.triangle.up.face-1 {
+    animation-delay: -3500ms;
+    transform: rotateY(22.5deg) translateY(-22px) translateZ(0px) rotateX(-70deg) scaleX(.13) scaleY(.33);
+}
+.triangle.up.face-2 {
+    animation-delay: -4500ms;
+    transform: rotateY(67.5deg) translateY(-22px) translateZ(0px) rotateX(-70deg) scaleX(.13) scaleY(.33);
+}
+.triangle.up.face-3 {
+    animation-delay: -5500ms;
+    transform: rotateY(112.5deg) translateY(-22px) translateZ(0px) rotateX(-70deg) scaleX(.13) scaleY(.33);
+}
+.triangle.up.face-4 {
+    animation-delay: -6500ms;
+    transform: rotateY(157.5deg) translateY(-22px) translateZ(0px) rotateX(-70deg) scaleX(.13) scaleY(.33);
+}
+.triangle.up.face-5 {
+    animation-delay: -7500ms;
+    transform: rotateY(202.5deg) translateY(-22px) translateZ(0px) rotateX(-70deg) scaleX(.13) scaleY(.33);
+}
+.triangle.up.face-6 {
+    animation-delay: -8500ms;
+    transform: rotateY(247.5deg) translateY(-22px) translateZ(0px) rotateX(-70deg) scaleX(.13) scaleY(.33);
+}
+.triangle.up.face-7 {
+    animation-delay: -9500ms;
+    transform: rotateY(292.5deg) translateY(-22px) translateZ(0px) rotateX(-70deg) scaleX(.13) scaleY(.33);
+}
+.triangle.up.face-8 {
+    animation-delay: -10500ms;
+    transform: rotateY(337.5deg) translateY(-22px) translateZ(0px) rotateX(-70deg) scaleX(.13) scaleY(.33);
+}
+
+
+@keyframes lighting {
+    0% {   border-bottom-color:#000000; }
+    50% {  border-bottom-color:#686868; }
+    100% { border-bottom-color:#000000; }
+}
+
+@media only screen and (max-width: 768px) and (min-width: 337px) {
+
+    .quartz{
+        font-size: 90px !important;
+    }
+
+    .button-cover {
+        height: 36px;
+        width: 100px;
+        margin-left: 115px;
+        margin-top: 5px;
+    }
+
+    .container-diamond{
+        top: -8%;
+    }
+    .rotor-x {
+        transform: scale(0.3) rotateX(-22deg);
+    }
+
+
+
+}
