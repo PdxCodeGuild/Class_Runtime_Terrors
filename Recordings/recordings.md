@@ -48,5 +48,4 @@
 
 [11-1-2021 - Django Accounts - Login-Logout. Passcode: 3z@R@byV](https://zoom.us/rec/share/xBQ4sRQ0tXqsCmaLGaNWlmFrUXMAfxNJm7eHHXFF7aKdnUKo0Atwh5SD1GmZQLx6.fT7tE6WDja7_9wNU )
 
-[22-1-2021 - Live Coding- Django. Passcode: q#ggn5&L]([22-1-2021 - Live Coding- Django. Passcode: q#ggn5&L](https://zoom.us/rec/share/TOdLe0hyteyNyQuqq56JZQD2KNa2waYcigqqH8Qpvkc_IDtSEedznAPV3amSW2tI.P_5g_JRS70IWgm4l )
-)
+[22-1-2021 - Live Coding Django. Passcode: q#ggn5&L](https://zoom.us/rec/share/TOdLe0hyteyNyQuqq56JZQD2KNa2waYcigqqH8Qpvkc_IDtSEedznAPV3amSW2tI.P_5g_JRS70IWgm4l)
