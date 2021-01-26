@@ -1,34 +1,45 @@
 
 # Capstone Proposal
 
-The Capstone is a web application that touches on every major technology we covered: Python, HTML, CSS, JavaScript, and Django. Below are the criteria for your proposal. It's difficult to be certain how long each feature will take to develop. Therefore you should plan out multiple 'milestones' for your project. That way, if you reach milestone 2 but not 3, you still have something worthwhile to present and be proud of. It also gives you the opportunity to plan out what you'd like to work on after the class is finished. I can help you sculpt out an idea, and I'll tell you very plainly whether a goal is attainable given our time constraints. I highly recommend doing some sketches of pages. This document is for you as much as it is for me. By planning thoroughly and precisely, the implementation will be much easier. Please do not change your idea after we start working on our capstones, it wastes your time and your end result won't be as good. Your proposal is due by the time we start our capstones (3-4 weeks before the end of the course).
+For my Capstone I will be attempting to improve the user experience of my 
+favorite dispensaries website.
 
-- Your proposal must be in a markdown `.md` file [more info](https://help.github.com/articles/basic-writing-and-formatting-syntax/)
-- Your proposal must set specific and attainable goals
-- Your proposal must cover all major topics we've covered
-- Your proposal must include the sections below
-
-
+[Your CannaSource](http://yourcannasource.com)
 
 ## Name
 
-Give your project a cool name. I recommend going to [translate.google.com](https://translate.google.com/), picking a random language, and typing in random words. Or there's [behindthename.com](https://www.behindthename.com/).
+I will call the project YourCannaSource 2.0
+
 
 ## Project Overview
 
-What are the major features of your web application? What problem is it attempting to solve? What libraries or frameworks will you use?
+I've decided to take on this task in order to learn more about website construction, as well as improving a website I currently use.
+YourCannaSource 2.0 will add user accounts to the website, as well as 
+adding the ability to pre-order online. As users orders are filled, the 
+availability of a given product will be adjusted to reflect exactly what 
+is in the physical store. Employees will also have access to the site in order to add/remove products. I will attempt to implement timers for specials, so as to drive sales. Ideally, I would like the program to track what users purchase and build databases of user interaction as a means of providing targeted advertising.
+As it currently sits, the website is incomplete and offers no user interaction. I will implement the changes I see as necassary to provide meaningful user interaction.
+I do not yet know what libraries or frameworks will be used.
 
 ## Functionality
 
-Walk through the application from the user's perspective. What will they see on each page? What can they input and click and see? How will their actions correspond to events on the back-end?
+When a user first lands on the websites home page, they will be shown current products, as well as any current deals going on, plus contact info such as phone number and a map to show the location. From this page a user will be able to navigate to the website 'menu' to view what is in store. If a user would like to pre-order online, an account will need to be set-up. Once the user is verified, they will be able to place online orders, and see any targeted promotions for them.
+On the 'menu' page, users will be presented with all available products. Users will be able to filter shown results (Indica, Sativa, Concentrates, etc)
+If the user clicks on a product, they will be photos of the product, as well as availability and pricing options.
+If logged in, the user will be taken to their 'homepage', which will have specials, saved products, and a section to review products.
+If a user places an online order, they will be taken to a page to finalize the order. Finalization will include reviewing the order, verifying the price, have an option to use a promo code, and selecting a time window that they would like to pick up the order at.
+After an order is confirmed by an employee and the user picks up the order, the site will update the revised availability of products in the main site.
 
 ## Data Model
 
-What data will you need to store as part of your application? These should be specific nouns, collections of information that serve a collective purpose. Examples might be 'User', 'Book', 'ImageSet'.
+The website will have to store pictures of the products. User data such as ID(?), previous purchases, and reviews on products.
 
 ## Schedule
 
-Here you'll want to come up with some (very rough) estimates of the timeframe for each section. State specifically which steps you'll take in the implementation. This section should also include work you're planning to do after the capstone is finished.
+The first week, I will work on copying the reproducing the site as it currently displays. 
+The second week, I will begin building the database to store user account information.
+The third week, I will work on adding pages to display reviews.
+The final week, I will review and test the website overall.
 
 
 

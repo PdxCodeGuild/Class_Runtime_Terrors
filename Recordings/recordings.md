@@ -45,3 +45,7 @@
 [14-10-2020 - Axios Passcode:  #f0frZ#1](https://zoom.us/rec/share/N_1QbpJG-_WMegwYuP8erK1uHTp0y6kShHcdISO2YmvDlA_sEU2FIzexHAULYE_L.8Glz5sDKgMtRkHgb )
 
 [04-1-2021 - Django Intro. Passcode: 7J@!Dw#n](https://zoom.us/rec/share/BPbu7sZdBS_rh9U1ajin8V2pNej-SkiPD9QvxdyD5HmQrFznj830GNwIIRnJsoF3.QYvvsmjuAR2VENdz)
+
+[11-1-2021 - Django Accounts - Login-Logout. Passcode: 3z@R@byV](https://zoom.us/rec/share/xBQ4sRQ0tXqsCmaLGaNWlmFrUXMAfxNJm7eHHXFF7aKdnUKo0Atwh5SD1GmZQLx6.fT7tE6WDja7_9wNU )
+
+[22-1-2021 - Live Coding Django. Passcode: q#ggn5&L](https://zoom.us/rec/share/TOdLe0hyteyNyQuqq56JZQD2KNa2waYcigqqH8Qpvkc_IDtSEedznAPV3amSW2tI.P_5g_JRS70IWgm4l)

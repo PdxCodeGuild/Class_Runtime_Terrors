@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="formLab.css">
+</head>
+<body>
+    <fieldset>
+        <legend>About Offending Film (Part 1 of 3)</legend>
+        <div>
+            <label for="Film">The Film In Question?</label>
+            <input class="inputField"
+            id="film"
+            name="film"
+            type="text"
+            placeholder="e.g. King Kong"
+            required
+            aria-required="true"
+            />
+        </div>
+        
+        <div>
+            <label for="awardWon">Award Won</label>
+            <input id="awardWon" name="awardWon" type="text" list="awards"/>
+            <datalist id="awards">
+                <select>
+                    <option value="Best Picture"></option>
+                    <option value="Best Director"></option>
+                    <option value="Best Adapted Screenplay"></option>
+                    <option value="Best Original Screenplay"></option>
+                </select>
+            </datalist>
+        </div>
+        <div>
+            <label for="yearOfCrime">Year Of Crime</label>
+            <input
+            id="yearOfCrime"
+            name="yearOfCrime"
+            type="number"
+            min="1929"
+            max="2021"
+            required
+            />
+        </div>
+        <div>
+            <label for="web">Your Web Address</label>
+            <input id="web" name="web" type="url" placeholder="https://www.mysite.com" pattern="https?://.+"/>
+        </div>
+        <div>
+            <label for="search">Search The Site</label>
+            <input id="search" name="search" type="search" placeholder="Wyatt Earp"/>
+        </div>
+        
+        <div>
+            <label for="date">Date</label>
+            <input id="date" name="date" type="date"/>
+        </div>
+        <div>
+            <label for="range">Select Between 1 and 10</label>
+            <input
+            id="howYouRateIt"
+            name="howYouRateIt"
+            type="range"
+            min="1" 
+            max="10" 
+            value="5"
+            onchange="showValue(this.value)"
+            />
+            <span id="range">5</span>
+        </div>
+    </fieldset>
+    <script>
+        function showValue(newValue){
+            document.getElementById("range").innerHTML=newValue;
+        }
+    </script>
+    <fieldset>
+        <legend>About You (Part 2 of 3)</legend>
+        <div>
+            <label for="name"> Your Name (first and last)</label>
+            <input
+            id="name"
+            name="name"
+            pattern="^([\D]{2,30}\s+)+([a-zA-Z]{2,30})$"
+            placeholder="Hunter Thompson"/>
+        </div>
+        <div>
+            <label for="email">Your Email Address</label>
+            <input
+            type="email"
+            id="email"
+            name="email"
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+            placeholder="your.name@gmail.com"
+            required
+            />
+        </div>
+        <div>
+            <label for="tel">Telephone Number</label>
+            <input
+            id="tel"
+            name="tel"
+            type="tel"
+            placeholder="1-702-555-1234"
+            autocomplete="off"
+            required
+            />
+            <div>
+                <label for="color">Your Favorite Color</label>
+                <input id="color" name="color" type="color"/>
+            </div>
+        </div>
+    </fieldset>
+    <script src="formLab.js"></script>
+</body>
+</html>
