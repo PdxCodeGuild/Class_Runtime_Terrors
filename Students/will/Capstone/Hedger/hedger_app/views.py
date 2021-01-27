@@ -5,6 +5,7 @@ from django.contrib.auth.forms import UserCreationForm
 from .models import API
 from django.contrib.auth.models import User
 from django.contrib import messages
+from django.utils import timezone
 
 
 def home(request):
@@ -46,7 +47,20 @@ def user_login(request):
     return render(request, 'pages/login.html')
 
 def api(request):
-    return render(request, 'pages/api.html')
+    if request.method == 'GET': 
+        return render(request, 'pages/api.html')
+    elif request.method == 'POST': 
+        user = request.user
+        api_key = request.POST['api_key']
+        secret_api = request.POST['secret_api']
+        register_date = timezone.now()
+        apiKeys = API.objects.create(user = user, api_key = api_key, secret_api = secret_api, register_date = register_date )
+        return redirect('dashboard')
+
+
+def dashboard(request):
+    return render(request, 'pages/dashboard.html')
+
 
 def user_logout(request):
     logout(request)
