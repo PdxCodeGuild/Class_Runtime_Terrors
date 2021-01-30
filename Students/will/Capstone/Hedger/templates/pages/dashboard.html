@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Dashboard</h1>
+    <div>
+        {% for api in api %}
+        <p>User: {{ api.user }}</p>
+        
+        <p>Balances: {{api_reply}}<br>
+          BTC: {{bitcoinBalance}} <br>
+          ETH: {{etherBalance}} <br>
+        </p>
+    </div>
+  {% empty %}
+  {% endfor %}
+        
+
+{% endblock %}
