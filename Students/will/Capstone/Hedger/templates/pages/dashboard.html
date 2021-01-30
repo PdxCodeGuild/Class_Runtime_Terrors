@@ -10,6 +10,9 @@
           ETH: {{etherBalance}} <br>
         </p>
     </div>
+    <div>{% autoescape off %}
+      {{ plot_div }}
+      {% endautoescape %}</div>
   {% empty %}
   {% endfor %}
         
