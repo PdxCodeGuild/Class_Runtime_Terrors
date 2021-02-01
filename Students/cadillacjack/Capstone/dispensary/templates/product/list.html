@@ -1,5 +1,6 @@
 {% extends 'shop/base.html' %}
 {% load static %}
+{% load thumbnail %}
 
 {% block title %}
     {% if category %}{{ category.name }}{% else %}Products{% endif %}
@@ -35,13 +36,14 @@
         {% for product in products %}
         <div class="item">
             <a href="{{ product.get_absolute_url }}">
-                {% if product.image %}
-                <img src="{{ product.image.url }}">
-                {% else %}
-                <img src="{% static '/img/no_image.png' %}">
-                {% endif %}
+                {% thumbnail product.image "200x200" as im %}
+                    <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+                {% endthumbnail %}
+
             </a>
             <a href="{{ product.get_absolute_url }}">{{ product.name }}</a><br>
+            THC: {{ product.thc }}%<br>
+            CBD: {{ product.cbd }}%<br>
             ${{ product.price }}
         </div>
         {% endfor %}

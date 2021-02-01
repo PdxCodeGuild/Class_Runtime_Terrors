@@ -207,11 +207,11 @@ ul.errorlist {
     font-weight:bold;
 }
 
-.product-detail img {
+/* .product-detail img {
     width:40%;
     float:left;
     padding:0 20px 20px 0;
-}
+} */
 
 .product-detail h1 {
     margin-bottom:0;

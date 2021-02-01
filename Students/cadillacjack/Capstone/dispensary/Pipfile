@@ -6,6 +6,9 @@ name = "pypi"
 [packages]
 pillow = "*"
 django = "*"
+celery = "==4.4.2"
+sorl-thumbnail = "12.7.0"
+django-cleanup = "*"
 
 [dev-packages]
 
