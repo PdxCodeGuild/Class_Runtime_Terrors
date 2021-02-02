@@ -1,0 +1,23 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<h1>register</h1>
+
+<form method="POST">
+    {% csrf_token %} 
+    {{ form.as_p}}   
+    <button>login</button>
+</form>
+
+<!-- <div class="mt-5 container text-center">
+<form action="{% url 'UserRegisterView' %}" method="POST">
+{% csrf_token %} 
+  <div class="form-group">
+    <label for="exampleFormControlInput1">username </label>
+    <input class="form-control" name="title" id="exampleFormControlInput1">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">password</label>
+    <textarea class="form-control" name="text" id="exampleFormControlTextarea1" rows="3"></textarea>
+    <button type="submit" class="btn btn-primary mt-3">Submit</button>
+  </div>
+</form>
+</div> -->

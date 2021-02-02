@@ -1,0 +1,39 @@
+<h1>fsdfds weather</h1>
+
+<div>
+{%  for city_weather in weather_data %}
+    {{ city_weather.windspeed }}
+    {{ city_weather.winddirection }}
+{% endfor %}
+</div>
+{%  for city_weather in weather_data %}
+
+<div class="container">
+    <div class="card-deck">
+      <div class="card bg-secondary">
+        <div class="card-body text-center">
+          <p class="card-text">Wind Speed </p>
+          <i class="fas fa-wind fa-4x"></i>
+              <div id= 'kaneohe_wind_speed'> </div>
+              <div>{{ city_weather.windspeed }} </div>
+  
+              <h6>Knots</h6>
+        </div>
+      </div>
+      <div class="card bg-secondary">
+        <div class="card-body text-center">
+          <p class="card-text">Wind Direction</p>
+            <i class="fas fa-location-arrow fa-4x"></i>
+            <div id='kaneohe_wind_direction'></div>
+            <div>{{ city_weather.winddirection }}</div>
+        </div>
+      </div>
+      {% endfor %}
+
+      <div class="card bg-secondary">
+        <div class="card-body text-center">
+          <p class="card-text">Wave Heights</p>
+        </div>
+      </div>
+    </div>
+  </div>
