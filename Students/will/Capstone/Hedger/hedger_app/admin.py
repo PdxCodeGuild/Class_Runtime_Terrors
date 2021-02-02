@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import API, Balances
 
-# Register your models here.
+
+admin.site.register(API)
+admin.site.register(Balances)

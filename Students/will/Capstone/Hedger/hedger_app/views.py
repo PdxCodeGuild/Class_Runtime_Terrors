@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.forms import UserCreationForm
-from .models import API
+from .models import API, Balances
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.utils import timezone
@@ -83,7 +83,7 @@ def api(request):
 
 
 def dashboard(request):
-    # API data get
+    ############################################ API data get balances ###############################
     api = API.objects.filter(user=request.user)
     callList = {'Balance': ''}
     for x, y in callList.items():
@@ -114,11 +114,24 @@ def dashboard(request):
         api_reply = json.loads(api_reply)
         api_reply = api_reply['result']
         print(api_reply)
-    bitcoinBalance = api_reply['XXBT']
-    etherBalance = api_reply['XETH']
-    x_data = [0,1,2,3]
-    y_data = [x**2 for x in x_data]
-    plot_div = plot([Scatter(x=x_data, y=y_data,
+    BTC_balance = api_reply['XXBT']
+    PAX_balance = api_reply['XETH']
+    date_time = timezone.now()
+    user = request.user
+    Balances.objects.create(user = user, BTC_balance = BTC_balance, PAX_balance = PAX_balance, date_time = date_time)
+    ########################### Ticker logic #####################################
+
+    ########################### Chart logic #####################################
+    # --------------------------BTC
+    chart_BTC_balance = Balances.objects.filter(user=request.user)
+    print(BTC_balance)
+    BTC_x_data = []
+    BTC_y_data = []
+    for key in chart_BTC_balance:
+        BTC_x_data.append(date_time)
+        BTC_y_data.append(BTC_balance)
+    
+    plot_div = plot([Scatter(x=BTC_x_data, y=BTC_y_data,
                         mode='lines', name='test',
                         opacity=0.8, marker_color='green')],
                output_type='div')
@@ -127,8 +140,8 @@ def dashboard(request):
     context = {
         'api': api,
         'api_reply': api_reply,
-        'bitcoinBalance':bitcoinBalance,
-        'etherBalance':etherBalance,
+        'BTC_balance':BTC_balance,
+        'PAX_balance':PAX_balance,
         'plot_div': plot_div,
     }
     return render(request, 'pages/dashboard.html', context)

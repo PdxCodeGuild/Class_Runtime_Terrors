@@ -1,3 +1,26 @@
+/////////////////////////////////// Global //////////////////////////////////////
+
+body {
+  font-family: 'Roboto Mono', monospace;
+  color: rgb(32, 32, 32);
+  background-color: antiquewhite;
+
+}
 h1 {
-    color: firebrick;
+    color: rgb(32, 19, 1);
+    font-family: 'Roboto Mono', monospace;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: antiquewhite;
   }
+
+///////////////////////////////////// Navigation ///////////////////////////////////
+.
+//////////////////////////////////// Home /////////////////////////////////////////
+
+.signup_button{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
