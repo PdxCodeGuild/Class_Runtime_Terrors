@@ -1,0 +1,19 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+
+{% if user.is_authenticated %}
+<!-- <div>{{post.author.id}}</div> -->
+
+<h2>New post</h2>
+<form method="POST" class="post-form">{% csrf_token %}
+    {{ form.as_p }}
+    <button>submit</button>
+</form>
+  {% else %}
+
+  You are not allowed
+
+  {% endif %}
+</form>
+</div>
+
