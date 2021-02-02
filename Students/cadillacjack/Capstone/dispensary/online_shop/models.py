@@ -86,8 +86,9 @@ class Variety(models.Model):
         verbose_name_plural = 'varieties'
     
     def get_variety_url(self):
-        # print(self.slug)
-        return reverse('online_shop:variety_list', args=[self.slug])
+        print(self, 'HELLO')
+        return reverse('online_shop:variety_detail',
+        args=[self.slug])
     
     def __str__(self):
         return self.name
