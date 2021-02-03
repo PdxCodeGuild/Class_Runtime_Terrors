@@ -6,11 +6,12 @@
         <p>User: {{ api.user }}</p>
         
         <p>Balances: {{api_reply}}<br>
-          BTC: {{bitcoinBalance}} <br>
-          ETH: {{etherBalance}} <br>
+          BTC: {{BTC_balance}} <br>
+          ETH: {{PAX_balance}} <br>
         </p>
     </div>
-    <div>{% autoescape off %}
+    
+    <div class = 'chart' id = 'chart'>{% autoescape off %}
       {{ plot_div }}
       {% endautoescape %}</div>
   {% empty %}

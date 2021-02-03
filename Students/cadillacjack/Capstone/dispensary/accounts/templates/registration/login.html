@@ -1,0 +1,22 @@
+{% extends 'shop/base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<h1>Log-in</h1>
+    {% if form.errors %}
+        <p>Your Username and Password did not match
+            Please try again
+        </p>
+    {% else %}
+        <p>Use the following form to login</p>
+    {% endif %}
+    <div class="login-form">
+        <form action="{% url 'login' %}" method="POST">
+            {{ form.as_p }}
+            {% csrf_token %}
+            <input type="hidden" name="next" value="{{ next }}">
+            <p><input type="submit" value="Login"></p>
+        </form>
+    </div>
+{% endblock %}
