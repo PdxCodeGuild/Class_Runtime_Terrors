@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<body>
+    <header>NCC-2020</header>
+
+    <div id= 'wrapper'>
+        <div class='window_wrapper'>
+            <div id= 'left_window'>
+        </div></div>
+        <div class='window_wrapper'>
+            <div id= 'center_window'>
+        </div></div> 
+        <div class='window_wrapper'>
+            <div id= 'right_window'>
+        </div></div>
+    </div>
+    <script>
+        
+        let marsday= '117'
+        
+        fetch(`https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=${marsday}&camera=FHAZ&api_key=mrrK6GWgF16JAzBzCdAmfgMfl4AK6NHz2WYnW3cg`, {
+            Method: 'GET',
+            
+        })
+            .then(function(response){
+                return response.json()
+
+            })
+
+            .then(function(data){
+                console.log(data)
+                console.log(data.photos.length)
+                let image=document.createElement('img');
+                let shot = 0
+                image.src = data.photos[shot].img_src
+                
+                let back = document.getElementById('wrapper')
+                back.appendChild(image)
+                
+                
+            })
+            </script>
+</body>
+<footer id= 'controal panel'>
+    <button id= 'change'>warp</button>
+    <button id= 'closer'>land</button>
+    <button id= 'destroy'>vaperize</button>
+</footer>
+
+
+{% endblock %}
+<script src= "{% static 'js/marsimg.js' %}"></script>

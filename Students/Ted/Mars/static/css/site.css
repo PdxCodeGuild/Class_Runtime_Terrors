@@ -1,0 +1,37 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding; 0px;
+}
+
+
+#wrapper{
+    display: flex;
+    position: absolute;
+    justify-content: space-evenly;
+
+}
+
+header{
+    text-align: center;
+}
+
+.window_wrapper{
+    width: 5px;    
+    background: white;
+}
+
+#left_window{
+    height: 400px;
+   
+}
+
+#right_window{
+    height: 400px;
+   
+}
+
+footer{
+    display: grid;
+    align-items: center;
+}
