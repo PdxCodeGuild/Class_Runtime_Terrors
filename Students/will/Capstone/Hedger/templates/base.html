@@ -7,38 +7,16 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel="stylesheet" href="{% static 'css/site.css' %}">
         <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@340&display=swap" rel="stylesheet">
-        <title>tHE hEDGER</title>
+        <title>hEDGEr</title>
     </head>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark main-nav">
-
-        <a class="navbar-brand" href="{%url 'home'%}">Home</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="nav navbar-nav ml-auto">
-            {%if user.is_authenticated%}
-
-            <li class="nav-item navbar-link about">
-              <a class="nav-link" href="{%url 'about'%}">about</a>
-            </li>
-            <li class="nav-item logout-nav-link navbar-link">
-                <a class="nav-link " href="{%url 'logout'%}">Logout</a>
-            </li>
-
-            {%else%}
-            <li class="nav-item navbar-link register">
-              <a class="nav-link" href="{%url 'signup'%}">signup</a>
-            </li>
-            <li class="nav-item navbar-link login ">
-              <a class="nav-link" href="{%url 'login'%}"> Login</a>
-            </li>
-
-            {%endif%}
-          </ul>
+      <nav class="nav">
+        <div class = 'home_buttons'>
+          <a href="{%url 'about' %}"><button type="text" class= 'signup_button'>About</button></a>
+          <a href="{%url 'home' %}"><button type="text" class= 'login_button'>Logout</button></a>
         </div>
       </nav>
+      <h2>Welcome to </h2>
+      <p class = 'hEDGEr'>hEDGEr</p>
     <body>
         {% block content %}
         {% endblock %}

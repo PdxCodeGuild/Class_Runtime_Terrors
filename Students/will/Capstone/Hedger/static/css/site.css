@@ -1,26 +1,47 @@
-/////////////////////////////////// Global //////////////////////////////////////
 
-body {
-  font-family: 'Roboto Mono', monospace;
-  color: rgb(32, 32, 32);
-  background-color: antiquewhite;
-
+nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: #241811;
 }
+.hEDGEr {
+  color: rgb(32, 19, 1);
+  font-family: 'Roboto Mono', monospace;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: rgb(182, 248, 59);
+  margin-top: -13;
+}
+
 h1 {
+    color: rgb(32, 19, 1);
+    font-size: 150;
+    font-family: 'Roboto Mono', monospace;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: rgb(182, 248, 59);
+    margin-top: -13;
+  }
+  h2 {
     color: rgb(32, 19, 1);
     font-family: 'Roboto Mono', monospace;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    background-color: antiquewhite;
+    background-color: rgb(219, 248, 89);
+    margin-top: 6;
   }
 
-///////////////////////////////////// Navigation ///////////////////////////////////
-.
-//////////////////////////////////// Home /////////////////////////////////////////
-
-.signup_button{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+.dashboard {
+  color: rgb(32, 19, 1);
+    font-family: 'Roboto Mono', monospace;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: rgb(223, 248, 112);
+    margin-top: 5;
 }
+
