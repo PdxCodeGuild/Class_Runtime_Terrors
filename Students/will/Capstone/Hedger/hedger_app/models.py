@@ -18,7 +18,7 @@ class Balances(models.Model):
     PAX_price = models.CharField(max_length=60, default=0)
     PAX_value = models.CharField(max_length=60, default=0)
     Account_value = models.CharField(max_length=60, default=0)
-    date_time = models.CharField(max_length=60)
+    date_time = models.CharField(max_length=60, default=0)
 
     def __str__(self):
         return self.date_time
@@ -27,7 +27,7 @@ class APIgets(models.Model):
     user = models.ForeignKey(User, on_delete = models.CASCADE, null=True, blank=True)
     balances = models.CharField(max_length=200)
     ticker = models.CharField(max_length=200)
-    date_time = models.CharField(max_length=60)
+    date_time = models.DateTimeField()
 
     def __str__(self):
         return self.date_time
