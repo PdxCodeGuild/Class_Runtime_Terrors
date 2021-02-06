@@ -202,18 +202,34 @@ def api(request):
 @login_required
 def dashboard(request):
     ############################################ API data get balances ###############################
-    api = API.objects.filter(user=request.user)
-    user = request.user
+    api = API.objects.filter(user=request.user) # find the keys for the user
+    user = request.user 
         
-    callList = kraken_API_balances(api, user)
+    callList = kraken_API_balances(api, user) 
     BTC_balance = callList[0]
     PAX_balance = callList[1]
     Account_value = callList[2]
+
+
+    balances = Balances.objects.filter(user=request.user)
+    BTC_balance_list = []
+    timeline = []
+    for item in balances:
+        BTC_balance_list.append(item.BTC_balance)
+        timeline.append(item.date_time)
+    
+    x_data = timeline
+    y_data = BTC_balance_list
+    plot_div = plot([Scatter(x=x_data, y=y_data,
+                        mode='lines', name='test',
+                        opacity=0.8, marker_color='green')],
+               output_type='div')
     context = {
         'api': api,
         'BTC_balance':BTC_balance,
         'PAX_balance':PAX_balance,
         'Account_value': Account_value,
+        'plot_div': plot_div
     }
     return render(request, 'pages/dashboard.html', context)
 
@@ -224,16 +240,32 @@ def rebalance(request):
     kraken_API_balances(api, user)
     kraken_API_rebalance(api, user)
 
-
     callList = kraken_API_balances(api, user)
+
     BTC_balance = callList[0]
     PAX_balance = callList[1]
     Account_value = callList[2]
+
+
+    balances = Balances.objects.filter(user=request.user)
+    BTC_balance_list = []
+    timeline = []
+    for item in balances:
+        BTC_balance_list.append(item.BTC_balance)
+        timeline.append(item.date_time)
+    
+    x_data = timeline
+    y_data = BTC_balance_list
+    plot_div = plot([Scatter(x=x_data, y=y_data,
+                        mode='lines', name='test',
+                        opacity=0.8, marker_color='green')],
+               output_type='div')
     context = {
         'api': api,
         'BTC_balance':BTC_balance,
         'PAX_balance':PAX_balance,
         'Account_value': Account_value,
+        'plot_div': plot_div
     }
     return render(request, 'pages/rebalance.html', context)
 

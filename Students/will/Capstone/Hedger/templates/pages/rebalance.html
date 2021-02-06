@@ -12,10 +12,11 @@
         </p>
     </div>
     <a href="{%url 'rebalance' %}"><button type="button" class= 'rebalance_button'>Rebalance</button></a>
-    <!-- <div class = 'chart' id = 'chart'>
+    
+    <div class = 'chart' id = 'chart'>
       {% autoescape off %}
       {{ plot_div }}
-      {% endautoescape %}</div> -->
+      {% endautoescape %}</div>
   {% empty %}
   {% endfor %}
         
