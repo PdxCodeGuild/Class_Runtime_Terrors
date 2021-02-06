@@ -6,5 +6,5 @@
 - regester new API keys after deleting 
 - while loop login attempts
 - message alerts using simple html alert
-- timezone specific to user
+-
 - 
