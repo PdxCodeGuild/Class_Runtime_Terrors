@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.forms import UserCreationForm
 from .models import API, Balances
@@ -14,8 +14,8 @@ import hashlib
 import hmac
 import json 
 import urllib.request as urllib2
-from plotly.offline import plot
-from plotly.graph_objs import Scatter
+from django.core import serializers
+
 
 def kraken_API_balances(api, user):
     for key in api:
@@ -96,12 +96,13 @@ def kraken_API_rebalance(api, user):
     print('PAX balance', PAX_value)
     print('Volume to balance', order_type, PAX_order_volume)
     api_domain = "https://api.kraken.com"
+    pair = 'PAXGXBT'
     if PAX_order_volume < PAX_order_min:
         status = 'hold'
         print(status)
     else:
         api_method = 'AddOrder'
-        api_data = f'pair=PAXGXBT&type={order_type}&ordertype=market&volume={PAX_order_volume}&oflags=fciq'
+        api_data = f'pair={pair}&type={order_type}&ordertype=market&volume={PAX_order_volume}&oflags=fciq'
         if api_method in api_private or api_method in api_trading:
             api_path = "/0/private/"
             api_nonce = str(int(time.time()*1000))
@@ -182,7 +183,7 @@ def user_login(request):
         )
         if user is not None:
             login(request, user)
-            return redirect('dashboard')
+            return redirect('rebalance')
         else:
             return redirect('signup')
     return render(request, 'pages/login.html')
@@ -248,26 +249,24 @@ def rebalance(request):
 
 
     balances = Balances.objects.filter(user=request.user)
-    BTC_balance_list = []
+    Account_value_list = []
     timeline = []
     for item in balances:
-        BTC_balance_list.append(item.BTC_balance)
+        Account_value_list.append(item.Account_value)
         timeline.append(item.date_time)
     
-    x_data = timeline
-    y_data = BTC_balance_list
-    plot_div = plot([Scatter(x=x_data, y=y_data,
-                        mode='lines', name='test',
-                        opacity=0.8, marker_color='green')],
-               output_type='div')
+    
+    serialize_balances = serializers.serialize('json', Balances.objects.filter(user=request.user))
+
     context = {
+        'serialize_balances': serialize_balances,
         'api': api,
         'BTC_balance':BTC_balance,
         'PAX_balance':PAX_balance,
         'Account_value': Account_value,
-        'plot_div': plot_div
-    }
+            }
     return render(request, 'pages/rebalance.html', context)
+
 
 @login_required
 def user_logout(request):
