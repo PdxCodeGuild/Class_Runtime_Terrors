@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Rebalance</h1>
+    <div class = 'dashboard'>
+        {% for api in api %}
+        <p>
+          User: {{ api.user }} <br>
+
+          BTC: {{BTC_balance}}    PAXG: {{PAX_balance}} <br>
+
+          Total: {{Account_value}} BTC<br>
+        </p>
+        <a href="{%url 'rebalance' %}"><button type="button" class= 'rebalance_button'>Rebalance</button></a>
+    </div>
+    <div id="chartContainer2" style="height: 500px; width: 50%;"></div>
+    
+    <script> 
+     var chart1 = new CanvasJS.Chart("chartContainer2", {
+              data: [
+              {
+                  type: "column",
+                  dataPoints: [
+                  { x: 10, y: 10 },
+                  { x: 20, y: 5 },
+                  { x: 30, y: 10 },
+                  { x: 40, y: 5 },
+                  { x: 50, y: 10 }
+                  ]
+              }
+              ]
+          });
+ 
+          chart1.render();
+
+    const balances = {{serialize_balances|safe}}
+    var reverse = balances.length
+    reverse = balances[reverse-1]
+    console.log(reverse)
+
+    </script>
+  {% empty %}
+  {% endfor %}
+        
+
+{% endblock %}

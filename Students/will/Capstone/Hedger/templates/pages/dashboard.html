@@ -1,19 +1,23 @@
 {% extends 'base.html' %}
 {% block content %}
     <h1>Dashboard</h1>
-    <div>
+    <div class = 'dashboard'>
         {% for api in api %}
-        <p>User: {{ api.user }}</p>
-        
-        <p>Balances: {{api_reply}}<br>
-          BTC: {{BTC_balance}} <br>
-          ETH: {{PAX_balance}} <br>
+        <p>
+          User: {{ api.user }} <br>
+
+          BTC: {{BTC_balance}}    PAXG: {{PAX_balance}} <br>
+
+          Total: {{Account_value}} BTC<br>
         </p>
     </div>
-    
-    <div class = 'chart' id = 'chart'>{% autoescape off %}
+    <a href="{%url 'rebalance' %}"><button type="button" class= 'rebalance_button'>Rebalance</button></a>
+
+    <div class = 'chart' id = 'chart'>
+      {% autoescape off %}
       {{ plot_div }}
       {% endautoescape %}</div>
+      
   {% empty %}
   {% endfor %}
         
