@@ -8,17 +8,28 @@ from django.contrib.auth.models import User
 #     tasks_done = models.ForeignKey(Capitan_app/models.tasks.done)
 #     todo = models.ForeignKey(views.tasks.todo)
 
-class Blog(models.Model):#change to class Mission
-    title = models.CharField(max_length = 200)#change to capitan= models...
-    text = models.TextField(max_length = 500)#change to serial
-    pub_date = models.DateField()
-    user = models.ForeignKey(User, on_delete = models.CASCADE, null=True, blank=True)
-    #capitan FK
+# class Image(models.Model):#change to class Mission
+#     sol = models.IntegerField()#change to capitan= models...
+#     rover_name = models.TextField(max_length = 500)#cange to serial
+#     image_link = models.TextField(max_length = 500)
+#     camera_name = models.TextField(max_length = 500)
+#     user = models.ForeignKey(User, on_delete = models.CASCADE, null=True, blank=True)
+#     #capitan FK
 
+#     def __str__(self):
+#         return self.rover_name
+
+class MediaModel(models.Model):
+    my_image = models.ImageField(upload_to='images/')
+
+class Image(models.Model):
+    sol = models.IntegerField()
+    image_link = models.TextField(max_length = 500)
+    
     def __str__(self):
-        return self.title
+        return str(self.sol)
 
 #class location in Capitan app
-   
+ #return sol, rover name, image source, camera-names 
 
 #class capitan
