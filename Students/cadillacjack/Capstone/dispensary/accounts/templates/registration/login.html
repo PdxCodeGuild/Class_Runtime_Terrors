@@ -9,7 +9,9 @@
             Please try again
         </p>
     {% else %}
-        <p>Use the following form to login</p>
+        <p>Use the following form to login:
+            If you don't have an account, you can create one <a href="{% url 'register' %}">Here.</a>
+        </p>
     {% endif %}
     <div class="login-form">
         <form action="{% url 'login' %}" method="POST">
@@ -18,5 +20,6 @@
             <input type="hidden" name="next" value="{{ next }}">
             <p><input type="submit" value="Login"></p>
         </form>
+        <p><a href="{% url 'password_reset' %}">Forgotten your password?</a></p>
     </div>
 {% endblock %}

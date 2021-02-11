@@ -86,9 +86,8 @@ class Variety(models.Model):
         verbose_name_plural = 'varieties'
     
     def get_variety_url(self):
-        print(self, 'HELLO')
-        return reverse('online_shop:variety_detail',
-        args=[self.slug])
+        # print(self.slug)
+        return reverse('online_shop:variety_list', args=[self.slug])
     
     def __str__(self):
         return self.name
@@ -103,7 +102,7 @@ class Product(models.Model):
 
     thc = models.DecimalField(max_digits=6, decimal_places=2) # THC % 33.42% THC
     cbd = models.DecimalField(max_digits=6, decimal_places=2) # CBD % 7.66% CBD
-    price = models.IntegerField() # Price in Dollars
+    price = models.DecimalField(max_digits=6, decimal_places=2) # Price in Dollars
     available = models.BooleanField(default=True) # More than 1 GRAM in inventory? T/F
     created  = models.DateTimeField(auto_now_add=True) # Auto Timestamp upon creation
     updated = models.DateTimeField(auto_now=True) # Auto Timestamp upon changes
