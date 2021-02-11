@@ -24,6 +24,7 @@ class MediaModel(models.Model):
 
 class Image(models.Model):
     sol = models.IntegerField()
+    num = models.IntegerField(default = 0)
     image_link = models.TextField(max_length = 500)
     
     def __str__(self):
