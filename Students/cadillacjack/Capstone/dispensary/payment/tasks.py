@@ -1,5 +1,7 @@
 from io import BytesIO
 from celery import task
+from dotenv import load_dotenv
+import os
 import weasyprint
 from django.template.loader import render_to_string
 from django.core.mail import EmailMessage
@@ -13,10 +15,11 @@ def payment_completed(order_id):
     #generate invoice email
     subject = f'Your CannaSource - EE Invoice Number: {order.id}'
     message = "Attached below is the invoice for you recent purchase from Your CannaSource"
+    host_email = os.getenv('EMAIL_HOST_USER')
     email = EmailMessage(
         subject,
         message,
-        'cadillacjackproductions@gmail.com',
+        host_email,
         [order.email],
     )
     #generate PDF

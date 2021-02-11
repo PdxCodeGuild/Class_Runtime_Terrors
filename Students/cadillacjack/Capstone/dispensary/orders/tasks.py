@@ -1,6 +1,8 @@
 from celery import task
 from django.core.mail import send_mail
 from .models import Order
+import os
+from dotenv import load_dotenv
 
 @task
 def order_created(order_id):
@@ -11,10 +13,11 @@ def order_created(order_id):
     Your order has been successfully submitted. \
     Your order ID is {order.id}.
     '''
+    host_email = os.getenv('EMAIL_HOST_USER')
     mail_sent = send_mail(
         subject,
         message,
-        'cadillacjackproductions@gmail.com',
+        host_email,
         [order.email],
         fail_silently=False
     )

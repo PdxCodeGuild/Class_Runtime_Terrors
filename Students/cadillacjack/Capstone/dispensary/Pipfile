@@ -13,6 +13,7 @@ flower = "==0.9.3"
 braintree = "==3.59.0"
 python-decouple = "*"
 weasyprint = "==51"
+python-dotenv = "*"
 
 [dev-packages]
 
