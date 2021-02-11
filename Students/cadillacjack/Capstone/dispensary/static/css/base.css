@@ -1,0 +1,63 @@
+/* @import url(http://fonts.googleapis.com/css?family=Ubuntu);
+
+/* *{
+    border: 2px solid black;
+} */
+
+ body{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: .05fr 1fr 1fr .05fr;
+    grid-template-areas:
+    "header header header header"
+    "sidebar main main main"
+    "sidebar main main main"
+    "footer footer footer footer"; 
+    grid-gap: .5em;
+}
+
+#sidebar{
+    grid-area: sidebar;
+    display: block;
+}
+
+#main{
+    grid-area: main;
+}
+
+/*#header{
+    grid-area: header;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+#subheader{
+    grid-area: header;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.categories{
+    grid-area: main;
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+}
+
+
+span.user {
+    position: relative;
+    top: -72%;
+    }
+
+a.logo {
+    position: relative;
+    top: 24%;
+    }
+
+#header > li {
+    position: relative;
+    top: 24%;
+    } */
