@@ -10,10 +10,17 @@ import json
 def home(request):
     return render(request, 'pages/home.html')
 
+def cleanup(stuff):
+    junk = [27550, 2523, 27530, 27509, 27514, 27521, 1890, 27500, 1889, 27496, 1886, 1893,
+     27474, 27484, 1885, 27460, 27461, 27468, 27429, 27434, 27440, 1887, 27535, 27516]
+    for image in stuff:
+        if image.num in junk:
+            image.delete()
+
 def rover(request):   
     sequence_img = []
     for sol in range (300, 310):
-        url=f"https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol={sol}&camera=NAVCAM&api_key=fwhYbiPcZTN6WlXZo10peJY5ywFTSumpb93DClFW"
+        url=f"https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol={sol}&camera=NAVCAM&api_key="
         url_get = requests.get(url)
         data = url_get.json()
         # print (data)
@@ -31,13 +38,13 @@ def rover(request):
                             # print (image_test[2])                 
                             #image_linsequence_img.append({'sol': sol, 'num': id, 'image_link':k})
                             image_model = Image(sol = sol, num = num, image_link = image_link)
-                            image_model.save()
-                            
+                            image_model.save()                        
                             print (image_model.num)
+
     stuff = Image.objects.all()
-    context = {'stuff':stuff}
+    cleanup(stuff)
+    stuff = Image.objects.all()
+    first = Image.objects.all()[0]
+    context = {'stuff':stuff, 'first':first}
     return render(request, 'pages/rover.html', context)
 
-def cleanup(junk):
-    junk = [27550, 2523, 27530, 27509, 27514, 27521, 1890, 27500, 1889, 27496, 1886, 27474, 27484, 1885, 27460, 27461, 27468, 27429, 27434]
-    

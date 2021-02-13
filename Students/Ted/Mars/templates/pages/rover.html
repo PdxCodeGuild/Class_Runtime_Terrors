@@ -4,8 +4,13 @@
 <body>
     <header>NCC-2020</header>
 
-    <div id= 'wrapper'>
-        <div class='window_wrapper'>
+    <div class="w3-panel w3-round-xxlarge">
+        <img src={{first.image_link}} 
+        class="visor_view" alt="marscape"
+        style>
+
+
+        <!-- <div class='window_wrapper'>
             <div id= 'left_window'>
         </div></div>
         <div class='window_wrapper'>
@@ -13,19 +18,19 @@
         </div></div> 
         <div class='window_wrapper'>
             <div id= 'right_window'>
-        </div></div>
+        </div></div> -->
     </div>
-   {% for image in stuff %}
+   <!-- {% for image in stuff %}
    <img src={{image.image_link}}>
    <p>{{image.sol}}</p>
    <p>{{image.num}}</p>
-   {% endfor %} 
+   {% endfor %}  -->
 </body>
-<footer id= 'controal panel'>
+<!-- <footer id= 'controal panel'>
     <button id= 'change'>warp</button>
     <button id= 'closer'>land</button>
     <button id= 'destroy'>vaperize</button>
-</footer>
+</footer> -->
 
 
 {% endblock %}

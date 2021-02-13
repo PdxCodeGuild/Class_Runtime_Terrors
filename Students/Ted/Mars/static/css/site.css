@@ -5,10 +5,13 @@
 }
 
 
-#wrapper{
+img{
     display: flex;
     position: absolute;
-    justify-content: space-evenly;
+    justify-content: center;
+    border-radius: 500px;
+    width: 1300px;
+    height: 900px;
 
 }
 
@@ -16,20 +19,8 @@ header{
     text-align: center;
 }
 
-.window_wrapper{
-    width: 5px;    
-    background: white;
-}
 
-#left_window{
-    height: 400px;
-   
-}
 
-#right_window{
-    height: 400px;
-   
-}
 
 footer{
     display: grid;
