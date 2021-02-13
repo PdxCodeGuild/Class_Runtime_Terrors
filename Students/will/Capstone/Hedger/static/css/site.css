@@ -1,49 +1,221 @@
 
+
 nav {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  background-color: #241811;
+  background-color: hsl(150, 99%, 27%);
+  padding: 2px;
 }
-.hEDGEr {
+.home_buttons {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #fcac00;
+  padding: 2px;
+  
+}
+/*------------------------------HOME PAGE--------------------*/
+.greeting {
   color: rgb(32, 19, 1);
-  size: 150;
   font-family: 'Roboto Mono', monospace;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  background-color: rgb(182, 248, 59);
-  margin-top: -13;
+  background-color: rgb(219, 248, 89);
+  margin-top: 3px;
 }
-
-h1 {
-    color: rgb(32, 19, 1);
-    font-size: 150;
-    font-family: 'Roboto Mono', monospace;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    background-color: rgb(182, 248, 59);
-    margin-top: -13;
-  }
-h2 {
-    color: rgb(32, 19, 1);
-    font-family: 'Roboto Mono', monospace;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    background-color: rgb(219, 248, 89);
-    margin-top: -13;
-  }
-
-.dashboard {
+.hedger_container {
+  background-color: rgb(219, 248, 89);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-family: 'Roboto Mono', monospace;
+}
+.hEDGEr {
   color: rgb(32, 19, 1);
-    font-family: 'Roboto Mono', monospace;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    background-color: rgb(223, 248, 112);
-    margin-top: -13;
+  font-size: 53pt;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 600;
+  background-color: rgb(182, 248, 59);
+  width: 253px;
+  height: 253px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 3px;
+  border: solid;
+  margin-bottom: 25px;
 }
 
+/*------------------------------LOGIN PAGE--------------------*/
+.page_login {
+  background-color: rgb(219, 248, 89);
+  font-family: 'Roboto Mono', monospace;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 3px;
+}
+.login_contianer {
+  background-color: rgb(219, 248, 89);
+  font-family: 'Roboto Mono', monospace;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.login_inputs {
+  background-color: rgb(182, 248, 59);
+  font-family: 'Roboto Mono', monospace;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 253px;
+  height: 253px;
+  margin-top: 3px;
+  border: solid;
+  margin-bottom: 25px;
+}
+.username_container {
+  font-family: 'Roboto Mono', monospace;
+  margin-left: 45px;
+}
+.submit {
+  margin: 5px;
+  margin-left: 68px;
+  margin-right: 68px;
+}
+.bottom {
+  background-color: #fcac00;
+  width: 100%;
+  height: 25px;
+  margin-top: 3px;
+}
+/*------------------------------DASHBOARD PAGE--------------------*/
+.user_dashboard {
+  background-color: #79f859;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-family: 'Roboto Mono', monospace;
+  margin-top: 3px;
+}
+.box_container {
+  background-color: #79f859;
+  font-family: 'Roboto Mono', monospace;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.pie_box{
+  color: rgb(32, 19, 1);
+  background-color: #b6f83b;
+  font-family: 'Roboto Mono', monospace;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 30%;
+  height: 500px;
+  margin-top: 3px;
+  border: solid;
+  margin-bottom: 25px;
+  margin: 25px;
+}
 
+.balances_box {
+    color: rgb(32, 19, 1);
+    background-color: #b6f83b;
+    font-family: 'Roboto Mono', monospace;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 30%;
+    height: 500px;
+    margin-top: 3px;
+    border: solid;
+    margin-bottom: 25px;
+    
+  }
+
+.settings_box {
+  color: rgb(32, 19, 1);
+  background-color: #b6f83b;
+  font-family: 'Roboto Mono', monospace;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 30%;
+  height: 500px;
+  margin-top: 3px;
+  border: solid;
+  margin-bottom: 25px;
+}
+table {
+  background-color: #59f8c3;
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 95%;
+  border: 1px solid #ddd;
+  margin: 2px;
+}
+
+th, td {
+  background-color: #59f8c3;
+  text-align: left;
+  padding: 16px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.chart_container{
+  background-color: #59f8c3;
+  font-family: 'Roboto Mono', monospace;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.BASE_qty_chart{
+  color: rgb(32, 19, 1);
+  background-color: #b6f83b;
+  font-family: 'Roboto Mono', monospace;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 30%;
+  height: 500px;
+  margin-top: 3px;
+  border: solid;
+  margin-bottom: 25px;
+  margin: 25px;
+}
+
+.QUOTE_qty_chart {
+    color: rgb(32, 19, 1);
+    background-color: #b6f83b;
+    font-family: 'Roboto Mono', monospace;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 30%;
+    height: 500px;
+    margin-top: 3px;
+    border: solid;
+    margin-bottom: 25px;
+
+  }
+
+.ACCOUNT_value_chart {
+  color: rgb(32, 19, 1);
+  background-color: #b6f83b;
+  font-family: 'Roboto Mono', monospace;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 30%;
+  height: 500px;
+  margin-top: 3px;
+  border: solid;
+  margin-bottom: 25px;
+}

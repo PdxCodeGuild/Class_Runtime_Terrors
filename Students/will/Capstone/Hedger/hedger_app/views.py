@@ -183,7 +183,7 @@ def user_login(request):
         )
         if user is not None:
             login(request, user)
-            return redirect('rebalance')
+            return redirect('dashboard')
         else:
             return redirect('signup')
     return render(request, 'pages/login.html')
@@ -218,19 +218,11 @@ def dashboard(request):
     for item in balances:
         BTC_balance_list.append(item.BTC_balance)
         timeline.append(item.date_time)
-    
-    x_data = timeline
-    y_data = BTC_balance_list
-    plot_div = plot([Scatter(x=x_data, y=y_data,
-                        mode='lines', name='test',
-                        opacity=0.8, marker_color='green')],
-               output_type='div')
     context = {
         'api': api,
         'BTC_balance':BTC_balance,
         'PAX_balance':PAX_balance,
         'Account_value': Account_value,
-        'plot_div': plot_div
     }
     return render(request, 'pages/dashboard.html', context)
 
