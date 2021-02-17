@@ -19,36 +19,40 @@ def cleanup(stuff):
 
 def rover(request):   
     sequence_img = []
-    for sol in range (300, 310):
-        url=f"https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol={sol}&camera=NAVCAM&api_key=fwhYbiPcZTN6WlXZo10peJY5ywFTSumpb93DClFW"
-        url_get = requests.get(url)
-        data = url_get.json()
-        stuff = Image.objects.all()
-        url_list = []
-        for things in stuff:
-            print (things.num, 'this is stuff')
-            url_list.append(things.num)
-        # print (data)
-        if (data['photos']):
-            test_img = []
-            
-                #to stop reloading
-            for photo in data['photos']:
-                num = photo['id']
-                image_link = photo['img_src']
-                print (num, 'this is num')
-                if num not in url_list:
-                    image_test = image_link.split('_')
-                    if image_test[2] not in test_img:#filters out duplicates
-                        if '543M' not in image_test[2] and '505M' not in image_test[2]:
-                        #filters out sky shots
-                            if 'D' not in image_test[2]:
-                                test_img.append(image_test[2])
-                                # print (image_test[2])                 
-                                #image_linsequence_img.append({'sol': sol, 'num': id, 'image_link':k})
-                                image_model = Image(sol = sol, num = num, image_link = image_link)
-                                image_model.save()                        
-                                # print (image_model.num)
+    stuff = Image.objects.all()
+    print (stuff)
+    if not stuff:
+        for sol in range (300, 310):
+            url=f"https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol={sol}&camera=NAVCAM&api_key=fwhYbiPcZTN6WlXZo10peJY5ywFTSumpb93DClFW"
+            url_get = requests.get(url)
+            data = url_get.json()
+            stuff = Image.objects.all()
+            url_list = []
+            print (url_list)
+            for things in stuff:
+                # print (things.num, 'this is stuff')
+                url_list.append(things.num)
+            # print (data)
+            if (data['photos']):
+                test_img = []
+                
+                    #to stop reloading
+                for photo in data['photos']:
+                    num = photo['id']
+                    image_link = photo['img_src']
+                    # print (num, 'this is num')
+                    if num not in url_list:
+                        image_test = image_link.split('_')
+                        if image_test[2] not in test_img:#filters out duplicates
+                            if '543M' not in image_test[2] and '505M' not in image_test[2]:
+                            #filters out sky shots
+                                if 'D' not in image_test[2]:
+                                    test_img.append(image_test[2])
+                                    # print (image_test[2])                 
+                                    #image_linsequence_img.append({'sol': sol, 'num': id, 'image_link':k})
+                                    image_model = Image(sol = sol, num = num, image_link = image_link)
+                                    image_model.save()                        
+                                    # print (image_model.num)
 
     stuff = Image.objects.all()
     cleanup(stuff)

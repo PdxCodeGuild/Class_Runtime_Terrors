@@ -12,18 +12,25 @@ body::-wedkit-scrollbar {
     display: none;
 }
 
-.marscape {
+.Marscape {
     display: flex;
+    justify-content: center;
     position: relative;
     
 }
+#step{
+    display: flex;
+    justify-content: right; 
+}
+
 img{
     display: flex;
     position: relative;
     justify-content: center;
-    border-radius: 500px;
+    border-radius: 400px;
     width: 1200px;
-    height: 900px;
+    height: 850px;
+    
 
 }
 
