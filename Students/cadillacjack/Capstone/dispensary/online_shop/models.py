@@ -98,8 +98,8 @@ class Product(models.Model):
     quantity = models.ForeignKey(Quantity, related_name='products', on_delete=models.CASCADE) # Weight in GRAMS/ packaging
     name = models.CharField(max_length=200, db_index=True) #Strain
     slug = models.SlugField(max_length=200, db_index=True) #Auto-generated url 'www.w/slug'
-    image = models.ImageField(upload_to='products/%Y/%m/%d', default='../media/no_image.jpg') #Pic of product
-
+    image = models.ImageField(upload_to='products/%Y/%m/%d', default='../media/no_image.png') #Pic of product
+    inventory = models.DecimalField(max_digits=6, decimal_places=2, default=0) # Quantity on hand
     thc = models.DecimalField(max_digits=6, decimal_places=2) # THC % 33.42% THC
     cbd = models.DecimalField(max_digits=6, decimal_places=2) # CBD % 7.66% CBD
     price = models.DecimalField(max_digits=6, decimal_places=2) # Price in Dollars

@@ -1,14 +1,36 @@
 *{
     box-sizing: border-box;
-    margin: 0px;
-    padding: 0px;
+    margin: 10px;
+    padding: 10px;
+}
+body{
+    background-color: grey;
+    overflow-y: hidden;
+
+}
+body::-wedkit-scrollbar {
+    display: none;
 }
 
-
-#wrapper{
+.Marscape {
     display: flex;
-    position: absolute;
-    justify-content: space-evenly;
+    justify-content: center;
+    position: relative;
+    
+}
+#step{
+    display: flex;
+    justify-content: right; 
+}
+
+img{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    border-radius: 400px;
+    width: 1200px;
+    height: 850px;
+    
 
 }
 
@@ -16,20 +38,8 @@ header{
     text-align: center;
 }
 
-.window_wrapper{
-    width: 5px;    
-    background: white;
-}
 
-#left_window{
-    height: 400px;
-   
-}
 
-#right_window{
-    height: 400px;
-   
-}
 
 footer{
     display: grid;

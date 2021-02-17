@@ -3,9 +3,34 @@
 {% block content %}
 <body>
     <header>NCC-2020</header>
+    <div class="Marscape">       
+        <div class="w3-panel w3-round-xlarge">
+            <div class='slideshow-container'>
+                <div class='slide fade'>
+                    <img src id = 'first'rover.stuff[0] style='width:100%'>
+                <!-- class="visor_view" alt="marscape"-->
+                </div>
 
-    <div id= 'wrapper'>
-        <div class='window_wrapper'>
+                <!-- <div class='slide fade'>
+                    <img src id='second'{{first.image_link}} style='width:100%'>   
+                </div>
+
+                <div class='slide fade'>
+                    <img src id='third'{{first.image_link}} style='width:100%'>   
+                </div>
+
+                <div class='slide fade'>
+                    <img src id='fourth'{{first.image_link}} style='width:100%'>   
+                </div>
+
+                <div class='slide fade'>
+                    <img src id='fifth'{{first.image_link}} style='width:100%'>   
+                </div> -->
+
+            </div>
+            <button id="step">step</button>
+        </div>
+        <!-- <div class='window_wrapper'>
             <div id= 'left_window'>
         </div></div>
         <div class='window_wrapper'>
@@ -13,19 +38,22 @@
         </div></div> 
         <div class='window_wrapper'>
             <div id= 'right_window'>
-        </div></div>
+        </div></div> -->
     </div>
-   {% for image in stuff %}
+   <!-- {% for image in stuff %}
    <img src={{image.image_link}}>
    <p>{{image.sol}}</p>
    <p>{{image.num}}</p>
-   {% endfor %} 
+   {% endfor %}  -->
+   <script>document.getElementById('step').addEventListener("click",
+   function walking(){
+       getElementById('first').innerHTML = rover.stuff[]</script>
 </body>
-<footer id= 'controal panel'>
+<!-- <footer id= 'controal panel'>
     <button id= 'change'>warp</button>
     <button id= 'closer'>land</button>
     <button id= 'destroy'>vaperize</button>
-</footer>
+</footer> -->
 
 
 {% endblock %}

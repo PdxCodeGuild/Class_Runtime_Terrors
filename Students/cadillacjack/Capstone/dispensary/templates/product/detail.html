@@ -18,7 +18,7 @@
         <a href="{{ product.category.get_absolute_url }}">{{ product.category }}</a>
         <p>THC: {{ product.thc }}% / CBD: {{ product.cbd }}%</p>
     </h2>
-    <p class="price">${{ product.price }}</p>
+    <p class="price">Price: ${{ product.price }}</p>
     <form action="{% url 'cart:cart_add' product.id %}" method="POST">
         {{ cart_product_form }}
         {% csrf_token %}
