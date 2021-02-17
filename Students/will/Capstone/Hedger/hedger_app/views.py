@@ -218,7 +218,11 @@ def dashboard(request):
     for item in balances:
         BTC_balance_list.append(item.BTC_balance)
         timeline.append(item.date_time)
+    
+    serialize_balances = serializers.serialize('json', Balances.objects.filter(user=request.user))
+
     context = {
+        'serialize_balances': serialize_balances,
         'api': api,
         'BTC_balance':BTC_balance,
         'PAX_balance':PAX_balance,
@@ -239,15 +243,6 @@ def rebalance(request):
     PAX_balance = callList[1]
     Account_value = callList[2]
 
-
-    balances = Balances.objects.filter(user=request.user)
-    Account_value_list = []
-    timeline = []
-    for item in balances:
-        Account_value_list.append(item.Account_value)
-        timeline.append(item.date_time)
-    
-    
     serialize_balances = serializers.serialize('json', Balances.objects.filter(user=request.user))
 
     context = {
@@ -258,7 +253,6 @@ def rebalance(request):
         'Account_value': Account_value,
             }
     return render(request, 'pages/rebalance.html', context)
-
 
 @login_required
 def user_logout(request):

@@ -1,23 +1,112 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h1>Dashboard</h1>
     <div class = 'dashboard'>
         {% for api in api %}
-        <p>
-          User: {{ api.user }} <br>
-
-          BTC: {{BTC_balance}}    PAXG: {{PAX_balance}} <br>
-
-          Total: {{Account_value}} BTC<br>
-        </p>
+        <div class = "">
+          <div class= 'dashboard_user'> User Account: {{ api.user }} </div>
+          <div class= 'dashboard_box_container'>
+            <div class = 'dashbaord_box'>
+              <div class = 'balances'> 
+                  <div class = 'BTC_balance'>BTC: {{BTC_balance}} </div>
+                  <div class = 'PAX_balance'>PAXG: {{PAX_balance}} </div>
+                  <div class = 'Account_value'>Total: {{Account_value}} BTC </div>
+                </div>
+            </div>
+            <div class = 'dashbaord_box'>
+                <div id="account_pie" style="height: 495px; width: 29vw;"></div>
+                <a href="{%url 'rebalance' %}"><button type="button" class= 'rebalance_button'>Rebalance</button></a>
+            </div>
+            <div class = 'dashbaord_box'>
+              <div class = 'target_percentages'>input for target %: currantly hard coded for 50/50</div>
+              <div class = 'base_asset'> input for selecting from base asset options</div>
+              <table class = 'table_api_resonse'> TABLE showing rebalances
+                <tr>
+                  <th>date/time</th>
+                  <th>buy/sell</th>
+                  <th>qty</th>
+                </tr>
+                  <td>timetime</td>
+                  <td>buybuybuy</td>
+                  <td>111111111</td>
+                <tr>
+                </tr>
+              </table>
+            </div>
+          </div> 
+        </div>  
+        <div class = 'account_balance_chart'>
+          <div class = 'account_chart' id="chart_line_BTC_QTY" > </div></div> 
+        
+        
     </div>
-    <a href="{%url 'rebalance' %}"><button type="button" class= 'rebalance_button'>Rebalance</button></a>
+    
+<script> 
+  const balances = {{serialize_balances|safe}}
+  var reverse = balances.length
+  reverse = balances[reverse-1]
+  reverse = reverse['fields']
+  var Account_value = reverse['Account_value']
+  var BTC_balance = reverse['BTC_balance']
+  var PAX_value = reverse['PAX_value']
+  var BTC_percentage = (BTC_balance/Account_value)*100
+  BTC_percentage = BTC_percentage.toFixed(2)
+  PAX_percentage = 100 - BTC_percentage
 
-    <div class = 'chart' id = 'chart'>
-      {% autoescape off %}
-      {{ plot_div }}
-      {% endautoescape %}</div>
-      
+  var chart_pie = new CanvasJS.Chart("account_pie",
+    {
+      backgroundColor: "#e5ffdf",
+      theme: "light2",
+      title:{
+        text: "Account Value:" + Account_value + 'BTC', 
+        fontFamily: 'Roboto Mono',
+        fontWeight: "normal",
+        fontSize: 25
+      },
+      data: [
+      {
+       type: "pie",
+       startAngle: 60,
+       dataPoints: [
+       {  y: BTC_percentage, indexLabel: "Bitcoin" },
+       {  y: PAX_percentage, indexLabel: "Gold" },
+       ]
+     }
+     ]
+   });
+    chart_pie.render();
+
+  var data = [];
+  var dataSeries = { type: "area" };
+  var dataPoints = []
+  for(i=0; i<balances.length;i+=2){
+    dataPoints.push({
+      x: i, // balances[i].fields.date_time, 
+      y: Number(balances[i].fields.Account_value)
+    });
+  }
+  dataSeries.dataPoints = dataPoints;
+  data.push(dataSeries);
+  console.log(dataPoints)
+  var options = {
+    zoomEnabled: true,
+    animationEnabled: true,
+    backgroundColor: "#e5ffdf",
+    theme: "light2",
+    
+    title: {
+      text: "Account Balance (in BTC)",
+      fontFamily: 'Roboto Mono',
+    },
+    axisY: {
+      suffix: "BTC",
+      lineThickness: 1
+    },
+    data: data  // random data
+  };
+  var chart_line_BTC_QTY = new CanvasJS.Chart("chart_line_BTC_QTY", options);
+    chart_line_BTC_QTY.render();
+
+</script>
   {% empty %}
   {% endfor %}
         
