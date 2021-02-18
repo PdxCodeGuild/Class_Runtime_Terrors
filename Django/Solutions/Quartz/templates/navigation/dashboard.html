@@ -1,0 +1,29 @@
+{% extends "base.html"%}
+
+{% block content %}
+
+<div class='container'>
+
+    <h1 class='mt-5 mb-5 text-center page-title'>
+        Main Dashboard
+    </h1>
+
+    <div class='dashboard-container '>
+
+        <div class=' mt-5 create-container'>
+            <a href="{%url 'create' %}"><button type="button" class=" create dashboard-button">Create
+                    Collection</button></a>
+        </div>
+
+        <div class='mt-5 view-container'>
+            <a href="{%url 'view-collections' %}"><button type="button " class=" view dashboard-button">View
+                    Collections</button></a>
+            <div class='glass'></div>
+
+        </div>
+
+    </div>
+
+    {% endblock content %}
+
+</div>
