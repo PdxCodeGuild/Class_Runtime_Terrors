@@ -4,7 +4,7 @@ nav {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  background-color: hsl(150, 99%, 27%);
+  background-color: #014550;
   padding: 2px;
 }
 .home_buttons {
@@ -44,7 +44,7 @@ nav {
   flex-direction: column;
   justify-content: center;
   margin-top: 3px;
-  border: solid;
+  border: inset;
   margin-bottom: 25px;
 }
 
@@ -92,66 +92,52 @@ nav {
   margin-top: 3px;
 }
 /*------------------------------DASHBOARD PAGE--------------------*/
-.user_dashboard {
-  background-color: #79f859;
+.dashboard {
+  background-color: #f0faed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: 'Roboto Mono', monospace;
+  margin-top: 3px;
+}
+
+.dashboard_user {
+  background-color: #00676D;
+  color: #f0faed;
   display: flex;
   flex-direction: row;
   justify-content: center;
   font-family: 'Roboto Mono', monospace;
   margin-top: 3px;
 }
-.box_container {
-  background-color: #79f859;
+.dashboard_box_container {
+  background-color: #00676D;
   font-family: 'Roboto Mono', monospace;
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
-.pie_box{
+.dashbaord_box{
   color: rgb(32, 19, 1);
-  background-color: #b6f83b;
+  background-color: #e5ffdf;
   font-family: 'Roboto Mono', monospace;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
-  width: 30%;
-  height: 500px;
+  width: 32%;
+  height: 420px;
   margin-top: 3px;
-  border: solid;
-  margin-bottom: 25px;
-  margin: 25px;
+  border: inset;
+  margin-bottom: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
-
-.balances_box {
-    color: rgb(32, 19, 1);
-    background-color: #b6f83b;
-    font-family: 'Roboto Mono', monospace;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 30%;
-    height: 500px;
-    margin-top: 3px;
-    border: solid;
-    margin-bottom: 25px;
-    
-  }
-
-.settings_box {
-  color: rgb(32, 19, 1);
-  background-color: #b6f83b;
-  font-family: 'Roboto Mono', monospace;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 30%;
-  height: 500px;
-  margin-top: 3px;
-  border: solid;
-  margin-bottom: 25px;
+.rebalance_button{
+  margin-bottom: 4px;
 }
 table {
-  background-color: #59f8c3;
+  background-color: #51CDA0;
   border-collapse: collapse;
   border-spacing: 0;
   width: 95%;
@@ -160,7 +146,7 @@ table {
 }
 
 th, td {
-  background-color: #59f8c3;
+  background-color: #51CDA0;
   text-align: left;
   padding: 16px;
 }
@@ -168,54 +154,20 @@ th, td {
 tr:nth-child(even) {
   background-color: #f2f2f2;
 }
+/* -----------------------------------------------Chart Row -------------------------------------------------- */
 
-.chart_container{
-  background-color: #59f8c3;
-  font-family: 'Roboto Mono', monospace;
+.account_balance_chart{
+  background-color: #00676D;
   display: flex;
   flex-direction: row;
   justify-content: center;
-}
-.BASE_qty_chart{
-  color: rgb(32, 19, 1);
-  background-color: #b6f83b;
-  font-family: 'Roboto Mono', monospace;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 30%;
-  height: 500px;
-  margin-top: 3px;
-  border: solid;
-  margin-bottom: 25px;
-  margin: 25px;
-}
+  align-items: center;
+  width: 100%;
+  height: 250px;
+ }
 
-.QUOTE_qty_chart {
-    color: rgb(32, 19, 1);
-    background-color: #b6f83b;
-    font-family: 'Roboto Mono', monospace;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 30%;
-    height: 500px;
-    margin-top: 3px;
-    border: solid;
-    margin-bottom: 25px;
-
-  }
-
-.ACCOUNT_value_chart {
-  color: rgb(32, 19, 1);
-  background-color: #b6f83b;
-  font-family: 'Roboto Mono', monospace;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 30%;
-  height: 500px;
-  margin-top: 3px;
-  border: solid;
-  margin-bottom: 25px;
-}
+ .account_chart{
+   border: inset;
+   height: 95%;
+   width: 95%;
+ }
