@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from .models import Image
 import requests
 import json
+from django.core import serializers
 #from .models import Signin
 #from .models import Greeting
 #from Capitan_app.views import Location
@@ -30,13 +31,11 @@ def rover(request):
             url_list = []
             print (url_list)
             for things in stuff:
-                # print (things.num, 'this is stuff')
                 url_list.append(things.num)
             # print (data)
             if (data['photos']):
-                test_img = []
-                
-                    #to stop reloading
+                test_img = []           
+                    #to stop redundant loading
                 for photo in data['photos']:
                     num = photo['id']
                     image_link = photo['img_src']
@@ -58,6 +57,9 @@ def rover(request):
     cleanup(stuff)
     stuff = Image.objects.all()
     first = Image.objects.all()[0]
-    context = {'stuff':stuff, 'first':first}
+    serialized_image = serializers.serialize('json',Image.objects.all())
+
+    context = {'serialized_image': serialized_image}
+    print(serialized_image)
     return render(request, 'pages/rover.html', context)
 
