@@ -50,3 +50,20 @@ function sendGetRequest() {
 
 sendGetRequest();
 ```
+
+Here is how you make a get request setting an authorization header
+```javascript
+ let config = {
+    headers: {
+      'Authorization': 'your_api_key_'
+    }
+  }
+axios.get('https://api.github.com/user', config
+})
+.then((res) => {
+  console.log(res.data)
+})
+.catch((error) => {
+  console.error(error)
+})
+```
