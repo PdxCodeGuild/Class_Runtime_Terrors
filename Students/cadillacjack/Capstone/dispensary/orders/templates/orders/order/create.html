@@ -4,7 +4,7 @@ Checkout
 {% endblock %}
 
 {% block content %}
-<h1>Checkout</h1>
+<h1 id="checkout-title">Checkout</h1>
 
 <div class='order-info'>
     <h3>Your Order</h3>
@@ -21,7 +21,7 @@ Checkout
 
 <form method="POST" class="order-form">
     {{ form.as_p }}
-    <p><input type="submit" value="Place Order"></p>
+    <p><input type="submit" value="Place Order" id="submit-order"></p>
     {%csrf_token%}
 </form>
 {% endblock %}
