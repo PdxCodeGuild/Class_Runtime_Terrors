@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+   
+<div class="Marscape">       
+    <div class="w3-panel w3-round-xlarge">
+        <div class='slideshow-container'>
+            <div class='slide fade'>
+                <img src id = 'first' style='width:100%'>
+            <!-- class="visor_view" alt="marscape"-->
+            </div>
+
+            <!-- <div class='slide fade'>
+                <img src id='second'{{first.image_link}} style='width:100%'>   
+            </div>
+
+            <div class='slide fade'>
+                <img src id='third'{{first.image_link}} style='width:100%'>   
+            </div>
+
+            <div class='slide fade'>
+                <img src id='fourth'{{first.image_link}} style='width:100%'>   
+            </div>
+
+            <div class='slide fade'>
+                <img src id='fifth'{{first.image_link}} style='width:100%'>   
+            </div> -->
+
+        </div>
+        <button id="step">step</button>
+    </div>
+    
+</div>
+
+
+<script>
+    const images = {{serialized_image|safe}}
+    // console.log(images)
+    let i = 0
+    document.getElementById('step').addEventListener("click",
+        function walking(){
+            // let walk = images[i].fields.image_link;      
+            document.getElementById('first').setAttribute('src', images[i].fields.image_link)
+            i++
+    // console.log(images[0].fields.image_link);
+        }
+    );
+        
+    </script>
+
+
+
+
+{% endblock %}

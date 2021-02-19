@@ -1,4 +1,173 @@
-h1 {
-    color: firebrick;
-    background-color: antiquewhite;
-  }
+
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: #014550;
+  padding: 2px;
+}
+.home_buttons {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #fcac00;
+  padding: 2px;
+  
+}
+/*------------------------------HOME PAGE--------------------*/
+.greeting {
+  color: rgb(32, 19, 1);
+  font-family: 'Roboto Mono', monospace;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: rgb(219, 248, 89);
+  margin-top: 3px;
+}
+.hedger_container {
+  background-color: rgb(219, 248, 89);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-family: 'Roboto Mono', monospace;
+}
+.hEDGEr {
+  color: rgb(32, 19, 1);
+  font-size: 53pt;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 600;
+  background-color: rgb(182, 248, 59);
+  width: 253px;
+  height: 253px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 3px;
+  border: inset;
+  margin-bottom: 25px;
+}
+
+/*------------------------------LOGIN PAGE--------------------*/
+.page_login {
+  background-color: rgb(219, 248, 89);
+  font-family: 'Roboto Mono', monospace;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 3px;
+}
+.login_contianer {
+  background-color: rgb(219, 248, 89);
+  font-family: 'Roboto Mono', monospace;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.login_inputs {
+  background-color: rgb(182, 248, 59);
+  font-family: 'Roboto Mono', monospace;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 253px;
+  height: 253px;
+  margin-top: 3px;
+  border: solid;
+  margin-bottom: 25px;
+}
+.username_container {
+  font-family: 'Roboto Mono', monospace;
+  margin-left: 45px;
+}
+.submit {
+  margin: 5px;
+  margin-left: 68px;
+  margin-right: 68px;
+}
+.bottom {
+  background-color: #fcac00;
+  width: 100%;
+  height: 25px;
+  margin-top: 3px;
+}
+/*------------------------------DASHBOARD PAGE--------------------*/
+.dashboard {
+  background-color: #f0faed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: 'Roboto Mono', monospace;
+  margin-top: 3px;
+}
+
+.dashboard_user {
+  background-color: #00676D;
+  color: #f0faed;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-family: 'Roboto Mono', monospace;
+  margin-top: 3px;
+}
+.dashboard_box_container {
+  background-color: #00676D;
+  font-family: 'Roboto Mono', monospace;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.dashbaord_box{
+  color: rgb(32, 19, 1);
+  background-color: #e5ffdf;
+  font-family: 'Roboto Mono', monospace;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 32%;
+  height: 420px;
+  margin-top: 3px;
+  border: inset;
+  margin-bottom: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.rebalance_button{
+  margin-bottom: 4px;
+}
+table {
+  background-color: #51CDA0;
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 95%;
+  border: 1px solid #ddd;
+  margin: 2px;
+}
+
+th, td {
+  background-color: #51CDA0;
+  text-align: left;
+  padding: 16px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+/* -----------------------------------------------Chart Row -------------------------------------------------- */
+
+.account_balance_chart{
+  background-color: #00676D;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 250px;
+ }
+
+ .account_chart{
+   border: inset;
+   height: 95%;
+   width: 95%;
+ }

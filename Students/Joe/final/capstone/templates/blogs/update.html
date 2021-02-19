@@ -1,0 +1,26 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+{% if user.is_authenticated %}
+<h2>Update</h2>
+<form method="POST" class="post-form">{% csrf_token %}
+    {{ form.as_p }}
+    <button>submit</button>
+</form>
+<!-- <div class="mt-5 container text-center">
+<form action="{% url 'add' %}" method="POST">{% csrf_token %} 
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Title </label>
+    <input class="form-control" name="title" id="exampleFormControlInput1">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Text</label>
+    <textarea class="form-control" name="text" id="exampleFormControlTextarea1" rows="3"></textarea>
+    <button type="submit" class="btn btn-primary mt-3">Submit</button>
+  </div> -->
+  {% else %}
+
+  You are not allowed
+
+  {% endif %}
+</form>
+</div>

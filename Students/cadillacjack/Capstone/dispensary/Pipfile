@@ -1,0 +1,21 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+pillow = "*"
+django = "*"
+celery = "==4.4.2"
+sorl-thumbnail = "12.7.0"
+django-cleanup = "*"
+flower = "==0.9.3"
+braintree = "==3.59.0"
+python-decouple = "*"
+weasyprint = "==51"
+python-dotenv = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.8"

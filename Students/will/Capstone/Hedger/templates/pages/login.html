@@ -1,4 +1,24 @@
 {% extends 'base.html' %}
+
 {% block content %}
-    <h1>Login</h1>
+<form id = 'author-form' action="" method="POST">
+    {% csrf_token %}
+    
+        <div class = 'page_login'>LOGIN</div>
+        <div class='login_contianer'>
+            <div class = 'login_inputs'>
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" class="form-control" name = 'username' id="username" placeholder="Username" size = '10'>
+                    <small id="emailHelp" class="form-text text-muted"></small>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" name='password' id="password" placeholder="Password" size = '10'>
+                </div>
+                <button class = 'submit' type="submit" >Submit</button>
+            </div>
+        </div>
+        <div class = 'bottom'></div>
+</form>
 {% endblock %}
