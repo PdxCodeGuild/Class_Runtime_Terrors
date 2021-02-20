@@ -1,55 +1,81 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-
-   
-<div class="Marscape">       
+<div class="Marscape"> 
+    <div style='text-align:center'>
+        <span class="dot" index='2'></span>
+        <span class="dot" index='4'></span>
+        <span class="dot" index='3' ></span>
+        <span class="dot" index='0'></span>
+        <span class="dot" index='1'></span>
+        
+    </div>      
     <div class="w3-panel w3-round-xlarge">
-        <div class='slideshow-container'>
-            <div class='slide fade'>
-                <img src id = 'first' style='width:100%'>
+
+        <div class=''>
+            <div class=''>
+                <img src id = 'first' >
             <!-- class="visor_view" alt="marscape"-->
             </div>
-
-            <!-- <div class='slide fade'>
-                <img src id='second'{{first.image_link}} style='width:100%'>   
-            </div>
-
-            <div class='slide fade'>
-                <img src id='third'{{first.image_link}} style='width:100%'>   
-            </div>
-
-            <div class='slide fade'>
-                <img src id='fourth'{{first.image_link}} style='width:100%'>   
-            </div>
-
-            <div class='slide fade'>
-                <img src id='fifth'{{first.image_link}} style='width:100%'>   
-            </div> -->
-
+            
         </div>
         <button id="step">step</button>
     </div>
-    
 </div>
-
-
 <script>
     const images = {{serialized_image|safe}}
-    // console.log(images)
+    const dots = document.querySelectorAll('.dot')
+    for(let i = 0; i<dots.length; i++){
+
+    dots[i].addEventListener('click',function trigger(event) {
+        let index = event.target.attributes.index.value
+        console.log(event.target.attributes.index.value)
+        document.getElementById('first').setAttribute('src', images[index].fields.image_link)
+    })
+    }
+
+    console.log(dots)
     let i = 0
     document.getElementById('step').addEventListener("click",
         function walking(){
-            // let walk = images[i].fields.image_link;      
-            document.getElementById('first').setAttribute('src', images[i].fields.image_link)
+            console.log(images[0].fields.image_link)
+            document.getElementById('first').setAttribute('src', images[0].fields.image_link)
             i++
     // console.log(images[0].fields.image_link);
         }
     );
-        
+    let slideIndex = 1;
+
+    showSlides(slideIndex);
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+        console.log(n)
+    }
+
+    function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("slide");
+        let dots = document.getElementsByClassName('dot');
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i =0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace("active", "");
+        }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+    }
+    document.getElementById('step').addEventListener("click",
+        function walking(){ 
+            document.getElementById('first').setAttribute('src', images[0].fields.image_link)
+        }
+    );
+
     </script>
-
-
-
-
 {% endblock %}

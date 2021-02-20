@@ -29,7 +29,7 @@ def rover(request):
             data = url_get.json()
             stuff = Image.objects.all()
             url_list = []
-            print (url_list)
+            
             for things in stuff:
                 url_list.append(things.num)
             # print (data)
@@ -57,9 +57,16 @@ def rover(request):
     cleanup(stuff)
     stuff = Image.objects.all()
     first = Image.objects.all()[0]
+    # serialized_image = serializers.serialize('json',Image.objects.all())
+    # img_urls = []
+    # for imgs in stuff:
+        # img_urls.append(imgs.fields.image_link)
+        # print(imgs.image_link)
+    # print (img_urls, 'list of urls')
+    # context = {'serialized_image': serialized_image}
+    
+    # return render(request, 'pages/rover.html', context)
     serialized_image = serializers.serialize('json',Image.objects.all())
-
     context = {'serialized_image': serialized_image}
     print(serialized_image)
     return render(request, 'pages/rover.html', context)
-
