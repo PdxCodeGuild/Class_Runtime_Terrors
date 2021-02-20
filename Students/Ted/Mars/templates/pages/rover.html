@@ -1,60 +1,81 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<body>
-    <header>NCC-2020</header>
-    <div class="Marscape">       
-        <div class="w3-panel w3-round-xlarge">
-            <div class='slideshow-container'>
-                <div class='slide fade'>
-                    <img src id = 'first'rover.stuff[0] style='width:100%'>
-                <!-- class="visor_view" alt="marscape"-->
-                </div>
+<div class="Marscape"> 
+    <div style='text-align:center'>
+        <span class="dot" index='2'></span>
+        <span class="dot" index='4'></span>
+        <span class="dot" index='3' ></span>
+        <span class="dot" index='0'></span>
+        <span class="dot" index='1'></span>
+        
+    </div>      
+    <div class="w3-panel w3-round-xlarge">
 
-                <!-- <div class='slide fade'>
-                    <img src id='second'{{first.image_link}} style='width:100%'>   
-                </div>
-
-                <div class='slide fade'>
-                    <img src id='third'{{first.image_link}} style='width:100%'>   
-                </div>
-
-                <div class='slide fade'>
-                    <img src id='fourth'{{first.image_link}} style='width:100%'>   
-                </div>
-
-                <div class='slide fade'>
-                    <img src id='fifth'{{first.image_link}} style='width:100%'>   
-                </div> -->
-
+        <div class=''>
+            <div class=''>
+                <img src id = 'first' >
+            <!-- class="visor_view" alt="marscape"-->
             </div>
-            <button id="step">step</button>
+            
         </div>
-        <!-- <div class='window_wrapper'>
-            <div id= 'left_window'>
-        </div></div>
-        <div class='window_wrapper'>
-            <div id= 'center_window'>
-        </div></div> 
-        <div class='window_wrapper'>
-            <div id= 'right_window'>
-        </div></div> -->
+        <button id="step">step</button>
     </div>
-   <!-- {% for image in stuff %}
-   <img src={{image.image_link}}>
-   <p>{{image.sol}}</p>
-   <p>{{image.num}}</p>
-   {% endfor %}  -->
-   <script>document.getElementById('step').addEventListener("click",
-   function walking(){
-       getElementById('first').innerHTML = rover.stuff[]</script>
-</body>
-<!-- <footer id= 'controal panel'>
-    <button id= 'change'>warp</button>
-    <button id= 'closer'>land</button>
-    <button id= 'destroy'>vaperize</button>
-</footer> -->
+</div>
+<script>
+    const images = {{serialized_image|safe}}
+    const dots = document.querySelectorAll('.dot')
+    for(let i = 0; i<dots.length; i++){
 
+    dots[i].addEventListener('click',function trigger(event) {
+        let index = event.target.attributes.index.value
+        console.log(event.target.attributes.index.value)
+        document.getElementById('first').setAttribute('src', images[index].fields.image_link)
+    })
+    }
 
+    console.log(dots)
+    let i = 0
+    document.getElementById('step').addEventListener("click",
+        function walking(){
+            console.log(images[0].fields.image_link)
+            document.getElementById('first').setAttribute('src', images[0].fields.image_link)
+            i++
+    // console.log(images[0].fields.image_link);
+        }
+    );
+    let slideIndex = 1;
+
+    showSlides(slideIndex);
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+        console.log(n)
+    }
+
+    function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("slide");
+        let dots = document.getElementsByClassName('dot');
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i =0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace("active", "");
+        }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+    }
+    document.getElementById('step').addEventListener("click",
+        function walking(){ 
+            document.getElementById('first').setAttribute('src', images[0].fields.image_link)
+        }
+    );
+
+    </script>
 {% endblock %}
-<script src= "{% static 'js/marsimg.js' %}"></script>

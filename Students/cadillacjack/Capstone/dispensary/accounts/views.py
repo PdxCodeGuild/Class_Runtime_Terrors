@@ -50,14 +50,14 @@ def register(request):
 def edit(request):
     if request.method == 'POST':
         user_form = UserEditForm(instance = request.user, data = request.POST)
-        profile_form = ProfileEditform(instance = request.user.profile)
+        profile_form = ProfileEditform(instance = request.user)
 
         if user_form.is_valid() and profile_form.is_valid():
             user_form.save()
             profile_form.save()
     else:
         user_form = UserEditForm(instance=request.user)
-        profile_form = ProfileEditform(instance=request.user.profile)
+        profile_form = ProfileEditform(instance=request.user)
     return render(
         request, 
         'accounts/edit.html', 

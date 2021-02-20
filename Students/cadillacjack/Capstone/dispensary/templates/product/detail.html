@@ -6,18 +6,21 @@
 
 {% block content %}
 <div class="product_detail">
+    <div class=card>
         {% thumbnail product.image "200x200" as im %}
-            <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+        <div class="img-box">
+            <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" class="image">
+        </div>    
         {% endthumbnail %}
-        <!-- <img src="{{product.image.url}}"> -->
-    <h1>{{ product.name }}</h1>
-    <h2>
-        <a href="{{ product.variety.get_variety_url }}">{{ product.variety }}</a> 
-    </h2>
-    <h2>
-        <a href="{{ product.category.get_absolute_url }}">{{ product.category }}</a>
-        <p>THC: {{ product.thc }}% / CBD: {{ product.cbd }}%</p>
-    </h2>
+        <h1 class="product-link">{{ product.name }}</h1>
+        <h2 class="variety-title">
+            Variety: <a href="{{ product.variety.get_variety_url }}">{{ product.variety }}</a> 
+        </h2>
+        <h2 class="variety-title">
+            Category: <a href="{{ product.category.get_absolute_url }}">{{ product.category }}</a>
+            <p>THC: {{ product.thc }}% <br> CBD: {{ product.cbd }}%</p>
+        </h2>
+    </div>
     <p class="price">Price: ${{ product.price }}</p>
     <form action="{% url 'cart:cart_add' product.id %}" method="POST">
         {{ cart_product_form }}

@@ -13,12 +13,7 @@
     <div id="header">
         <a href="/" class="logo">Your Cannasource</a>
         {% if request.user.is_authenticated %}
-            <li {% if section == 'dashboard' %}class='selected'{% endif %}>
-                <a href="{% url 'dashboard' %}">My Dashboard</a>
-            </li>
-            <li {% if section == 'images' %}class='selected'{% endif %}>
-                <a href="#">Images</a>
-            </li>
+            <a href="{% url 'dashboard' %}">My Dashboard</a>
         {% endif %}
 
         <span class="user">
@@ -29,6 +24,11 @@
                 <a href="{% url 'login' %}">Login</a>
             {% endif %}
         </span>
+    </div>
+    <div class="company-logo">
+        <div class="img-box">
+            <a href="/"><img class="logo-image" src="../../static/img/logo.png"></a>
+        </div>    
     </div>
     <div id="subheader">
         <div class="cart">
