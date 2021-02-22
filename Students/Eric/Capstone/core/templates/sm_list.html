@@ -1,0 +1,26 @@
+{% extends 'base.html'%}
+{% block content %}
+<h1>Army Forms</h1>
+
+<table class="table">
+    <tabehead>
+    <tr>
+        <th>Number</th>
+        <th>Date</th>
+        <th>Title</th>
+        <th>Download</th>
+    </tr>
+    </tabehead>
+    <tablebody>
+    {% for book in books%}
+    <tr>
+        <td>{{book.number}}</td>
+        <td>{{book.date}}</td>
+        <td>{{book.title}}</td>
+        <td> <a href="{{ book.pdf.url }}" class="btn btn-primary" target="_blank"></a> View</a></td>
+    </tr>
+    {% endfor %}
+    </tablebody>
+</table>
+    
+{%endblock %}
