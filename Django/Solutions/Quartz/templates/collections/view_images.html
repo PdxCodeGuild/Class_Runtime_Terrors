@@ -1,0 +1,34 @@
+{% extends "base.html"%}
+
+{% block content %}
+
+<div class = 'container mt-5'>
+
+  <h1 class = 'page-title mb-5 text-center'> Images from <b>{{cover.title}}</b></h1>
+  
+    <div class = 'container d-flex flex-row-reverse'>
+      <div class = 'container d-flex image-container'>
+        {%for image in images%}
+            <div class="card mb-5 ml-2 image-card-images d-flex flex-column">
+              <div class = 'image-thumbnail-container '>
+               <img src='{{image.image.url}}' class="card-img-top" alt="...">
+              </div>
+              <div class="card-body delete-button">
+                <form  action=""method='POST'>
+                  {%csrf_token%}
+                    <button type="submit" value="submit" style ='border: none'class="x-delete">✖</button>
+                </form> 
+              </div>
+            </div> 
+         {%endfor%}
+        </div>
+        <div class = 'd-flex flex-column justify-content-center'>
+          <a href = "{% url 'add-images' cover.id %}"><button type="button" style = 'border: none;'class="upload-pictures">+</button></a>
+          <a href = "{%url 'view-collections'%}"><button type="button" style = 'border: none'class="go-back">➥</button></a>
+          <a href = ""><button type="button" style = 'border: none'class="to-gallery">➥</button></a>
+
+  {% endblock content %}
+         </div>
+
+</div>
+

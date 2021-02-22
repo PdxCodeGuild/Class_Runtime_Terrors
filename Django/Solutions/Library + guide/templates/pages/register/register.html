@@ -1,13 +1,20 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <form action="" method = "POST">
+<form action="" method="POST">
+    <div id='author-form' class="form-group">
         {% csrf_token %}
-        username: <input type="text" name="username"><br>
-        password: <input type="password" name="password"><br>
-        email: <input type="text" name="email"><br>
-        first name: <input type="text" name="first_name"><br>
-        last name: <input type="text" name="last_name"><br>
-        <input type="submit" value="register">
-    </form>
+        <label for="username">Username</label>
+        <input class="form-control" type="text" name="username">
+        <label for="username">Password</label>
+        <input class="form-control" type="password" name="password">
+        <label for="email">Email</label>
+        <input class="form-control" type="text" name="email">
+        <label for="first_name">First Name</label>
+        <input class="form-control" type="text" name="first_name"><br>
+        <label for="last_name">Last Name</label>
+        <input class="form-control" type="text" name="last_name"><br>
+        <button type="submit" class="btn btn-primary mb-2 mt-3">Submit</button>
+    </div>
+</form>
 {% endblock %}

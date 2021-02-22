@@ -51,3 +51,17 @@ if(rot<0){
     Scramble()
 }
 console.log(secretList)
+
+
+let userInput = document.getElementById('secret')
+let userRotation = document.getElementById('rot')
+let encryptionBtn = document.getElementById('userInput')
+
+userInput.addEventListener('click', function(){
+    console.log(userInput.val())
+    userInput.val() = ''
+})
+
+encryptionBtn.addEventListener('click', function(){
+    console.log('Clicky Clicky')
+})

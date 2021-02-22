@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'pages_app',
     'accounts',
     "rest_framework",
-    'corsheaders',
 ]
 
 MIDDLEWARE = [

@@ -7,7 +7,6 @@ router = routers.DefaultRouter()
 router.register('api/', views.TodoView, basename='ApiTodos')
 
 urlpatterns = [
-    # path('api/', include(router.urls)),
     path('api/', views.TodoView.as_view()),
     path('', views.todo_list, name = 'list'),
     path('add/', views.add_todo, name = 'add'),

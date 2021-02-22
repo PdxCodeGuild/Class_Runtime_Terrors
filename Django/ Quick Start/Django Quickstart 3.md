@@ -1,7 +1,7 @@
 This guide covers the content in the folder **Forms and Links**.
 ## How to use a model and a database inside your template
 
-Before starting, add a new URL in the my_app > urls.py folder:
+Before continuing further, add a new URL in the my_app > urls.py folder:
 
 ```python
 urlpatterns = [
@@ -22,7 +22,7 @@ from .models import Blog
 def blog_posts(request):
     blogs = Blog.objects.all()  # gets all of the blog posts from the database and store them in a variable
   
-    # create the context dictionary to send the blog posts to the template
+    # creates the context dictionary to send the blog posts to the template
     context = {
        'blogs': blogs
     }
@@ -31,7 +31,7 @@ def blog_posts(request):
 def add_post(request):
     if request.method == 'GET': # if its a GET request, just display the add.html template
         return render(request, 'pages/add.html')
-    if request.method == 'POST': # if it's a POST request ...
+    elif request.method == 'POST': # if it's a POST request ..
         title = request.POST['title']   # get the title from the POST submission, this comes from a form
         text = request.POST['text']     # get the text from the POST submission, this comes from a form
         pub_date = request.POST['pub_date']
@@ -39,10 +39,10 @@ def add_post(request):
         # don't need a separate call to the save() method
         blogs = Blog.objects.create(title = title, text = text, pub_date = pub_date)
         return redirect('posts')
-    return render(request, 'pages/add.html')
+   
 ```
 
-- In the Pages > posts.html add the following:
+- In the Pages folder create a new page `posts.html` and add the following:
 
 ```html
 {% extends 'base.html' %}
@@ -62,7 +62,7 @@ def add_post(request):
 
 ## Add a form to create blog posts.
 
-In the Pages > add.html page add the following:
+- In the Pages folder create a new page `add.html` and add the following:
 
 ```html
 {% extends 'base.html' %}

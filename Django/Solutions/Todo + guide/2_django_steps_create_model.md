@@ -127,5 +127,3 @@ from . import models
 admin.site.register(models.Todo)
 
 ```
-- In the terminal run `python manage.py createsuperuser`
-- Go to` http://localhost:8000/admin/` to explore and add more todos.

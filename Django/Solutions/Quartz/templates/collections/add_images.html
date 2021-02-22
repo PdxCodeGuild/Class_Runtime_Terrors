@@ -1,0 +1,20 @@
+{% extends "base.html"%}
+
+{% block content %}
+
+ 
+  <div class= 'container mt-5'>
+      <h1 class = 'page-title text-center'>Add Images to <b>{{cover.title}}</b></h1>
+    
+      <div class = 'create-album-container'>
+          <form  action="{% url 'add-images' cover.id %}" method='POST' enctype = 'multipart/form-data' class = 'd-flex flex-column' >
+            {%csrf_token%}
+              <h3 class= 'name-create-collection border-bottom'>Select Your Images</h3>
+              <input type="file" name="image_file" class= 'form-album-title' accept="image/*" required multiple>
+              <button type="submit" value="submit" class="btn btn-dark dashboard-button mt-5 mb-5">Submit</button>
+          </form>   
+        </div>
+    
+      </div>
+
+{% endblock content %}
