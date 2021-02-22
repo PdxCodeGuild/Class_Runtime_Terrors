@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class = 'dashboard'>
+        {% for api in api %}
+        <div class = "">
+          <div class= 'dashboard_user'> User Account: {{ api.user }} </div>
+          <div class= 'dashboard_box_container'>
+            <div class = 'dashbaord_box_left'>
+              <div class = 'BTC_balance' id = chart_line_BTC_BAL></div>
+              <div class = 'PAX_balance' id = 'chart_line_BTC_PAX_QTY'></div></div>
+            <div class = 'dashbaord_box_center'>
+              <div id="account_pie"></div>
+              <a href="{%url 'rebalance' %}"><button type="button" class= 'rebalance_button'> rebalance </button></a></div>
+            <div class = 'dashbaord_box' style="overflow-y:auto;">
+              <table class = 'table_api_resonse' id = 'table_api_resonse'> TABLE showing rebalances
+                <tr>
+                  <th>API Response</th>
+                </tr>
+                <tr>
+                </tr>
+              </table>
+            </div>
+          </div> 
+        </div>  
+        <div class = 'account_balance_chart'>
+          <div class = 'account_chart' id="chart_line_BTC_QTY" > </div></div> 
+        
+        
+    </div>
+    
+<script > 
+  const balances = {{serialize_balances|safe}}
+
+</script>
+  {% empty %}
+  {% endfor %}
+        
+
+{% endblock %}
