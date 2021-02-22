@@ -4,7 +4,7 @@ from django.core.files.storage import FileSystemStorage
 from .forms import BookForm, AskForm
 from .models import Book, Event, Ask
 from django.http import JsonResponse
-from django.urls import reverse_lazy
+
 # from .models import *
 
 # Create your views here.
