@@ -6,13 +6,13 @@
 
 {% block content %}
 <div class="product_detail">
-    <div class=card>
+    <div class="detail-card">
         {% thumbnail product.image "200x200" as im %}
-        <div class="img-box">
-            <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" class="image">
+        <div class="detail-img-box">
+            <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" class="detail-image">
         </div>    
         {% endthumbnail %}
-        <h1 class="product-link">{{ product.name }}</h1>
+        <h1 class="detail-product-link">{{ product.name }}</h1>
         <h2 class="variety-title">
             Variety: <a href="{{ product.variety.get_variety_url }}">{{ product.variety }}</a> 
         </h2>
