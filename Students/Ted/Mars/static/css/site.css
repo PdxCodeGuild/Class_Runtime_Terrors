@@ -11,6 +11,46 @@ body{
     margin: auto; 
 }
 */
+.helmet {
+    justify-content: center;
+}
+.visor {
+    justify-content: center;
+    /* position: relative; */
+    width: 700px;
+    height: 700px;
+    border-radius: 100px;
+    /* z-index: 999;
+    border: 2px solid black; */
+    overflow: hidden;
+   
+}
+
+.visor > #first {
+    position: relative;
+    top: 0;
+    left: 0;
+    transition: all ease 4s;
+}
+
+.visor > #first:hover {
+    top: 0;
+    left: -300px;
+    transition: all ease 4s;
+}
+
+
+#first {
+    position: absolute;
+    height: auto;
+    width: 1000px;
+    height: 1000px;
+    max-width: 100%;
+    z-index: -1;
+    overflow: hidden;
+    display: block;
+    margin: auto;
+}
 .dot {
     cursor: pointer;
     height: 15px;
