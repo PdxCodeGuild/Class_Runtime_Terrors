@@ -58,8 +58,7 @@ Here is how you make a get request setting an authorization header
       'Authorization': 'your_api_key_'
     }
   }
-axios.get('https://api.github.com/user', config
-})
+axios.get('https://api.github.com/user', config)
 .then((res) => {
   console.log(res.data)
 })
