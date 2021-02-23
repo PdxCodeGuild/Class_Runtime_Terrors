@@ -80,6 +80,8 @@ def kraken_API_rebalance(api, user):
     PAX_balance = float(balances.PAX_balance)
     PAX_value = float(balances.PAX_value)
     PAX_price = float(balances.PAX_price)
+    Account_value = float("{:.8f}".format(PAX_value+BTC_balance))
+    date_time = timezone.now()
     PAX_order_min = 0.004
     api_public = {"Time", "Assets", "AssetPairs", "Ticker", "OHLC", "Depth", "Trades", "Spread"}
     api_private = {"Balance"}
@@ -99,8 +101,7 @@ def kraken_API_rebalance(api, user):
     api_domain = "https://api.kraken.com"
     pair = 'PAXGXBT'
     if PAX_order_volume < PAX_order_min:
-        status = 'hold'
-        print(status)
+        api_reply = 'hold'
     else:
         api_method = 'AddOrder'
         api_data = f'pair={pair}&type={order_type}&ordertype=market&volume={PAX_order_volume}&oflags=fciq'
@@ -135,8 +136,8 @@ def kraken_API_rebalance(api, user):
             sys.exit(1)
         api_reply = json.loads(api_reply)
         api_reply = api_reply['result']
-        print(api_reply)
-        Balances.objects.create(user = user, BTC_balance = BTC_balance, PAX_balance = PAX_balance, PAX_price=PAX_price, PAX_value=PAX_value, Account_value=Account_value, API_reply=api_reply, date_time = date_time)
+    print(api_reply)
+    Balances.objects.create(user = user, BTC_balance = BTC_balance, PAX_balance = PAX_balance, PAX_price=PAX_price, PAX_value=PAX_value, Account_value=Account_value, API_reply=api_reply, date_time = date_time)
 
 def home(request):
     return render(request, 'pages/home.html')

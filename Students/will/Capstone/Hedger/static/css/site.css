@@ -19,22 +19,24 @@ nav {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  background-color: #fcac00;
-  padding: 2px;
+  background-color: #00676D;
+  padding: 3px;
+  margin-top: 3px;
   
 }
 /*------------------------------HOME PAGE--------------------*/
 .greeting {
   color: rgb(32, 19, 1);
   font-family: 'Roboto Mono', monospace;
+  color: #e5ffdf;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  background-color: rgb(219, 248, 89);
+  background-color: #91A0BB;;
   margin-top: 3px;
 }
 .hedger_container {
-  background-color: rgb(219, 248, 89);
+  background-color: #91A0BB;;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -45,7 +47,7 @@ nav {
   font-size: 53pt;
   font-family: 'Roboto Mono', monospace;
   font-weight: 600;
-  background-color: rgb(182, 248, 59);
+  background-color: #e5ffdf;
   width: 253px;
   height: 253px;
   display: flex;
@@ -58,7 +60,8 @@ nav {
 
 /*------------------------------LOGIN PAGE--------------------*/
 .page_login {
-  background-color: rgb(219, 248, 89);
+  background-color:  #00676D;
+  color: #e5ffdf;
   font-family: 'Roboto Mono', monospace;
   display: flex;
   flex-direction: row;
@@ -66,14 +69,14 @@ nav {
   margin-top: 3px;
 }
 .login_contianer {
-  background-color: rgb(219, 248, 89);
+  background-color:#00676D;
   font-family: 'Roboto Mono', monospace;
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
 .login_inputs {
-  background-color: rgb(197, 194, 26);
+  background-color: #e5ffdf;
   font-family: 'Roboto Mono', monospace;
   display: flex;
   flex-direction: column;
@@ -101,7 +104,7 @@ nav {
 }
 /*------------------------------DASHBOARD/REBALANCE PAGE--------------------*/
 .dashboard {
-  background-color: #f0faed;
+  background-color: #e5ffdf;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -111,7 +114,7 @@ nav {
 
 .dashboard_user {
   background-color: #00676D;
-  color: #f0faed;
+  color: #e5ffdf;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -206,18 +209,25 @@ table {
   border-spacing: 0;
   width: 95%;
   height: 95%;
-  border: 1px solid #ddd;
+  border: 1px solid #6D78AD;
   margin: 2px;
 }
-
-th, td {
-  background-color: #91A0BB;
-  text-align: left;
-  padding: 16px;
+td, th {
+  border: 1px solid #6D78AD;
+  padding: 8px;
 }
+th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #014550;
+  color: white;
+}
+tr:nth-child(odd){background-color: #e5ffdf;}
 
-tr:nth-child(even) {
-  background-color: #e5ffdf;
+tr:hover {
+  background-color:#6D78AD;
+  border: #e5ffdf;
 }
 /* -----------------------------------------------Chart Row -------------------------------------------------- */
 

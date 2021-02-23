@@ -11,17 +11,14 @@
             <div class = 'dashbaord_box_center'>
               <div id="account_pie"></div>
               <a href="{%url 'rebalance' %}"><button type="button" class= 'rebalance_button'> rebalance </button></a></div>
-            <div class = 'dashbaord_box'>
-              <table class = 'table_api_resonse'> TABLE showing rebalances
+            <div class = 'dashbaord_box' style="overflow-y:auto;">
+              <table class = 'table_api_resonse' id = 'table_api_resonse'> TABLE showing rebalances
                 <tr>
-                  <th>date/time</th>
-                  <th>buy/sell</th>
-                  <th>qty</th>
+                  <th>  BTC</th>
+                  <th>  GOLD|BTC</th>
+                  <th>API Response</th>
                 </tr>
-                  <td>timetime</td>
-                  <td>buybuybuy</td>
-                  <td>111111111</td>
-                <tr>
+                <tr id = 'table_api_resonse'>
                 </tr>
               </table>
             </div>
@@ -33,144 +30,9 @@
         
     </div>
     
-<script> 
+<script > 
   const balances = {{serialize_balances|safe}}
-///////////////////////////////////////////////////////////    PIE CHART
-  var reverse = balances.length
-  reverse = balances[reverse-1]
-  reverse = reverse['fields']
-  var Account_value = reverse['Account_value']
-  var BTC_balance = reverse['BTC_balance']
-  var PAX_value = reverse['PAX_value']
-  var BTC_percentage = (BTC_balance/Account_value)*100
-  BTC_percentage = BTC_percentage.toFixed(2)
-  PAX_percentage = 100 - BTC_percentage
-  var chart_pie = new CanvasJS.Chart("account_pie",
-    {
-      backgroundColor: "#e5ffdf",
-      theme: "light2",
-      title:{
-        text: "Account Value:" + Account_value + 'BTC', 
-        fontFamily: 'Roboto Mono',
-        fontWeight: "normal",
-        fontSize: 25
-      },
-      toolTip:{
-        enabled: false,       //disable here
-        animationEnabled: true //disable here
-      },
-      data: [
-      {
-       type: "pie",
-       startAngle: 60,
-       legendText: "{indexLabel}",
-       dataPoints: [
-       {  y: BTC_percentage, indexLabel: "Bitcoin "+BTC_percentage+ '%', color: "#F79400" },
-       {  y: PAX_percentage, indexLabel: "Gold "+PAX_percentage+ '%', color: "#D0B13E" },
-       ]
-     }
-     ]
-   });
-    chart_pie.render();
-//////////////////////////////////////////////////////////   ACCOUNT BALANCE
-  var data = [];
-  var dataSeriesaccount = { type: "area" };
-  var dataPoints = []
-  for(i=0; i<balances.length;i+=2){
-    dataPoints.push({
-      x: i, // balances[i].fields.date_time, 
-      y: Number(balances[i].fields.Account_value)
-    });
-  }
-  dataSeriesaccount.dataPoints = dataPoints;
-  data.push(dataSeriesaccount);
-  var options = {
-    zoomEnabled: true,
-    animationEnabled: true,
-    backgroundColor: "#e5ffdf",
-    theme: "light2",
-    fontFamily: 'Roboto Mono',
 
-    title: {
-      text: "Account Balance:" + Account_value + 'BTC',
-      
-    },
-    axisY: {
-      suffix: "BTC",
-      lineThickness: 1
-    },
-    data: data  // random data
-  };
-  var chart_line_BTC_QTY = new CanvasJS.Chart("chart_line_BTC_QTY", options);
-    chart_line_BTC_QTY.render();
-//////////////////////////////////////////////////////////   PAX CHART
-  PAX_balance = reverse['PAX_balance']
-  var data = [];
-  var dataSeriesaccount = { type: "area", color: "#D0B13E" };
-  var dataPoints = []
-  for(i=0; i<balances.length;i+=2){
-    dataPoints.push({
-      x: i, // balances[i].fields.date_time, 
-      y: Number(balances[i].fields.PAX_balance)
-    });
-  }
-  dataSeriesaccount.dataPoints = dataPoints;
-  data.push(dataSeriesaccount);
-
-  var options = {
-    borderThickness: 2,
-    
-    zoomEnabled: true,
-    animationEnabled: true,
-    backgroundColor: "#e5ffdf",
-    theme: "light2",
-    fontFamily: 'Roboto Mono',
-    
-    title: {
-      text: "Total Gold Balance: " + PAX_balance + 'oz',
-      
-    },
-    axisY: {
-      suffix: "oz",
-      lineThickness: 1
-    },
-    data: data  // random data
-  };
-  var chart_line_BTC_PAX_QTY = new CanvasJS.Chart("chart_line_BTC_PAX_QTY", options);
-  chart_line_BTC_PAX_QTY.render();
-//////////////////////////////////////////////////////////   BTC CHART
-BTC_balance = reverse['BTC_balance']
-  var data = [];
-  var dataSeriesaccount = { type: "area", color: "#F79400" };
-  var dataPoints = []
-  for(i=0; i<balances.length;i+=2){
-    dataPoints.push({
-      x: i, // balances[i].fields.date_time, 
-      y: Number(balances[i].fields.BTC_balance)
-    });
-  }
-  dataSeriesaccount.dataPoints = dataPoints;
-  data.push(dataSeriesaccount);
-
-  var options = {
-    zoomEnabled: true,
-    animationEnabled: true,
-    backgroundColor: "#e5ffdf",
-    theme: "light2",
-    fontFamily: 'Roboto Mono',
-    
-    title: {
-      text: "Total Bitcoin Balance: " + BTC_balance + 'BTC',
-      
-    },
-    axisY: {
-      suffix: "oz",
-      lineThickness: 1
-    },
-    data: data  // random data
-  };
-  var chart_line_BTC_BAL = new CanvasJS.Chart("chart_line_BTC_BAL", options);
-  chart_line_BTC_BAL.render();
 </script>
   {% empty %}
   {% endfor %}
