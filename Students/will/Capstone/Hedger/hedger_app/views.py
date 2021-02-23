@@ -64,8 +64,8 @@ def kraken_API_balances(api, user):
     BTC_balance = float(balances['XXBT'])
     PAX_balance = float(balances['PAXG'])
     PAX_price = float(callList[0]['PAXGXBT']['c'][0])
-    PAX_value = float("{:.5f}".format(PAX_balance*PAX_price))
-    Account_value = float("{:.5f}".format(PAX_value+BTC_balance))
+    PAX_value = float("{:.8f}".format(PAX_balance*PAX_price))
+    Account_value = float("{:.8f}".format(PAX_value+BTC_balance))
     date_time = timezone.now()
     Balances.objects.create(user = user, BTC_balance = BTC_balance, PAX_balance = PAX_balance, PAX_price=PAX_price, PAX_value=PAX_value, Account_value=Account_value, date_time = date_time)
     
@@ -77,6 +77,7 @@ def kraken_API_rebalance(api, user):
                 secret_api = key.secret_api
     balances = Balances.objects.filter(user=user).order_by('date_time').reverse()[0]
     BTC_balance = float(balances.BTC_balance)
+    PAX_balance = float(balances.PAX_balance)
     PAX_value = float(balances.PAX_value)
     PAX_price = float(balances.PAX_price)
     PAX_order_min = 0.004
@@ -91,10 +92,10 @@ def kraken_API_rebalance(api, user):
     print('$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$')
     print(balances.id, balances.date_time)
     BTC_order_volume = abs(float("{:.8f}".format(BTC_balance-PAX_value)))/2
-    PAX_order_volume = float("{:.5f}".format(BTC_order_volume/PAX_price))
-    print('BTC balance:', BTC_balance)
-    print('PAX balance', PAX_value)
-    print('Volume to balance', order_type, PAX_order_volume)
+    PAX_order_volume = float("{:.8f}".format((BTC_order_volume/PAX_price)*0.9974))
+    print('BTC balance:              ', BTC_balance)
+    print('PAX balance:              ', PAX_value)
+    print('Volume to balance:   ', order_type, PAX_order_volume, 'PAX')
     api_domain = "https://api.kraken.com"
     pair = 'PAXGXBT'
     if PAX_order_volume < PAX_order_min:
@@ -135,6 +136,7 @@ def kraken_API_rebalance(api, user):
         api_reply = json.loads(api_reply)
         api_reply = api_reply['result']
         print(api_reply)
+        Balances.objects.create(user = user, BTC_balance = BTC_balance, PAX_balance = PAX_balance, PAX_price=PAX_price, PAX_value=PAX_value, Account_value=Account_value, API_reply=api_reply, date_time = date_time)
 
 def home(request):
     return render(request, 'pages/home.html')
@@ -244,8 +246,9 @@ def rebalance(request):
     Account_value = callList[2]
 
     serialize_balances = serializers.serialize('json', Balances.objects.filter(user=request.user))
-
+    
     context = {
+        'callList': callList,
         'serialize_balances': serialize_balances,
         'api': api,
         'BTC_balance':BTC_balance,

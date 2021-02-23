@@ -2,10 +2,18 @@
 
 nav {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   background-color: #014550;
   padding: 2px;
+}
+.nav_left{ 
+  display: flex;
+  flex-direction: row;
+}
+.nav_right{ 
+  display: flex;
+  flex-direction: row-reverse;
 }
 .home_buttons {
   display: flex;
@@ -65,7 +73,7 @@ nav {
   justify-content: center;
 }
 .login_inputs {
-  background-color: rgb(182, 248, 59);
+  background-color: rgb(197, 194, 26);
   font-family: 'Roboto Mono', monospace;
   display: flex;
   flex-direction: column;
@@ -91,7 +99,7 @@ nav {
   height: 25px;
   margin-top: 3px;
 }
-/*------------------------------DASHBOARD PAGE--------------------*/
+/*------------------------------DASHBOARD/REBALANCE PAGE--------------------*/
 .dashboard {
   background-color: #f0faed;
   display: flex;
@@ -133,26 +141,83 @@ nav {
   margin-left: 5px;
   margin-right: 5px;
 }
-.rebalance_button{
-  margin-bottom: 4px;
+
+.dashbaord_box_left{
+  color: rgb(32, 19, 1);
+  background-color: #e5ffdf;
+  font-family: 'Roboto Mono', monospace;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 32%;
+  height: 420px;
+  margin-top: 3px;
+  border: inset;
+  margin-bottom: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
+.BTC_balance{
+  height: 45%; 
+  width: 95%px;
+  border: #F79400;
+  border-radius: 1%;
+}
+
+.PAX_balance{
+  height: 45%; 
+  width: 95%px;
+  border: #D0B13E;
+  border-radius: 1%;
+}
+.dashbaord_box_center{
+  color: rgb(32, 19, 1);
+  background-color: #e5ffdf;
+  font-family: 'Roboto Mono', monospace;
+  display: flex;
+  flex-direction: column;
+  width: 32%;
+  height: 420px;
+  margin-top: 3px;
+  border: inset;
+  margin-bottom: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.account_pie{
+  margin-top: 5px;
+  height: 415px;
+  width: 320px;
+}
+.rebalance_button{
+  font-family: 'Roboto Mono', monospace;
+  font-size: 22.5px;
+  position: relative;
+  top: 1039%;
+  right: -35%;
+  text-align: center;
+  cursor: pointer;
+  transition-duration: 0.15s;
+  
+} 
 table {
-  background-color: #51CDA0;
+  background-color: #91A0BB;
   border-collapse: collapse;
   border-spacing: 0;
   width: 95%;
+  height: 95%;
   border: 1px solid #ddd;
   margin: 2px;
 }
 
 th, td {
-  background-color: #51CDA0;
+  background-color: #91A0BB;
   text-align: left;
   padding: 16px;
 }
 
 tr:nth-child(even) {
-  background-color: #f2f2f2;
+  background-color: #e5ffdf;
 }
 /* -----------------------------------------------Chart Row -------------------------------------------------- */
 

@@ -46,6 +46,7 @@ def user2():
     for x in range(len(data['Countries'])):
         if data['Countries'][x]['Country'] == country:
             recallx = x  
+            print(recallx)
     if recallx != 9000:
         print('\nCOVID-19 Summary for',country,'as of ',data['Countries'][recallx]['Date'],' in the last 24 hours')
         print('New Confirmed Case: ',data['Countries'][recallx]['NewConfirmed'])

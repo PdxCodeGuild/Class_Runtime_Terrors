@@ -13,15 +13,24 @@
     </head>
     
       <nav class="nav">
-        <div class = 'home_buttons'>
-          <a href="{%url 'about' %}"><button type="text" class= 'signup_button'>About</button></a>
-          <a href="{%url 'home' %}"><button type="text" class= 'login_button'>Logout</button></a>
-        </div>
+        
+          <div class = 'nav_left'>
+            <a href="{%url 'about' %}"><button type="text" class= 'signup_button'>About</button></a>
+            <a href="{%url 'home' %}"><button type="text" class= 'login_button'>Logout</button></a>
+          </div>
+          <div class = 'nav_right'>
+            <a href="{%url 'about' %}"><button type="text" class= 'signup_button'>About</button></a>
+            <a href="{%url 'home' %}"><button type="text" class= 'login_button'>Logout</button></a>
+          </div>
+
       </nav>
 
     <body>
         {% block content %}
         {% endblock %}
         <script src="{% static 'js/main.js' %}"></script>
+        <script src="{% static 'js/rebalance.js' %}"></script>
+        
+
     </body>
     </html>

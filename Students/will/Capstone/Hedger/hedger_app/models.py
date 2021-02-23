@@ -18,6 +18,7 @@ class Balances(models.Model):
     PAX_price = models.CharField(max_length=60, default=0)
     PAX_value = models.CharField(max_length=60, default=0)
     Account_value = models.CharField(max_length=60, default=0)
+    API_reply = models.CharField(max_length=150, default='hold')
     date_time = models.CharField(max_length=60, default=0)
 
     def __str__(self):
