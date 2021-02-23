@@ -5,9 +5,9 @@
 {% block title %} Your Shopping Cart {% endblock %}
 
 {% block content %}
-    <h1>Your Shopping Cart</h1>
-    <table class="cart">
-        <thead>
+    <h1 id="your-cart">Your Shopping Cart</h1>
+    <table class="cart-detail" style="display: table;">
+        <thead style="display: table-header-group;">
             <tr>
                 <th>Image</th>
                 <th>Product</th>
@@ -17,7 +17,7 @@
                 <th>Price</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody style="display: table-row-group;">
             {% for item in cart %}
                 {% with product=item.product %}
                 <tr>
@@ -29,6 +29,7 @@
                         </a>
                     </td>
                     <td>
+                        <p class="cart-product">{{ product.name }}</p>
                         <form action="{% url 'cart:cart_add' product.id %}" method="POST">
                             {{ item.update_quantity_form.quantity }}
                             {{ item.update_quantity_form.override }}

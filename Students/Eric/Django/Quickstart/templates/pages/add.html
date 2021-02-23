@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<form action="{% url 'add_posts' %}" method="POST">
+    {% csrf_token %} title: <br />
+    <input type="text" name="title" placeholder="enter todo title" /><br /><br />
+    <textarea name="text" id="" cols="30" rows="10"></textarea><br />
+    <input type="date" id="start" name="pub_date" value="2018-07-22" min="2018-01-01" max="2030-12-31">
+    <br />
+    <input type="submit" />
+</form>
+{% endblock %}
