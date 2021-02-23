@@ -29,3 +29,5 @@ def product_detail(request, id, slug):
         'product': product,
         'cart_product_form': cart_product_form})
 
+def home(request):
+    return render(request, 'shop/homepage.html')
