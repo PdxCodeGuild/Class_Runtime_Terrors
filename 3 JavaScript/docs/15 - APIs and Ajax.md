@@ -79,6 +79,28 @@ http_get("https://jsonplaceholder.typicode.com/todos/1", function(data) {
 });
 ```
 
+Adding a key-value pair to the request header is done by invoking `setRequestHeader` when the connection is open.
+
+```javascript
+let xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+  if (this.readyState === 1) {
+    xhttp.setRequestHeader('Authorization', 'Token token="a1b2c3"')
+  } else if (this.readyState === 4 && this.status === 200) {
+    let data = JSON.parse(xhttp.responseText);
+    // do something with data
+  } else if (this.readyState === 4 && this.status === 404) {
+    // handle 404
+  }
+};
+xhttp.open("GET", url);
+xhttp.send();
+
+http_get("https://jsonplaceholder.typicode.com/todos/1", function(data) {
+    console.log(data);
+});
+```
+
 It's a little more succinct in jQuery:
 
 ```javascript

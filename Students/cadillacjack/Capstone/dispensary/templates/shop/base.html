@@ -19,6 +19,7 @@
         <span class="user">
             {% if request.user.is_authenticated %}
                 Hello {{ request.user.first_name }}<br>
+                <a href="{% url 'online_shop:product_list' %}">View Menu</a><br>
                 <a href="{% url 'logout' %}">Log Out</a>
             {% else %}
                 <a href="{% url 'login' %}">Login</a>
