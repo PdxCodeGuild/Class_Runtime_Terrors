@@ -12,6 +12,9 @@
 }
 
 #first {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     position: relative;
     width: 1000px;
     height: 1000px;
@@ -20,11 +23,11 @@
     transition: all ease 6s;
 }
 
-#first:hover {
+/* #first:hover {
     top: 0;
     left: -300px;
     transition: all ease 6s;
-}
+} */
 
 .dot {
     cursor: pointer;

@@ -63,6 +63,8 @@
     async function mag() {
         let imgSize = '1000px'
         let startingSize = 1000
+        let justice = 10
+        let justify = '10px'
         const sleep = (milliseconds) => {
             return new Promise(resolve => setTimeout(resolve, milliseconds))
         }
@@ -70,11 +72,13 @@
             await sleep(1000)
             setTimeout(() => {
                 startingSize += 50
-                imgSize = startingSize.toString()+'px'
-                console.log(imgSize,startingSize)
+                justice -= 50
+                justify = justice.toString()+'px'
+                console.log(justify)
+                imgSize = startingSize.toString()+'px'           
                 document.getElementById('first').style.width = imgSize
                 document.getElementById('first').style.height = imgSize
-
+                document.getElementById('first').style.left = justify
             }, 1000)
         }
     }
