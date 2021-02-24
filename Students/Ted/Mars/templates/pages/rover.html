@@ -13,13 +13,9 @@
 
         <div class='helmet'>
             <div class='visor'>
-                <img src id = 'first'>
-            <!-- class="visor_view" alt="marscape"-->
+            <img src id = 'first' style = 'width: {imgSize}, height: {imgSize}'>
             </div>
-            
         </div>
-        <button id="step">step</button>
-    <!-- </div> -->
 </div>
 <script>
     const images = {{serialized_image|safe}}
@@ -30,19 +26,12 @@
         let index = event.target.attributes.index.value
         console.log(event.target.attributes.index.value)
         document.getElementById('first').setAttribute('src', images[index].fields.image_link)
+        mag()
     })
     }
 
     console.log(dots)
-    let i = 0
-    document.getElementById('step').addEventListener("click",
-        function walking(){
-            console.log(images[0].fields.image_link)
-            document.getElementById('first').setAttribute('src', images[0].fields.image_link)
-            i++
-    // console.log(images[0].fields.image_link);
-        }
-    );
+    
     let slideIndex = 1;
 
     showSlides(slideIndex);
@@ -70,11 +59,25 @@
         slides[slideIndex-1].style.display = "block";
         dots[slideIndex-1].className += " active";
     }
-    document.getElementById('step').addEventListener("click",
-        function walking(){ 
-            document.getElementById('first').setAttribute('src', images[0].fields.image_link)
+    
+    async function mag() {
+        let imgSize = '1000px'
+        let startingSize = 1000
+        const sleep = (milliseconds) => {
+            return new Promise(resolve => setTimeout(resolve, milliseconds))
         }
-    );
+        for (let i = 0; i< 25; i++) {
+            await sleep(1000)
+            setTimeout(() => {
+                startingSize += 50
+                imgSize = startingSize.toString()+'px'
+                console.log(imgSize,startingSize)
+                document.getElementById('first').style.width = imgSize
+                document.getElementById('first').style.height = imgSize
+
+            }, 1000)
+        }
+    }
 
     </script>
 {% endblock %}
