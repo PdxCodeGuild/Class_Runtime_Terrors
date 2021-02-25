@@ -134,14 +134,7 @@ var chart_line_BTC_BAL = new CanvasJS.Chart("chart_line_BTC_BAL", options);
 chart_line_BTC_BAL.render();
 
 
-// for (let item in balances){
-//     balance= balances["fields"]
-//     table = document.getElementById('table_api_resonse')
-//     tr = document.createElement('tr')
-//     tr.innerHTML = balances.API_reply
-//     table.appendChild(tr)
-//     console.log(balance)
-    
+
 
 table_items=[];
 for(i=0; i<balances.length;i++){

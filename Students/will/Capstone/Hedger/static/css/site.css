@@ -32,7 +32,7 @@ nav {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  background-color: #91A0BB;;
+  background-color: #91A0BB;
   margin-top: 3px;
 }
 .hedger_container {
@@ -60,7 +60,7 @@ nav {
 
 /*------------------------------LOGIN PAGE--------------------*/
 .page_login {
-  background-color:  #00676D;
+  background-color:  #91A0BB;
   color: #e5ffdf;
   font-family: 'Roboto Mono', monospace;
   display: flex;
@@ -69,7 +69,7 @@ nav {
   margin-top: 3px;
 }
 .login_contianer {
-  background-color:#00676D;
+  background-color:#91A0BB;;
   font-family: 'Roboto Mono', monospace;
   display: flex;
   flex-direction: row;
@@ -97,7 +97,7 @@ nav {
   margin-right: 68px;
 }
 .bottom {
-  background-color: #fcac00;
+  background-color: #00676D;
   width: 100%;
   height: 25px;
   margin-top: 3px;
