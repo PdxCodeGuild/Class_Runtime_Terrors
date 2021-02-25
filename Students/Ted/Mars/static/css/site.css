@@ -1,17 +1,47 @@
-/* *{
-    box-sizing: border-box;
-}
-body{
+.Marscape {
+    display: flex;
+    align-content: center;
+    flex-direction: column;
     background-color: grey;
+    color: lightgreen;
+}
+.helmet {
+   display: flex;
+   background-color: grey;
+}
+
+
+.visor {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    border-style: none;
+    width: 700px;
+    height: 500px;
+    border-radius: 150px;
     overflow: hidden;
+    background-color: grey;
 }
-.Slideshow-container {
-    max-width: 1300px;
+
+#first {
+    display: block;
+    
+    margin-left: auto;
+    margin-right: auto;
     position: relative;
-    margin: auto; 
+    width: 1000px;
+    height: 1000px;
+    top: 0;
+    left: 0;
+    background-color: grey;
+    /* transition: ease 6s; */
 }
-*/
+
+
+
 .dot {
+    display: flex;
+    align-items: center;
     cursor: pointer;
     height: 15px;
     width: 15px;
@@ -26,57 +56,3 @@ body{
     background-color: #717171;
   }
 
-/* .fade {
-    -webkit-animation-name: fade;
-    -webkit-animation-duration: 2.0s;
-    animation-name: fade;
-    animation-duration: 2.0s;
-}
-
-@-webkit-keyframes fade {
-    from {opacity: .2}
-    to {opacity: 1}
-}
-
-@keyframes fade {
-    from {opacity: .2}
-    to {opacity: 1}
-} */ */
-/* 
-.slide {
-    display: none;
-}
-
-/* .Marscape {
-    display: flex;
-    justify-content: center;
-    position: relative;
-    
-} */
-/* #step{
-    display: flex;
-    justify-content: right; 
-} */
-
-/* img{
-    display: flex;
-    position: relative;
-    justify-content: center;
-    border-radius: 400px;
-    width: 1200px;
-    height: 850px;
-    
-
-}
-
-header{
-    text-align: center;
-} */
-
-
-
-
-footer{
-    display: grid;
-    align-items: center;
-}
