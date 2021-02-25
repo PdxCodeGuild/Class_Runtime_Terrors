@@ -1,71 +1,26 @@
-checkers.game.com
+Purple.Discord.com
 
 Project Overview:
 
-The point of this application is to be able to play the game of Checkers against a multi level difficulty AI, and, time permitting, another player (or vice versa). 
+The purpose of this project is to create a website to manage and invite a discord bot I am developing. To start with, the site will be capable of creating and managing reminder DM's (Discord Messages). The bot will be able to send a message to a user with the bot enabled on a server they are a member of, at a specific time with a custom message. Further functionanility will be made as more features to the bot are added over time. There will be a home page with a quick overview of what the bot can do, an invite page to bring the bot to a server you manage, and a profile page to manage bot actions specific to the user. All of this will run on a discord login
 
-There will be a user login function to store data on scores like:
- - Time spent in the game
- - Total number of turns to achieve victory
- - Total pieces lost (Players and enemies)
-
-as well as general information such as:
- - Time and Date of match played
- - Comments on the game (probably only for player vs player interaction)
- - Total Games played
- - Wins and Loses (Both AI and PvP)
-
-I'll be using Django and until I learn of a better alternative, the basic SQL database it employs. That is something for the future however.
+The project will Utilize Django, Discord API, and sqlite3 (And maybe migrate to PostgreSQL since a web tutorial I am using to help guide me recommends it).
 
 Functionality:
 
-As outlined above, the app will provide the game of Checkers, with the goal of it allowing for PvP type games but will start with just AI controls to begin with (Or vice versa, with PvP being worked on first, then the AI games).
+Home Page - Displays Key Bot Features
+          - Log In Function
+          - Bot Invite Link
 
-Main Page - Portal site for starting a game and navigating to the highscores page
-          - Will display the top scores for each category:
-            - Shortest Match
-            - Least Turns To Win
-            - Least Pieces Lost
+Profile Page
+          - Displays User Relevent Data (Bot Alarms)
 
-Game Page - Start match making
-          - Display game board
-          - Space for game chat (time permitting)
+Bot Management Page
+          - Displays User Alarms
+          - Allows for Creating, Deleting, and Editing Alarms.
 
-Highscore - Display the top 10 of each score type:
-            - Shortest Match
-            - Least Turns To Win
-            - Least Pieces Lost
-
-Profile P.- Display personal information:
-            - Games Played
-              - Wins
-              - Losses
-              - Ties(?)
-            - Games of type (AI/PvP)
-            - Game History
-              - Against Who
-                - Win
-                - Lose
-                - Score
-            - Change Password
-            - Change Email
-            - Change Profile Image (?)
-            - Achievements (?)
-
-Data Model:
-Checker Board + Pieces
-Username + Password
-(maybe) Profile Picture
-Total Games
-Total Wins
-Total Loses
-Total Pieces lost
-Total Kings
-Players Matched (And how many times of same player)
-
-Schedule:
-¯\_(ツ)_/¯
-
-==========================================================
-
-*** Items listed with "(?)" are features with low priority and will be added, time permitting.
+Data Model
+id - Users public Discord ID
+avatar - Users Discord Avatar (just the Identification code to grab from Discord)
+Time and Date - Keeps track of the time and date so messages can be sent when there is a match
+Message Content - The message to be sent to the user when Time and Date match.
