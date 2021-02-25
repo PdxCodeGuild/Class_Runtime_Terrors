@@ -2,29 +2,28 @@
 {% load static %}
 {% block content %}
 <div class="Marscape"> 
-    <div style='text-align:center'>
-        <span class="dot" index='2'></span>
-        <span class="dot" index='4'></span>
-        <span class="dot" index='3' ></span>
-        <span class="dot" index='0'></span>
-        <span class="dot" index='1'></span>
-        
-    </div>      
-
-        <div class='helmet'>
-            <div class='visor'>
+        <div id = 'dots' style='text-align:center'>
+            <span class="dot" index='2'></span>
+            <span class="dot" index='4'></span>
+            <span class="dot" index='3'></span>
+            <span class="dot" index='0'></span>
+            <span class="dot" index='1'></span>      
+        </div> 
+    <div class='helmet'>
+        <div id = 'left'>text here</div>
+        <div class='visor'>
             <img src id = 'first' style = 'width: {imgSize}, height: {imgSize}'>
-            </div>
         </div>
+        <div id = 'right'>text here</div>
+    </div>
 </div>
 <script>
     const images = {{serialized_image|safe}}
     const dots = document.querySelectorAll('.dot')
     for(let i = 0; i<dots.length; i++){
-
     dots[i].addEventListener('click',function trigger(event) {
         let index = event.target.attributes.index.value
-        console.log(event.target.attributes.index.value)
+        document.getElementById('first').setAttribute('src', '')
         document.getElementById('first').setAttribute('src', images[index].fields.image_link)
         mag()
     })
@@ -44,27 +43,31 @@
         console.log(n)
     }
 
-    function showSlides(n) {
-        let i;
-        let slides = document.getElementsByClassName("slide");
-        let dots = document.getElementsByClassName('dot');
-        if (n > slides.length) {slideIndex = 1}
-        if (n < 1) {slideIndex = slides.length}
-        for (i =0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-        }
-        for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace("active", "");
-        }
-        slides[slideIndex-1].style.display = "block";
-        dots[slideIndex-1].className += " active";
-    }
+    // function showSlides(n) {
+    //     let i;
+    //     let slides = document.getElementsById("first");
+    //     let dots = document.getElementsByClassName('dot');
+    //     if (n > slides.length) {slideIndex = 1}
+    //     if (n < 1) {slideIndex = slides.length}
+    //     for (i =0; i < slides.length; i++) {
+    //         slides[i].style.display = "none";
+    //     }
+    //     for (i = 0; i < dots.length; i++) {
+    //         dots[i].className = dots[i].className.replace("active", "");
+    //     }
+    //     slides[slideIndex-1].style.display = "block";
+    //     dots[slideIndex-1].className += " active";
+    // }
     
     async function mag() {
+        let image = document.getElementById('first')
         let imgSize = '1000px'
-        let startingSize = 1000
+        let startingSize = 990
         let justice = 10
         let justify = '10px'
+        image.style.width = imgSize
+        image.style.height = imgSize
+        image.style.left = justify
         const sleep = (milliseconds) => {
             return new Promise(resolve => setTimeout(resolve, milliseconds))
         }
@@ -72,14 +75,14 @@
             await sleep(1000)
             setTimeout(() => {
                 startingSize += 50
+                imgSize = startingSize.toString()+'px' 
                 justice -= 50
-                justify = justice.toString()+'px'
-                console.log(justify)
-                imgSize = startingSize.toString()+'px'           
+                justify = justice.toString()+'px'         
                 document.getElementById('first').style.width = imgSize
                 document.getElementById('first').style.height = imgSize
                 document.getElementById('first').style.left = justify
             }, 1000)
+            
         }
     }
 
