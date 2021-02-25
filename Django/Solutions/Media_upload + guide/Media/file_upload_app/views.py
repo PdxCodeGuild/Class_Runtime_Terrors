@@ -10,6 +10,6 @@ def addImage(request):
     if request.method == 'GET':
         return render(request, 'pages/file.html', context)
     elif request.method == 'POST':
-        my_image = request.FILES['my_image']
-        Image.objects.create(my_image=my_image)
+        for afile in request.FILES.getlist('my_image'):
+            Image.objects.create(my_image=afile)
         return redirect('add_image')
