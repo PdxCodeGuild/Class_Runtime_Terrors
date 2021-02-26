@@ -1,0 +1,69 @@
+{% extends parent_template|default:'rockHound/base_rockHound.html' %}
+
+{% block title %}
+{{ block.super }} - {{ site.name }}
+{% endblock %}
+
+{% block content %}
+
+<div class="container" style="margin-bottom: 1rem;">
+    <div class="container left">
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+            <ul>
+                <li><a class="has-text-grey-light" href="{% url 'blog-post-list' %}" text-decoration="none;">Home</a></li>
+                <li><a class="has-text-grey-light" href="{% url 'rockhound-site-list' %}">Rockhound Sites</a></li>
+                <li class="has-text-grey-light is-active"><a href="#" aria-current="page">{{ site.name }}</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<article class="content is-medium">
+    <header>
+        <div class="notification is-primary">
+            <div>
+                <h2 class="title is-2 center" style="font-family: Lobster">{{ site.name|title }}</h2>
+    
+            </div>
+        </div>
+    </header>
+    <main class="notification is-dark" style="padding-top: 0rem;">
+        <div class="container" style="padding-top: 0rem;">
+            <div class="content notification is-primary is-light">
+                <div>
+                    <h5 class="title">Location: </h3>
+                    <p>
+                        {{ site.address }}
+                    </p>
+                    <br />
+                </div>
+                <div>
+                    <h5 class="title">Rocks found here: </h5>
+                    <p>
+                        {{ site.rocks }}
+                    </p>
+                    <br />
+                </div>
+                <div>
+                    <h5 class="title">Notes: </h5>
+                    <p>
+                        {{ site.notes|linebreaks }}
+                    </p>
+                    <br />
+                </div>
+                <div class="container">
+                    <div class="media center">
+                        <figure class="box media-left" style="border: 15px solid darkseagreen;">
+                            {% load easy_maps_tags %}
+                            {% easy_map address 400 300  10 %}
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </main>
+
+
+
+{% endblock %}

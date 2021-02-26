@@ -1,0 +1,64 @@
+{% extends parent_template|default:'shophound/base_shophound.html' %}
+
+{% block title %}
+{{ block.super }} - Add New Rock Shop
+{% endblock %}
+
+{% block content %}
+<div class="content">
+    <div>
+            <h1 class="title center" style="font-family: Lobster">Create a new Rock Shop</h1>
+            <hr>
+            <div class="">
+                <form class="box notification is-primary" action="{% url 'shophound-create' %}" method='POST'>
+                    {% csrf_token %}
+                    <div class="field">
+                        <label class="label" for='name'>Name</label>
+                        <div class="control">
+                            <input class="input" type='text' name='name'>
+                        </div>
+                    </div>
+                    
+                    <div class="field">
+                        <label class="label" for='slug'>Slug</label>
+                        <div class="control">
+                            <input class="input" type='text' name='slug'>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label class="label" for='address'>Address</label>
+                        <div class="control">
+                            <input class="input" type='text' name='address'>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label class="label" for='website'>Website</label>
+                        <div class="control">
+                            <input class="input" type='url' name='website'>
+                        </div>
+                    </div>
+                    
+                    <div class="field">
+                        <label class="label" for='hours'>Hours of Operation</label>
+                        <div class="control">
+                            <input class="input" type='text' name='hours'>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label class="label" for='description'>Description</label>
+                        <div class="control">
+                            <textarea class="textarea" type='text' name='description' placeholder="what to you shop here for">
+                                </textarea>
+                        </div>
+                    </div>
+
+                    <button class="button is-large is-fullwidth is-primary is-inverted" type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

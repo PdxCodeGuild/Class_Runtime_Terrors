@@ -1,0 +1,129 @@
+{% extends parent_template|default:'compendium/base_organizer.html' %}
+
+{% block title %}
+{{ block.super }} - Crystals
+{% endblock %}
+
+{% block content %}
+
+<div class="">
+        <div class="container left">
+            <nav class="breadcrumb" aria-label="breadcrumbs">
+                <ul>
+                    <li><a class="has-text-grey-light" href="{% url 'blog-post-list' %}">Home</a></li>
+                    <li class="has-text-grey-light is-active"><a href="#" aria-current="page">Crystals</a></li>
+                </ul>
+            </nav>
+        </div>
+</div>
+
+<div class="context" >
+    <div class="notification is-dark" style="padding-top: 1rem;">
+        <div class="columns">
+            <div class="column left" style="padding-bottom: 0.3rem;">
+                <h2 class="title is-2 has-text-grey-light" style="font-family: Lobster">Crystal List</h2>
+            </div>
+            <div class="column">
+                {% if perms.compendium.add_crystal %}
+                <span class="right"><a href="{% url 'compendium-crystal-create' %}">
+                    <span class="icon">
+                        <i class="fas fa-pen-fancy" style="font-size: 30px"></i>
+                    </span></a>
+                </span>
+                {% endif %}
+            </div>
+        </div>
+        
+        
+        <div class="notification is-primary is-light">
+            <div>
+                {% for crystal in crystal_list %}
+                <section class="section is-paddingless-horizontal" style="padding-top: 0; padding-bottom: 1rem;">
+                    <div class="containter grid notification is-primary">
+                        <article class="media center">
+                            
+                                <figure class="media-left">
+                                    <figure class="center image is-128x128">
+                                        {% if crystal.image %}
+                                        <img class="is-rounded" src="{{ crystal.image.url }}" alt="{{ crystal.name }}">
+                                        {% endif %}
+                                    </figure>
+                                </figure>
+                            
+                            <div class="media-content">
+                                <div class="content columns">
+                                    <div class="column left">
+                                        <a class="title" style="font-family: Lobster" href="{{ crystal.get_absolute_url }}">
+                                        {{ crystal.name }}</a>
+                                    </div>
+                                    <div class="column right">
+                                        {% if perms.compendium.add_crystal %}
+                                        <span><a href="{{ crystal.get_update_url }}">
+                                        <span class="icon">
+                                            <i class="fas fa-pen-nib"></i>
+                                        </span></a>
+                                        <span><a href="{{ crystal.get_delete_url }}">
+                                            <span class="icon">
+                                                <i class="fas fa-trash-alt"></i>
+                                            </span></a>
+                                        </span>
+                                        {% endif %}
+
+                                        
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                {% empty %}
+                    <em>No Crystals Available.</em>
+                {% endfor %}
+                {% if is_paginated %}
+                <div class="content columns">
+                    <div class="column left">
+                        {% if crystal_list.has_previous %}
+                        <span class="icon">
+                            <a href="?page={{ crystal_list.previous_page_number }}">
+                                <i class="fas fa-2x fa-angle-left"></i>
+                            </a>
+                        </span>  
+                        {% endif %}
+                    </div>
+                    <div class="column center">
+                        <p>
+                            Page {{ crystal_list.number }}
+                        of {{ paginator.num_pages }}
+                        </p>
+                    </div>
+                    <div class="column right">
+                        {% if crystal_list.has_next %}
+                        <span class="icon">
+                            <a href="{{ next_page_url }}">
+                                <i class="fas fa-2x fa-angle-right"></i>
+                            </a>
+                        </span>
+                        {% endif %}
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+    
+
+    
+            
+
+    
+
+
+
+
+
+{% endblock %}
