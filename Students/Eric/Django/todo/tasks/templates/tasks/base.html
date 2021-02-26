@@ -1,0 +1,39 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="{%static 'css/styles.css'%}">  
+	<title>Todo</title>
+</head>
+<body>
+	<div class="center-column">
+
+		<form method="POST" action="/">
+			{% csrf_token %}
+			{{form.title}}
+			<input class="btn btn-info" type="submit" name="Create Task">
+		</form>
+	
+		<div class="todo-list">
+	
+		{% for task in tasks %}
+			<div class="item-row">
+				<a class="btn btn-sm btn-info" href="{% url 'update_task' task.id %}">Update</a>
+				<a class="btn btn-sm btn-danger" href="{% url 'delete' task.id %}">Delete</a>
+	
+				{% if task.complete == True %}
+				<strike>{{task}}</strike>
+				{% else %}
+				<span>{{task}}</span>
+				{% endif %}
+			</div>
+		{% endfor %}
+		</div>
+	</div>
+</body>
+</html>
