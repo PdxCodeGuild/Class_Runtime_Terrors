@@ -1,0 +1,34 @@
+{% extends "base.html"%}
+
+{% block content %}
+
+<h1 class='page-title center text-center mb-5 mt-5'>Your Collections</h1>
+
+<div class='container mt-5 albums-super-container'>
+
+  <div class='container d-flex album-container'>
+
+    {%for pics in albums%}
+
+    <div class="card image-card-albums">
+      <a href="{%url 'collection-details' pics.id %}" class='album-link'>
+        <p class='album-title'>{{pics.title}}</p>
+      </a>
+      <a href="{%url 'collection-details' pics.id %}"><img src="{{pics.album_cover.url}}" class="card-img-top" alt="..."></a>
+      <form action="{%url 'delete_album' pics.id %}" method='POST'>
+        {%csrf_token%}
+        <button type="submit" value="submit" style='border:none' class="delete-album">✖</button>
+      </form>
+    </div>
+
+    {%endfor%}
+
+  </div>
+
+  <div class='d-flex flex-column justify-content-center buttons-menu'>
+    <a href="{%url 'create'%}"><button type="button" class=" add-collection dashboard-button">Add a Collection</button></a>
+  </div>
+
+  {% endblock content %}
+
+</div>

@@ -1,0 +1,248 @@
+
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #014550;
+  padding: 2px;
+}
+.nav_left{ 
+  display: flex;
+  flex-direction: row;
+}
+.nav_right{ 
+  display: flex;
+  flex-direction: row-reverse;
+}
+.home_buttons {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #00676D;
+  padding: 3px;
+  margin-top: 3px;
+  
+}
+/*------------------------------HOME PAGE--------------------*/
+.greeting {
+  color: rgb(32, 19, 1);
+  font-family: 'Roboto Mono', monospace;
+  color: #e5ffdf;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: #91A0BB;
+  margin-top: 3px;
+}
+.hedger_container {
+  background-color: #91A0BB;;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-family: 'Roboto Mono', monospace;
+}
+.hEDGEr {
+  color: rgb(32, 19, 1);
+  font-size: 53pt;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 600;
+  background-color: #e5ffdf;
+  width: 253px;
+  height: 253px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 3px;
+  border: inset;
+  margin-bottom: 25px;
+}
+
+/*------------------------------LOGIN PAGE--------------------*/
+.page_login {
+  background-color:  #91A0BB;
+  color: #e5ffdf;
+  font-family: 'Roboto Mono', monospace;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 3px;
+}
+.login_contianer {
+  background-color:#91A0BB;;
+  font-family: 'Roboto Mono', monospace;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.login_inputs {
+  background-color: #e5ffdf;
+  font-family: 'Roboto Mono', monospace;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 253px;
+  height: 253px;
+  margin-top: 3px;
+  border: solid;
+  margin-bottom: 25px;
+}
+.username_container {
+  font-family: 'Roboto Mono', monospace;
+  margin-left: 45px;
+}
+.submit {
+  margin: 5px;
+  margin-left: 68px;
+  margin-right: 68px;
+}
+.bottom {
+  background-color: #00676D;
+  width: 100%;
+  height: 25px;
+  margin-top: 3px;
+}
+/*------------------------------DASHBOARD/REBALANCE PAGE--------------------*/
+.dashboard {
+  background-color: #e5ffdf;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: 'Roboto Mono', monospace;
+  margin-top: 3px;
+}
+
+.dashboard_user {
+  background-color: #00676D;
+  color: #e5ffdf;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-family: 'Roboto Mono', monospace;
+  margin-top: 3px;
+}
+.dashboard_box_container {
+  background-color: #00676D;
+  font-family: 'Roboto Mono', monospace;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.dashbaord_box{
+  color: rgb(32, 19, 1);
+  background-color: #e5ffdf;
+  font-family: 'Roboto Mono', monospace;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 32%;
+  height: 420px;
+  margin-top: 3px;
+  border: inset;
+  margin-bottom: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.dashbaord_box_left{
+  color: rgb(32, 19, 1);
+  background-color: #e5ffdf;
+  font-family: 'Roboto Mono', monospace;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 32%;
+  height: 420px;
+  margin-top: 3px;
+  border: inset;
+  margin-bottom: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.BTC_balance{
+  height: 45%; 
+  width: 95%px;
+  border: #F79400;
+  border-radius: 1%;
+}
+
+.PAX_balance{
+  height: 45%; 
+  width: 95%px;
+  border: #D0B13E;
+  border-radius: 1%;
+}
+.dashbaord_box_center{
+  color: rgb(32, 19, 1);
+  background-color: #e5ffdf;
+  font-family: 'Roboto Mono', monospace;
+  display: flex;
+  flex-direction: column;
+  width: 32%;
+  height: 420px;
+  margin-top: 3px;
+  border: inset;
+  margin-bottom: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.account_pie{
+  margin-top: 5px;
+  height: 415px;
+  width: 320px;
+}
+.rebalance_button{
+  font-family: 'Roboto Mono', monospace;
+  font-size: 22.5px;
+  position: relative;
+  top: 1039%;
+  right: -35%;
+  text-align: center;
+  cursor: pointer;
+  transition-duration: 0.15s;
+  
+} 
+table {
+  background-color: #91A0BB;
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 95%;
+  height: 95%;
+  border: 1px solid #6D78AD;
+  margin: 2px;
+}
+td, th {
+  border: 1px solid #6D78AD;
+  padding: 8px;
+}
+th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #014550;
+  color: white;
+}
+tr:nth-child(odd){background-color: #e5ffdf;}
+
+tr:hover {
+  background-color:#6D78AD;
+  border: #e5ffdf;
+}
+/* -----------------------------------------------Chart Row -------------------------------------------------- */
+
+.account_balance_chart{
+  background-color: #00676D;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 250px;
+ }
+
+ .account_chart{
+   border: inset;
+   height: 95%;
+   width: 95%;
+ }

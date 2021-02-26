@@ -1,0 +1,32 @@
+{% extends 'shop/base.html' %}
+{% load thumbnail %}
+{% load static %}
+
+{% block title %}{{ product.name }}{% endblock %}
+
+{% block content %}
+<div class="product_detail">
+    <div class="detail-card">
+        {% thumbnail product.image "200x200" as im %}
+        <div class="detail-img-box">
+            <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" class="detail-image">
+        </div>    
+        {% endthumbnail %}
+        <h1 class="detail-product-link">{{ product.name }}</h1>
+        <h2 class="variety-title">
+            Variety: <a href="{{ product.variety.get_variety_url }}">{{ product.variety }}</a> 
+        </h2>
+        <h2 class="variety-title">
+            Category: <a href="{{ product.category.get_absolute_url }}">{{ product.category }}</a>
+            <p>THC: {{ product.thc }}% <br> CBD: {{ product.cbd }}%</p>
+        </h2>
+    </div>
+    <p class="price">Price: ${{ product.price }}</p>
+    <form action="{% url 'cart:cart_add' product.id %}" method="POST">
+        {{ cart_product_form }}
+        {% csrf_token %}
+        <input type="submit" value="Add To Cart">
+    </form>
+    {{ product.description | linebreaks }}
+</div>
+{% endblock %}

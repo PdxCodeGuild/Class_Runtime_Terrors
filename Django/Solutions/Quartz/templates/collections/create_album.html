@@ -1,0 +1,21 @@
+{% extends "base.html"%}
+
+{% block content %}
+
+<div class= 'container mt-5'>
+  <h1 class = 'page-title text-center'>Create Your Collection</h1>
+
+  <div class = 'create-album-container'>
+      <form  action="{% url 'create' %}"method='POST' enctype = 'multipart/form-data' class = 'd-flex flex-column' >
+        {%csrf_token%}
+          <h3 class= 'name-create-collection border-bottom'>Title</h3>
+          <input type="text" name="title" class= 'form-album-title'required>
+          <input type="file" name="album_cover" class= 'form-album-image' accept="image/*" required >
+          <button type="submit" value="submit" class="btn btn-dark dashboard-button mt-5 mb-5">Submit</button>
+      </form>   
+    </div>
+
+  </div>
+
+
+{% endblock content %}

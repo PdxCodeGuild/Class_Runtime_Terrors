@@ -1,0 +1,34 @@
+body{
+    padding:0px;
+    margin:0px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 30px;
+    background:hsla(0, 6%, 90%, 0.898);
+
+    }
+.wrapper {
+    display: grid;
+    grid-gap: 20px;
+    margin: 0 auto;  
+    margin-bottom: 10px;
+      }
+
+h1{
+    text-align: center;
+}
+
+#mapid{
+    margin: 0 auto;  
+    margin-bottom: 10px;
+    height: 50vh; 
+    width: 50vw;  
+}
+
+/* #login{
+    font-size: 25px !important;
+} */
+
+.add{
+    font-size: 25px !important;
+}
+

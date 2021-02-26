@@ -3,15 +3,16 @@ from django.http import HttpResponse
 from .models import Todo
 from django.contrib.auth.decorators import login_required
 
-##Rest
 
 from rest_framework import viewsets
+from rest_framework.permissions import IsAuthenticated
 from .serializers import TodoSerializer
-from rest_framework import generics
 
+##alternative option with permissions
 
-class TodoView(generics.ListAPIView):
+class TodoView(viewsets.ModelViewSet):
     serializer_class = TodoSerializer
+    permission_classes = [IsAuthenticated]
     def get_queryset(self):
         user = self.request.user
         return Todo.objects.filter(user=user)

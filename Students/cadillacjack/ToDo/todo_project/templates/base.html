@@ -1,0 +1,23 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/todo.css' %}">
+    <title>Welcome Home Slice</title>
+</head>
+<body>
+    {% if user.is_authenticated %}
+        <p>Welcome {{ user.username }}</p>
+        <a href="{% url 'logout' %}">Logout</a>
+    {% else %}
+        <p>You must be logged in to veiw this page.</p>
+        <a href="{% url 'login' %}">Login</a>
+        <a href="{% url 'register' %}">Register</a>
+    {% endif %}
+    {% block content %}
+    {% endblock %}
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>
