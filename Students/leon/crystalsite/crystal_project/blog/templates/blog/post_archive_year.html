@@ -1,0 +1,117 @@
+{% extends parent_template|default:'blog/base_blog.html' %}
+
+{% block title %}
+{{ block.super }} - {{ year|date:"Y" }} Posts
+{% endblock %}
+
+{% block content %}
+
+<div class="">
+    <div class="container left">
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+            <ul>
+                <li><a class="has-text-grey-light" href="{% url 'blog-post-list' %}" text-decoration="none;">Home</a></li>
+                <li class="has-text-grey-light is-active"><a href="#" aria-current="page">{{ year|date:"Y" }} Posts</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<div class="columns">
+    <div class="column left" style="padding-bottom: 0.3rem;">
+        <h2 class="title is-2 has-text-grey-light" style="font-family: Lobster">All Posts for {{ year|date:"Y" }}</h2>
+    </div>
+    <div class="column">
+        {% if perms.blog.add_post %}
+        <span class="right"><a href="{% url 'blog-post-create' %}">
+            <span class="icon">
+                <i class="fas fa-pen-fancy" style="font-size: 30px"></i>
+            </span></a>
+        </span>
+        {% endif %}
+    </div>
+</div>
+
+
+<div class="content">
+    <div class="notification is-dark">
+        
+        {% for post in post_list %}
+            <article>
+                <header>
+                    <div class="columns notification is-primary is-paddingless">
+                        <div class="column left">
+                            <h2 class="title"><a href="{{ post.get_absolute_url }}">
+                                {{ post.title|title}}
+                            </a></h2>
+                            
+                        </div>
+                        <div class="column center">
+                            <p class="subtitle is-6">
+                                Written on
+                                <time datetime="{{ post.pub_date|date:'Y-m-d' }}">
+                                    {{ post.pub_date|date:"l, F j, Y" }}
+                                </time>
+                            </p>
+                
+                        </div>
+                        <div class="column">
+                            {% if perms.blog.add_post %}
+                            <span class="right"><a href="{{ post.get_update_url }}">
+                                <span class="icon">
+                                    <i class="fas fa-pen-nib"></i>
+                                </span></a>
+                            <span class="right"><a href="{{ post.get_delete_url }}">
+                                <span class="icon">
+                                    <i class="fas fa-trash-alt"></i>
+                                </span></a>
+                            </span>
+                            {% endif %}
+                        </div>
+                    </div>
+                </header>
+                <article class="media notification is-primary is-light">
+                    <p>{{ post.text|truncatewords:20 }}</p>
+                    <p>
+                        <a href="{{ post.get_absolute_url }}">
+                            Read more&hellip;
+                        </a>
+                    </p>
+                </article>
+            </article>
+            <br/>
+        {% endfor %}
+
+        <footer>
+            <div class="notification is-primary is-light">
+                <h3 class="title">Archives by Month</h3>
+                <ul>
+                    {% for m in date_list %}
+                        <li>
+                            <a href="{% url 'blog-post-archive-month' m|date:'Y' m|date:'m' %}">
+                                {{ m|date:"F Y" }}
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            
+            {% if previous_year %}
+                <ul>
+            
+                    <li>
+                        <a href="{% url 'blog-post-archive-year' previous_year|date:'Y' %}">
+                            Post from {{ previous_year|date:"Y"}}
+                        </a>
+                    </li>
+            {% endif %}
+            {% if next_year %}
+                <li>
+                    <a href="{% url 'blog-post-archive-year' next_year|date:'Y' %}">
+                        Post from {{ next_year|date:"Y"}}
+                    </a>
+                </li>
+            </ul>
+            {% endif %}
+            </div>
+        </footer>
+{% endblock %}

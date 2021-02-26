@@ -1,0 +1,187 @@
+a:link {
+    text-decoration: none;
+}
+
+#ex1 {
+    display: table;
+    margin:20px auto;
+    text-align: center;
+    color: black;
+    border: 1px solid black;
+    padding: 5px 30px;
+}
+
+#ex1 [shadow] {
+    filter: drop-shadow(0 0 25px rgb(0,50,50));
+    padding: 15px 0;
+}
+
+#ex2 {    
+    width: 100%;
+    margin:20px auto;
+    color:white;
+    background-color: black;
+}
+
+#ex2 > b {
+    display: block;
+    font-size: 24px;
+    text-align: center;
+}
+  
+#ex2 > div {
+    display: inline-block;
+    vertical-align: top;
+}
+
+#ex2 > div > div {
+    border: 1px solid rgba(255,255,255,.5);
+    margin: 1%;
+    padding:1%;
+}
+
+#ex2 > div > div > span {
+    position:absolute;
+    font-size:32px;
+    color:rgba(255,255,255,.5);
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+#ex2 > div > div > div {
+    font-size:16px;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+#ex2 > div > div > svg {
+    width: 95%;
+    display: block;
+    margin: 10px auto 0 auto;
+}
+
+.lobster {
+    font-family: 'Lobster';
+}
+
+.center {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.center-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.top    { 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; 
+
+}
+
+.right  { 
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.bottom { 
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.left   { 
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.single-spaced, .single-spaced * {
+    line-height: 1;
+}  
+
+.grid {
+    display: grid;
+    grid-template-columns: 
+        [xl-start] 1fr 1.5rem [md-start] minmax(0, 624px) [md-end] 1.5rem 1fr [xl-end];
+}
+
+.grid * { grid-column: md; }
+
+.grid-xl { grid-column: xl; }
+
+.is-paddingless-horizontal {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+@media (max-width: 672px) {
+    :root {
+        font-size: 75%
+    }
+  .sidebar {
+    display: none;
+  }
+  .menu-toggle {
+    display: initial; /* display the toggle, previously hidden */
+  }
+}
+
+@media (max-width: 1024px) {
+    .desktop {
+        display: none;
+    }
+}
+
+.topnav {
+    overflow: hidden;
+    background-color: #333;
+    position: relative;
+}
+
+.topnav #myLinks {
+    display: none;
+}
+
+.topnav a {
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+}
+
+.topnav a.icon {
+    background: black;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+
+
+
+
+
+
+

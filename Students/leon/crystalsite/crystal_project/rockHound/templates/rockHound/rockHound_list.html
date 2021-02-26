@@ -1,0 +1,54 @@
+{% extends parent_template|default:'rockHound/base_rockHound.html' %}
+
+{% block title %}
+{{ block.super }} - Rockhound
+{% endblock %}
+
+{% block content %}
+
+<div class="">
+    <div class="container left">
+        <nav class="breadcrumb" aria-label="breadcrumbs" style="margin-bottom: 1rem;">
+            <ul>
+                <li><a class="has-text-grey-light" href="{% url 'blog-post-list' %}" text-decoration="none;">Home</a></li>
+                <li class="has-text-grey-light is-active"><a href="#" aria-current="page">Rockhound Sites</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<div class="columns">
+    <div class="column left" style="padding-bottom: 0.3rem;">
+        <h2 class="title is-2 has-text-grey-light" style="font-family: Lobster">All Rockhound Sites</h2>
+    </div>
+    <div class="column">
+        {% if perms.shophound.add_hound_site %}
+        <span class="right"><a href="{% url 'rockhound-create' %}">
+            <span class="icon">
+                <i class="fas fa-pen-fancy" style="font-size: 30px"></i>
+            </span></a>
+        </span>
+        {% endif %}
+    </div>
+</div>
+
+<div class="content">
+    <div class="notification is-dark">
+        <div class="notification is-primary is-light">
+            <div>
+                {% for site in sites %}
+                <div class="columns notification is-primary">
+                    <div class="column center">
+                        <a class="title" href="{{ site.get_absolute_url }}">
+                            {{ site.name|title}}
+                        </a>
+                    </div>
+                </div>
+                <br />
+                {% empty %}
+                    <li><em>There are currently no Sites available.</em></li>
+                {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

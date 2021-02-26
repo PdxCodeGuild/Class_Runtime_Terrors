@@ -11,6 +11,7 @@
             <div class = 'dashbaord_box_center'>
               <div id="account_pie"></div>
               <a href="{%url 'rebalance' %}"><button type="button" class= 'rebalance_button'> rebalance </button></a></div>
+<<<<<<< HEAD
             <div class = 'dashbaord_box'>
               <table class = 'table_api_resonse'> TABLE showing rebalances
                 <tr>
@@ -22,6 +23,16 @@
                   <td>buybuybuy</td>
                   <td>111111111</td>
                 <tr>
+=======
+            <div class = 'dashbaord_box' style="overflow-y:auto;">
+              <table class = 'table_api_resonse' id = 'table_api_resonse'> TABLE showing rebalances
+                <tr>
+                  <th>  BTC</th>
+                  <th>  GOLD|BTC</th>
+                  <th>API Response</th>
+                </tr>
+                <tr id = 'table_api_resonse'>
+>>>>>>> 30d074996118eabf39297f0c7f6137047f4132b6
                 </tr>
               </table>
             </div>
@@ -33,6 +44,7 @@
         
     </div>
     
+<<<<<<< HEAD
 <script> 
   const balances = {{serialize_balances|safe}}
 ///////////////////////////////////////////////////////////    PIE CHART
@@ -171,6 +183,11 @@ BTC_balance = reverse['BTC_balance']
   };
   var chart_line_BTC_BAL = new CanvasJS.Chart("chart_line_BTC_BAL", options);
   chart_line_BTC_BAL.render();
+=======
+<script > 
+  const balances = {{serialize_balances|safe}}
+
+>>>>>>> 30d074996118eabf39297f0c7f6137047f4132b6
 </script>
   {% empty %}
   {% endfor %}
