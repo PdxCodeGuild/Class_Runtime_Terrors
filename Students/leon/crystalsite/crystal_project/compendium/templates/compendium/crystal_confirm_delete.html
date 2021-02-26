@@ -1,0 +1,21 @@
+{% extends parent_template|default:'compendium/base_organizer.html' %}
+
+{% block title %}
+{{ block.super }} - Delete Crystal
+{% endblock %}
+
+{% block content %}
+<div class="content">
+    <div class="notification is-primary">
+        <form action="{{ crystal.get_delete_url }}" method="POST">
+            {% csrf_token %}
+            <p>
+                Are you sure you want to delete crystal {{ crystal.name }}?
+            </p>
+            <a class="button is-large is-fullwidth is-primary is-inverted" href="{{ crystal.get_absolute_url }}">Cancel</a>
+            <br />
+            <button class="button is-large is-fullwidth is-danger is-inverted" type="submit">Delete Crystal</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

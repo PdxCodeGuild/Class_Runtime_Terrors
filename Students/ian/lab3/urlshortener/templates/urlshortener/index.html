@@ -1,0 +1,14 @@
+<html>
+
+<body>
+    <form action="/" method="POST"> {% csrf_token %}
+        <label>
+            url: <input type="text" name="uurl" />
+        </label>
+        <button type="submit"> make url </button>
+    </form>
+    <a href="/get/{{short_url}}">{{short_url}}</a>
+    {{long_url}}
+</body>
+
+</html>

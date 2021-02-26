@@ -1,0 +1,55 @@
+{% extends parent_template|default:'rockHound/base_rockHound.html' %}
+
+{% block title %}
+{{ block.super }} - Add New Rockhound Sites
+{% endblock %}
+
+{% block content %}
+<div class="content">
+    <div>
+            <h1 class="title center" style="font-family: Lobster">Create a new Rockhound Site</h1>
+            <hr>
+                <form class="box notification is-primary" action="{% url 'rockhound-create' %}" method='POST'>
+                    {% csrf_token %}
+                    <div class="field">
+                        <label class="label" for='name'>Name</label>
+                        <div class="control">
+                            <input class="input" type='text' name='name'>
+                        </div>
+                    </div>
+                    
+                    <div class="field">
+                        <label class="label" for='slug'>Slug</label>
+                        <div class="control">
+                            <input class="input" type='text' name='slug'>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label class="label" for='address'>Address</label>
+                        <div class="control">
+                            <input class="input" type='text' name='address'>
+                        </div>
+                    </div>
+                    
+                    <div class="field">
+                        <label class="label" for='address'>List of rocks found here</label>
+                        <div class="control">
+                            <input class="input" type='text' name='rocks'>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label class="label" for='description'>Notes (what to bring, what to expect, etc)</label>
+                        <div class="control">
+                            <textarea class="textarea" type='text' name='notes' placeholder="what to you shop here for">
+                                </textarea>
+                        </div>
+                    </div>
+
+                    <button class="button is-large is-fullwidth is-primary is-inverted" type="submit">Submit</button>
+                </form>
+        </div>
+    </div>
+
+{% endblock %}

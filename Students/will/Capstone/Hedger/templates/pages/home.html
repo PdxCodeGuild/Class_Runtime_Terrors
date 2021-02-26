@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class= 'greeting'> Welcome to </div>
+    <div class='hedger_container'>
+        <div class = 'hEDGEr'> hEDGEr </div>
+    </div>
+    <div class = 'home_buttons'>
+        <a href="{%url 'signup' %}"><button type="button" class= 'signup_button'>Register</button></a>
+        <a href="{%url 'login' %}"><button type="button" class= 'login_button'>Login</button></a>
+    </div>
+    
+    
+{% endblock %}
+

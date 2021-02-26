@@ -1,0 +1,54 @@
+{% extends parent_template|default:'shophound/base_shophound.html' %}
+
+{% block title %}
+{{ block.super }} - Rock Shops
+{% endblock %}
+
+{% block content %}
+
+<div class="">
+    <div class="container left">
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+            <ul>
+                <li><a class="has-text-grey-light" href="{% url 'blog-post-list' %}" text-decoration="none;">Home</a></li>
+                <li class="has-text-grey-light is-active"><a href="#" aria-current="page">Rock Shops</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<div class="columns">
+    <div class="column left" style="padding-bottom: 0.3rem;">
+        <h2 class="title is-2 has-text-grey-light" style="font-family: Lobster">All Rock Shops</h2>
+    </div>
+    <div class="column">
+        {% if perms.shophound.add_rock_shop %}
+        <span class="right"><a href="{% url 'shophound-create' %}">
+            <span class="icon">
+                <i class="fas fa-pen-fancy" style="font-size: 30px"></i>
+            </span></a>
+        </span>
+        {% endif %}
+    </div>
+</div>
+
+<div class="content">
+    <div class="notification is-dark">
+        <div class="notification is-primary is-light">
+            <div>
+                {% for shop in shops %}
+                <div class="columns notification is-primary">
+                    <div class="column is-four-fifths center">
+                        <a class="title" href="{{ shop.get_absolute_url }}">
+                            {{ shop.name|title}}
+                        </a>
+                    </div>
+                </div>
+                <br />
+                {% empty %}
+                    <li><em>There are currently no Shops available.</em></li>
+                {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

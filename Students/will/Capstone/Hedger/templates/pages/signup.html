@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form action="" method="POST">
+    <div id='author-form' class="form-group">
+        {% csrf_token %}
+        <label for="username">Username<br></label>
+        <input class="form-control" type="text" name="username"><br>
+        <label for="password">Password<br></label>
+        <input class="form-control" type="password" name="password"><br>
+        <label for="email">Email<br></label>
+        <input class="form-control" type="text" name="email"><br>
+        <button type="submit" >Submit</button>
+    </div>
+</form>
+{% endblock %}
