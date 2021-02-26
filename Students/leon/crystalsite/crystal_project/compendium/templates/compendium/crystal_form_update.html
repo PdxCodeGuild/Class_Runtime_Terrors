@@ -1,0 +1,17 @@
+{% extends parent_template|default:'compendium/base_organizer.html' %}
+
+{% block title %}
+{{ block.super }} - Update Crystal
+{% endblock %}
+
+{% block content %}
+<div class="content">
+    <div class="notification is-primary">
+        <form action="{{ crystal.get_update_url }}" method="POST" enctype='multipart/form-data'>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="button is-large is-fullwidth is-primary is-inverted" type="submit">Update Crystal</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

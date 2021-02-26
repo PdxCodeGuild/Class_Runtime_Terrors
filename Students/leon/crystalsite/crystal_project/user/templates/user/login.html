@@ -1,0 +1,30 @@
+{% extends parent_template|default:'user/base_user.html' %}
+
+{% block title %}
+{{ block.super }} - Login
+{% endblock %}
+
+{% block content %}
+<div class="content">
+    <div>
+        <form class="box notification is-primary" action="" method="POST">
+            {% csrf_token %}
+            <div class="field">
+                <label class="label" for='username'>Username:</label>
+                <div class="control">
+                    <input class="input" type='text' name='username' id="username">
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label" for='password'>Password:</label>
+                <div class="control">
+                    <input class="input" type='password' name='password' id="password">
+                </div>
+            </div>
+            
+            <button class="button is-large is-fullwidth is-primary is-inverted" type="submit">Submit</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

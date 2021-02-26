@@ -1,0 +1,18 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django = "*"
+pillow = "*"
+django-cleanup = "*"
+sorl-thumbnail = "*"
+python-memcached = "*"
+django-easy-maps = "*"
+python-decouple = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.6"

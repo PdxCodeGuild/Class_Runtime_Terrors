@@ -1,0 +1,88 @@
+{% extends parent_template|default:'compendium/base_organizer.html' %}
+{% load thumbnail %}
+{% block title %}
+{{ block.super }} - {{ crystal.name }}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="container" style="margin-bottom: 1.5rem;">
+    <div class="container left">
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+            <ul>
+                <li><a class="has-text-grey-light" href="{% url 'blog-post-list' %}">Home</a></li>
+                <li><a class="has-text-grey-light" href="{% url 'compendium-crystal-list' %}">Crystals</a></li>
+                <li class="has-text-grey-light is-active"><a href="#" aria-current="page">{{ crystal.name }}</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<article class="content">
+    <div class="columns notification is-primary">
+        
+        <div class="column is-four-fifths center">
+            <h2 class="title is-2" style="font-family: Lobster">{{ crystal.name }}</h2>
+        </div>
+        <div class="column right">
+            {% if perms.compendium.add_crystal %}
+            <span><a href="{{ crystal.get_update_url }}">
+                <span class="icon">
+                    <i class="fas fa-pen-nib"></i>
+                </span></a>
+            <span><a href="{{ crystal.get_delete_url }}">
+                <span class="icon">
+                    <i class="fas fa-trash-alt"></i>
+                </span></a>
+            </span>
+            {% endif %}
+        </div>        
+    </div>
+</article>
+
+<article>
+    <div class="content columns">
+        <div class="column is-half">
+            <p>
+                placeholder text
+                {{ crystal.description|linebreaks }}
+            </p>
+        </div>
+
+        <div class="media column">
+            <figure class="media-right">
+                <figure class="image">
+                    {% if crystal.image %}
+                        {% thumbnail crystal.image "480x480" as im %}
+                            <img class="desktop" src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}"  alt="..."> 
+                        {% endthumbnail %}
+                    {% endif %}
+                </figure>
+            </figure>
+        </div>
+
+    </div>
+</article>
+<footer class="content">
+    <div class="notification is-primary is-light">
+        {% if crystal.blog_posts.all %}
+            <section>
+                <h3 class="title">Blog Post{{ crystal.blog_posts.all|pluralize }}</h3>
+                <ul>
+                    {% for post in crystal.blog_posts.all %}
+                        <li>
+                            <a href="{{ post.get_absolute_url }}">
+                                {{ post.title|title }}
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </section>
+        {% endif %}
+    </div>
+
+</footer>
+
+
+{% endblock %}

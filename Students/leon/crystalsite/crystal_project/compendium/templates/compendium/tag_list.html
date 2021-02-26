@@ -1,0 +1,100 @@
+{% extends parent_template|default:'compendium/base_organizer.html' %}
+
+{% block title %}
+{{ block.super }} - Tags
+{% endblock %}
+
+{% block content %}
+
+<div class="">
+    <div class="container left">
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+            <ul>
+                <li><a class="has-text-grey-light" href="{% url 'blog-post-list' %}" text-decoration="none;">Home</a></li>
+                <li class="has-text-grey-light is-active"><a href="#" aria-current="page">Tags</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<div class="columns">
+    <div class="column left" style="padding-bottom: 0.3rem;">
+        <h2 class="title is-2 has-text-grey-light" style="font-family: Lobster">All Tags</h2>
+    </div>
+    <div class="column">
+        {% if perms.blog.add_tag %}
+        <span class="right"><a href="{% url 'compendium-tag-create' %}">
+            <span class="icon">
+                <i class="fas fa-pen-fancy" style="font-size: 30px"></i>
+            </span></a>
+        </span>
+        {% endif %}
+    </div>
+</div>
+
+<div class="content">
+    <div class="notification is-dark">
+    
+        <div class="notification is-primary is-light">
+            <div>
+                {% for tag in tag_list %}
+                <div class="columns notification is-primary">
+                    <div class="column is-four-fifths center">
+                        <a class="title" href="{{ tag.get_absolute_url }} ">
+                            {{ tag.name|title}}
+                        </a>
+                    </div>
+                    <div class="column right">
+                        {% if perms.compendium.add_tag %}
+                        <span><a href="{{ tag.get_update_url }}">
+                            <span class="icon">
+                                <i class="fas fa-pen-nib"></i>
+                            </span></a>
+                        <span><a href="{{ tag.get_delete_url }}">
+                            <span class="icon">
+                                <i class="fas fa-trash-alt"></i>
+                            </span></a>
+                        </span>
+                        {% endif %}
+                    </div>
+                </div>
+                <br />
+                {% empty %}
+                    <li><em>There are currently no Tags available.</em></li>
+                {% endfor %}
+
+                {% if is_paginated %}
+                <div class="content columns">
+                    <div class="column left">
+                        {% if previous_page_url %}
+                            <span class="icon">
+                                <a href="?page={{ tag_list.previous_page_number }}">
+                                    <i class="fas fa-2x fa-angle-left"></i>
+                                </a>
+                            </span>   
+                        {% endif %}
+                    </div>
+                    <div class="column center">
+                        <p>
+                            Page {{ tag_list.number }}
+                            of {{ paginator.num_pages }}
+                        </p>  
+                    </div>
+                    <div class="column right">
+                        {% if tag_list.has_next %}
+                            <span class="icon">
+                                <a href="{{ next_page_url }}">
+                                    <i class="fas fa-2x fa-angle-right"></i>
+                                </a>
+                            </span>
+                        {% endif %}
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+

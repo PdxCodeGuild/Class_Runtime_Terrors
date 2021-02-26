@@ -1,0 +1,79 @@
+{% extends parent_template|default:'shophound/base_shophound.html' %}
+
+{% block title %}
+{{ block.super }} - {{ shop.name }}
+{% endblock %}
+
+{% block content %}
+
+<div class="">
+    <div class="container left">
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+            <ul>
+                <li><a class="has-text-grey-light" href="{% url 'blog-post-list' %}" text-decoration="none;">Home</a></li>
+                <li><a class="has-text-grey-light" href="{% url 'shophound-shop-list' %}">Rock Shops</a></li>
+                <li class="has-text-grey-light is-active"><a href="#" aria-current="page">{{ shop.name }}</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<section class="section" style="padding: 1.5rem; padding-top: 0rem;">
+ 
+</section>
+
+<article class="notification is-dark">
+    <header>
+        <div class="notification is-primary">
+            <div class="center">
+                <h2 class="title is-2" style="font-family: Lobster">{{ shop.name|title }}</h2>
+            </div>
+        </div>
+    </header>
+    <main class="notification is-dark" style="padding-top: 0rem;">
+        <div class="content notification is-primary is-light">
+            <div>
+                <h5 class="title">Location: </h3>
+                <p>
+                    {{ shop.address }}
+                </p>
+                <br />
+            </div>
+            <div>
+                <h5 class="title">Website: </h5>
+                <p>
+                    <a href="{{ website }}" target="_blank" rel="noopener noreferrer" >{{ website }}</a>
+                </p>
+                <br />
+            </div>
+            <div>
+                <h5 class="title">Operating Hours: </h5>
+                <p>
+                    {{ shop.hours }}
+                </p>
+                <br />
+            </div>
+            <div>
+                <h5 class="title">Description: </h5>
+                <p>
+                    {{ shop.description|linebreaks }}
+                </p>
+                <br />
+            </div>
+            
+            <div class="container">
+                <div class="media center" >
+                    <figure class="box media-left" style="border: 15px solid darkseagreen;">
+                        {% load easy_maps_tags %}
+                        {% easy_map address 400 300 18 %}
+                    </figure>
+                </div>
+            </div>
+            
+            
+        </div>
+    </main>
+
+
+
+{% endblock %}
