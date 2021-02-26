@@ -1,0 +1,20 @@
+{%extends 'base.html'%}
+{%block content%}
+<a href="{% url 'add_post'%}">Add a blog post</a>
+
+
+{%for blog in blogs%}
+<p>Title : {{blog.title}}</p>
+<p>id: {{blog.id}}</p>
+<p>Description: {{blog.text}}</p>
+<p>Pub Date: {{blog.pub_date}}</p>
+<p>Pub Date: {{blog.id}}</p>
+{% for img in blog.image_set.all%}
+<img src="{{ img.image.url }}">
+{% endfor %}
+<br/>
+
+<a href="http://localhost:8000/details/{{blog.id}}">See post details</a>
+{%endfor%}
+
+{%endblock%}

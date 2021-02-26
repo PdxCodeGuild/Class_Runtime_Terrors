@@ -1,0 +1,17 @@
+{% extends parent_template|default:'compendium/base_organizer.html' %}
+
+{% block title %}
+{{ block.super }} - Create Tag
+{% endblock %}
+
+{% block content %}
+<div class="content">
+    <div>
+        <form class="box notification is-primary" action="{% url 'compendium-tag-create' %}" method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="button is-large is-fullwidth is-primary is-inverted" type="submit">Create Tag</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

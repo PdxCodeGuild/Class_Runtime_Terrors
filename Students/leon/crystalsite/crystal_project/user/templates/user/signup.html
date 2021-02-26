@@ -1,0 +1,52 @@
+{% extends parent_template|default:'user/base_user.html' %}
+
+{% block title %}
+{{ block.super }} - Sign Up
+{% endblock %}
+
+{% block content %}
+<div class="content">
+    <div>
+        <form class="box notification is-primary" action="" method="POST">
+            {% csrf_token %}
+            <div class="field">
+                <label class="label" for='username'>Username:</label>
+                <div class="control">
+                    <input class="input" type='text' name='username' id="username">
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label" for='password'>Password:</label>
+                <div class="control">
+                    <input class="input" type='password' name='password' id="password">
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label" for='email'>Email:</label>
+                <div class="control">
+                    <input class="input" type='text' name='email' id="email">
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label" for='irst_name'>First Name:</label>
+                <div class="control">
+                    <input class="input" type='text' name='irst_name' id="irst_name">
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label" for='last_name'>Last Name:</label>
+                <div class="control">
+                    <input class="input" type='text' name='last_name' id="last_name">
+                </div>
+            </div>
+
+                <button class="button is-large is-fullwidth is-primary is-inverted" type="submit">Submit</button>
+            
+        </form>
+    </div>
+</div>
+{% endblock %}
