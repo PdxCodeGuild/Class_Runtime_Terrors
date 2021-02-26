@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Home</h1>
+    <form action="{% url 'hello' %}" method="post">
+        {% csrf_token %}
+        <input name="hiya">
+        <input type="submit">
+      </form>
+{% endblock %}

@@ -1,0 +1,58 @@
+.Marscape {
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    background-color: grey;
+    color: lightgreen;
+}
+.helmet {
+   display: flex;
+   background-color: grey;
+}
+
+
+.visor {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    border-style: none;
+    width: 700px;
+    height: 500px;
+    border-radius: 150px;
+    overflow: hidden;
+    background-color: grey;
+}
+
+#first {
+    display: block;
+    
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    width: 1000px;
+    height: 1000px;
+    top: 0;
+    left: 0;
+    background-color: grey;
+    /* transition: ease 6s; */
+}
+
+
+
+.dot {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  
+  .active, .dot:hover {
+    background-color: #717171;
+  }
+
