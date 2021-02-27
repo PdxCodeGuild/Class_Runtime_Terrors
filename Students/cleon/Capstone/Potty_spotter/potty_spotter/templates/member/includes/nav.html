@@ -1,0 +1,92 @@
+{% load i18n static %}
+
+{% url 'member:dashboard' as url_member_dashboard %}
+{% url 'object:restroom_list' as url_restroom_list %}
+
+<ul class="navbar-nav bg-white sidebar sidebar-light accordion" id="accordionSidebar">
+    <div class="mt-4"></div>
+    <!-- Sidebar - Brand -->
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ url_member_dashboard }}">
+        TT Finder
+    </a>
+
+    <div class="text-center mt-4">
+        {% if request.user.is_sysadmin %}
+            {% trans "ADMIN PANEL" %}
+        {% elif request.user.is_general_user %}
+            {% trans "USER PANEL" %}
+        {% endif %}
+    </div> 
+
+    <!-- Divider -->
+    <hr class="sidebar-divider my-0 mt-2 mb-2">
+
+    <!-- Nav Item - Dashboard -->
+    <li class="nav-item {% if request.path == url_member_dashboard %}active{% endif %}">
+        <a class="nav-link mb-0 pb-0 {% if request.path != url_member_dashboard %}collapsed{% endif %}"
+            href="{{url_member_dashboard}}"
+            aria-controls="collapseOne">
+            <span class="d-inline-block w-15">
+                <i class="fas fa-fw fa-tachometer-alt"></i>
+            </span>
+            <span class="d-inline-block" style="font-size: 0.85rem;">
+                <span>{% trans "DASHBOARD"|upper %}</span>
+            </span>
+        </a>
+    </li> 
+
+    {% if request.user.is_sysadmin %}
+    <li class="nav-item {% if request.path == url_restroom_list %}active{% endif %}">
+        <a class="nav-link mb-0 pb-0 {% if request.path != url_restroom_list %}collapsed{% endif %}"
+            href="{{url_restroom_list }}"
+            aria-controls="collapseOne">
+            <span class="d-inline-block w-15">
+                <i class="fa fa-history" aria-hidden="true"></i>
+            </span>
+            <span class="d-inline-block" style="font-size: 0.85rem;">
+                <span>{% trans "RESTROOMS"|upper %}</span>
+            </span>
+        </a>
+    </li>
+    {% endif %}
+
+    {% comment %} <li class="nav-item {% if request.path == url_member_dashboard1 %}active{% endif %}">
+        <a class="nav-link mb-0 pb-0 {% if request.path != url_member_dashboard1 %}collapsed{% endif %}"
+            href="{{url_member_dashboard1}}"
+            aria-controls="collapseOne">
+            <span class="d-inline-block w-15">
+                <i class="fa fa-history" aria-hidden="true"></i>
+            </span>
+            <span class="d-inline-block" style="font-size: 0.85rem;">
+                <span>{% trans "RECENT HISTORY"|upper %}</span>
+            </span>
+        </a>
+    </li>
+
+    <li class="nav-item {% if request.path == url_member_dashboard1 %}active{% endif %}">
+        <a class="nav-link mb-0 pb-0 {% if request.path != url_member_dashboard1 %}collapsed{% endif %}"
+            href="{{url_member_dashboard1}}"
+            aria-controls="collapseOne">
+            <span class="d-inline-block w-15">
+                <i class="fas fa-fw fa-tachometer-alt"></i>
+            </span>
+            <span class="d-inline-block" style="font-size: 0.85rem;">
+                <span>{% trans "CHANGE PROFILE"|upper %}</span>
+            </span>
+        </a>
+    </li>  {% endcomment %}
+
+    <!-- Divider -->
+    <hr class="sidebar-divider">
+
+    {% url 'user-logout' as url_user_logout %}
+    <div class="text-center mt-4">
+        <a class="collapse-item text-danger {% if request.path == url_user_logout %}active{% endif %}"
+        href="{{url_user_logout}}"><i class="fas fa-power-off"></i> {% trans "Logout" %}</a>
+    </div>
+
+    <!-- Sidebar Toggler (Sidebar) -->
+    <div class="mt-3 text-center d-none d-md-inline">
+        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+    </div>
+</ul>

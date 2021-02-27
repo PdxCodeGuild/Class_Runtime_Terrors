@@ -1,0 +1,37 @@
+{% extends "member/includes/ajax/popup_base_lg.html" %}
+
+{% load i18n bootstrap %}
+
+{% block form_title %}{{ form_title }}{% endblock %}
+
+
+{# This is a custom ajax form of Enrollment of Cardholder #}
+{% block content %}
+<div class="form-container">
+    <form class="form" action="{% block form_action %}{% endblock %}" 
+            method="post" enctype="multipart/form-data" autocomplete="off">
+        <div class="modal-body" id="modal_form_body">
+            {% csrf_token %}
+
+            <div class="row">
+                <div class="col-12 p-2"></div>
+                {% for field in form.visible_fields %}
+                    <div class="col-12">
+                        {{ field|bootstrap }}
+                    </div>
+                {% endfor %}
+            </div>
+
+        </div>
+
+        <div class="modal-footer d-flex flex-row">
+            <div class="mr-auto">
+                <button type="button" class="btn btn-danger btn-lg" data-dismiss="modal">{% trans "Cancel" %}</button>
+            </div>
+            <div class="">
+                <button type="submit" class="btn btn-primary btn-lg btn-submit-modal">{% trans "Submit" %}</button>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock content %}
