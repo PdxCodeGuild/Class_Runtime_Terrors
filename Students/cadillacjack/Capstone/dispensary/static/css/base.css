@@ -252,6 +252,9 @@ li a{
     margin-bottom: 1vh;
 }
 
+.cart-detail{
+    grid-column: 2;
+}
 table{
     width: 100%;
     border-spacing:0;
@@ -394,6 +397,127 @@ form p input {
     height: fit-content;
 }
 
+/* a.btn{
+    background-color: #54A984;
+    color: #fff;
+    text-decoration: none;
+    display:inline-block;
+    letter-spacing: 0.1em;
+    padding: 0.5em 0em;
+    } */
+.btn-alpha{
+    background-color: rgb(193, 193, 211);
+} 
+.btn-beta{
+    background-color: rgb(193, 193, 211);
+    }
+.decor-line {
+    position: relative;
+    top:  0.7em;
+    border-top: 1px solid black;
+    text-align:center;
+    max-width: 40%;
+    margin-left: 16vw;
+    display: block;
+    padding: 0.1em 1em;
+    color: black;
+} 
+
+.overlay-verify{
+background: #000;
+position:fixed;
+height: 100vh;
+width: 100vw;
+top: 0;
+left: 0;
+z-index: 1;
+}
+  
+.box{
+background-image: url('https://thumbs.gfycat.com/ConventionalDrearyKoalabear-max-1mb.gif');
+background-repeat: no-repeat;
+background-size: cover;
+position: absolute;
+left: 0;
+right: 0;
+top: 20%;
+bottom: 0;
+margin: 0 auto;
+z-index: 9;
+width: 70%;
+height: 40%;
+display:table;
+}
+.box-left, .box-right{
+    width: 100%;
+    position: relative;
+    text-align: center;
+    padding: 5%;
+}
+    
+.box-left{
+    /* background:url(http://uiclients.com/thinc/assets/images/block-bg-2.jpg) 50% 50%; */
+    background-size: cover;
+    text-align: center;
+}     
+    
+.box-right{
+    text-align: center;
+}
+
+.legal-cya{
+    margin-right: 7vw;
+}
+.modal-logo{
+    margin-right: 4vw;
+}
+    
+.btn{
+font-weight: 600;
+letter-spacing: 0.2em;
+padding: 0.9em 1em 0.7em;
+margin-right: 7vw;
+display: block;
+border-radius: 5px;
+color: black;
+}
+
+.age-verify-text{
+    text-align: center;
+    margin-right: 7vw;
+}
+
+small{
+    margin-right: 5vw;
+}
+
+.about-page{
+    grid-column: 1/-1;
+    text-align: center;
+    margin-left: 7vw;
+}
+.top-about{
+    display: flex;
+    flex-direction: row;
+}
+.top-about-text{
+    display: flex;
+    flex-direction: column;
+}
+
+.map-pic{
+    width: 85vw;
+}
+.map-pic-home{
+    width: 100vw;
+}
+.map-pic-container{
+    width: 100vw;
+    margin-left: -1vw;
+}
+    
+  
+
 /* @media screen and (max-width: 480px){
     body{
         grid-template-rows: 5% 90% 5%;
@@ -513,7 +637,7 @@ form p input {
     }
     td{
         /* Style as row */
-        border: none;
+        /* border: none;
         border-bottom: 1px solid #eeee;
         position: relative;
         padding-left: 50%;
@@ -538,7 +662,7 @@ form p input {
     .image{
         max-height: 100%;
     }
-} */
+} */ */
 
 /* @media screen and (max-width: 1024px){
     body{
@@ -560,7 +684,7 @@ form p input {
     } */
 } */
 
-@media screen and (min-width: 1025px){
+/* @media screen and (min-width: 1025px){
     body{
 
         }
@@ -575,4 +699,4 @@ form p input {
     .detail-image{
         max-height: 100%;
     }
-} */
+} */ */
