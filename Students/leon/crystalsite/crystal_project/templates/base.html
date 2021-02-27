@@ -1,0 +1,117 @@
+{% load flatpages %}
+{% get_flatpages as flatpages %}
+{% load static %}
+{% load thumbnail %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <script defer src="https://use.fontawesome.com/releases/v5.15.2/js/all.js"></script>
+        <script defer src="{% static 'js/main.js' %}"></script>
+        <title>
+            {% block title %}
+            Crystal Compendium 
+            {% endblock %}
+        </title>
+
+
+    </head>
+    <body>
+        <section class="hero is-small is-light"> 
+            <div class="hero-head">
+                <div class="columns is-mobile is-marginless heading has-text-weight-bold">
+                    <div class="column left" style="padding-right: 3rem;">
+                        <span class="icon">
+                            <i class='fa fa-i-cursor' style="font-size: 50px;"></i>
+                        </span>
+                    </div>
+                    <div class="column center desktop">
+                        <p class="navbar-item"><a class="is-size-7 button is-primary is-outlined is-rounded" style="padding: .5rem;" href="{% url 'blog-post-list' %}">Blog</a></p>
+                        <p class="navbar-item"><a class="is-size-7 button is-primary is-outlined is-rounded" style="padding: .5rem;" href="{% url 'compendium-crystal-list' %}">Crystals</a></p>
+                        <p class="navbar-item"><a class="is-size-7 button is-primary is-outlined is-rounded" style="padding: .5rem;" href="{% url 'shophound-shop-list' %}">Rockshops</a></p>
+                        <p class="navbar-item"><a class="is-size-7 button is-primary is-outlined is-rounded" style="padding: .5rem;" href="{% url 'rockhound-site-list' %}">Rockhound</a></p>
+                        <p class="navbar-item"><a class="is-size-7 button is-primary is-outlined is-rounded" style="padding: .5rem;" href="{% url 'compendium-tag-list' %}">Tags</a></p>
+                        <p class="navbar-item"><a class="is-size-7 button is-primary is-outlined is-rounded" style="padding: .5rem;" href="{% url 'about-site' %}">About</a></p>
+                    </div>
+                    <div class="column right">
+                        {% if user.is_authenticated %}
+                        <p class="navbar-item is-size-6"><a href="{% url 'logout' %}">Log Out</a></p>
+                        {% else %}            
+                        <p class="navbar-item is-size-6"><a href="{% url 'register' %}">Log In</a></p>
+                        {% endif %}
+                        <div class="dropdown is-hoverable is-right">
+                            <div class="dropdown-trigger">
+                                <figure class="navbar-item image center" aria-haspopup="true" aria-controls="dropdown-menu">
+                                    <i class="fas fa-bars" style="width: 1rem; height: 1rem;"></i></a>
+                                </figure>
+                            </div>
+                            <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                                <div class="dropdown-content">
+                                    <a class="dropdown-item" href="{% url 'blog-post-list' %}">Blog</a>
+                                    <a class="dropdown-item" href="{% url 'compendium-crystal-list' %}">Crystals</a>
+                                    <a class="dropdown-item" href="{% url 'shophound-shop-list' %}">Rockshops</a>
+                                    <a class="dropdown-item" href="{% url 'rockhound-site-list' %}">Rockhound</a>
+                                    <a class="dropdown-item" href="{% url 'compendium-tag-list' %}">Tags</a>
+                                    <a class="dropdown-item" href="{% url 'about-site' %}">About</a>
+                                </div>
+                            </div>
+                            </div>
+                          </div>
+                        
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        
+        <section>
+            
+            
+            <div class="section notification is-dark">
+                <main class="section" style="padding: 3rem; padding-top: 1rem;">
+                    <div class="content">
+                        <h1 class="title is-size-1" style="font-family: lobster;">Crystal Compendium</h1>
+                    </div>
+                        {% block content %}
+
+                        {% endblock %}
+                       
+                </main>
+                <div>
+                    <div id="ex2"></div>
+                </div>
+            </div>
+        </section>
+        <section class="section">
+            <div class="containter">
+                
+            </div>        
+        </section>
+
+
+            
+        <footer>
+            <p>
+                &copy; 2021
+                <a href="">
+                    Leon
+                </a>
+            </p>
+            <p>
+                Created for
+                <a herf="">
+                    Ari
+                </a>
+            </p>
+            
+        </footer>
+
+    </body>
+
+</html>

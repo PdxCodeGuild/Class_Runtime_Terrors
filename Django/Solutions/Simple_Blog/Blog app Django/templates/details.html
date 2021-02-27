@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<p><a href=http://localhost:8000/posts>Back to main view</a></p>
+<p>{{blog.title}}</p>
+<p>{{blog.text}}</p>
+{%for pics in image%}
+<div>
+    <a href="{{pics.image.url}}">
+        <img class="img-fluid img-thumbnail" src="{{pics.image.url}}" alt="">
+    </a>
+    <p>{{pics.blog_post}}</p>
+</div>
+{%endfor%}
+{% endblock %}

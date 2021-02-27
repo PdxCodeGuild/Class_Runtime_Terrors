@@ -1,0 +1,101 @@
+{% extends parent_template|default:'blog/base_blog.html' %}
+
+{% block title %}
+{{ block.super }} - {{ post.title|title }}
+{% endblock %} 
+
+{% block content %}
+
+<div class="container" style="padding: 1rem;">
+    <div class="container left">
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+            <ul>
+                <li><a class="has-text-grey-light" href="{% url 'blog-post-list' %}">Home</a></li>
+                <li class="has-text-grey-light is-active"><a href="#" aria-current="page">{{ post.title}}</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<div class="left" style="padding-bottom: 1rem;">
+    <h2 class="title is-2 has-text-grey-light" style="font-family: Lobster">{{ post.author }}</h2>
+</div>
+
+
+
+<article class="content is-medium">
+    <header>
+        <div class="columns notification is-primary">
+            <div class="column left">
+                <h2 class="title">{{ post.title|title }}</h2>
+            
+            </div>
+            <div class="column center">
+                
+    
+            </div>
+            
+            <div class="column">
+                {% if perms.blog.add_post %}
+                <span class="right"><a href="{{ post.get_update_url }}">
+                    <span class="icon">
+                        <i class="fas fa-pen-nib"></i>
+                    </span></a>
+                <span class="right"><a href="{{ post.get_delete_url }}">
+                    <span class="icon">
+                        <i class="fas fa-trash-alt"></i>
+                    </span></a>
+                </span>
+                {% endif %}
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="notification is-light">
+            <p class="content is-small right">
+                <time datetime="{{ post.pub_date|date:'Y-m-d' }}">
+                   {{ post.pub_date|date:"l, F j, Y" }}
+               </time>
+           </p><hr>
+           <p class="content">
+                {{ post.text|linebreaks }}
+            </p>
+        </div>
+
+    </main>
+        
+
+{% if post.crystals.all or post.tags.all %}
+    <footer>
+        <div class="notification is-primary is-light">
+        {% if post.crystals.all %}
+            <section>
+                <h5>Crystal{{post.crystals.count|pluralize }}</h3>
+                <ul>
+                    {% for crystal in post.crystals.all %}
+                        <li><a href="{{ crystal.get_absolute_url }}">
+                            {{ crystal.name }}
+                        </a></li>
+                    {% endfor %}
+                </ul>
+            </section>
+        {% endif %}
+
+        {% if post.tags.all %}
+            <section>
+                <h5>Tag{{ post.tags.count|pluralize }}</h3>
+                <ul>
+                    {% for tag in post.tags.all %}
+                        <li><a href="{{ tag.get_absolute_url }}">
+                            {{ tag.name|title }}
+                        </a></li>
+                    {% endfor %}
+                </ul>
+            </section>
+        {% endif %}
+        </div>
+    </footer>
+
+{% endif %}
+</article>
+{% endblock %}

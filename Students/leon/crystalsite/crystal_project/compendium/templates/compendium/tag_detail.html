@@ -1,0 +1,93 @@
+{% extends parent_template|default:'compendium/base_organizer.html' %}
+
+{% block title %}
+{{ block.super }} - {{ tag.name|title }}
+{% endblock %}
+
+{% block content %}
+
+<div class="">
+    <div class="container left">
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+            <ul>
+                <li><a class="has-text-grey-light" href="{% url 'blog-post-list' %}" text-decoration="none;">Home</a></li>
+                <li><a class="has-text-grey-light" href="{% url 'compendium-tag-list' %}" text-decoration="none;">Tags</a></li>
+                <li class="has-text-grey-light is-active"><a href="#" aria-current="page">{{ tag.name|title }}</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<div class="columns">
+    <div class="column left" style="padding-bottom: 0.3rem;">
+        <h2 class="title is-2 has-text-grey-light" style="font-family: Lobster">{{ tag.name|title }}</h2>
+    </div>
+    <div class="column">
+        {% if perms.blog.add_tag %}
+        <span class="right"><a href="{% url 'compendium-tag-create' %}">
+            <span class="icon">
+                <i class="fas fa-pen-fancy" style="font-size: 30px"></i>
+            </span></a>
+        </span>
+        {% endif %}
+    </div>
+</div>
+
+
+<article class="content">
+    <div class="columns notification is-primary">
+        <div class="column left">
+            <h2 class="title">{{ tag.name|title }}</h2>
+        </div>
+        <div class="column right">
+            {% if perms.compendium.add_tag %}
+            <span><a href="{{ tag.get_update_url }}">
+                <span class="icon">
+                    <i class="fas fa-pen-nib"></i>
+                </span></a>
+            <span><a href="{{ tag.get_delete_url }}">
+                <span class="icon">
+                    <i class="fas fa-trash-alt"></i>
+                </span></a>
+            </span>
+            {% endif %}
+        </div>
+        
+    </div>
+</article>
+
+
+<footer class="content">
+    <div class="notification is-primary is-light">
+        {% if tag.crystal_set.all %}
+        <p>
+            {{ tag.name|title }} tag is associated with
+            {{ tag.crystal_set.count }}
+            crystal{{ tag.crystal_set.count|pluralize }}.
+        </p>
+        <ul>
+            {% for crystal in tag.crystal_set.all %}
+            <li><a href="{{ crystal.get_absolute_url }}">
+                {{ crystal.name }}
+            </a></li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% if tag.blog_posts.all %}
+        <h3 class="title">Blog Post{{ tag.blog_posts.count|pluralize }}</h3>
+            <ul>
+                {% for post in tag.blog_posts.all %}
+                    <li><a href="{{ post.get_absolute.url }}">
+                        {{ post.title|title }}
+                    </a></li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        {% if not tag.crystal_set.all and not tag.blog_posts.all %}
+        <p>This tag is not related to any content.</p>
+        {% endif %}
+    </div>
+</footer>
+
+
+{% endblock %}

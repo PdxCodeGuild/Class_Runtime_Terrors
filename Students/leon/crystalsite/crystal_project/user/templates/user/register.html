@@ -1,0 +1,21 @@
+{% extends parent_template|default:'user/base_user.html' %}
+
+{% block title %}
+{{ block.super }} - Register
+{% endblock %}
+
+{% block content %}
+
+<div class="content">
+    <div class="columns notification is-primary">
+        <div class="column center is-half">
+            <a href="{% url 'signup' %}"><button class="button is-large is-fullwidth is-primary is-inverted">Sign Up</button></a>
+        </div>
+        <div class="column center">
+            <a href="{% url 'login' %}"><button class="button is-large is-fullwidth is-primary is-inverted">Sign In</button></a>
+        </div>
+        
+    </div>
+</div>
+
+{% endblock %}
