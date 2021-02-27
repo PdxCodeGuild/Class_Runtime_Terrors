@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Python button script
+        </title>
+<h1>Login:</h1>
+<!-- <br> -->
+{% extends 'base2.html' %}
+{% block content %}
+<form class="site-form" method="post">
+    {{ form }}
+    {% csrf_token %}
+    <input type="submit" value="SIGN-IN">
+</form>
+<p>
+    <a href="http://127.0.0.1:8000/register/">
+        <h3>Click here to Register!</h3>
+    </a>
+</p>
+</body>
+{% endblock %}
+</html>

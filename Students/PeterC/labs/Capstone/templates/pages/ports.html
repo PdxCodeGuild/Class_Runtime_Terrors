@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>
+body {
+        background-color: gray;
+    }
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  background-color: #2196F3;
+  padding: 10px;
+}
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 25px;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+<h1>Well-Known TCP Port Numbers</h1>
+
+<p>Port numbers range from <em>0 to 65535</em>, but only port numbers <em>0 to 1023</em> are reserved for privileged services and designated as <u>Well-known ports</u>.</p>
+<p>The following list of Top 20 Well-Known Port numbers are most scanned ports for vulnerability.</p>
+
+<h2><u>PORT NUMBER — DESCRIPTION</u></h2>
+
+<div class="grid-container">
+    <div class="grid-item">21: FTP</div>
+    <div class="grid-item">22: SSH</div>
+    <div class="grid-item">23: Telnet</div>
+    <div class="grid-item">25: SMTP</div>
+    <div class="grid-item">53: Domain Name System</div>
+    <div class="grid-item">80: HTTP</div>
+    <div class="grid-item">110: POP3</div>
+    <div class="grid-item">111: RPCBIND</div>
+    <div class="grid-item">135: MSRPC</div>
+    <div class="grid-item">139: Netbios-ssn</div>
+    <div class="grid-item">143: IMAP</div>
+    <div class="grid-item">443: HTTPS</div>
+    <div class="grid-item">445: Microsoft-DS</div>
+    <div class="grid-item">993: IMAPS</div>
+    <div class="grid-item">995: POP3s</div>
+    <div class="grid-item">1723: PPTP</div>
+    <div class="grid-item">3306: MYSQL</div>
+    <div class="grid-item">3389: MS-WBT-Server</div>
+    <div class="grid-item">5900: VNC</div>
+    <div class="grid-item">8080: HTTP-Proxy</div>
+  </div>
+</body>
+<br><br>
+<form action="/scan">
+    <button><a href="http://127.0.0.1:8000/r_script/">Back to Scan Page</a></button>
+</form>
+</html>
