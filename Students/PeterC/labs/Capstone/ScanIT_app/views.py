@@ -31,9 +31,7 @@ def external(request):
         except:
             return None
     myScan = []
-    # for port in range(0 to 65353):
-    # for port in range(20,30): # 10.0.0.192
-    for port in range(45,55): # 10.0.0.1
+    for port in range(0 to 65353):
         value = scan(ip, port)
         if value == None:
             print("Port not opened on %d" % port)
