@@ -19,15 +19,30 @@ nav {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+<<<<<<< HEAD
+  background-color: #fcac00;
+  padding: 2px;
+=======
   background-color: #00676D;
   padding: 3px;
   margin-top: 3px;
+>>>>>>> 30d074996118eabf39297f0c7f6137047f4132b6
   
 }
 /*------------------------------HOME PAGE--------------------*/
 .greeting {
   color: rgb(32, 19, 1);
   font-family: 'Roboto Mono', monospace;
+<<<<<<< HEAD
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: rgb(219, 248, 89);
+  margin-top: 3px;
+}
+.hedger_container {
+  background-color: rgb(219, 248, 89);
+=======
   color: #e5ffdf;
   display: flex;
   flex-direction: row;
@@ -37,6 +52,7 @@ nav {
 }
 .hedger_container {
   background-color: #91A0BB;;
+>>>>>>> 30d074996118eabf39297f0c7f6137047f4132b6
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -47,7 +63,11 @@ nav {
   font-size: 53pt;
   font-family: 'Roboto Mono', monospace;
   font-weight: 600;
+<<<<<<< HEAD
+  background-color: rgb(182, 248, 59);
+=======
   background-color: #e5ffdf;
+>>>>>>> 30d074996118eabf39297f0c7f6137047f4132b6
   width: 253px;
   height: 253px;
   display: flex;
@@ -60,8 +80,12 @@ nav {
 
 /*------------------------------LOGIN PAGE--------------------*/
 .page_login {
+<<<<<<< HEAD
+  background-color: rgb(219, 248, 89);
+=======
   background-color:  #91A0BB;
   color: #e5ffdf;
+>>>>>>> 30d074996118eabf39297f0c7f6137047f4132b6
   font-family: 'Roboto Mono', monospace;
   display: flex;
   flex-direction: row;
@@ -69,14 +93,22 @@ nav {
   margin-top: 3px;
 }
 .login_contianer {
+<<<<<<< HEAD
+  background-color: rgb(219, 248, 89);
+=======
   background-color:#91A0BB;;
+>>>>>>> 30d074996118eabf39297f0c7f6137047f4132b6
   font-family: 'Roboto Mono', monospace;
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
 .login_inputs {
+<<<<<<< HEAD
+  background-color: rgb(197, 194, 26);
+=======
   background-color: #e5ffdf;
+>>>>>>> 30d074996118eabf39297f0c7f6137047f4132b6
   font-family: 'Roboto Mono', monospace;
   display: flex;
   flex-direction: column;
@@ -97,14 +129,22 @@ nav {
   margin-right: 68px;
 }
 .bottom {
+<<<<<<< HEAD
+  background-color: #fcac00;
+=======
   background-color: #00676D;
+>>>>>>> 30d074996118eabf39297f0c7f6137047f4132b6
   width: 100%;
   height: 25px;
   margin-top: 3px;
 }
 /*------------------------------DASHBOARD/REBALANCE PAGE--------------------*/
 .dashboard {
+<<<<<<< HEAD
+  background-color: #f0faed;
+=======
   background-color: #e5ffdf;
+>>>>>>> 30d074996118eabf39297f0c7f6137047f4132b6
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -114,7 +154,11 @@ nav {
 
 .dashboard_user {
   background-color: #00676D;
+<<<<<<< HEAD
+  color: #f0faed;
+=======
   color: #e5ffdf;
+>>>>>>> 30d074996118eabf39297f0c7f6137047f4132b6
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -209,6 +253,20 @@ table {
   border-spacing: 0;
   width: 95%;
   height: 95%;
+<<<<<<< HEAD
+  border: 1px solid #ddd;
+  margin: 2px;
+}
+
+th, td {
+  background-color: #91A0BB;
+  text-align: left;
+  padding: 16px;
+}
+
+tr:nth-child(even) {
+  background-color: #e5ffdf;
+=======
   border: 1px solid #6D78AD;
   margin: 2px;
 }
@@ -228,6 +286,7 @@ tr:nth-child(odd){background-color: #e5ffdf;}
 tr:hover {
   background-color:#6D78AD;
   border: #e5ffdf;
+>>>>>>> 30d074996118eabf39297f0c7f6137047f4132b6
 }
 /* -----------------------------------------------Chart Row -------------------------------------------------- */
 

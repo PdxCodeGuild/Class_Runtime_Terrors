@@ -1,0 +1,49 @@
+{% extends "base/base.html" %}
+{% load i18n static %}
+
+{% block html_title %}
+{% trans "TT Finder - Best public restroom finder" %}
+{% endblock html_title %}
+
+{% block head %}
+ <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+   crossorigin=""/>
+    
+ <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+   crossorigin=""></script>
+{% endblock head %}
+
+{% block root_content %}
+
+{% include "base/nav.html" %}
+
+<div class="container mt-4">
+    <div style="height:10vh"></div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="text-center bg-white rounded shadow p-4">
+                <h2>Find Me</h2>
+                <input id="input_location_search" type="text"
+                    class="search-box form-control rounded" 
+                    placeholder="Enter your address here">
+                
+                <div id="location_search_results" class="text-left">
+
+                </div>
+            </div>
+            
+            <div id="my_location">
+                <div id="mapid" style="height: 300px;"></div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<script>
+
+</script>
+{% endblock root_content %}

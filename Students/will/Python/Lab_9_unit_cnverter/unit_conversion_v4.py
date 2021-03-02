@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-# version 2
-=======
 
->>>>>>> b1c36459ccd5338398b88cdcabc299e116c62a3a
 
 unit_to_be_convert_from = input("What are the units you would like to convert from? \n Please choose from: in, ft, yd, m, mi, km...  ")
 distance = float(input("What is the distance?: "))

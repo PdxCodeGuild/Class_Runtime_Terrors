@@ -1,5 +1,9 @@
 console.log('words words words')
 
+<<<<<<< HEAD
+console.log(balances)
+=======
+>>>>>>> 30d074996118eabf39297f0c7f6137047f4132b6
 ///////////////////////////////////////////////////////////    PIE CHART
 var reverse = balances.length
 reverse = balances[reverse-1]
@@ -34,7 +38,11 @@ var chart_pie = new CanvasJS.Chart("account_pie",
     ]}]
 });
 chart_pie.render();
+<<<<<<< HEAD
+//////////////////////////////////////////////////////////   BTC CHART
+=======
 //////////////////////////////////////////////////////////   Account CHart
+>>>>>>> 30d074996118eabf39297f0c7f6137047f4132b6
 var data = [];
 var dataSeriesaccount = { type: "area" };
 var dataPoints = []
@@ -54,7 +62,11 @@ theme: "light2",
 
 
 title: {
+<<<<<<< HEAD
+    text: "Account Balance:" + Account_value + 'BTC',
+=======
     text: "Account Balance:" + Number(Account_value).toFixed(4) + ' BTC',
+>>>>>>> 30d074996118eabf39297f0c7f6137047f4132b6
     fontFamily: 'Roboto Mono',
 },
 axisY: {
@@ -89,7 +101,11 @@ theme: "light2",
     
     
     title: {
+<<<<<<< HEAD
+      text: "Total Gold Balance: " + PAX_balance + 'oz',
+=======
       text: "Total Gold Balance: " + Number(PAX_balance).toFixed(4) + ' oz',
+>>>>>>> 30d074996118eabf39297f0c7f6137047f4132b6
       fontFamily: 'Roboto Mono',
     },
     axisY: {
@@ -121,7 +137,11 @@ var options = {
     theme: "light2",
         
     title: {
+<<<<<<< HEAD
+    text: "Total Bitcoin Balance: " + BTC_balance + 'BTC',
+=======
     text: "Total Bitcoin Balance: " + Number(BTC_balance).toFixed(4) + ' BTC',
+>>>>>>> 30d074996118eabf39297f0c7f6137047f4132b6
     fontFamily: 'Roboto Mono',
     },
     axisY: {
@@ -134,6 +154,17 @@ var chart_line_BTC_BAL = new CanvasJS.Chart("chart_line_BTC_BAL", options);
 chart_line_BTC_BAL.render();
 
 
+<<<<<<< HEAD
+for (let item in balances){
+    table = document.getElementById('table_api_resonse')
+    tr = document.createElement('tr')
+    tr.innerHTML = balances.API_reply
+    table.appendChild(tr)
+    console.log('yes')
+    
+}
+   
+=======
 
 
 table_items=[];
@@ -157,3 +188,4 @@ for (i=0; i<table_items.length;i++){
 }
 console.log(table_items);
 console.log(balances);
+>>>>>>> 30d074996118eabf39297f0c7f6137047f4132b6

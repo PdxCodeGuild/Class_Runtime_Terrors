@@ -1,4 +1,8 @@
 from django import forms
+from online_shop.models import Product
+
+
+# product_inventory = Product.objects.get()
 
 PRODUCT_QUANTITY_CHOICES = [(i, str(i)) for i in range(1,21)]
 

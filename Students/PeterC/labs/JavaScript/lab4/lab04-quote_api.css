@@ -3,11 +3,9 @@ body {
     justify-content: center;
   }
   h1 {
-    /* margin: 2em; */
     color: rgb(172, 47, 255);
     font-style: italic;
     font-family: Georgia, 'Times New Roman', Times, serif;
-   
   }
   .frame {
     width: 670px;
@@ -15,7 +13,6 @@ body {
     padding: 135px;
     text-align: center;
     background: url("https://images.freeimages.com/images/large-previews/5d1/paper-1056994.jpg");
-    
   }
   .container {
     padding: 2px 16px;

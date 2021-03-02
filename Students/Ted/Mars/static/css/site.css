@@ -1,3 +1,59 @@
+<<<<<<< HEAD
+/* *{
+    box-sizing: border-box;
+}
+body{
+    background-color: grey;
+    overflow: hidden;
+}
+.Slideshow-container {
+    max-width: 1300px;
+    position: relative;
+    margin: auto; 
+}
+*/
+.helmet {
+    justify-content: center;
+}
+.visor {
+    justify-content: center;
+    /* position: relative; */
+    width: 700px;
+    height: 700px;
+    border-radius: 100px;
+    /* z-index: 999;
+    border: 2px solid black; */
+    overflow: hidden;
+   
+}
+
+.visor > #first {
+    position: relative;
+    top: 0;
+    left: 0;
+    transition: all ease 4s;
+}
+
+.visor > #first:hover {
+    top: 0;
+    left: -300px;
+    transition: all ease 4s;
+}
+
+
+#first {
+    position: absolute;
+    height: auto;
+    width: 1000px;
+    height: 1000px;
+    max-width: 100%;
+    z-index: -1;
+    overflow: hidden;
+    display: block;
+    margin: auto;
+}
+.dot {
+=======
 .Marscape {
     display: flex;
     align-content: center;
@@ -42,6 +98,7 @@
 .dot {
     display: flex;
     align-items: center;
+>>>>>>> 30d074996118eabf39297f0c7f6137047f4132b6
     cursor: pointer;
     height: 15px;
     width: 15px;
@@ -56,3 +113,60 @@
     background-color: #717171;
   }
 
+<<<<<<< HEAD
+/* .fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 2.0s;
+    animation-name: fade;
+    animation-duration: 2.0s;
+}
+
+@-webkit-keyframes fade {
+    from {opacity: .2}
+    to {opacity: 1}
+}
+
+@keyframes fade {
+    from {opacity: .2}
+    to {opacity: 1}
+} */ */
+/* 
+.slide {
+    display: none;
+}
+
+/* .Marscape {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    
+} */
+/* #step{
+    display: flex;
+    justify-content: right; 
+} */
+
+/* img{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    border-radius: 400px;
+    width: 1200px;
+    height: 850px;
+    
+
+}
+
+header{
+    text-align: center;
+} */
+
+
+
+
+footer{
+    display: grid;
+    align-items: center;
+}
+=======
+>>>>>>> 30d074996118eabf39297f0c7f6137047f4132b6
