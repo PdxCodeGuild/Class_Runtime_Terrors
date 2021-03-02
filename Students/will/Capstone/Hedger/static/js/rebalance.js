@@ -133,9 +133,6 @@ var options = {
 var chart_line_BTC_BAL = new CanvasJS.Chart("chart_line_BTC_BAL", options);
 chart_line_BTC_BAL.render();
 
-
-
-
 table_items=[];
 for(i=0; i<balances.length;i++){
     table_items.push({
@@ -143,7 +140,7 @@ for(i=0; i<balances.length;i++){
         PAX_value : balances[i].fields.PAX_value,
         API_reply : balances[i].fields.API_reply
     })
-    };
+};
 
 for (i=0; i<table_items.length;i++){
     table = document.getElementById('table_api_resonse')
@@ -155,5 +152,5 @@ for (i=0; i<table_items.length;i++){
     cell2.innerHTML = table_items[i].PAX_value;
     cell3.innerHTML = table_items[i].API_reply;
 }
-console.log(table_items);
-console.log(balances);
+
+

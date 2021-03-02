@@ -192,12 +192,17 @@ nav {
   height: 415px;
   width: 320px;
 }
+.action_buttons{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: auto;
+
+}
 .rebalance_button{
   font-family: 'Roboto Mono', monospace;
   font-size: 22.5px;
   position: relative;
-  top: 1039%;
-  right: -35%;
   text-align: center;
   cursor: pointer;
   transition-duration: 0.15s;
