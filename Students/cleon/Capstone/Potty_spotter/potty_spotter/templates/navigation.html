@@ -1,0 +1,56 @@
+{% load i18n static %}
+
+{% url 'login_redirect_view' as login_redirect_view_url %}
+{% url 'user:login' as auth_login_url %}
+{% url 'user:logout' as url_auth_logout %}
+{% url 'product:product_list' as url_product_list %}
+{% url 'blog:blog_list' as blog_url %}
+{% url 'dashboard:summary_view' as summary_url %}
+
+<link rel="stylesheet" href="{% static 'navigation.css' %}">
+
+<nav class="navbar navbar-expand-lg">
+    <div class="container">
+        <a class="navbar-brand text-white" href="/">
+            <b>potty_spotter</b>
+            {% comment %} <img src="{% static 'official_logo_transparent.png' %}"  height="38" width="auto" alt=""> {% endcomment %}
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <div class="ml-auto">
+                <ul class="navbar-nav mr-auto mt-1 mt-lg-0">
+
+                    <li class="nav-item {% if request.path == url_product_list %}active{% endif %}">
+                        <a class="nav-link" href="{{ url_product_list }}">{% trans 'PRODUCT' %}</a>
+                    </li>
+                    <li class="nav-item {% if request.path == blog_url %}active{% endif %}">
+                        <a class="nav-link" href="{{ blog_url }}">{% trans 'BLOG' %}</a>
+                    </li>
+                    
+                    <!--========= User Varifivation Nav============= -->
+
+                    {% if request.user.is_authenticated %}
+                        
+                        <li class="nav-item {% if request.path == summary_url %}active{% endif %}">
+                            <a class="nav-link" href="{{ summary_url }}">{% trans 'DASHBOARD' %}</a>
+                        </li>
+                        <li class="nav-item {% if request.path == url_auth_logout %}active{% endif %}">
+                            <a class="nav-link" href="{{ url_auth_logout }}">{% trans 'LOGOUT' %}</a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item {% if request.path == auth_login_url %}active{% endif %}">
+                            <a class="nav-link" href="{{ auth_login_url }}">{% trans 'LOGIN' %}</a>
+                        </li>
+                    {% endif %}
+
+                    {% comment %} {% url 'login_page' as login_url %}
+                    <li class="nav-item {% if request.path == login_url %}active{% endif %}">
+                        <a class="nav-link bg-info" href="{{ login_url }}"><b>{% trans 'LOGIN' %}</b></a>
+                    </li> {% endcomment %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
