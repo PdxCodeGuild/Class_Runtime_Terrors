@@ -1,0 +1,211 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block meta_description %}{{ meta_description }}{% endblock meta_description %}
+{% block title %}BERANDA | potty_spotter{% endblock title %}
+
+{% block content %}
+
+<div class="container mt-2 mb-2">
+    {# Caraousel #}
+    <div class="row mb-2 mt-2">
+        <div class="col-12">
+            <div class="box text-center">
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        {% for carousel in carousel_data %}
+                        <li data-target="#carouselExampleIndicators" data-slide-to="{{forloop.counter}}" {% if forloop.first %}class="active"{% endif %}></li>
+                        {% endfor %}
+                    </ol>
+                    <div class="carousel-inner">
+                        {% for carousel in carousel_data %}
+                            <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                                <img class="d-block w-100 img-fluid" src="{{carousel.image.url}}" alt="{{carousel.alt_text}}">
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="card mb-2">
+        <div class="card-body bg-light-yellow">
+            <div class="row">
+    
+                <div class="col-12 col-sm-6 mb-2">
+                    {# Welcome Text #}
+                    <div class="text-center">
+                        <h2>Selamat Datang di potty_spotter</h2>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-md-6 text-center">
+                            <h4>Butuh tutor privat?</h4>
+                            <a class="btn btn-success" 
+                                href="https://wa.me/6285939407473?text=Hallo%20potty_spotter,%20saya%20mau%20daftar%20les%20privat">
+                                Pendaftaran Siswa</a>
+                        </div>
+                        <div class="col-12 col-md-6 text-center">
+                            <h4>Ingin jadi tutor?</h4>
+                            <a class="btn btn-success" href="{% url 'tutor_registration' %}">Pendaftaran Tutor</a>
+                        </div>
+                    </div>
+                    <br>
+                    {{ welcome_text|safe }}
+                </div>
+
+                <div class="col-12 col-sm-6 text-center mb-2" style="background:#ff4242;border-radius:7px;">
+                    <h6 style="color:white;">potty_spotter Student Aplikasi untuk Siswa</h6>
+                    <img src="{% static 'app_screen/student_app_1.png' %}" width="45%" alt="potty_spotter Student App">
+                    <img src="{% static 'app_screen/student_app_2.png' %}" width="45%" alt="potty_spotter Student App">
+                </div>
+    
+            </div>
+        </div>
+    </div>
+
+
+    {% comment %} {# WHY potty_spotter #}
+    <div class="card mb-2">
+        <div class="card-body">
+            <div class="text-center">
+                <h2>Kenapa Pilih potty_spotter?</h2>
+            </div>
+            <div class="row p-3" style="font-size:17px;">
+                {% spaceless %}
+                <span class="p-2 w-100">
+                    <img src="{% static 'icons/free_sign.png' %}" width="40px" alt=""> 
+                    Gratis Pendaftaran. Biaya les Termurah. Diskon paket untuk siswa baru plus voucher belajar 50 ribu.
+                </span>
+                
+                <span class="p-2 w-100">
+                    <img src="{% static 'icons/smart_phone.png' %}" width="40px" alt=""> 
+                    Transparansi keberlangsungan pertemuan les dan full Support lewat aplikasi potty_spotter Student. 
+                    Tutor attendance code disetiap pertemuan les dan dapatkan tambahan point setiap kali kirim attendance code ke tutor. 
+                    Semakin banyak point, semakin besar tambahan diskon untuk paket les berikutnya.
+                </span>
+
+                <span class="p-2 w-100">
+                    <img src="{% static 'icons/clock.png' %}" width="40px" alt=""> 
+                    Jadwal les fleksibel. Belajar apa saja dan kapan saja. Sesukamu!
+                </span>
+                
+                <span class="p-2 w-100">
+                    <img src="{% static 'icons/teacher.png' %}" width="40px" alt=""> 
+                    Tutor kompeten dan berpengalaman. Tutor yang mengajar dipastikan telah lulus tahapan seleksi administrasi, 
+                    akademik tertulis dan demo mengajar dari potty_spotter.
+                </span>
+
+                <span class="p-2 w-100">
+                    <img src="{% static 'icons/change.png' %}" width="40px" alt=""> 
+                    Mau tutor laki - laki atau perempuan? Bisa request. Jaminan ganti tutor jika tidak cocok, sampai siswa puas dan cocok. 
+                </span>
+                {% endspaceless %}
+            </div>
+        </div>
+    </div> {% endcomment %}
+
+
+    {# TESTIMONIAL #}
+    <div class="card">
+        <div class="card-body">
+            <div class="text-center">
+                <h2>Testimoni Siswa / Orang Tua</h2>
+                <small>( Zoom in di layar untuk membaca lebih jelas )</small>
+            </div>
+            <div class="row mb-2 mt-2">
+                {% for logo in school_logos %}
+                <div class="col-3 col-md-2 mb-2">
+                    <img src="{{logo.image.url}}" class="img-fluid" alt="{{logo.title}}">
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+
+    {% comment %} <div class="card mb-2">
+        <div class="card-body bg-light-yellow">
+            <div class="row">
+
+                
+                <div class="col-12 col-sm-6 mt-2 mb-2">
+                    <div class="text-center"><h2>Kenapa memilih potty_spotter?</h2></div>
+                    <br>
+                    ✔ Free registrasi  <br>
+                    ✔ Waktu belajar fleksibel. Bebas tentukan sendiri! <br>
+                    ✔ Sistem belajar one-on-one. Siswa lebih fokus, konsentrasi meningkat, dan pembelajaran terarah/sesuai target.<br>
+                    ✔ Pendalaman konsep materi. Diberikan juga latihan soal/pr/tugas dan persiapan sukses semua ujian sekolah. <br>
+                    ✔ Belajar di rumah sendiri. Nyaman, kondusif dan terpantau.<br>
+                    ✔ Tutor muda, berpengalaman dan kompeten. <br>
+                    ✔ Boleh pilih tutor sendiri. Sesuai kriteria dan kebutuhan belajar siswa.<br>
+                    ✔ Bebas konsultasi pelajaran di luar les privat.<br>
+                    ✔ 1 sesi belajar maksimal 2 jam. Boleh tambah sesi melalui kesepakatan. <br>
+                    ✔ Laporan evalusi siswa di akhir bulan. <br>
+                    ✔ Pembayaran via transfer ke rekening potty_spotter.<br>
+                </div>
+
+
+                <div class="col-12 col-sm-6 mt-2 mb-2">
+                    <div class="text-center"><h2>Apa Kata Meraka?</h2></div>
+                    {# Quote Caraousel #}
+                    <div class="row mb-2 mt-2">
+                        <div class="col-12">
+                            <div class="box text-center">
+                                <div id="testimonialCarousel" class="carousel slide" data-ride="carousel">
+                                    <div class="carousel-inner">
+                                        {% for quote in quote_data %}
+                                            <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                                                {{ quote.quote_text|safe }}
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                    <a class="carousel-control-prev" href="#testimonialCarousel" role="button" data-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="sr-only">Previous</span>
+                                    </a>
+                                    <a class="carousel-control-next" href="#testimonialCarousel" role="button" data-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"><i class="fas fa-angle-right"></i></span>
+                                        <span class="sr-only">Next</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-center"><h2>Siswa-siswi kami berasal dari:</h2></div>
+                    <div class="row mb-2 mt-2">
+                        {% for logo in school_logos %}
+                        <div class="col-12 col-md-6 mb-1">
+                            <img src="{{logo.image.url}}" class="img-fluid" alt="{{logo.title}}">
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <hr>
+                    <div class="text-center mt-2"><h2>Tutor-tutor kami lulusan dari:</h2></div>
+                    <div class="row mb-2 mt-2">
+                        {% for logo in university_logos %}
+                        <div class="col-3 col-md-2">
+                            <img src="{{logo.image.url}}" class="img-fluid" alt="{{logo.title}}">
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>     {% endcomment %}
+    
+</div>
+{% endblock content %}

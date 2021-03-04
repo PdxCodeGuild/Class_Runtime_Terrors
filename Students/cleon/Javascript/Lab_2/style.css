@@ -1,0 +1,55 @@
+/* body{
+    padding: 30px;
+
+}
+.header{
+    padding: 30px;
+    text-align: center;
+    
+}
+.butt{
+    border: 2px black;
+    border-radius: 25px;
+} */
+
+* {
+  box-sizing: border-box;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+ul li{
+  cursor: pointer;
+    
+  padding: 12px 8px 12px 40px;
+
+}
+ul li.checked{
+  text-decoration: line-through;
+}
+.header {
+  border: 5px;
+  border-color: black;
+  padding: 40px;
+  text-align: center;
+}
+.header:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.addButt {
+  padding: 10px;
+  /* width: 25%; */
+  background: #d9d9d9;
+  color: #555;
+  /* float: left; */
+  /* text-align: center; */
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 0;
+}

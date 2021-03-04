@@ -1,7 +1,0 @@
-{% extends 'base.html'%}
-{% block content %}
-<h1>From Products templets This is the detal of the item</h1>
-<p>In App Template: {{object.title}}</p>
-<P>{% if object.description != None and object.description == "test2" %}description coming soon {%else%}{{object.description}}{% endif %}</P>
-<p>{{object.price}}</p>
-{% endblock %}

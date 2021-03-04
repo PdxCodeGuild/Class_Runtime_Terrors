@@ -1,0 +1,185 @@
+/* global section  */
+.section {
+  text-align: center;
+  margin-bottom: 200px auto;
+}
+
+.section h1 {
+  padding: 0 0 50px 0;
+  font-family: "Abril Fatface", cursive;
+  font-size: 55px;
+  letter-spacing: 2px;
+  /* text-transform: uppercase; */
+}
+
+.section p {
+  font-family: "Open Sans", sans-serif;
+  font-size: 22px;
+  padding-bottom: 20px;
+}
+
+/* navigation section */
+.landing-nav {
+  min-height: 750px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.nav-content {
+  /* margin-bottom: 200px; */
+  padding-top: 200px;
+  padding-bottom: 100px;
+  max-width: 800px !important;
+  color: white;
+}
+
+.nav-content button {
+  margin-top: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  background: rgba(70, 69, 69, 0.712);
+  padding: 20px 35px;
+  border-radius: 30px !important;
+}
+
+.nav-content button:hover {
+  background: rgba(24, 146, 134, 0.568);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Verdana, sans-serif;
+}
+
+.mySlides {
+  display: none;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  position: relative;
+  margin: auto;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #333232;
+}
+
+/* Fading animation */
+/* .fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 10s;
+  animation-name: fade;
+  animation-duration: 10s;
+} */
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 0.8;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.8;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* product section */
+.product-section {
+  margin: 50px 0 !important;
+  padding: 20px 0;
+}
+
+.product-section button {
+  min-width: 220px;
+  padding: 13px 25px;
+  text-transform: uppercase;
+  font-size: 25px;
+  font-weight: 600;
+  border-radius: 35px;
+}
+
+.product-buttons button {
+  min-width: 220px;
+  padding: 13px 25px;
+  text-transform: uppercase;
+  font-size: 25px;
+  font-weight: 600;
+  border-radius: 35px;
+}
+
+.products {
+  margin-top: 60px;
+}
+.products p {
+  font-size: 14px !important;
+}
+
+/* species section */
+.species-section {
+  background: rgb(173, 173, 173);
+  padding: 50px 0;
+}
+
+/* instagram section */
+.instagram-section {
+  padding: 50px 0;
+}
+
+.instagram-section button {
+  min-width: 220px;
+  padding: 13px 25px;
+  text-transform: uppercase;
+  font-size: 25px;
+  font-weight: 600;
+  border-radius: 35px;
+}
+
+/* BLOG section */
+.blog-section {
+  background: rgb(173, 173, 173);
+  padding: 50px 0;
+}
+
+.blog-section button {
+  min-width: 220px;
+  padding: 13px 25px;
+  text-transform: uppercase;
+  font-size: 25px;
+  font-weight: 600;
+  border-radius: 35px;
+}
+
+/* about section */
+.about-section {
+  background: rgb(173, 173, 173);
+  padding: 50px 0;
+}
+
+.blogs p {
+  font-size: 14px !important;
+}

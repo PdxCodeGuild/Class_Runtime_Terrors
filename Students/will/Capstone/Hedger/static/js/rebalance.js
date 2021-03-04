@@ -172,6 +172,8 @@ var options = {
 var chart_line_BTC_BAL = new CanvasJS.Chart("chart_line_BTC_BAL", options);
 chart_line_BTC_BAL.render();
 
+<<<<<<< HEAD
+=======
 
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -189,6 +191,7 @@ for (let item in balances){
 >>>>>>> 4996abcf50a91e81220314bf284bb3f2054b4984
 
 
+>>>>>>> dc912fbe3622bfa2b132d8dc240c5dcb54637049
 table_items=[];
 for(i=0; i<balances.length;i++){
     table_items.push({
@@ -196,7 +199,7 @@ for(i=0; i<balances.length;i++){
         PAX_value : balances[i].fields.PAX_value,
         API_reply : balances[i].fields.API_reply
     })
-    };
+};
 
 for (i=0; i<table_items.length;i++){
     table = document.getElementById('table_api_resonse')
@@ -208,9 +211,17 @@ for (i=0; i<table_items.length;i++){
     cell2.innerHTML = table_items[i].PAX_value;
     cell3.innerHTML = table_items[i].API_reply;
 }
+<<<<<<< HEAD
+
+
+=======
 console.log(table_items);
 console.log(balances);
 <<<<<<< HEAD
 >>>>>>> 30d074996118eabf39297f0c7f6137047f4132b6
+<<<<<<< HEAD
 =======
 >>>>>>> 4996abcf50a91e81220314bf284bb3f2054b4984
+=======
+>>>>>>> dc912fbe3622bfa2b132d8dc240c5dcb54637049
+>>>>>>> 389761191cc01254895c12cd577b000d31322254
