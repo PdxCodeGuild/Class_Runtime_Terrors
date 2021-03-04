@@ -1,9 +1,12 @@
 console.log('words words words')
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 console.log(balances)
 =======
 >>>>>>> 30d074996118eabf39297f0c7f6137047f4132b6
+=======
+>>>>>>> 4996abcf50a91e81220314bf284bb3f2054b4984
 ///////////////////////////////////////////////////////////    PIE CHART
 var reverse = balances.length
 reverse = balances[reverse-1]
@@ -39,10 +42,14 @@ var chart_pie = new CanvasJS.Chart("account_pie",
 });
 chart_pie.render();
 <<<<<<< HEAD
+<<<<<<< HEAD
 //////////////////////////////////////////////////////////   BTC CHART
 =======
 //////////////////////////////////////////////////////////   Account CHart
 >>>>>>> 30d074996118eabf39297f0c7f6137047f4132b6
+=======
+//////////////////////////////////////////////////////////   Account CHart
+>>>>>>> 4996abcf50a91e81220314bf284bb3f2054b4984
 var data = [];
 var dataSeriesaccount = { type: "area" };
 var dataPoints = []
@@ -63,10 +70,14 @@ theme: "light2",
 
 title: {
 <<<<<<< HEAD
+<<<<<<< HEAD
     text: "Account Balance:" + Account_value + 'BTC',
 =======
     text: "Account Balance:" + Number(Account_value).toFixed(4) + ' BTC',
 >>>>>>> 30d074996118eabf39297f0c7f6137047f4132b6
+=======
+    text: "Account Balance:" + Number(Account_value).toFixed(4) + ' BTC',
+>>>>>>> 4996abcf50a91e81220314bf284bb3f2054b4984
     fontFamily: 'Roboto Mono',
 },
 axisY: {
@@ -102,10 +113,14 @@ theme: "light2",
     
     title: {
 <<<<<<< HEAD
+<<<<<<< HEAD
       text: "Total Gold Balance: " + PAX_balance + 'oz',
 =======
       text: "Total Gold Balance: " + Number(PAX_balance).toFixed(4) + ' oz',
 >>>>>>> 30d074996118eabf39297f0c7f6137047f4132b6
+=======
+      text: "Total Gold Balance: " + Number(PAX_balance).toFixed(4) + ' oz',
+>>>>>>> 4996abcf50a91e81220314bf284bb3f2054b4984
       fontFamily: 'Roboto Mono',
     },
     axisY: {
@@ -138,10 +153,14 @@ var options = {
         
     title: {
 <<<<<<< HEAD
+<<<<<<< HEAD
     text: "Total Bitcoin Balance: " + BTC_balance + 'BTC',
 =======
     text: "Total Bitcoin Balance: " + Number(BTC_balance).toFixed(4) + ' BTC',
 >>>>>>> 30d074996118eabf39297f0c7f6137047f4132b6
+=======
+    text: "Total Bitcoin Balance: " + Number(BTC_balance).toFixed(4) + ' BTC',
+>>>>>>> 4996abcf50a91e81220314bf284bb3f2054b4984
     fontFamily: 'Roboto Mono',
     },
     axisY: {
@@ -155,6 +174,7 @@ chart_line_BTC_BAL.render();
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 for (let item in balances){
     table = document.getElementById('table_api_resonse')
     tr = document.createElement('tr')
@@ -165,6 +185,8 @@ for (let item in balances){
 }
    
 =======
+=======
+>>>>>>> 4996abcf50a91e81220314bf284bb3f2054b4984
 
 
 table_items=[];
@@ -188,4 +210,7 @@ for (i=0; i<table_items.length;i++){
 }
 console.log(table_items);
 console.log(balances);
+<<<<<<< HEAD
 >>>>>>> 30d074996118eabf39297f0c7f6137047f4132b6
+=======
+>>>>>>> 4996abcf50a91e81220314bf284bb3f2054b4984

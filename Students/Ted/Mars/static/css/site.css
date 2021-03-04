@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 /* *{
     box-sizing: border-box;
 }
@@ -54,6 +55,8 @@ body{
 }
 .dot {
 =======
+=======
+>>>>>>> 4996abcf50a91e81220314bf284bb3f2054b4984
 .Marscape {
     display: flex;
     align-content: center;
@@ -98,7 +101,10 @@ body{
 .dot {
     display: flex;
     align-items: center;
+<<<<<<< HEAD
 >>>>>>> 30d074996118eabf39297f0c7f6137047f4132b6
+=======
+>>>>>>> 4996abcf50a91e81220314bf284bb3f2054b4984
     cursor: pointer;
     height: 15px;
     width: 15px;
@@ -113,6 +119,7 @@ body{
     background-color: #717171;
   }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 /* .fade {
     -webkit-animation-name: fade;
@@ -170,3 +177,5 @@ footer{
 }
 =======
 >>>>>>> 30d074996118eabf39297f0c7f6137047f4132b6
+=======
+>>>>>>> 4996abcf50a91e81220314bf284bb3f2054b4984

@@ -1,0 +1,26 @@
+h1 {
+    color: firebrick;
+  }
+h2 {
+    color: blue;
+  }
+  body {
+    background: #333;
+      color:deepskyblue;
+    font-family: sans-serif;
+    font-size: xx-large;
+    text-align: center;
+    width: 1400px;
+    padding-top: 60px;
+    background: url('https://i.gifer.com/NvL.gif');
+    background-size: 1600px 1200px;
+    background-repeat: no-repeat, repeat;
+    overflow: hidden;  
+  }
+  button {
+    width: 140px;
+    color: red;
+    font-size: medium;
+    border-radius: 8px;
+    background:cadetblue
+  }

@@ -20,6 +20,7 @@ nav {
   justify-content: flex-start;
   align-items: center;
 <<<<<<< HEAD
+<<<<<<< HEAD
   background-color: #fcac00;
   padding: 2px;
 =======
@@ -27,12 +28,18 @@ nav {
   padding: 3px;
   margin-top: 3px;
 >>>>>>> 30d074996118eabf39297f0c7f6137047f4132b6
+=======
+  background-color: #00676D;
+  padding: 3px;
+  margin-top: 3px;
+>>>>>>> 4996abcf50a91e81220314bf284bb3f2054b4984
   
 }
 /*------------------------------HOME PAGE--------------------*/
 .greeting {
   color: rgb(32, 19, 1);
   font-family: 'Roboto Mono', monospace;
+<<<<<<< HEAD
 <<<<<<< HEAD
   display: flex;
   flex-direction: row;
@@ -43,6 +50,8 @@ nav {
 .hedger_container {
   background-color: rgb(219, 248, 89);
 =======
+=======
+>>>>>>> 4996abcf50a91e81220314bf284bb3f2054b4984
   color: #e5ffdf;
   display: flex;
   flex-direction: row;
@@ -52,7 +61,10 @@ nav {
 }
 .hedger_container {
   background-color: #91A0BB;;
+<<<<<<< HEAD
 >>>>>>> 30d074996118eabf39297f0c7f6137047f4132b6
+=======
+>>>>>>> 4996abcf50a91e81220314bf284bb3f2054b4984
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -64,10 +76,14 @@ nav {
   font-family: 'Roboto Mono', monospace;
   font-weight: 600;
 <<<<<<< HEAD
+<<<<<<< HEAD
   background-color: rgb(182, 248, 59);
 =======
   background-color: #e5ffdf;
 >>>>>>> 30d074996118eabf39297f0c7f6137047f4132b6
+=======
+  background-color: #e5ffdf;
+>>>>>>> 4996abcf50a91e81220314bf284bb3f2054b4984
   width: 253px;
   height: 253px;
   display: flex;
@@ -81,11 +97,16 @@ nav {
 /*------------------------------LOGIN PAGE--------------------*/
 .page_login {
 <<<<<<< HEAD
+<<<<<<< HEAD
   background-color: rgb(219, 248, 89);
 =======
   background-color:  #91A0BB;
   color: #e5ffdf;
 >>>>>>> 30d074996118eabf39297f0c7f6137047f4132b6
+=======
+  background-color:  #91A0BB;
+  color: #e5ffdf;
+>>>>>>> 4996abcf50a91e81220314bf284bb3f2054b4984
   font-family: 'Roboto Mono', monospace;
   display: flex;
   flex-direction: row;
@@ -94,10 +115,14 @@ nav {
 }
 .login_contianer {
 <<<<<<< HEAD
+<<<<<<< HEAD
   background-color: rgb(219, 248, 89);
 =======
   background-color:#91A0BB;;
 >>>>>>> 30d074996118eabf39297f0c7f6137047f4132b6
+=======
+  background-color:#91A0BB;;
+>>>>>>> 4996abcf50a91e81220314bf284bb3f2054b4984
   font-family: 'Roboto Mono', monospace;
   display: flex;
   flex-direction: row;
@@ -105,10 +130,14 @@ nav {
 }
 .login_inputs {
 <<<<<<< HEAD
+<<<<<<< HEAD
   background-color: rgb(197, 194, 26);
 =======
   background-color: #e5ffdf;
 >>>>>>> 30d074996118eabf39297f0c7f6137047f4132b6
+=======
+  background-color: #e5ffdf;
+>>>>>>> 4996abcf50a91e81220314bf284bb3f2054b4984
   font-family: 'Roboto Mono', monospace;
   display: flex;
   flex-direction: column;
@@ -130,10 +159,14 @@ nav {
 }
 .bottom {
 <<<<<<< HEAD
+<<<<<<< HEAD
   background-color: #fcac00;
 =======
   background-color: #00676D;
 >>>>>>> 30d074996118eabf39297f0c7f6137047f4132b6
+=======
+  background-color: #00676D;
+>>>>>>> 4996abcf50a91e81220314bf284bb3f2054b4984
   width: 100%;
   height: 25px;
   margin-top: 3px;
@@ -141,10 +174,14 @@ nav {
 /*------------------------------DASHBOARD/REBALANCE PAGE--------------------*/
 .dashboard {
 <<<<<<< HEAD
+<<<<<<< HEAD
   background-color: #f0faed;
 =======
   background-color: #e5ffdf;
 >>>>>>> 30d074996118eabf39297f0c7f6137047f4132b6
+=======
+  background-color: #e5ffdf;
+>>>>>>> 4996abcf50a91e81220314bf284bb3f2054b4984
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -155,10 +192,14 @@ nav {
 .dashboard_user {
   background-color: #00676D;
 <<<<<<< HEAD
+<<<<<<< HEAD
   color: #f0faed;
 =======
   color: #e5ffdf;
 >>>>>>> 30d074996118eabf39297f0c7f6137047f4132b6
+=======
+  color: #e5ffdf;
+>>>>>>> 4996abcf50a91e81220314bf284bb3f2054b4984
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -254,6 +295,7 @@ table {
   width: 95%;
   height: 95%;
 <<<<<<< HEAD
+<<<<<<< HEAD
   border: 1px solid #ddd;
   margin: 2px;
 }
@@ -267,6 +309,8 @@ th, td {
 tr:nth-child(even) {
   background-color: #e5ffdf;
 =======
+=======
+>>>>>>> 4996abcf50a91e81220314bf284bb3f2054b4984
   border: 1px solid #6D78AD;
   margin: 2px;
 }
@@ -286,7 +330,10 @@ tr:nth-child(odd){background-color: #e5ffdf;}
 tr:hover {
   background-color:#6D78AD;
   border: #e5ffdf;
+<<<<<<< HEAD
 >>>>>>> 30d074996118eabf39297f0c7f6137047f4132b6
+=======
+>>>>>>> 4996abcf50a91e81220314bf284bb3f2054b4984
 }
 /* -----------------------------------------------Chart Row -------------------------------------------------- */
 

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Scan Host for Open Port(s):</h1>
+       
+<form action="/external/" method="post">
+    {% csrf_token %}               
+    Input Host IP Address:
+    <input type="text" name="run_script" required>
+    <br><br>
+    <input type="submit" value="Execute Scan">    
+</form>
+
+<form action="/r_script">
+    <button id="r_script" class="btn">Clear Page</button>
+</form>
+
+<form action="/logout">
+    <button><a href="http://127.0.0.1:8000/login/">Logout</a></button>
+</form>
+
+<form action="/ports">
+    <button><a href="http://127.0.0.1:8000/ports/">Port Descriptions</a></button>
+</form>
+
+<h4>Open Port(s):</h4>
+{% for info in myScan %}
+<p>{{ info }}</p>
+{% endfor %}
+{% endblock %}
