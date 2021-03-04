@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <p>title: {{ todo.title }}</p>
+    <p>description: {{ todo.text }}</p>
+    <p>status: {{ todo.status }}</p>
+    <a href="{% url 'update' todo.id %}">update</a>
+    <a href="{%url 'remove' todo.id %}">remove</a>
+    <a href ="http://localhost:8000/todo/">Back to main todo list</a>
+{% endblock %}

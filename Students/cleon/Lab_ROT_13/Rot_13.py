@@ -1,6 +1,6 @@
 import string
- 
-#Rot 13
+
+Rot 13
 
 def rot_13(plain_text):
     enc = ""
@@ -22,7 +22,5 @@ plain_text = input (" Please eneter your message: \n")
 
 
 print(rot_13(plain_text))
-
-
 
 

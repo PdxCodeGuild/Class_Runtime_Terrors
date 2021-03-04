@@ -27,8 +27,8 @@ for word in word_list:
         count = word_dict[word]
         word_dict[word] = count + 1
 
-words = list(word_dict.items())
-words.sort(key=lambda tup: tup[1], reverse=True) 
-for i in range(min(25, len(words))):  
+words = list(word_dict.items()) # .items() returns a list of tuples
+words.sort(key=lambda tup: tup[1], reverse=True)  # sort largest to smallest, based on count
+for i in range(min(25, len(words))):  # print the top 10 words, or all of them, whichever is smaller
     print(words[i])
 #print(sorted(word_dict.values()))

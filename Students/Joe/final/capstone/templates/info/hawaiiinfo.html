@@ -1,0 +1,309 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% load static %}
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel = "stylesheet" href = "{% static 'css/hawaiiinfo.css' %}"> </link>
+
+  <!-- <link rel="stylesheet" href="css/baguetteBox.css"> -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <!-- <link href="search-filter.css" rel="stylesheet"> -->
+  <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body id ='body'>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item" >
+        <a class="nav-link" href="http://localhost:8000/"> <i class="fas fa-home fa-2x"></i></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="http://localhost:8000/hawaiiblog/"> <i class="fas fa-arrow-left fa-2x"></i></a>      
+      </li>
+    {% if user.is_authenticated %}
+    <li class="nav-item my-container">
+      <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+    </li>  
+    {% endif %}    
+    </ul>
+    <ul class ="navbar-nav ml-auto">
+      {% if user.is_authenticated %}
+      <li class="nav-item">
+        <a class = 'nav-link'>Profile: {{ user.username }}</a>
+      </li>  
+      {% endif %}  
+    </ul>
+  </div>  
+</nav>
+<div class="container">
+    <div class="mt-5 page-header">
+      <h1 class ='text-center'>Hawaii</h1>
+            
+    </div>    
+  </div>
+  <body>
+<div class="mt-5 container text-center">    
+  <div class="row content">
+    <div class="mt-4 col-sm-12">
+      <h3>Kaneohe Marine Corps Base</h1>
+      <p> Kaneohe Marine Corps Base Hawaii is home to a handful of great surfing beaches. Pyramid Rock and North Beach span over a mile
+        beach with around a dozen different waves. During the winter time, large north swells will consistently wrap into the beaches. Throughout 
+        the entire year east winds drive tradewind swells as well, making the beaches very consistent for 
+        surfing activities. However, the best wind conditions occur in the winter, when occassional "Kona winds",
+        or winds from the south, blow over the island. </p>  
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="card-deck">
+    <div class="card bg-secondary col-sm-4">
+      <div class="card-body text-center">
+        <p class="card-text">Wind Speed </p>
+        <i class="fas fa-wind fa-4x"></i>
+            <div id= 'kaneohe_wind_speed'> </div>
+            <!-- {%  for city_weather in weather_data %} -->
+            <div>{{ city_weather.windspeed }} </div>
+
+            <h6>Knots</h6>
+            <!-- {% endfor %} -->
+
+      </div>
+    </div>    
+    <div class="card bg-secondary col-sm-4">
+      <div class="card-body text-center">
+        <p class="card-text">Wind Direction</p>
+          <i class="fas fa-location-arrow fa-4x"></i>
+          <div id='kaneohe_wind_direction'></div>
+          {%  for city_weather in weather_data %}
+
+          <div>{{ city_weather.winddirection }}</div>
+          {% endfor %}
+      </div>
+    </div>
+    <div class="card bg-secondary col-sm-4">
+      <div class="card-body text-center">
+        <p class="card-text">Wave Heights</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class = 'container'>
+<form method="GET" action ="{% url 'search' %}">
+<div class="form-row mt-5">
+  <div class="form-group col-3">
+      <div class="input-group">
+          <input class="form-control py-2 border-right-0 border" type="search" name="text" placeholder="text..." />
+      </div>
+  </div>        
+</div>
+<button type='submit'>search</button>
+</form>
+</div>
+<div class = 'container'>
+  <form method="GET" action ="{% url 'search' %}">
+  <div class="form-row mt-5">
+    <div class="form-group col-3">
+        <div class="input-group">
+            <input class="form-control py-2 border-right-0 border" type="search" name="author" placeholder="author exact..." />
+        </div>
+    </div>        
+  </div>
+  <button type='submit'>search</button>
+  </form>
+  </div>
+
+<!-- <div class="container mt-5">
+  <form method="GET" action ="{% url 'search' %}">
+  <div class="row searchFilter" >
+     <div class="col-sm-6" >
+      <div class="input-group" >
+       <input id="table_filter" type="text" class="form-control" >
+       <div class="input-group-btn" >
+        <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" ><span class="label-icon" >Category</span> </button>
+        <div class="dropdown-menu dropdown-menu-right" >
+           <ul class="category_filters" >
+            <li >
+             <input type="radio" name="author" value="Author" ><label class="category-label" for="Author" >Photographer</label>
+            </li>
+            <li >
+             <input type="radio" name="text" value="Text" ><label class="category-label" for="Text" >Description </label>
+            </li>
+            <li >
+             <input type="radio" name="created_date"  value="Pub date" ><label class="category-label" for="created_date" >Published date</label>
+            </li>
+           </ul>
+        </div>
+        <button id="searchBtn" type="button" class="btn btn-secondary btn-search" >Search</span></button>
+       </div>
+      </div>
+     </div>
+  </div>
+  </form>
+</div> -->
+
+<div class="mt-5 container text-center">
+  <h1 class='photos'>Spot Photos</h1>
+</div>
+{% if user.is_authenticated %}
+<div class="mt-3 container text-center">    
+  <a  href= "{%url 'create' %}"> 
+    <i class="fas fa-upload fa-2x"></i>
+  </a>  
+  <span id ='kaneohe_upload' ><h5>Upload a photo</h5> </span>
+</div>
+{% else %}
+  <div class = "mt-3 container text-center">
+    <h5><a href="{%url 'login' %}">Login to post pictures</a> </h5>
+  </div>
+{% endif %}
+<div class="container-fluid">
+  <div class="row mt-5">
+    {% for pics in albums %}
+    <a href="{%url 'details' pics.id %}" data-toggle="lightbox" data-gallery="gallery" class="col-md-1" class="col-sm-3"  id='pics'>
+      <img src={{pics.album_cover.url}} class="img-fluid rounded">
+    </a>
+    {% endfor %}
+  </div>
+</div>
+<!-- this works just tryin above -->
+<!-- <div class="container-fluid gallery-container">
+  <div class="tz-gallery">
+    <div class="row">
+      {% for pics in albums %}
+      <div class="col-sm-6 col-lg-1">
+        <div class="lightbox">
+          <a href="{%url 'details' pics.id %}">
+            <img src = {{pics.album_cover.url}}/>
+            </a>
+        
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div> -->
+
+<div class="container text-center">    
+  <div class="row content">
+    <div class="mt-5 col-sm-12">
+      <h3>Hickam Air Force Base</h1>
+      <p> Hickam AFB has a wave called "Runways" located off the airport runway. The
+        wave only breaks on large summer South and Southwest swells. Conditions are 
+        usually choppy and rough as the wave is pretty exposed to sideshore winds. 
+        The crowd is often minimal as it can be a very long paddle out to the break, but if 
+      you are willing to wait for the ferry you can pay a few dollars to be shuttled out to the 
+    surf zone </p>  
+    </p>  
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="card-deck">
+    <div class="card bg-secondary">
+      <div class="card-body text-center">
+        <p class="card-text">Some text inside the first card</p>
+        <i class="fas fa-wind fa-4x"></i>
+            <div id= 'hickam_wind_speed'> </div>
+            <h6>Knots</h6>
+      </div>
+    </div>
+    <div class="card bg-secondary">
+      <div class="card-body text-center">
+        <p class="card-text">Some text inside the second card</p>
+          <i class="fas fa-location-arrow fa-4x"></i>
+          <div id='hickam_wind_direction'></div>
+      </div>
+    </div>
+    <div class="card bg-secondary">
+      <div class="card-body text-center">
+        <p class="card-text">Wave heights</p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- how do people submit pics? what happens if the amount of pics exceeds container height? -->
+<h1 class='photos'>Spot Photos</h1>
+<div class="container-fluid gallery-container">
+  <div class="mt-3 container text-center">   
+    <span>
+    <a  href="{%url 'create' %}"> 
+      <i class="fas fa-upload fa-2x"></i>
+    </a>  
+  </span>
+    <span id ='kaneohe_upload' >Upload a photo </span>
+  </div>
+  <div class="tz-gallery">
+    <div class="row">
+      <div class="col-sm-6 col-lg-1">
+        <a class="lightbox" href="../images/tunnel.jpg">
+          <img src="https://via.placeholder.com/300.png/09f/fffC/O https://placeholder.com/ " alt="Tunnel">
+        </a>
+      </div>
+    </div>
+  </div>
+<!-- <script src = "{% static 'js/hawaiiinfo.js' %}"></script> -->
+<script>
+  function dakine(){
+    let kaneohe = 'kaneohe'
+    // if (icon.hasChildNodes){
+    //     icon.innerText = '';
+    // }
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${kaneohe}&appid=8af2aa7fa978da0c3dc608a85406875c`)
+//   method: 'GET',
+//   headers: myHeaders,
+// })
+    .then(function(response){
+        return response.json()
+    })
+    .then(function(data){
+        console.log(data) 
+        console.log(data.wind.speed)
+        console.log(data.wind.deg)
+        let speed = document.getElementById('kaneohe_wind_speed')
+        speed.innerText = data.wind.speed;
+        //if you want to change to cardinal dir thats cool
+        let direction = document.getElementById('kaneohe_wind_direction')
+        direction.innerText = data.wind.deg;
+    })
+    .catch(function(error){
+        console.error('There has been a problem with your fetch operation:', error);
+    });
+  }
+
+function aiea(){
+        let aiea = 'aiea'
+        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${aiea}&appid=8af2aa7fa978da0c3dc608a85406875c`)
+        .then(function(response){
+            return response.json()
+        })
+        .then(function(data){
+            console.log(data) 
+            console.log(data.wind.speed)
+            console.log(data.wind.deg)
+            let speed = document.getElementById('hickam_wind_speed')
+            speed.innerText = data.wind.speed;
+            //if you want to change to cardinal dir thats cool
+            let direction = document.getElementById('hickam_wind_direction')
+            direction.innerText = data.wind.deg;
+        })
+        .catch(function(error){
+            console.error('There has been a problem with your fetch operation:', error);
+        });
+        }
+dakine()
+aiea()
+// Material Select Initialization
+$(document).ready(function() {
+$('.mdb-select').materialSelect();
+});
+</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body body style = "background-color: hsla(0, 6%, 90%, 0.898)">
+    <div class="container">
+        <div class="mt-5 page-header">
+          <h1 class ='text-center'>Search Results</h1>      
+        </div>    
+      </div>
+    
+    <div class="container-fluid">
+        <div class="row mt-5">
+            {% for x in queryset %}
+          <a href = "{%url 'details' x.id %}" data-toggle="lightbox" data-gallery="gallery" class="col-md-3" class="col-sm-3">
+            <img src= "{{ x.album_cover.url }}" class="img-fluid rounded">
+          </a>
+            {% endfor %}
+            </div>
+        </div>
+      </div>
+</body>
+</html>
+
+
+<!-- this works  -->
+<!-- <h1>test results</h1>
+<div>
+{% for x in queryset %}
+    <img src= "{{ x.album_cover.url }}" width = "50%"/>
+<div>
+    <p>{{x.author }} </p>
+    <p>{{x.text }} </p>
+    <p>{{x.created_date }} </p>
+</div>
+{% endfor %} --> 

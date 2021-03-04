@@ -1,0 +1,31 @@
+body{
+    background-color: #F4F4FF;
+}
+
+#pageTitle{
+    position: relative;
+    left: 35%;
+}
+
+#pageDescription{
+    position: relative;
+    left: 6%;
+}
+
+#picDiv{
+    position: relative;
+    
+    text-align: center;
+}
+.pic{
+    max-width: 960px;
+}
+
+#copyright{
+    position: relative;
+    left: 43%;
+}
+#owner{
+    position: relative;
+    left: -3%;
+}

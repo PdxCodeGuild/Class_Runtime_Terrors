@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="clock.css"/>
+</head>
+<body>
+    <header class="welcome">
+        <h1 class="name">Cadillac Jacks Timer Apps</h1>
+        <h2 class="now"></h2>
+    </header>
+    <sidebar class="side">
+        
+        <ul class="laps">
+            <li>Your Lap Times Will Appear Below</li>
+        </ul>
+
+    </sidebar>
+    <main class="clocks">
+        <h1 class="clocked">00:00:00</h1>
+        <button class="btn" id="startBtn">Start Lap</button>
+        <button class="btn" id="stopBtn">Stop Lap</button>
+    </main>
+    <footer class="foot">
+        <ul id=times>
+            <li class="units">Hours</li>
+            <li class="units">Minutes</li>
+            <li class="units">Seconds</li>
+        </ul>
+        <div class="countDown" id="countDown">
+            <select name="tenHour" size="1" class="listbox" id="tenHour">  
+                <option value="0"> 0 </option>  
+                <option value="1"> 1 </option>  
+                <option value="2"> 2 </option> 
+                <option value="3"> 3 </option>  
+                <option value="4"> 4 </option>  
+                <option value="5"> 5 </option>
+                <option value="6"> 6 </option>
+                <option value="7"> 7 </option>
+                <option value="8"> 8 </option>
+                <option value="9"> 9 </option>  
+            </select>
+            <select name="hour" size="1" class="listbox" id="hour">  
+                <option value="0"> 0 </option>  
+                <option value="1"> 1 </option>  
+                <option value="2"> 2 </option> 
+                <option value="3"> 3 </option>  
+                <option value="4"> 4 </option>  
+                <option value="5"> 5 </option>
+                <option value="6"> 6 </option>
+                <option value="7"> 7 </option>
+                <option value="8"> 8 </option>
+                <option value="9"> 9 </option>  
+            </select>
+            <p class="colon" id="hourCol">:</p>
+            <select name="tenMinutes" size="1" class="listbox" id="tenMin">  
+                <option value="0"> 0 </option>  
+                <option value="1"> 1 </option>  
+                <option value="2"> 2 </option>  
+                <option value="3"> 3 </option>  
+                <option value="4"> 4 </option>  
+                <option value="5"> 5 </option>  
+            </select>
+            <select name="Minutes" size="1" class="listbox" id="min">  
+                <option value="0"> 0 </option>  
+                <option value="1"> 1 </option>  
+                <option value="2"> 2 </option>  
+                <option value="3"> 3 </option>  
+                <option value="4"> 4 </option>  
+                <option value="5"> 5 </option>
+                <option value="6"> 6 </option>
+                <option value="7"> 7 </option>
+                <option value="8"> 8 </option>
+                <option value="9"> 9 </option>  
+            </select>
+            <p class="colon" id="minCol">:</p>
+                <select name="tenSeconds" size="1" class="listbox" id="tenSec">  
+                <option value="0"> 0 </option>  
+                <option value="1"> 1 </option>  
+                <option value="2"> 2 </option>  
+                <option value="3"> 3 </option>  
+                <option value="4"> 4 </option>  
+                <option value="5"> 5 </option>  
+            </select>
+            <select name="Seconds" size="1" class="listbox" id="sec">  
+                <option value="0"> 0 </option>  
+                <option value="1"> 1 </option>  
+                <option value="2"> 2 </option>  
+                <option value="3"> 3 </option>  
+                <option value="4"> 4 </option>  
+                <option value="5"> 5 </option>
+                <option value="6"> 6 </option>
+                <option value="7"> 7 </option>
+                <option value="8"> 8 </option>
+                <option value="9"> 9 </option>  
+            </select>
+        </div>
+        <button class="timerBtn" id="startTimer">Start Timer</button>
+        <p class="timerTime">00:00:00</p>
+
+    </footer>
+    
+
+    <script src="clock.js"></script>
+</body>
+</html>

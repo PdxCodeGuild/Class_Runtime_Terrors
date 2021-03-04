@@ -1,6 +1,0 @@
-<select class="form-control form-control-sm w-auto select-restroom-status"
-        data-pk="{{ record.pk }}" >
-    {% for status in status_choices %}
-        <option value="{{ status.0 }}" {% if record.status == status.0 %}selected{% endif%}>{{ status.1 }}</option>
-    {% endfor %}
-</select>
