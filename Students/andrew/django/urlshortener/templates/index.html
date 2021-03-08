@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shorten my URL!</title>
+</head>
+<body>
+<form method="POST" action="">
+    {% csrf_token %}
+    <div>
+        {{ form.as_p }}
+        <input type="submit" name="Submit">
+    </div>
+</form>
+
+<div class="container">
+    {% for i in data %}
+    <h2>{{ i.url }}</h2>
+    <h4><a href="/u/{{ i.slug }}">{{ i.slug }}</a></h4>
+</div>
+{% endfor %}
+</body>
+</html>
