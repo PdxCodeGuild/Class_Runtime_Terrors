@@ -40,7 +40,7 @@ def update(request, id):
     elif request.method =='POST':
         todo.title = request.POST['title']
         todo.text = request.POST['text']
-        if (request.POST['statis'] == 'False'):
+        if (request.POST['status'] == 'False'):
             todo.statis = False
         else:
             todo.status = True
@@ -50,5 +50,5 @@ def update(request, id):
 def remove_todo(request, id):
     todo = Todo.objects.get(id = id)
     todo.delete()
-    return redirect('list')
+    return redirect('todo_app:list')
         
