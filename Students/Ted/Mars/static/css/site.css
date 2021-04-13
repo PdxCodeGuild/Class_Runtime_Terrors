@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 /* *{
     box-sizing: border-box;
 }
@@ -13,29 +12,29 @@ body{
     margin: auto; 
 }
 */
-.helmet {
+/* .helmet {
     justify-content: center;
 }
 .visor {
     justify-content: center;
     /* position: relative; */
-    width: 700px;
+    /* width: 700px;
     height: 700px;
-    border-radius: 100px;
+    border-radius: 100px; */
     /* z-index: 999;
     border: 2px solid black; */
-    overflow: hidden;
+    /* overflow: hidden; */
    
-}
+/* }
 
 .visor > #first {
     position: relative;
     top: 0;
     left: 0;
     transition: all ease 4s;
-}
+} */
 
-.visor > #first:hover {
+/* .visor > #first:hover {
     top: 0;
     left: -300px;
     transition: all ease 4s;
@@ -53,10 +52,13 @@ body{
     display: block;
     margin: auto;
 }
-.dot {
-=======
-=======
->>>>>>> 4996abcf50a91e81220314bf284bb3f2054b4984
+.dot { */ 
+
+/* body {
+    background-color: grey;
+} */
+
+
 .Marscape {
     display: flex;
     align-content: center;
@@ -65,13 +67,14 @@ body{
     color: lightgreen;
 }
 .helmet {
-   display: flex;
-   background-color: grey;
-}
-
-
-.visor {
     display: flex;
+    justify-content: center;
+    margin: 25px;
+    background-color: grey;
+    background-image: linear-gradient
+    (to bottom right,rgb(237, 127, 19),rgb(33, 28, 18));
+}
+.visor {
     align-items: center;
     margin: 0 auto;
     border-style: none;
@@ -79,37 +82,38 @@ body{
     height: 500px;
     border-radius: 150px;
     overflow: hidden;
-    background-color: grey;
+    
 }
 
 #first {
     display: block;
-    
-    margin-left: auto;
-    margin-right: auto;
+    border: 2px solid grey;
+    margin-left: -30px;
+    margin-right: -10px;
+    margin-top: -10px;
+    margin-bottom: -10px;
     position: relative;
     width: 1000px;
     height: 1000px;
     top: 0;
     left: 0;
     background-color: grey;
-    /* transition: ease 6s; */
+    transition: ease 6s;
 }
-
+#left, #right {
+    text-align: center;
+}
 
 
 .dot {
     display: flex;
     align-items: center;
-<<<<<<< HEAD
->>>>>>> 30d074996118eabf39297f0c7f6137047f4132b6
-=======
->>>>>>> 4996abcf50a91e81220314bf284bb3f2054b4984
+
     cursor: pointer;
     height: 15px;
     width: 15px;
-    margin: 0 2px;
-    background-color: #bbb;
+    margin: 5px;
+    background-color: lightgreen;
     border-radius: 50%;
     display: inline-block;
     transition: background-color 0.6s ease;
@@ -119,8 +123,7 @@ body{
     background-color: #717171;
   }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 /* .fade {
     -webkit-animation-name: fade;
     -webkit-animation-duration: 2.0s;
@@ -136,7 +139,7 @@ body{
 @keyframes fade {
     from {opacity: .2}
     to {opacity: 1}
-} */ */
+} */ 
 /* 
 .slide {
     display: none;
@@ -175,7 +178,4 @@ footer{
     display: grid;
     align-items: center;
 }
-=======
->>>>>>> 30d074996118eabf39297f0c7f6137047f4132b6
-=======
->>>>>>> 4996abcf50a91e81220314bf284bb3f2054b4984
+
