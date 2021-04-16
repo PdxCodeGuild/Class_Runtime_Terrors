@@ -2,7 +2,7 @@
 {% block content %}
     <h1> Welcom to Ushort</h1><br>
     <h2>Add URL to shorten below</h2>
-    <form id='add entry' action= "{%url 'Ushort_app:post' %}" method= 'POST'>
+    <form id='add entry' action= "{%url 'add_url'%}" method= 'POST'>
         {% csrf_token %}
         <div id='site_name'>
             <input type="text" id="url_shortener" name="url" placeholder="enter URL" />
