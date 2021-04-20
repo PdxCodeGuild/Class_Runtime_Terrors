@@ -1,18 +1,19 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h1> Welcom to Ushort</h1><br>
+    <h1> Welcome to Ushort</h1><br>
     <h2>Add URL to shorten below</h2>
     <form id='add entry' action= "{%url 'Ushort_app:post' %}" method= 'POST'>
         {% csrf_token %}
         <div id='site_name'>
             <input type="text" id="url_shortener" name="url" placeholder="enter URL" />
-            <button type="submit" class="btn btn-primary">Submit</button><br /><br />
+            <button type="submit">Submit</button><br /><br />
         </div>
     </form>
 
     <h2 class='text-center'>List of URLS</h2>
-{%for url in my_urls%}
+{%for url in all_urls%}
 <p class='text-center'><a href='https://{{url.url_name}}' target='_blank'>{{url.shortened_url}}</a></p>
+<button type="delete">Delete</button><br><br>
 {% endfor %}
     
 {% endblock %}

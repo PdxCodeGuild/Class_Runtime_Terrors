@@ -22,7 +22,7 @@ def ushrink_post(request):
         else:
             full_url = url.split('/')
             random = get_random_string(length=5)
-            short_url = full_url[0] + x + '///' + random
+            short_url = x + '///' + random
             Ushort.objects.create(url_name = url, shortened_url = short_url)
             return redirect('Ushort_app:list') 
 
