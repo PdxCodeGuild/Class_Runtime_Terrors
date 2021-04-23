@@ -26,6 +26,13 @@ def ushrink_post(request):
             Ushort.objects.create(url_name = url, shortened_url = short_url)
             return redirect('Ushort_app:list') 
 
+def udelete(request):
+    print(request)
+    #post = Ushort.objects.get(id=id)
+    #print(post)
+    #post.delete()
+    return redirect('Ushort_app:list')
+
 
 
 
