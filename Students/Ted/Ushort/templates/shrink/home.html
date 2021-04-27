@@ -13,7 +13,7 @@
     <h2 class='text-center'>List of URLS</h2>
 {% for link in all_urls %}
 <p class='text-center'><a href='https://{{link.url_name}}' target='_blank'>{{link.shortened_url}}</a></p>
-<button onclick="{% url 'Ushort_app:delete' %}">Delete</button><br><br>
+<a href= "{% url 'Ushort_app:delete' link.id %}"><button>Delete</button></a><br><br>
 {% endfor %}
     
 {% endblock %}

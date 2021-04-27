@@ -20,17 +20,17 @@ def ushrink_post(request):
             # return render(request, 'home.html', context)
             return redirect('Ushort_app:list')
         else:
-            full_url = url.split('/')
+            # full_url = url.split('/')
             random = get_random_string(length=5)
             short_url = x + '///' + random
             Ushort.objects.create(url_name = url, shortened_url = short_url)
             return redirect('Ushort_app:list') 
 
-def udelete(request):
+def udelete(request, id):
     print(request)
-    #post = Ushort.objects.get(id=id)
-    #print(post)
-    #post.delete()
+    post = Ushort.objects.get(id=id)
+    print(post)
+    post.delete()
     return redirect('Ushort_app:list')
 
 
