@@ -1,62 +1,4 @@
 
-/* *{
-    box-sizing: border-box;
-}
-body{
-    background-color: grey;
-    overflow: hidden;
-}
-.Slideshow-container {
-    max-width: 1300px;
-    position: relative;
-    margin: auto; 
-}
-*/
-/* .helmet {
-    justify-content: center;
-}
-.visor {
-    justify-content: center;
-    /* position: relative; */
-    /* width: 700px;
-    height: 700px;
-    border-radius: 100px; */
-    /* z-index: 999;
-    border: 2px solid black; */
-    /* overflow: hidden; */
-   
-/* }
-
-.visor > #first {
-    position: relative;
-    top: 0;
-    left: 0;
-    transition: all ease 4s;
-} */
-
-/* .visor > #first:hover {
-    top: 0;
-    left: -300px;
-    transition: all ease 4s;
-}
-
-
-#first {
-    position: absolute;
-    height: auto;
-    width: 1000px;
-    height: 1000px;
-    max-width: 100%;
-    z-index: -1;
-    overflow: hidden;
-    display: block;
-    margin: auto;
-}
-.dot { */ 
-
-/* body {
-    background-color: grey;
-} */
 
 
 .Marscape {
@@ -64,22 +6,22 @@ body{
     align-content: center;
     flex-direction: column;
     background-color: grey;
+    background-image: linear-gradient(to bottom right,rgb(33, 28, 18),rgba(211, 109, 7, 0.993));
     color: lightgreen;
 }
 .helmet {
     display: flex;
     justify-content: center;
     margin: 25px;
-    background-color: grey;
-    background-image: linear-gradient
-    (to bottom right,rgb(237, 127, 19),rgb(33, 28, 18));
+    
+    
 }
 .visor {
     align-items: center;
     margin: 0 auto;
     border-style: none;
-    width: 700px;
-    height: 500px;
+    width: 800px;
+    height: 630px;
     border-radius: 150px;
     overflow: hidden;
     
@@ -88,7 +30,7 @@ body{
 #first {
     display: block;
     border: 2px solid grey;
-    margin-left: -30px;
+    margin-left: -50px;
     margin-right: -10px;
     margin-top: -10px;
     margin-bottom: -10px;
@@ -97,13 +39,17 @@ body{
     height: 1000px;
     top: 0;
     left: 0;
-    background-color: grey;
-    transition: ease 6s;
+    background-color: rgb(49, 37, 37);
+    transition: ease 1s;
 }
-#left, #right {
-    text-align: center;
+#right {
+    margin-top: 70px;
+    text-align: left;
 }
-
+#left {
+    margin-top: 70px;
+    text-align: right;
+}
 
 .dot {
     display: flex;
@@ -112,64 +58,16 @@ body{
     cursor: pointer;
     height: 15px;
     width: 15px;
-    margin: 5px;
-    background-color: lightgreen;
+    margin: 2px;
+    background-color: rgb(24, 168, 24);
     border-radius: 50%;
     display: inline-block;
     transition: background-color 0.6s ease;
   }
   
   .active, .dot:hover {
-    background-color: #717171;
+    background-color: #990505;
   }
-
-
-/* .fade {
-    -webkit-animation-name: fade;
-    -webkit-animation-duration: 2.0s;
-    animation-name: fade;
-    animation-duration: 2.0s;
-}
-
-@-webkit-keyframes fade {
-    from {opacity: .2}
-    to {opacity: 1}
-}
-
-@keyframes fade {
-    from {opacity: .2}
-    to {opacity: 1}
-} */ 
-/* 
-.slide {
-    display: none;
-}
-
-/* .Marscape {
-    display: flex;
-    justify-content: center;
-    position: relative;
-    
-} */
-/* #step{
-    display: flex;
-    justify-content: right; 
-} */
-
-/* img{
-    display: flex;
-    position: relative;
-    justify-content: center;
-    border-radius: 400px;
-    width: 1200px;
-    height: 850px;
-    
-
-}
-
-header{
-    text-align: center;
-} */
 
 
 
