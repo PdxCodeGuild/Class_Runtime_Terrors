@@ -6,7 +6,10 @@
     align-content: center;
     flex-direction: column;
     background-color: grey;
-    background-image: linear-gradient(to bottom right,rgb(33, 28, 18),rgba(211, 109, 7, 0.993));
+    /* height: 740px;
+    width: 1300px; */
+    /* background-image: linear-gradient(to bottom right,rgb(33, 28, 18)); */
+    background-image: radial-gradient(circle farthest-side at 60% 80%,rgba(211, 109, 7, 0.993)10%,rgba(165, 86, 7, 0.993)50%,rgb(33, 28, 18)80%);
     color: lightgreen;
 }
 .helmet {
@@ -30,7 +33,7 @@
 #first {
     display: block;
     border: 2px solid grey;
-    margin-left: -50px;
+    margin-left: -60px;
     margin-right: -10px;
     margin-top: -10px;
     margin-bottom: -10px;

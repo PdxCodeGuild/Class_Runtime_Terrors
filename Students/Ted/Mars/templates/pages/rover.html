@@ -44,43 +44,43 @@
 
 
 const mag = () => {
-        console.log('mag ran')
-        let image = document.getElementById('first')
-        let imgSize = '1000px'
-        let startingSize = 990
-        let justice = 0
-        let justify = '50px'
-        image.style.transition =''
-        image.style.width = imgSize
-        image.style.height = imgSize
-        image.style.left = justify
-        const sleep = (milliseconds) => {
-            return new Promise(resolve => setTimeout(resolve, milliseconds))
-        }
-        let counter = 0
-        const intervalid = setInterval(()=>{
-            counter ++
-            dots.forEach(dot =>{
-            dot.addEventListener('click', ()=> clearInterval(intervalid))
-        })
-            if (counter == 24){
-                clearInterval(intervalid)
-            }
-            console.log(counter)
-            if (counter > 0) {
-                image.style.transition ='ease 1s'
-            }
-           
-            startingSize += 50
-            imgSize = startingSize.toString()+'px' 
-            justice -= 50
-            justify = justice.toString()+'px'         
-            document.getElementById('first').style.width = imgSize
-            document.getElementById('first').style.height = imgSize
-            document.getElementById('first').style.left = justify
-        },1000)
-         
+    console.log('mag ran')
+    let image = document.getElementById('first')
+    let imgSize = '1000px'
+    let startingSize = 990
+    let justice = 0
+    let justify = '0px'
+    image.style.transition =''
+    image.style.width = imgSize
+    image.style.height = imgSize
+    image.style.left = justify
+    const sleep = (milliseconds) => {
+        return new Promise(resolve => setTimeout(resolve, milliseconds))
     }
+    let counter = 0
+    const intervalid = setInterval(()=>{
+        counter ++
+        dots.forEach(dot =>{
+        dot.addEventListener('click', ()=> clearInterval(intervalid))
+    })
+        if (counter == 24){
+            clearInterval(intervalid)
+        }
+        console.log(counter)
+        if (counter > 0) {
+            image.style.transition ='ease 1s'
+        }
+        
+        startingSize += 20
+        imgSize = startingSize.toString()+'px' 
+        justice -= 50
+        justify = justice.toString()+'px'         
+        document.getElementById('first').style.width = imgSize
+        document.getElementById('first').style.height = imgSize
+        document.getElementById('first').style.left = justify
+    },1000)
+        
+}
 
     const images = {{serialized_image|safe}}
     
@@ -98,39 +98,10 @@ const mag = () => {
     })
     }
 
-    let slideIndex = 1;
+    
 
-    showSlides(slideIndex);
-    function plusSlides(n) {
-        showSlides(slideIndex += n);
-    }
-
-    function currentSlide(n) {
-        showSlides(slideIndex = n);
-        console.log(n)
-    }
-
-
-    function showSlides(n) {
-        let i;
-        let slides = document.getElementsByClassName("slide");
-        let dots = document.getElementsByClassName('dot');
-        if (n > slides.length) {slideIndex = 1}
-        if (n < 1) {slideIndex = slides.length}
-        for (i =0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-        }
-        for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace("active", "");
-        }
-        slides[slideIndex-1].style.display = "block";
-        dots[slideIndex-1].className += " active";
-    }
-    document.getElementById('step').addEventListener("click",
-        function walking(){ 
-            document.getElementById('first').setAttribute('src', images[0].fields.image_link)
-        }
-    );
+ 
+    
 
     </script>
 {% endblock %}
