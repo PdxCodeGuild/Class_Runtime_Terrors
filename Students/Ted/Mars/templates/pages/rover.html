@@ -47,13 +47,16 @@ const mag = () => {
     console.log('mag ran')
     let image = document.getElementById('first')
     let imgSize = '1000px'
-    let startingSize = 990
-    let justice = 0
-    let justify = '0px'
+    let startingSize = 1000
+    let justiceLeft = -100
+    let justiceTop = -50
+    let justifyLeft = '-100px'
+    let justifyTop = '-50px'
     image.style.transition =''
-    image.style.width = imgSize
-    image.style.height = imgSize
-    image.style.left = justify
+    // image.style.width = imgSize
+    // image.style.height = imgSize
+    // image.style.left = justifyLeft
+    // image.style.top = justifyTop
     const sleep = (milliseconds) => {
         return new Promise(resolve => setTimeout(resolve, milliseconds))
     }
@@ -73,11 +76,15 @@ const mag = () => {
         
         startingSize += 20
         imgSize = startingSize.toString()+'px' 
-        justice -= 50
-        justify = justice.toString()+'px'         
+        justiceLeft += 0
+        justiceTop += 5
+        justifyLeft = justiceLeft.toString()+'px'         
+        justifyTop = justiceTop.toString()+'px'         
         document.getElementById('first').style.width = imgSize
         document.getElementById('first').style.height = imgSize
-        document.getElementById('first').style.left = justify
+        document.getElementById('first').style.left = justifyLeft
+        document.getElementById('first').style.top = justifyTop
+
     },1000)
         
 }
