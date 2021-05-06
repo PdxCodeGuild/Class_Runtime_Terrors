@@ -6,11 +6,9 @@
     align-content: center;
     flex-direction: column;
     background-color: grey;
-    /* height: 740px;
-    width: 1300px; */
-    /* background-image: linear-gradient(to bottom right,rgb(33, 28, 18)); */
-    background-image: radial-gradient(circle farthest-side at 60% 80%,rgba(211, 109, 7, 0.993)10%,rgba(165, 86, 7, 0.993)50%,rgb(33, 28, 18)80%);
-    color: lightgreen;
+    
+    background-image: radial-gradient(circle farthest-side at 60% 70%,rgba(189, 105, 22, 0.993)10%,rgba(240, 148, 117, 0.993)40%,rgb(33, 28, 18)65%);
+    color: rgb(22, 156, 22);
 }
 .helmet {
     display: flex;
@@ -36,11 +34,13 @@
     margin-left: -100px;
     /* margin-right: -10px; */
     margin-top: -10px;
-    /* margin-bottom: -10px; */
+    margin-bottom: -10px;
     position: relative;
-    width: 1000px;
-    height: 1000px;
+    filter: sepia(100%) hue-rotate(340deg)brightness(70%)saturate(150%);
+    width: 1350px;
+    height: 1350px;
     top: 0;
+    bottom: 0;
     left: 0;
     background-color: rgb(49, 37, 37);
     transition: ease 1s;
