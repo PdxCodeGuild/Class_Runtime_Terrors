@@ -57,6 +57,7 @@ const mag = () => {
     const sleep = (milliseconds) => {
         return new Promise(resolve => setTimeout(resolve, milliseconds))
     }
+    
     let counter = 0
     const intervalid = setInterval(()=>{
         counter ++
@@ -72,7 +73,7 @@ const mag = () => {
         }
         
         startingSize += 20
-        imgSize = startingSize.toString()+'px' 
+        imgSize = startingSize.toString()+'px'
         justiceLeft -= 7
         justiceBottom += 10
         justifyLeft = justiceLeft.toString()+'px'         
