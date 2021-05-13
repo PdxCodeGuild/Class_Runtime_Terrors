@@ -10,30 +10,58 @@
             <span class="dot" index='0'></span>
             <span class="dot" index='1'></span>      
         </div> 
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="#"> Curiosity <br>
+                landed at <br> Gale Crater <br>
+                November 26, 2011 <br><br></a>
+            <a href="#">Services</a>
+            <a href="#">Clients</a>
+            <a href="#">Contact</a>
+        </div>
+        <span style="font-size:20px;cursor:pointer" onclick="openNav()">&#9776;</span>
+        
+        <!-- <div class="sidebar">
+            <a class="active" href="#home">Home</a><br>
+            <a href="#news">News</a><br>
+            <a href="#contact">Contact</a><br>
+            <a href="#about">About</a><br>
+        </div> 
+        -->
     <div class='helmet'>
-        <div id = 'left'>
+        
+
+        <!-- <div class = 'introText' style = 'center'>
             Curiosity <br>
             landed at Gale Crater <br>
             November 26, 2011 <br><br>
+        </div>
+        <div class = 'introText' style = 'center'>
             300 Mars days later, <br>
             look for Mt. Elsie <br> 
             beyond the ridge line. <br><br>
+        </div>
+        <div class = 'introText' style = 'center'>
             Here, it has traveled <br>
             ~4000m
         </div>
-        <div class='visor'>
-            <img src id = 'first' style = 'width: {imgSize}, height: {imgSize}'>
-        </div>
-        <div id = 'right'>
+        <div class = 'introText' style = 'center' >
             To take a walk on Mars,<br>
             just click any of the <br>
             buttons at the top<br><br>
+        </div> 
+        <div class = 'introText' style = 'center'>   
             Look for the dark knot<br>
             visible on the ridge,<br>
             and the tire tracks<br>
             in the foreground
+        </div> -->
 
+        <div class='visor'>
+                
+            <img src id = 'first' style = 'width: {imgSize}, height: {imgSize}'>
         </div>
+        
     </div>
 
 </div>
@@ -41,6 +69,14 @@
 
 
 <script>
+
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
 
 
 const mag = () => {
@@ -74,7 +110,7 @@ const mag = () => {
         
         startingSize += 20
         imgSize = startingSize.toString()+'px'
-        justiceLeft -= 7
+        justiceLeft -= 10
         justiceBottom += 10
         justifyLeft = justiceLeft.toString()+'px'         
         justifyBottom = justiceBottom.toString()+'px'         

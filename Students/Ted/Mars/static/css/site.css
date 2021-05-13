@@ -6,18 +6,78 @@
     align-content: center;
     flex-direction: column;
     background-color: grey;
-    
     background-image: radial-gradient(circle farthest-side at 60% 70%,rgba(189, 105, 22, 0.993)10%,rgba(240, 148, 117, 0.993)40%,rgb(33, 28, 18)65%);
     color: rgb(22, 156, 22);
 }
 .helmet {
     display: flex;
     justify-content: center;
-    margin: 25px;
-    
-    
+    margin: 25px;    
 }
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+ 
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+/* .sidebar {
+    margin: 0;
+    padding: 0;
+    width: 100px;
+    position: fixed;
+    height: 10%;
+    overflow: auto;
+  }
+  
+.sidebar a {
+    display: block;
+    color: rgb(22, 156, 22);
+    padding: 16px;
+    text-decoration: none;
+  }
+   
+.sidebar a.active {
+    color: white;
+  }
+  
+.sidebar a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+  } */
+  
+  /* div.content {
+    margin-left: 200px;
+    padding: 1px 16px;
+    height: 1000px;
+  }
+   */
 .visor {
+    position: relative;
     align-items: center;
     margin: 0 auto;
     border-style: none;
@@ -25,7 +85,7 @@
     height: 630px;
     border-radius: 150px;
     overflow: hidden;
-    
+    background-color: rgb(49, 37, 37);
 }
 
 #first {
@@ -41,35 +101,25 @@
     height: 1350px;
     top: 0;
     bottom: 0;
-    left: 0;
-    background-color: rgb(49, 37, 37);
+    left: 0;  
     transition: ease 1s;
-}
-#right {
-    margin-top: 70px;
-    text-align: left;
-}
-#left {
-    margin-top: 70px;
-    text-align: right;
 }
 
 .dot {
     display: flex;
     align-items: center;
-
     cursor: pointer;
-    height: 15px;
-    width: 15px;
+    height: 55px;
+    width: 55px;
     margin: 2px;
-    background-color: rgb(24, 168, 24);
+    background-image: 'images[index].fields.image_link';
     border-radius: 50%;
     display: inline-block;
     transition: background-color 0.6s ease;
   }
   
   .active, .dot:hover {
-    background-color: #990505;
+    background-color: rgb(189, 105, 22, 0.993);
   }
 
 
