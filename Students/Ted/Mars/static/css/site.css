@@ -105,14 +105,13 @@
     transition: ease 1s;
 }
 
-.dot {
+#dots {
     display: flex;
     align-items: center;
     cursor: pointer;
     height: 55px;
     width: 55px;
     margin: 2px;
-    background-image: 'images[index].fields.image_link';
     border-radius: 50%;
     display: inline-block;
     transition: background-color 0.6s ease;

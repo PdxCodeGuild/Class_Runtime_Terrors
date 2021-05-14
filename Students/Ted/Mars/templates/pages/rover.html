@@ -4,12 +4,19 @@
 <div class="Marscape"> 
 
         <div id = 'dots' style='text-align:center'>
-            <span class="dot" index='2'></span>
+            <img src = './css/images/Mars_image2.jpeg' id='thumbnail0' onclick= {blowThisUp(this.id)}/>
+            <img src = './css/images/new_Mars_image1.jpeg' id='thumbnail1'/>
+            <img src = './css/images/new_Mars_image2.jpeg' id='thumbnail2'/>
+            <img src = './css/images/new_Mars_image3.jpeg' id='thumbnail3'/>
+            <img src = './css/images/new_Mars_image4.jpeg' id='thumbnail4'/>
+
+            <!-- <span class="dot" index='2'></span>
             <span class="dot" index='4'></span>
             <span class="dot" index='3'></span>
             <span class="dot" index='0'></span>
-            <span class="dot" index='1'></span>      
+            <span class="dot" index='1'></span>       -->
         </div> 
+        
         <div id="mySidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <a href="#"> Curiosity <br>
@@ -56,9 +63,11 @@
             and the tire tracks<br>
             in the foreground
         </div> -->
+        <div>
+            <img src='./css/images/Mars_image2.jpeg' id= 'bigPicture'/>
+        </div>
 
-        <div class='visor'>
-                
+        <div class='visor'>     
             <img src id = 'first' style = 'width: {imgSize}, height: {imgSize}'>
         </div>
         
@@ -69,6 +78,11 @@
 
 
 <script>
+
+let blowUpItem = document.getElementById(id).getAttribute('src')
+let bigPicture = document.getElementById('bigPicture')
+
+bigPicture.setAttribute('src', blowUpItem)
 
 function openNav() {
   document.getElementById("mySidenav").style.width = "250px";
