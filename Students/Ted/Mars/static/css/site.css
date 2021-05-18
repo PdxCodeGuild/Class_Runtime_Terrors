@@ -105,7 +105,7 @@
     transition: ease 1s;
 }
 
-#dots {
+#dots img {
     display: flex;
     align-items: center;
     cursor: pointer;

@@ -4,11 +4,11 @@
 <div class="Marscape"> 
 
         <div id = 'dots' style='text-align:center'>
-            <img src = './css/images/Mars_image2.jpeg' id='thumbnail0' onclick= {blowThisUp(this.id)}/>
-            <img src = './css/images/new_Mars_image1.jpeg' id='thumbnail1'/>
-            <img src = './css/images/new_Mars_image2.jpeg' id='thumbnail2'/>
-            <img src = './css/images/new_Mars_image3.jpeg' id='thumbnail3'/>
-            <img src = './css/images/new_Mars_image4.jpeg' id='thumbnail4'/>
+            <img src = "{% static 'images/Mars_image1.jpeg' %}" id='thumbnail'/>
+            <img src = "{% static 'images/Mars_image2.jpeg' %}" id='thumbnail'/>
+            <img src = "{% static 'images/Mars_image3.jpeg' %}" id='thumbnail'/>
+            <img src = "{% static 'images/Mars_image4.jpeg' %}" id='thumbnail'/>
+            <img src = "{% static 'images/Mars_image5.jpeg' %}" id='thumbnail'/>
 
             <!-- <span class="dot" index='2'></span>
             <span class="dot" index='4'></span>
@@ -28,13 +28,7 @@
         </div>
         <span style="font-size:20px;cursor:pointer" onclick="openNav()">&#9776;</span>
         
-        <!-- <div class="sidebar">
-            <a class="active" href="#home">Home</a><br>
-            <a href="#news">News</a><br>
-            <a href="#contact">Contact</a><br>
-            <a href="#about">About</a><br>
-        </div> 
-        -->
+       
     <div class='helmet'>
         
 
@@ -63,9 +57,9 @@
             and the tire tracks<br>
             in the foreground
         </div> -->
-        <div>
+        <!-- <div>
             <img src='./css/images/Mars_image2.jpeg' id= 'bigPicture'/>
-        </div>
+        </div> -->
 
         <div class='visor'>     
             <img src id = 'first' style = 'width: {imgSize}, height: {imgSize}'>
@@ -78,11 +72,19 @@
 
 
 <script>
+let hand = []
+const pics = document.querySelectorAll('.thumbnail')
+for (let i = 0; i<pics.length; i++) {
+    pics[i].addEventListener('click',function trigger(event) {
+        let index = event.target.attributes.index.value
+        console.log(index)
+    hand.append(pics[i])
+}
+console.log(pics)
+let blowThisUp = document.getElementById(id).getAttribute('src')
+// let bigPicture = document.getElementById('first')
 
-let blowUpItem = document.getElementById(id).getAttribute('src')
-let bigPicture = document.getElementById('bigPicture')
-
-bigPicture.setAttribute('src', blowUpItem)
+// visor.setAttribute('src', blowUpItem)
 
 function openNav() {
   document.getElementById("mySidenav").style.width = "250px";
@@ -137,13 +139,14 @@ const mag = () => {
         
 }
 
-    const images = {{serialized_image|safe}}
+    // const images = {{serialized_image|safe}}
     
     console.log(images)
-    const dots = document.querySelectorAll('.dot')
+    const dots = document.querySelectorAll('.dots')
     for(let i = 0; i<dots.length; i++){
     dots[i].addEventListener('click',function trigger(event) {
         let index = event.target.attributes.index.value
+        console.log(index)
         const first =document.getElementById('first')
         first.setAttribute('src', '')
         first.setAttribute('src', images[index].fields.image_link)
@@ -152,10 +155,6 @@ const mag = () => {
 
     })
     }
-
-    
-
- 
     
 
     </script>
