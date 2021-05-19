@@ -4,17 +4,12 @@
 <div class="Marscape"> 
 
         <div id = 'dots' style='text-align:center'>
-            <img src = "{% static 'images/Mars_image1.jpeg' %}" id='thumbnail'/>
-            <img src = "{% static 'images/Mars_image2.jpeg' %}" id='thumbnail'/>
-            <img src = "{% static 'images/Mars_image3.jpeg' %}" id='thumbnail'/>
-            <img src = "{% static 'images/Mars_image4.jpeg' %}" id='thumbnail'/>
-            <img src = "{% static 'images/Mars_image5.jpeg' %}" id='thumbnail'/>
+            <img src = "{% static 'images/Mars_image1.jpeg' %}" id='thumbnail' onclick = "selectThumb(this.src)" />
+            <img src = "{% static 'images/Mars_image2.jpeg' %}" id='thumbnail' onclick = "selectThumb(this.src)"/>
+            <img src = "{% static 'images/Mars_image3.jpeg' %}" id='thumbnail' onclick = "selectThumb(this.src)"/>
+            <img src = "{% static 'images/Mars_image4.jpeg' %}" id='thumbnail' onclick = "selectThumb(this.src)"/>
+            <img src = "{% static 'images/Mars_image5.jpeg' %}" id='thumbnail' onclick = "selectThumb(this.src)"/>
 
-            <!-- <span class="dot" index='2'></span>
-            <span class="dot" index='4'></span>
-            <span class="dot" index='3'></span>
-            <span class="dot" index='0'></span>
-            <span class="dot" index='1'></span>       -->
         </div> 
         
         <div id="mySidenav" class="sidenav">
@@ -30,39 +25,9 @@
         
        
     <div class='helmet'>
-        
-
-        <!-- <div class = 'introText' style = 'center'>
-            Curiosity <br>
-            landed at Gale Crater <br>
-            November 26, 2011 <br><br>
-        </div>
-        <div class = 'introText' style = 'center'>
-            300 Mars days later, <br>
-            look for Mt. Elsie <br> 
-            beyond the ridge line. <br><br>
-        </div>
-        <div class = 'introText' style = 'center'>
-            Here, it has traveled <br>
-            ~4000m
-        </div>
-        <div class = 'introText' style = 'center' >
-            To take a walk on Mars,<br>
-            just click any of the <br>
-            buttons at the top<br><br>
-        </div> 
-        <div class = 'introText' style = 'center'>   
-            Look for the dark knot<br>
-            visible on the ridge,<br>
-            and the tire tracks<br>
-            in the foreground
-        </div> -->
-        <!-- <div>
-            <img src='./css/images/Mars_image2.jpeg' id= 'bigPicture'/>
-        </div> -->
 
         <div class='visor'>     
-            <img src id = 'first' style = 'width: {imgSize}, height: {imgSize}'>
+            <img src id = 'first' style = 'width: {imgSize}, height: {imgSize}' onclick = 'mag()'>
         </div>
         
     </div>
@@ -75,16 +40,20 @@
 let hand = []
 const pics = document.querySelectorAll('.thumbnail')
 for (let i = 0; i<pics.length; i++) {
+    console.log(pics[i])
     pics[i].addEventListener('click',function trigger(event) {
         let index = event.target.attributes.index.value
         console.log(index)
-    hand.append(pics[i])
+        hand.push(pics[i])
+    })
+}
+
+const selectThumb= function(e){
+    console.log(e)
+    let first = document.getElementById('first')
+    first.setAttribute('src', e)
 }
 console.log(pics)
-let blowThisUp = document.getElementById(id).getAttribute('src')
-// let bigPicture = document.getElementById('first')
-
-// visor.setAttribute('src', blowUpItem)
 
 function openNav() {
   document.getElementById("mySidenav").style.width = "250px";
@@ -111,10 +80,12 @@ const mag = () => {
     }
     
     let counter = 0
+    
     const intervalid = setInterval(()=>{
         counter ++
-        dots.forEach(dot =>{
-        dot.addEventListener('click', ()=> clearInterval(intervalid))
+        pics.forEach(dot =>{
+        dot.addEventListener('click', ()=> clearInterval())
+
     })
         if (counter == 24){
             clearInterval(intervalid)
@@ -138,23 +109,6 @@ const mag = () => {
     },1000)
         
 }
-
-    // const images = {{serialized_image|safe}}
-    
-    console.log(images)
-    const dots = document.querySelectorAll('.dots')
-    for(let i = 0; i<dots.length; i++){
-    dots[i].addEventListener('click',function trigger(event) {
-        let index = event.target.attributes.index.value
-        console.log(index)
-        const first =document.getElementById('first')
-        first.setAttribute('src', '')
-        first.setAttribute('src', images[index].fields.image_link)
-        first.onclick = () => mag()
-        first.style.transitionDuration = '0s'
-
-    })
-    }
     
 
     </script>
