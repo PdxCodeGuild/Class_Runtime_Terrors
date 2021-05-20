@@ -4,11 +4,11 @@
 <div class="Marscape"> 
 
         <div id = 'dots' style='text-align:center'>
-            <img src = "{% static 'images/Mars_image1.jpeg' %}" id='thumbnail' onclick = "selectThumb(this.src)" />
-            <img src = "{% static 'images/Mars_image2.jpeg' %}" id='thumbnail' onclick = "selectThumb(this.src)"/>
-            <img src = "{% static 'images/Mars_image3.jpeg' %}" id='thumbnail' onclick = "selectThumb(this.src)"/>
-            <img src = "{% static 'images/Mars_image4.jpeg' %}" id='thumbnail' onclick = "selectThumb(this.src)"/>
-            <img src = "{% static 'images/Mars_image5.jpeg' %}" id='thumbnail' onclick = "selectThumb(this.src)"/>
+            <img src = "{% static 'images/Mars_image1.jpeg' %}" class='thumbnail' onclick = "selectThumb(this.src)" />
+            <img src = "{% static 'images/Mars_image2.jpeg' %}" class='thumbnail' onclick = "selectThumb(this.src)"/>
+            <img src = "{% static 'images/Mars_image3.jpeg' %}" class='thumbnail' onclick = "selectThumb(this.src)"/>
+            <img src = "{% static 'images/Mars_image4.jpeg' %}" class='thumbnail' onclick = "selectThumb(this.src)"/>
+            <img src = "{% static 'images/Mars_image5.jpeg' %}" class='thumbnail' onclick = "selectThumb(this.src)"/>
 
         </div> 
         
@@ -17,11 +17,14 @@
             <a href="#"> Curiosity <br>
                 landed at <br> Gale Crater <br>
                 November 26, 2011 <br><br></a>
-            <a href="#">Services</a>
-            <a href="#">Clients</a>
-            <a href="#">Contact</a>
+            <a href="#">To take a walk on Mars,<br>
+                just click any of the <br>
+                buttons at the top<br></a>
+            <a href="#">Then click the view to begin<br></a>
+            <a href="https://www.nasa.gov/mission_pages/mars/main/index.html">Click for more<br>about Mars mission<br></a>
+            <a href='#'>Click here to return to Ted Ooghe's page</a>
         </div>
-        <span style="font-size:20px;cursor:pointer" onclick="openNav()">&#9776;</span>
+        <span id = 'opened' style="font-size:20px;cursor:pointer" onclick="openNav()">&#9776;</span>
         
        
     <div class='helmet'>
@@ -39,19 +42,21 @@
 <script>
 let hand = []
 const pics = document.querySelectorAll('.thumbnail')
-for (let i = 0; i<pics.length; i++) {
-    console.log(pics[i])
-    pics[i].addEventListener('click',function trigger(event) {
-        let index = event.target.attributes.index.value
-        console.log(index)
-        hand.push(pics[i])
-    })
-}
+console.log(pics, 'pics')
+
 
 const selectThumb= function(e){
     console.log(e)
     let first = document.getElementById('first')
     first.setAttribute('src', e)
+    let startingSize = 1000
+    let justifyLeft = '-100px'
+    let justifyBottom = '-50px'
+    first.style.width = '1000px'
+    first.style.height = '1000px'
+    first.style.left = '-100px'
+    first.style.bottom = '-50px'
+    first.style.transition ='none'
 }
 console.log(pics)
 
@@ -63,17 +68,17 @@ function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
 }
 
-
+const intervalids = []
 const mag = () => {
     console.log('mag ran')
     let image = document.getElementById('first')
-    let imgSize = '1000px'
+    let imgSize = '1350px'
     let startingSize = 1000
     let justiceLeft = -100
     let justiceBottom = -50
     let justifyLeft = '-100px'
     let justifyBottom = '-50px'
-    image.style.transition =''
+    image.style.transition ='ease 1s'
     
     const sleep = (milliseconds) => {
         return new Promise(resolve => setTimeout(resolve, milliseconds))
@@ -84,14 +89,18 @@ const mag = () => {
     const intervalid = setInterval(()=>{
         counter ++
         pics.forEach(dot =>{
-        dot.addEventListener('click', ()=> clearInterval())
+        dot.addEventListener('click', ()=> {
+            clearInterval(intervalid)
+            counter = 0
+            
+        })
 
     })
         if (counter == 24){
             clearInterval(intervalid)
         }
         console.log(counter)
-        if (counter > 0) {
+        if (counter > 1) {
             image.style.transition ='ease 1s'
         }
         
@@ -107,7 +116,7 @@ const mag = () => {
         document.getElementById('first').style.bottom = justifyBottom
 
     },1000)
-        
+    intervalids.push(intervalid)    
 }
     
 
