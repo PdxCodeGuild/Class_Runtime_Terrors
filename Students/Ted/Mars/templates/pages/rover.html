@@ -4,27 +4,26 @@
 <div class="Marscape"> 
 
         <div id = 'dots' style='text-align:center'>
-            <img src = "{% static 'images/Mars_image1.jpeg' %}" class='thumbnail' onclick = "selectThumb(this.src)" />
-            <img src = "{% static 'images/Mars_image2.jpeg' %}" class='thumbnail' onclick = "selectThumb(this.src)"/>
-            <img src = "{% static 'images/Mars_image3.jpeg' %}" class='thumbnail' onclick = "selectThumb(this.src)"/>
-            <img src = "{% static 'images/Mars_image4.jpeg' %}" class='thumbnail' onclick = "selectThumb(this.src)"/>
-            <img src = "{% static 'images/Mars_image5.jpeg' %}" class='thumbnail' onclick = "selectThumb(this.src)"/>
-
+            <div id = 'dotbox'>
+                <img src = "{% static 'images/Mars_image1.jpeg' %}" class='thumbnail' onclick = "selectThumb(this.src)" />
+                <img src = "{% static 'images/Mars_image2.jpeg' %}" class='thumbnail' onclick = "selectThumb(this.src)"/>
+                <img src = "{% static 'images/Mars_image3.jpeg' %}" class='thumbnail' onclick = "selectThumb(this.src)"/>
+                <img src = "{% static 'images/Mars_image4.jpeg' %}" class='thumbnail' onclick = "selectThumb(this.src)"/>
+                <img src = "{% static 'images/Mars_image5.jpeg' %}" class='thumbnail' onclick = "selectThumb(this.src)"/>
+            </div>
+            <h3>To take a walk on Mars,just click any of the 
+                buttons at the top
         </div> 
         
         <div id="mySidenav" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <a href="#"> Curiosity <br>
-                landed at <br> Gale Crater <br>
-                November 26, 2011 <br><br></a>
-            <a href="#">To take a walk on Mars,<br>
-                just click any of the <br>
-                buttons at the top<br></a>
-            <a href="#">Then click the view to begin<br></a>
-            <a href="https://www.nasa.gov/mission_pages/mars/main/index.html">Click for more<br>about Mars mission<br></a>
-            <a href='#'>Click here to return to Ted Ooghe's page</a>
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"> &times;</a>
+            <a href="#">Curiosity Rover<br>
+                landed at <br> Gale Crater, Mars <br>
+                11/26/2011 <br><br></a>
+            <a href="https://www.nasa.gov/mission_pages/mars/main/index.html">Click HERE for more about Mars mission<br></a>
+            <a href='https://github.com/PdxCodeGuild/Class_Runtime_Terrors/tree/master/Students/Ted/Mars/Project_rover'>Click HERE to see the code in github</a>
         </div>
-        <span id = 'opened' style="font-size:20px;cursor:pointer" onclick="openNav()">&#9776;</span>
+        <span id = 'opened' style="font-size:20px;cursor:pointer" onclick="openNav()">  &#9776;</span>
         
        
     <div class='helmet'>
