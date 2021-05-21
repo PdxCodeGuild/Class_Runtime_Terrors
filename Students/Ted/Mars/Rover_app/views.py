@@ -4,7 +4,9 @@ from .models import Image
 import requests
 import json
 from django.core import serializers
-
+# AN EARLIER VERSION CALLED NASA API TO RETURN IMAGES, 
+# SORTED, THEN ADDED TO DATABASE. I HAVE LEFT THE CODE HERE
+# FOR POSSIBLE FUTURE VERSIONS.
 
 def home(request):
     return render(request, 'pages/home.html')

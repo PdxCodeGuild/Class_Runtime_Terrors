@@ -11,8 +11,8 @@
                 <img src = "{% static 'images/Mars_image4.jpeg' %}" class='thumbnail' onclick = "selectThumb(this.src)"/>
                 <img src = "{% static 'images/Mars_image5.jpeg' %}" class='thumbnail' onclick = "selectThumb(this.src)"/>
             </div>
-            <h3>To take a walk on Mars,just click any of the 
-                buttons at the top
+            <h3>To take a walk on Mars, select a location at the <br> 
+                top and click the Marscape that loads in visor view.
         </div> 
         
         <div id="mySidenav" class="sidenav">
@@ -24,10 +24,8 @@
             <a href='https://github.com/PdxCodeGuild/Class_Runtime_Terrors/tree/master/Students/Ted/Mars/Project_rover'>Click HERE to see the code in github</a>
         </div>
         <span id = 'opened' style="font-size:20px;cursor:pointer" onclick="openNav()">  &#9776;</span>
-        
-       
+             
     <div class='helmet'>
-
         <div class='visor'>     
             <img src id = 'first' style = 'width: {imgSize}, height: {imgSize}' onclick = 'mag()'>
         </div>
@@ -36,12 +34,9 @@
 
 </div>
 
-
-
 <script>
 let hand = []
 const pics = document.querySelectorAll('.thumbnail')
-console.log(pics, 'pics')
 
 
 const selectThumb= function(e){
@@ -57,7 +52,6 @@ const selectThumb= function(e){
     first.style.bottom = '-50px'
     first.style.transition ='none'
 }
-console.log(pics)
 
 function openNav() {
   document.getElementById("mySidenav").style.width = "250px";
@@ -91,9 +85,7 @@ const mag = () => {
         dot.addEventListener('click', ()=> {
             clearInterval(intervalid)
             counter = 0
-            
         })
-
     })
         if (counter == 24){
             clearInterval(intervalid)
